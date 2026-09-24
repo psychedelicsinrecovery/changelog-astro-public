@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Elementor MCP (emcp) tool capabilities — Library</title><meta name="description" content="What the Elementor MCP tools can and can't touch on this site."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="Elementor MCP (emcp) tool capabilities — Library"><meta property="og:description" content="What the Elementor MCP tools can and can't touch on this site."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/capabilities-emcp-tools"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Elementor MCP (emcp) tool capabilities — Library"><meta name="twitter:description" content="What the Elementor MCP tools can and can't touch on this site."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("pir-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>.content-section[data-astro-cid-cx6wmmop]{max-width:760px;margin:0 auto;padding:40px 20px 60px}.back[data-astro-cid-cx6wmmop]{margin:0 0 24px}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]:hover{opacity:1}h1[data-astro-cid-cx6wmmop]{letter-spacing:-.01em;margin:0 0 8px;font-size:1.9rem;font-weight:600}.desc[data-astro-cid-cx6wmmop]{opacity:.7;margin:0 0 32px;font-size:1rem}.prose[data-astro-cid-cx6wmmop] h1{margin:40px 0 16px;font-size:1.6rem}.prose[data-astro-cid-cx6wmmop] h2{margin:32px 0 12px;font-size:1.3rem}.prose[data-astro-cid-cx6wmmop] h3{margin:24px 0 10px;font-size:1.1rem}.prose[data-astro-cid-cx6wmmop] p{margin:0 0 16px;line-height:1.7}.prose[data-astro-cid-cx6wmmop] ul,.prose[data-astro-cid-cx6wmmop] ol{padding-left:1.4em;line-height:1.7}.prose[data-astro-cid-cx6wmmop] .tldr{background:color-mix(in srgb, var(--signature) 10%, transparent);border-left:3px solid var(--signature);border-radius:10px;align-items:flex-start;gap:10px;margin:0 0 20px;padding:14px 16px;font-size:.95rem;line-height:1.6;display:flex}.prose[data-astro-cid-cx6wmmop] .tldr .ph{color:var(--signature);flex-shrink:0;margin-top:2px}.prose[data-astro-cid-cx6wmmop] details{border:1px solid var(--line,currentColor);border-radius:10px;margin:4px 0 24px;padding:0 16px}.prose[data-astro-cid-cx6wmmop] details[open]{padding-bottom:16px}.prose[data-astro-cid-cx6wmmop] summary{cursor:pointer;color:var(--signature);align-items:center;gap:8px;padding:14px 0;font-weight:600;display:flex}.prose[data-astro-cid-cx6wmmop] summary::-webkit-details-marker{display:none}.prose[data-astro-cid-cx6wmmop] summary .ph-caret-right{transition:transform .15s}.prose[data-astro-cid-cx6wmmop] details[open] summary .ph-caret-right{transform:rotate(90deg)}.prose[data-astro-cid-cx6wmmop] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.88em}.prose[data-astro-cid-cx6wmmop] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;font-size:.85rem;overflow-x:auto}.prose[data-astro-cid-cx6wmmop] pre code{background:0 0;padding:0}.prose[data-astro-cid-cx6wmmop] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.prose[data-astro-cid-cx6wmmop] blockquote{border-left:3px solid var(--signature,currentColor);opacity:.85;margin:0 0 16px;padding:4px 0 4px 16px}
+#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}:root{--ink:#1a1530;--ink-soft:#6b5f8a;--signature:#5b21b6;--signature-2:#db2777;--surface:#fff;--line:#e0d9f0;--bg:#f5f3fa}:root[data-theme=dark]{--ink:#f1e9ff;--ink-soft:#a89cc8;--signature:#7c3aed;--signature-2:#f472b6;--surface:#131829;--line:#2a2550;--bg:#0a0e1a}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;padding-bottom:96px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex}.brand:hover .brand-home-icon,.brand:hover .brand-title{color:var(--signature)}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);padding:10px 20px;font-size:.78rem;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}a{color:var(--signature)}body,.content-section{color:var(--ink)}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColor = "#F1E9FF";
+const sparkColor = "#F472B6";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        bx: Math.random() * W,
+        by: Math.random() * H,
+        x: 0,
+        y: 0,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><span class="brand-title">PIR® Changelog</span><i class="ph ph-house brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Home</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-cx6wmmop><p class="back" data-astro-cid-cx6wmmop><a href="/changelog-astro-public/library" data-astro-cid-cx6wmmop>&larr; All library docs</a></p><h1 data-astro-cid-cx6wmmop>Elementor MCP (emcp) tool capabilities</h1><p class="desc" data-astro-cid-cx6wmmop>What the Elementor MCP tools can and can&#39;t touch on this site.</p><div class="prose" data-astro-cid-cx6wmmop><div class="tldr"><i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> A living reference for what the Elementor MCP tools (emcp-tools) can and can't touch on this site -- the toolset behind most of the WordPress fixes documented elsewhere in this library.</div>
+<details>
+<summary><i class="ph ph-caret-right"></i> Read the full story →</summary>
+<h1 id="what-emcp-tools-mcp-can-actually-do">What emcp-tools MCP can actually do</h1>
+<p>Live capability reference for the <code>emcp-tools</code> plugin’s MCP server (<code>emcp-psychedelicsinrecovery-org</code>
+/ <code>emcp-service-psychedelicsinrecovery-org</code>). Written after direct use, not from the plugin’s own
+marketing copy — every category below has been exercised against real PIR data at least once.
+~126 of 266 total tools are enabled on both sites (the rest are toggled off per-site in the plugin’s
+Tools tab). For how to connect, see <code>HOW-TO-RECONNECT-MCP.md</code>.</p>
+<h2 id="content--the-everyday-layer">Content — the everyday layer</h2>
+<p>Full CRUD on pages, posts, and custom post types: <code>create-page</code>, <code>create-post</code>, <code>update-post</code>,
+<code>delete-post</code>, <code>list-pages</code>, <code>list-posts</code>, <code>get-post</code>, <code>get-post-blocks</code>, <code>set-post-terms</code>
+(taxonomies/categories/tags), <code>search-content</code>. This is how the convention schedule page got built
+and published in the original session — real, not theoretical.</p>
+<h2 id="elementor--the-deep-layer-and-the-reason-this-plugin-exists">Elementor — the deep layer, and the reason this plugin exists</h2>
+<p>Most of PIR’s site is Elementor-built, which nothing else here reaches. Two modes:</p>
+<ul>
+<li><strong>Legacy/free-widget mode:</strong> <code>add-free-widget</code>, <code>add-container</code>, <code>add-div-block</code>, <code>add-flexbox</code>.</li>
+<li><strong>Atomic mode (Elementor 4.0+, what this site runs):</strong> <code>add-atomic-heading</code>, <code>-paragraph</code>,
+<code>-button</code>, <code>-image</code>, <code>-video</code>, <code>-youtube</code>, <code>-svg</code>, <code>-divider</code>, <code>-widget</code>, <code>update-atomic-widget</code>.
+<code>detect-elementor-version</code> tells you which mode to use before touching a page.</li>
+</ul>
+<p>Structural tools work on both modes: <code>get-page-structure</code> (full element tree, containers/widgets/
+nesting), <code>get-page-snapshot</code>, <code>get-page-html</code>, <code>find-element</code>, <code>get-element-settings</code>,
+<code>update-element</code>, <code>move-element</code>, <code>duplicate-element</code>, <code>remove-element</code>, <code>set-element-label</code>,
+<code>reorder-elements</code>, <code>get-widget-schema</code>/<code>get-container-schema</code> (what settings a given widget/container
+actually accepts, before trying to set them).</p>
+<p>Global design tokens (site-wide, not per-page): <code>list-global-classes</code>, <code>get-global-settings</code>,
+<code>update-global-colors</code>, <code>update-global-typography</code>.</p>
+<p>Patterns and templates: <code>list-patterns</code>, <code>insert-pattern</code>, <code>save-as-template</code>, <code>apply-template</code>,
+<code>import-template</code>, <code>create-theme-template</code>, <code>update-theme-template</code>, <code>delete-theme-template</code>,
+<code>resolve-template</code>, <code>set-template-conditions</code>, <code>list-condition-targets</code> (theme-builder conditional
+display — which template shows on which pages).</p>
+<h2 id="media">Media</h2>
+<p><code>list-media</code>, <code>get-media</code>, <code>upload-media</code>, <code>update-media</code>, <code>sideload-image</code> (pull an image from a
+URL directly into the media library), <code>search-images</code>/<code>add-stock-image</code> (built-in stock photo
+search), <code>upload-svg-icon</code>.</p>
+<h2 id="plugins-themes-and-site-config">Plugins, themes, and site config</h2>
+<p><code>list-plugins</code> (status, version, update-available, whether it’s protected from being disabled —
+<code>emcp-tools</code> and Elementor themselves can never be turned off via MCP), <code>search-plugins</code>,
+<code>list-themes</code>, <code>search-themes</code>, <code>theme-read</code> (a thinner Astra/theme settings reader — see
+<code>CAPABILITIES-ASTRA.md</code> for the real, deep version), <code>astra-read</code> (same caveat), <code>get-settings</code>/
+<code>update-settings</code> (WordPress core settings: general, reading, writing, discussion, media,
+permalinks), <code>menu-read</code>/<code>menu-write</code> (nav menus), <code>list-redirects</code>.</p>
+<h2 id="database--read-only-but-real-sql">Database — read-only, but real SQL</h2>
+<p><code>query</code>: runs arbitrary <code>SELECT</code>/<code>SHOW</code>/<code>DESCRIBE</code>/<code>EXPLAIN</code> against the live database. Writes and
+DDL are rejected server-side, not just discouraged. <code>describe-table</code>/<code>list-tables</code> for schema
+discovery first. This is genuinely powerful — it’s how the Jetpack active-plan and active-modules
+data got pulled for the JetPack-vs-emcp comparison in this project’s history. Also flagged by Claude
+Code’s own auto-mode classifier as “Production Reads” on the main site specifically — expect a
+permission prompt there.</p>
+<h2 id="auditing-safety-and-diagnostics">Auditing, safety, and diagnostics</h2>
+<p>Every change an AI makes through this plugin is recorded and reversible: <code>list-changes</code>, <code>get-change</code>,
+<code>rollback-change</code>. <code>scan-security</code> and <code>analyze-performance</code> are built-in, no separate plugin needed
+— this is the direct answer to “what does emcp give you that Jetpack AI doesn’t.” <code>find-broken-links</code>,
+<code>reindex-search</code> (Relevanssi), <code>read-file</code>/<code>search-files</code>/<code>list-directory</code> (server filesystem, scoped
+to the WordPress install).</p>
+<h2 id="backup--export">Backup &amp; export</h2>
+<p><code>export-page</code>, <code>export-content</code>, <code>list-content-exports</code>, <code>restore-content</code>, <code>export-sandbox-artifact</code>/
+<code>import-sandbox-artifact</code> (portable bundles for moving work between sites or environments).</p>
+<h2 id="identity">Identity</h2>
+<p><code>core-get-site-info</code>, <code>core-get-user-info</code>, <code>get-user</code>, <code>list-users</code> (admin-only — real emails, roles,
+post counts; used to confirm both sites’ real user lists, not a stub response).</p>
+<h2 id="what-this-doesnt-reach">What this doesn’t reach</h2>
+<p>Anything Astra-theme-specific in real depth (fonts, header/footer <em>design</em> not just layout, global
+color palette editing, sidebar styling) — <code>astra-read</code>/<code>theme-read</code> here are thin readers; the real
+surface is Astra’s own native MCP server. See <code>CAPABILITIES-ASTRA.md</code>.</p>
+</details>
+</div></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">PIR® · Psychedelics In Recovery™</span><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> Entry portal</a><a href="https://psychedelicsinrecovery.github.io/404.html" target="_blank" rel="noopener"><i class="ph ph-map-trifold"></i> Curious what a wrong turn looks like?</a><a href="https://www.psychedelicsinrecovery.org/contact/" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("pir-theme", current);
+        });
+      })();
+    </script></body></html>

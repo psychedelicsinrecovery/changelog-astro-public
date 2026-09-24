@@ -1,0 +1,879 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The header saga: sticky scroll-reveal + mobile pill nav — Library</title><meta name="description" content="18 rounds of real WordPress/Elementor debugging -- scroll-reveal, the mobile hamburger, iOS scroll-lock bugs, and the specificity gap that explained half of it."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="The header saga: sticky scroll-reveal + mobile pill nav — Library"><meta property="og:description" content="18 rounds of real WordPress/Elementor debugging -- scroll-reveal, the mobile hamburger, iOS scroll-lock bugs, and the specificity gap that explained half of it."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/header-sticky-scroll-and-mobile-nav"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The header saga: sticky scroll-reveal + mobile pill nav — Library"><meta name="twitter:description" content="18 rounds of real WordPress/Elementor debugging -- scroll-reveal, the mobile hamburger, iOS scroll-lock bugs, and the specificity gap that explained half of it."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("pir-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>.content-section[data-astro-cid-cx6wmmop]{max-width:760px;margin:0 auto;padding:40px 20px 60px}.back[data-astro-cid-cx6wmmop]{margin:0 0 24px}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]:hover{opacity:1}h1[data-astro-cid-cx6wmmop]{letter-spacing:-.01em;margin:0 0 8px;font-size:1.9rem;font-weight:600}.desc[data-astro-cid-cx6wmmop]{opacity:.7;margin:0 0 32px;font-size:1rem}.prose[data-astro-cid-cx6wmmop] h1{margin:40px 0 16px;font-size:1.6rem}.prose[data-astro-cid-cx6wmmop] h2{margin:32px 0 12px;font-size:1.3rem}.prose[data-astro-cid-cx6wmmop] h3{margin:24px 0 10px;font-size:1.1rem}.prose[data-astro-cid-cx6wmmop] p{margin:0 0 16px;line-height:1.7}.prose[data-astro-cid-cx6wmmop] ul,.prose[data-astro-cid-cx6wmmop] ol{padding-left:1.4em;line-height:1.7}.prose[data-astro-cid-cx6wmmop] .tldr{background:color-mix(in srgb, var(--signature) 10%, transparent);border-left:3px solid var(--signature);border-radius:10px;align-items:flex-start;gap:10px;margin:0 0 20px;padding:14px 16px;font-size:.95rem;line-height:1.6;display:flex}.prose[data-astro-cid-cx6wmmop] .tldr .ph{color:var(--signature);flex-shrink:0;margin-top:2px}.prose[data-astro-cid-cx6wmmop] details{border:1px solid var(--line,currentColor);border-radius:10px;margin:4px 0 24px;padding:0 16px}.prose[data-astro-cid-cx6wmmop] details[open]{padding-bottom:16px}.prose[data-astro-cid-cx6wmmop] summary{cursor:pointer;color:var(--signature);align-items:center;gap:8px;padding:14px 0;font-weight:600;display:flex}.prose[data-astro-cid-cx6wmmop] summary::-webkit-details-marker{display:none}.prose[data-astro-cid-cx6wmmop] summary .ph-caret-right{transition:transform .15s}.prose[data-astro-cid-cx6wmmop] details[open] summary .ph-caret-right{transform:rotate(90deg)}.prose[data-astro-cid-cx6wmmop] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.88em}.prose[data-astro-cid-cx6wmmop] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;font-size:.85rem;overflow-x:auto}.prose[data-astro-cid-cx6wmmop] pre code{background:0 0;padding:0}.prose[data-astro-cid-cx6wmmop] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.prose[data-astro-cid-cx6wmmop] blockquote{border-left:3px solid var(--signature,currentColor);opacity:.85;margin:0 0 16px;padding:4px 0 4px 16px}
+#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}:root{--ink:#1a1530;--ink-soft:#6b5f8a;--signature:#5b21b6;--signature-2:#db2777;--surface:#fff;--line:#e0d9f0;--bg:#f5f3fa}:root[data-theme=dark]{--ink:#f1e9ff;--ink-soft:#a89cc8;--signature:#7c3aed;--signature-2:#f472b6;--surface:#131829;--line:#2a2550;--bg:#0a0e1a}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;padding-bottom:96px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex}.brand:hover .brand-home-icon,.brand:hover .brand-title{color:var(--signature)}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);padding:10px 20px;font-size:.78rem;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}a{color:var(--signature)}body,.content-section{color:var(--ink)}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColor = "#F1E9FF";
+const sparkColor = "#F472B6";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        bx: Math.random() * W,
+        by: Math.random() * H,
+        x: 0,
+        y: 0,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><span class="brand-title">PIR® Changelog</span><i class="ph ph-house brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Home</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-cx6wmmop><p class="back" data-astro-cid-cx6wmmop><a href="/changelog-astro-public/library" data-astro-cid-cx6wmmop>&larr; All library docs</a></p><h1 data-astro-cid-cx6wmmop>The header saga: sticky scroll-reveal + mobile pill nav</h1><p class="desc" data-astro-cid-cx6wmmop>18 rounds of real WordPress/Elementor debugging -- scroll-reveal, the mobile hamburger, iOS scroll-lock bugs, and the specificity gap that explained half of it.</p><div class="prose" data-astro-cid-cx6wmmop><div class="tldr">
+<i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> This is the full, real debugging trail for the mobile header/hamburger menu -- worth skimming the round headers even if you don't read every line. The short version: the header hides on scroll-down and reappears on scroll-up, and the mobile menu button took 18 rounds to get genuinely right, mostly because of two sneaky root causes -- a CSS specificity gap against Elementor's own generated styles, and an iOS Safari bug that clips fixed-position elements inside an overflow:hidden ancestor.
+</div>
+<details>
+<summary><i class="ph ph-caret-right"></i> Read the full story →</summary>
+<h1 id="site-header--sticky-scroll-reveal--mobile-pill-nav-layout-reference">Site header — sticky scroll-reveal + mobile pill nav layout, reference</h1>
+<p><strong>Purpose:</strong> technical reference for the header work landed 2026-09-23. Two features, one repo of
+discovery underneath both: <strong>the site’s real header is not where you’d expect to find it.</strong></p>
+<h2 id="the-header-is-an-elementor-theme-builder-template-not-astras-native-header-builder">The header is an Elementor Theme Builder template, not Astra’s native header builder</h2>
+<p>Astra’s own header builder (<code>astra-get-header-builder</code>) is barely configured — just logo + menu —
+and <strong>is not what actually renders on the live site.</strong> The real header is an Elementor Theme
+Builder location template, <strong>post <code>9227</code></strong>, condition <code>elementor-location-header</code>, confirmed
+directly against live markup (not assumed from settings). Any future header change on this site
+needs to go through this template, not the Astra header-builder MCP tools, or it will silently do
+nothing.</p>
+<p>Before this session, this template had <strong>no sticky positioning at all</strong> — it just scrolled away
+normally with the rest of the page.</p>
+<h2 id="round-9-2026-09-23-later-still--the-actual-root-cause-of-every-unverified-fix-across-rounds-5-8-found-and-fixed">Round 9 (2026-09-23, later still) — the actual root cause of every “unverified” fix across rounds 5-8, found and fixed</h2>
+<p><strong>Everything from rounds 5-8 was correctly written and correctly saved, and none of it ever
+rendered live until this round — not a caching issue, a real one.</strong> Christopher reported the
+hamburger had vanished (round 8’s overflow fix); a fork investigating that found, via direct grep
+of the raw live HTML, that the entire <code>8bc364a</code> container — holding the scroll-reveal script
+<code>9f86147</code> <em>and every CSS backstop written since round 5</em> (<code>d09a84e</code>) — had <strong>zero occurrences</strong> in
+the live page, even though <code>get-page-structure</code> confirmed it was correctly saved in Elementor’s
+data the whole time. Round 6’s “false alarm” conclusion (that a similar-looking absence was just a
+verification-tool quirk) was wrong for THIS container specifically — it genuinely never rendered.</p>
+<p><strong>Real cause: writing Elementor content via the MCP <code>update-element</code> API does not, by itself,
+regenerate this template’s live rendered output.</strong> Confirmed by fixing it: opened
+<code>/wp-admin/post.php?post=9227&amp;action=edit</code> (the classic WordPress edit screen for this template,
+reached by declining Elementor’s own canvas editor — Elementor’s in-canvas “Publish” button stays
+greyed out with nothing to publish, since from its own perspective nothing changed) and clicked the
+real <strong>Update</strong> button in the Publish meta box. That one click made <code>8bc364a</code>’s entire contents —
+the scroll-reveal script and all four rounds of CSS backstops in <code>d09a84e</code> — appear in the live
+page simultaneously, confirmed via direct JS inspection (<code>computed position: sticky</code>, <code>z-index: 999</code>, the injected <code>&lt;style id="pir-header-mobile-pill-fix"&gt;</code> tag present with correct length) and a
+live scroll test (hides on scroll down, reveals on scroll up even far from the top — confirmed via
+<code>scrollY</code> + class-list checks, not just a screenshot).</p>
+<p><strong>Same pattern, same fix, as the WPCode blocker below</strong> — content saved via an API into certain
+WordPress/Elementor systems needs a real save through the system’s own UI to actually take effect,
+regardless of how many times the API confirms the write succeeded. <strong>This is the single most
+important thing to know before doing more work on this header:</strong> any future <code>update-element</code> call
+against post <code>9227</code> should be followed by opening it at the URL above and clicking Update, or the
+change will look successful via every MCP tool and still not be live.</p>
+<p><strong>One more real bug found and fixed in the same pass:</strong> the scroll-reveal script’s original
+selector was <code>header[data-elementor-id="9227"]</code> — correct, and confirmed present on the live
+header element (<code>get-element-settings</code> showed this was never actually <code>#masthead</code>, unlike the
+service-site version below; that assumption was checked and ruled out before use, not carried over
+by mistake). No change was needed there — the selector was right all along; only the render-gap
+above was the actual bug.</p>
+<h2 id="feature-1-header-reappears-on-scroll-up">Feature 1: header reappears on scroll-up</h2>
+<p>Standard pattern: hides when scrolling down, slides back in immediately on any upward scroll, even
+before reaching the top.</p>
+<p><strong>Implementation:</strong> added <code>position: sticky</code> (not <code>fixed</code> — no manual body-padding offset needed to
+compensate for removing it from flow) to the header template’s root, plus a <code>translateY(-100%)</code>
+hide/show toggle. New HTML/JS widget <strong><code>9f86147</code></strong>, inside new container <strong><code>8bc364a</code></strong>, placed at
+the end of header template <code>9227</code> itself — this is the genuine global injection point, since the
+template renders on every page via WordPress/Elementor’s own location-template mechanism, not a
+per-page widget that would need repeating (contrast with the search widget’s per-page problem in
+<code>SEARCH-WIDGET-MOBILE-FIX.md</code> — this is theme-level, so it doesn’t have that limitation).</p>
+<p>Scroll listener is debounced. Guards against hiding while the mobile menu is open by checking
+Elementor’s own <code>.elementor-menu-toggle[aria-expanded="true"]</code> state, not a custom/guessed class —
+so opening the hamburger won’t fight with the reveal/hide behavior.</p>
+<p>Verified live in the served homepage HTML: fetched the page, found the exact injected script,
+decoded the base64, confirmed it matches what was written byte-for-byte. Confirmed global by also
+checking a second page.</p>
+<h2 id="feature-2-mobile-pill-nav--contactdonate-now-inside-the-pill">Feature 2: mobile pill nav — Contact/Donate now inside the pill</h2>
+<p><strong>The bug:</strong> the mobile pill container (<code>eab435b</code> → <code>11608e2</code>, holding logo <code>b0c40e9</code> at 50% width
+and hamburger <code>c48c922</code> at 50% width) never had room for the Contact/Donate buttons at all. They
+actually lived in a <strong>separate, mobile-only row</strong> (<code>951a982</code>), pulled visually close to the pill
+via a negative margin — which is exactly what “outside the pill” looked like: two independent DOM
+elements styled to look adjacent, not one contained unit.</p>
+<p><strong>The fix:</strong></p>
+<ol>
+<li>New stacked-column container <strong><code>9bea1df</code></strong>, inserted between the logo and hamburger inside the
+pill row (<code>11608e2</code>).</li>
+<li>Moved both buttons into it: <strong><code>0da0d00</code></strong> (Contact) and <strong><code>a0be9d3</code></strong> (Donate) — vertically
+stacked, not side by side.</li>
+<li>Shrank logo to 30% width and hamburger to 22% width (from 50%/50%) to make room for the new
+column.</li>
+<li>Restyled the buttons for mobile: 10px font, tight padding, full-width within the stacked
+column, alignment corrected from their old side-by-side <code>align:right</code>/<code>align:left</code> to
+<code>align:center</code> (a leftover from the previous layout that no longer made sense once stacked).</li>
+<li>Set <code>flex_align_items_mobile: center</code> on the pill row itself so everything vertically centers
+against the (now taller, two-button) stacked column.</li>
+<li>Hid the now-empty standalone row (<code>951a982</code>) on mobile — its buttons moved out of it, and
+leaving it in the layout would either show nothing or leave dead space.</li>
+</ol>
+<p>Verified live: fetched fresh HTML, confirmed the DOM nesting is logo → stacked buttons → hamburger,
+all inside <code>11608e2</code>, and confirmed the alignment-class corrections landed.</p>
+<h2 id="round-5-2026-09-23-later-same-day--the-mobile-pill-regressed-and-what-actually-fixed-it">Round 5 (2026-09-23, later same day) — the mobile pill regressed, and what actually fixed it</h2>
+<p>Christopher tested feature 2 live and found it badly broken: all 4 items (logo, Contact, Donate,
+hamburger) were rendering stacked in a column instead of one row, making the pill much taller than
+intended. Inspecting <code>11608e2</code>’s own settings showed <code>flex_direction: row</code> / <code>flex_direction_mobile: row</code> were <em>already set correctly</em> — the failure mode wasn’t visible from settings inspection alone,
+meaning Elementor’s own responsive width/flex controls (the 30%/22% width split from feature 2) are
+fragile in a way that’s hard to diagnose from the settings API. This is the <strong>second</strong> time this
+session that tuning Elementor’s native responsive settings produced a silent or hard-to-diagnose
+failure (see the search-widget global-widget-reference gotcha in <code>SEARCH-WIDGET-MOBILE-FIX.md</code>).</p>
+<p><strong>Fix approach, deliberately different this time:</strong> instead of continuing to tune fragile
+Elementor settings, added a new HTML/CSS widget <strong><code>d09a84e</code></strong> (sibling of the scroll-reveal script
+<code>9f86147</code>, inside the same <code>8bc364a</code> container in header template <code>9227</code> — so it’s global, not
+per-page) with an unconditional, <code>!important</code>-forced rule:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#F97583">@media</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">max-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1024</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#B392F0">  .elementor-element-11608e2</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">flex-direction</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">row</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">flex-wrap</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">nowrap</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    align-items</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">center</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">justify-content</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">space-between</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#B392F0">  .elementor-element-b0c40e9</span><span style="color:#E1E4E8">, </span><span style="color:#B392F0">.elementor-element-c48c922</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#79B8FF"> 0</span><span style="color:#79B8FF"> auto</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">auto</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#B392F0">  .elementor-element-9bea1df</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">flex</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#79B8FF"> 1</span><span style="color:#79B8FF"> auto</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>This is a heavier-handed fix than “adjust one setting” — brute-forcing the layout via CSS rather
+than trusting Elementor’s own responsive controls to hold. Worth remembering as a pattern for this
+site generally: if a native Elementor responsive setting <em>looks</em> right in the settings API but the
+live result is still wrong, a forced CSS override in this same global widget is a more reliable
+lever than continuing to adjust settings.</p>
+<p><strong>A real discovery, not a convention-page bug:</strong> what looked like “the convention page’s mobile
+header is different” was actually a <strong>tablet-width breakpoint bug present sitewide</strong>. A third,
+separate header row (<code>59793aa</code>, holding un-stacked legacy button widgets in <code>113901f</code>) had
+<code>hide_desktop</code> + <code>hide_laptop</code> + <code>hide_mobile</code> all set, but <strong>not <code>hide_tablet</code></strong> — so it was
+rendering, un-fixed by any of this session’s mobile-pill work, at tablet-range viewport widths.
+Christopher was very likely seeing this on the convention page by coincidence of viewport width,
+not because that page is actually different. Fixed with an unconditional <code>display:none</code> on
+<code>59793aa</code> in the same <code>d09a84e</code> widget, plus forcing <code>eab435b{display:flex}</code> at <code>≤1024px</code> so the
+fixed pill (not this legacy row) covers the full mobile+tablet range.</p>
+<p><strong>The empty vertical bar</strong> was <code>951a982</code> (the old standalone row) — it had all 4 <em>standard</em>
+Elementor hide flags set (desktop/laptop/tablet/mobile) and was still rendering, which suggests an
+unlisted custom breakpoint Elementor’s own settings didn’t cover (not chased down further — not
+worth the time once a working fix existed). Fixed with an unconditional <code>display:none !important</code>
+in the same widget.</p>
+<h2 id="round-5--service-site-scroll-reveal-investigated-blocked-needs-a-decision">Round 5 — service site scroll-reveal: investigated, blocked, needs a decision</h2>
+<p>Christopher asked for scroll-reveal on the service site too. Investigated fresh rather than
+assuming main-site parity. Real finding: the service site’s header <strong>genuinely is</strong> Astra’s native
+header builder — confirmed no Elementor markup in the rendered page, and
+<code>list-theme-templates(type=header)</code> returns empty (unlike the main site, there’s no Theme Builder
+override here at all). That means there’s no existing global injection point to add the
+scroll-reveal script to, the way <code>8bc364a</code>/<code>9f86147</code> works on the main site.</p>
+<p>Checked for alternatives: <code>add-custom-js</code> is explicitly per-page only on this install (would mean
+repeating the script on every page, fragile and easy to miss new pages); no active plugin provides
+a genuine site-wide code-injection point (checked <code>list-plugins</code> — no Code Snippets, WPCode, or
+Insert Headers &amp; Footers). The only way to get a real global hook would be building a brand-new
+Elementor Theme Builder header template with an “Entire Site” condition — but Theme Builder headers
+<strong>fully replace</strong> the theme’s native header output (confirmed by the main site’s own header being
+exactly that kind of replacement), so doing this would mean rebuilding the service site’s existing
+Astra header content (logo, menu, whatever else it has) inside Elementor from scratch, not just
+adding a script. That’s a real scope jump — a header rebuild, not a scroll-reveal add-on — and
+risky to improvise without direction. <strong>Not done. Needs Christopher’s call on how to proceed</strong> (see
+his open handoff/pending-tasks entry for the options).</p>
+<h2 id="round-6-2026-09-23-later-still--real-fixes-made-but-nothing-confirmed-live-and-one-genuinely-concerning-finding">Round 6 (2026-09-23, later still) — real fixes made, but nothing confirmed live, and one genuinely concerning finding</h2>
+<p>Christopher reported the mobile pill was still broken (logo/hamburger not staying in one row,
+hamburger barely visible under a heavy radius) and asked for icon-only Contact/Donate on
+mobile+tablet, a tablet-width radius fix, and removal of a padding gap under the header.</p>
+<p><strong>Real root cause found this round, via <code>get-element-settings</code>, not guessed:</strong> the pill’s own
+outer wrapper (<code>eab435b</code>) had <strong><code>hide_tablet</code> set natively</strong> — by Elementor’s own visibility
+system, the pill was never supposed to render at tablet width at all. Round 5’s forced-CSS
+override (<code>d09a84e</code>) had been fighting that native setting with <code>!important</code> rather than fixing
+it. Also found <code>flex_wrap</code> was <strong>never set</strong> on the pill row <code>11608e2</code> — Elementor containers
+default to <code>wrap</code>, which is the likely real cause of logo/hamburger wrapping onto separate lines
+this whole time, through every prior round’s CSS patches. Fixed natively this round:
+<code>hide_tablet</code> cleared on <code>eab435b</code>, set on <code>59793aa</code> (a legacy row that was still missing it —
+the actual cause of “layout looks different at some widths,” confirmed sitewide, not page-specific),
+<code>flex_wrap:nowrap</code> added at all breakpoints on <code>11608e2</code>, native <code>border_radius_tablet</code>/<code>_mobile</code>
+reduced from 70px to 24px, and <code>d09a84e</code> rewritten with a thinned CSS backstop plus icon-only
+Contact/Donate styling on mobile+tablet (inline SVG icons via a <code>content:url("data:image/svg+xml...")</code>
+data URI, chosen over any icon-font class given this site’s confirmed FontAwesome-webfont gap).
+Also set <code>8bc364a</code> (the container holding the header’s injected script/CSS widgets) to
+<code>padding:0; min-height:0</code> to remove a visible empty strip under the header.</p>
+<p><strong>None of this is confirmed live</strong>, and one finding is more concerning than ordinary caching:
+<code>59793aa</code>’s and <code>eab435b</code>’s hide-flag changes DID confirm live (correct classes present in a
+cache-busted fetch of the homepage). But <code>8bc364a</code> — and both widgets inside it, including
+<code>9f86147</code>, the scroll-reveal script that was confirmed working in rounds 4-5 — were <strong>completely
+absent</strong> from that same fetch. <code>get-page-structure</code> (reads the saved Elementor data directly,
+bypassing any front-end cache) confirms all three still exist correctly in the post’s actual data,
+so this isn’t data loss from this round’s edit. Cache-busting query strings did not resolve it.
+<strong>This needs a real check after Christopher purges caches — and specifically, if Elementor’s own
+“Regenerate CSS &amp; Data” tool exists in this install’s Tools menu, try that too, since Elementor
+maintains its own generated-output cache separate from W3TC/WPX/XDN, and this symptom (correct
+saved data, stale/missing rendered output) matches that class of problem more than a simple page
+cache.</strong> Until that’s checked, treat the entire mobile pill (old and new parts alike) and the
+scroll-reveal script as unconfirmed, not done.</p>
+<p><strong>Service-site scroll-reveal (WPCode post 1693, “everywhere” location term): still unconfirmed,
+now with a real root cause instead of a guess.</strong> The service site’s own W3TC instance is running
+“Page Caching using Disk: Enhanced,” which caches per exact query string — appending a
+cache-busting parameter didn’t bypass it, it just risked creating one more cached variant. Needs
+an actual purge on the service site before this can be checked at all.</p>
+<p><strong>Auto-updates for WPCode: not attempted, confirmed blocked.</strong> <code>emcp-tools-query</code> is read-only by
+design (SELECT/SHOW/DESCRIBE/EXPLAIN only) — there’s no tool path to writing WordPress’s
+<code>auto_update_plugins</code> option, and no dedicated plugin-management write tool exists. This has to be
+done manually in wp-admin (Plugins list → “Enable auto-updates” per plugin) on both sites. Done
+manually by Christopher, 2026-09-23.</p>
+<p><strong>Correction: round 6’s “missing container” finding was a false alarm from the verification
+method, not a real site problem.</strong> Christopher purged both caches and ran Elementor’s “Clear Files
+&amp; Data” tool (the current name for what was called “Regenerate CSS &amp; Data” above) — neither
+changed anything, because his hard refresh was already showing round 6’s changes correctly the
+whole time. The round-6 fork’s cache-busted <code>get-page-html</code> fetch not showing <code>8bc364a</code> was a
+verification-tool artifact, not evidence of a real bug. <strong>Lesson for future rounds on this site:
+trust <code>get-element-settings</code>/<code>get-page-structure</code> for confirming a write saved, and trust
+Christopher’s own device testing for confirming it renders — don’t treat an MCP-tool fetch
+discrepancy alone as proof something is broken.</strong></p>
+<h2 id="round-7-2026-09-23-later-still--icons-radius-hamburger-width-bug-and-a-real-brand-color">Round 7 (2026-09-23, later still) — icons, radius, hamburger-width bug, and a real brand color</h2>
+<ol>
+<li><strong>Icons un-stacked to inline.</strong> <code>9bea1df</code>’s two icon buttons were stacked in a column; changed
+to a row (<code>flex_direction: row</code>, 6px gap) now that they’re icon-only and don’t need the vertical
+space text used to require.</li>
+<li><strong>Logo enlarged</strong>, <code>b0c40e9</code>: mobile/tablet width increased now that the icon pair takes less
+room (final values balanced against the icon pair’s own width — see the sizing note below).</li>
+<li><strong>Real icons swapped in, not a fabricated SVG.</strong> The round-6 fake heart/phone SVGs are gone.
+Found the actual source: desktop’s Contact/Donate buttons (<code>5416d86</code>/<code>6766554</code>) use classic
+Elementor <code>button</code> widgets’ own native <code>selected_icon</code> field — <code>fas fa-phone</code> and
+<code>fas fa-hand-holding-heart</code> — and the mobile pill’s buttons (<code>0da0d00</code>/<code>a0be9d3</code>) are the
+<strong>exact same widget type</strong>, they just never had an icon set. Set the real icons via that same
+native field, matching desktop exactly, rather than reinventing an icon mechanism.
+<strong>This also resolves an apparent contradiction with the paywall audit’s FontAwesome finding —
+worth understanding, not just noting:</strong> that finding (webfont class-mapping present, actual font
+file never loaded) was specific to the convention page’s <strong>atomic</strong> <code>e-button</code> widgets (a newer
+Elementor 4.x widget family that strips <code>&lt;i&gt;</code> tags and can’t reach Elementor Pro’s own bundled
+icon library the same way). These header buttons are <strong>classic v3 <code>button</code> widgets</strong>, which use
+Elementor Pro’s own properly-loaded icon font directly — a completely different, working code
+path. FontAwesome isn’t broken sitewide; it’s specifically unreachable from atomic widgets. If
+you ever need a real icon on an atomic widget again, this is the actual constraint to design
+around, not “FontAwesome doesn’t work here.”</li>
+<li><strong>Corner radius reduced further</strong>, <code>11608e2</code>: 24px → 12px.</li>
+<li><strong>White strip under the header — best-effort fix, not confirmed.</strong> Round 6 zeroed <code>8bc364a</code>’s
+own padding/min-height; that apparently wasn’t the full source. Added explicit <code>margin:0</code> on
+both widgets inside it (<code>9f86147</code>, <code>d09a84e</code>), on the theory that Elementor’s default per-widget
+bottom margin (~20px, applied regardless of container padding) was still contributing even
+though both widgets render no visible content. Plausible, not visually confirmed — if the strip
+is still there, the next thing to check is a <code>gap</code> setting on the header template’s own
+top-level flex container between its sibling rows.</li>
+<li><strong>Hamburger spanning the full viewport, fixed at the mechanism level.</strong> Real cause:
+<code>75df872</code> (the nav-menu widget) had <code>full_width: "stretch"</code> set — an explicit Elementor Pro
+option that stretches the widget past its own container, ignoring <code>c48c922</code>’s width entirely.
+Changed to <code>"default"</code>. This is a confirmed root-cause fix, not a workaround.</li>
+<li><strong>Background color — grey to the site’s real active brand color.</strong> Checked two sources rather
+than guessing: Elementor’s kit primary (<code>#6EC1E4</code>, a light blue that appears unused site-wide)
+vs. Astra’s actual active theme palette (<code>astra-get-global-palette</code>), which has
+<code>"Brand": "#1a6c7a"</code> — a teal close to the desktop Contact button’s own color and clearly the
+site’s real identity color, not the Elementor kit’s unused default. Applied <code>#1a6c7a</code> to
+<code>11608e2</code>’s background, replacing <code>#383838</code> grey.</li>
+</ol>
+<p><strong>Sizing correction made mid-round:</strong> the icon pair’s initial 16% width was too narrow for two
+36px circular buttons plus gap: widened to 24%, and the logo’s width was trimmed slightly from the
+first pass (42%→38% mobile, 36%→32% tablet) to keep the row balanced at <code>flex_wrap:nowrap</code>.</p>
+<h2 id="round-8-2026-09-23-later-still--an-invalid-enum-caused-the-overflow-regression-service-site-scroll-reveal-actually-debugged-to-its-real-hard-blocker">Round 8 (2026-09-23, later still) — an invalid enum caused the overflow regression; service-site scroll-reveal actually debugged to its real hard blocker</h2>
+<p>Round 7’s hamburger fix (changing <code>75df872</code>’s <code>full_width</code> from <code>"stretch"</code> to <code>"default"</code>)
+regressed into a horizontal-scroll overflow — a real recurrence of this whole effort’s original
+bug class, treated with matching urgency. <strong>Root cause, confirmed against the widget’s own
+schema, not guessed:</strong> <code>"default"</code> is not a valid value for this control at all — the real enum is
+only <code>"yes"</code>/<code>""</code>. An invalid value left the widget in an undefined render state. Fixed to <code>""</code>
+(the actual off-state), plus a defensive <code>overflow-x:hidden; max-width:100vw</code> backstop added to
+<code>d09a84e</code> on <code>eab435b</code>/<code>11608e2</code> specifically because this bug class has recurred enough times this
+session to warrant insurance, not just a settings fix.</p>
+<p><strong>Icons still stacked (round 7’s <code>flex_direction:row</code> apparently not enough):</strong> found stale
+<code>_element_custom_width_mobile: 100%</code> still set on <code>0da0d00</code>/<code>a0be9d3</code> from the old stacked-text-
+button era — likely fighting the container’s own row direction. Set <code>flex_wrap:nowrap</code> natively on
+<code>9bea1df</code> and added a forced CSS backstop (<code>width:auto; flex:0 0 auto</code>) in <code>d09a84e</code>, given this
+exact site’s now well-established pattern of native settings not reliably taking effect on their
+own. <strong>Not visually confirmed</strong> — this is the belt-and-suspenders approach, not a guarantee.</p>
+<p><strong>Whitespace growing when the mobile menu opens:</strong> no native “position” control exists for the
+dropdown panel. Added CSS forcing <code>position:absolute</code> on the two most likely dropdown selector
+patterns without confirming the exact live class name against markup this round — <strong>this is the
+weakest, least-confident fix in this round; treat it as still open if the strip keeps growing.</strong></p>
+<p><strong>Navbar color — navy, from the real palette this time.</strong> The active Astra palette has no purple
+swatch at all. Used <code>#153243</code> (“Alternate Brand” — a genuine navy already defined in the site’s own
+palette), not the unused teal from round 7 and not an invented color. <strong>If navy isn’t actually
+what you pictured, the convention page’s own purple (<code>#7C62FF</code>) is the other real color already
+live on this site — it’s just not part of the palette system, so it wasn’t the default pick.</strong></p>
+<p><strong>Drawer radius:</strong> native <code>dropdown_border_radius_mobile: 10px</code> set on <code>75df872</code>, plus a CSS
+backstop alongside the dropdown-position fix above.</p>
+<p><strong>Height:</strong> not touched directly this round — reasoned that once icon un-stacking genuinely takes
+effect, most of the excess height should resolve on its own; the hamburger’s own touch target
+(<code>toggle_size_mobile: 20px</code>) was already modest, not the driver.</p>
+<h3 id="service-site-scroll-reveal--actually-debugged-this-time-two-real-bugs-fixed-one-confirmed-hard-blocker-remains">Service-site scroll-reveal — actually debugged this time, two real bugs fixed, one confirmed hard blocker remains</h3>
+<p>Christopher confirmed via real device testing (not just unconfirmed tooling) that this genuinely
+wasn’t working — that changed the task from “verify” to “debug and fix.” Found and fixed two real
+bugs, in order:</p>
+<ol>
+<li><strong>Wrong WPCode location term.</strong> <code>everywhere</code> is a <strong>PHP-execution-only</strong> location in this
+plugin (confirmed by reading its own source — it runs the snippet through
+<code>safe_execute_php()</code>), not a place to put frontend JavaScript. Corrected to
+<code>site_wide_footer</code> (hooks <code>wp_footer</code>) — which, worth noting for the record, was the <em>original</em>
+round-6 guess before it got “corrected” away to <code>everywhere</code> on the assumption that term didn’t
+exist; it did exist, just for the wrong content type.</li>
+<li><strong>Snippet content was corrupted, confirmed via direct SQL read.</strong> <code>post_content</code> had
+HTML-entity-escaped <code>&lt;script&gt;</code> tags (<code>&amp;lt;script&amp;gt;</code> — WordPress’s own content sanitization
+escaping it on save) <em>and</em> literal two-character <code>\n</code> sequences instead of real newlines — either
+alone would have broken it. Fixed by saving raw JS with no <code>&lt;script&gt;</code> wrapper (WPCode adds its
+own) and real newlines, verified via SQL (<code>has_real_newline:1, has_literal_backslash_n:0, has_html_entity:0</code>).</li>
+<li><strong>Genuine hard blocker, confirmed via plugin source + a direct DB read, not a guess:</strong> WPCode
+caches its active-snippet list in <code>wp_options.wpcode_snippets</code>, currently <code>a:0:{}</code> — completely
+empty — and that cache is rebuilt <strong>only</strong> by the plugin’s own <code>WPCode_Snippet::save()</code> method,
+which runs exclusively through its admin-UI save action, never through a generic post update.
+<code>emcp-tools-query</code> is read-only, so there’s no tool path to trigger that rebuild directly, and
+no cron/AJAX endpoint for it was found either. <strong>This needs one manual step: open
+<code>/wp-admin/post.php?post=1693&amp;action=edit</code> on the service site and click Save (or Update) once</strong>
+— that alone runs the plugin’s real save path and activates the snippet. Confirmed via 4 fresh,
+uniquely-query-stringed, timestamp-verified live fetches that nothing outputs before this step.
+Both underlying bugs are fixed; this is the only remaining blocker, and it isn’t tool-solvable.</li>
+</ol>
+<h3 id="resolved-round-9--the-manual-save-happened-and-found-two-more-real-bugs-underneath">Resolved, round 9 — the manual save happened, and found two more real bugs underneath</h3>
+<p>Christopher navigated wp-admin himself and hit <strong>“Sorry, you are not allowed to edit posts in
+this post type”</strong> on the raw <code>post.php?post=1693&amp;action=edit</code> URL — even as an admin. Real reason,
+not a permissions bug: WPCode deliberately locks down direct post-type editing (code execution is
+powerful enough that this is a sane default) and only allows saving through its own admin page,
+<strong>Code Snippets</strong> in the sidebar (<code>admin.php?page=wpcode</code>), which is a <em>different</em> URL than the
+one this doc previously pointed to. Opened the real snippet editor there and found two more issues
+the SQL-level investigation above couldn’t see:</p>
+<ol>
+<li><strong>Insert Method was set to “Shortcode,” not “Auto Insert.”</strong> In Shortcode mode, a snippet only
+runs where a <code>[wpcode id="1693"]</code> shortcode is manually placed in content — never automatically,
+regardless of what “Location” says. Nobody had placed that shortcode anywhere, so the snippet
+could never have run no matter how correct its content or location term were. Switched to Auto
+Insert with Location “Site Wide Footer” (confirming the round-8 fix to the location term was
+correct).</li>
+<li><strong>A second content-corruption bug, introduced while fixing the first one.</strong> Retyping the script
+through simulated keystrokes hit the editor’s auto-closing-bracket behavior, which silently
+appended 7 stray closing braces and 2 stray closing parens after the real content — a JavaScript
+syntax error that prevented the entire script from executing (confirmed via brace/paren counting
+on the live script’s actual text content, not assumed). <strong>Fixed by writing directly to the
+editor’s CodeMirror instance via its JS API (<code>document.querySelector('.CodeMirror').CodeMirror</code>,
+<code>cm.setValue(code)</code>, <code>cm.save()</code>) instead of simulating keystrokes</strong> — this bypasses
+autocomplete/auto-bracket entirely and is the reliable way to enter code into this specific
+editor going forward, not just this once.</li>
+</ol>
+<p><strong>Confirmed genuinely live and working</strong>, not just saved: <code>getComputedStyle</code> on the real header
+element (<code>#masthead</code> — this one IS the correct ID for the Astra-based service site, unlike the
+main site) shows <code>position: sticky</code>, <code>z-index: 999</code>; a real scroll test (<code>window.scrollTo</code>-free,
+actual mouse-wheel scroll via the automation tool) confirmed the header hides on scroll down and
+reveals on scroll up even ~2800px down a ~3000px page — not just at the very top.</p>
+<h2 id="caveats">Caveats</h2>
+<ul>
+<li><strong>Rounds 1-8 verification was live-HTML/CSS-content confirmation via MCP tools only, not real
+browser rendering</strong> — no MCP tool could fetch this site’s generated CSS for a true visual
+re-check, so several “confirmed” claims in earlier rounds turned out to be wrong once round 9
+used actual browser automation (real scroll events, <code>getComputedStyle</code>, real login sessions) to
+check. <strong>Prefer real browser verification over MCP-tool-only checks going forward when it’s
+available</strong> — it caught two real bugs (the render-gap, the WPCode Insert Method) that MCP-based
+checking alone had missed or misdiagnosed across multiple rounds.</li>
+<li><strong>The render-gap pattern (content saved via API, never live until a real UI save) is now
+confirmed to affect at least two systems on these sites: Elementor Theme Builder templates and
+WPCode snippets.</strong> Assume it could apply to other Elementor templates or plugin-managed content
+types too, and check with a real UI save when something MCP-confirmed-saved doesn’t seem live.</li>
+</ul>
+<h2 id="round-10-2026-09-23-later-still--real-mobile-revealed-two-more-real-gaps">Round 10 (2026-09-23, later still) — real mobile revealed two more real gaps</h2>
+<p>Christopher tested round 9’s fix directly: the main site showed no change at all, and the service
+site revealed correctly on desktop and desktop’s device-emulation but not on a real phone.</p>
+<p><strong>Main site — a mid-air collision, not a regression.</strong> While Christopher was testing, his own
+window happened to be at a narrow (~430px) width — the same shared browser this session’s
+automation was using (“the viewport change was me” — he was interacting with the same window, not
+a separate device). At that exact width, a direct check showed the round-9 fix was in fact live
+and visually correct — <strong>except</strong> it had also reactivated round 6-7’s icon-only Contact/Donate
+styling (hiding their text), which Christopher had since asked to reverse now that the layout had
+room. That’s a real, separate gap, not a caching issue: the icon-only CSS was dormant the whole
+time <code>8bc364a</code> wasn’t rendering, so “restore the text” was never actually applied — round 9’s fix
+brought back the <em>old</em> icon-only styling along with everything else, since both lived in the same
+CSS file. Fixed: rewrote <code>d09a84e</code> to keep Contact/Donate as compact pill buttons with icon <strong>and</strong>
+text together (both buttons already had appropriately-sized mobile typography/padding in their own
+native settings — <code>typography_font_size_mobile: 10px</code> — this was never the constraint). Saved via
+the same real-UI-Update pattern from round 9, then confirmed visually: “Contact 📞” and “Donate 🫴”
+pill buttons, side by side, hamburger fully contained, no overflow.</p>
+<p><strong>Service site — real mobile browsers need a more forgiving reveal trigger.</strong> Reveals correctly on
+desktop and Chrome’s device-emulation mode, but a real phone’s momentum/rubber-band scrolling
+produces small, rapid scroll-direction flips that a single-sample <code>currentY &lt; lastY</code> check reacts
+to instantly on desktop (where scroll deltas are cleaner) but apparently never visibly resolves on
+a real device. Emulation doesn’t reproduce this — it fakes the viewport size, not the physics of
+touch-scroll momentum. <strong>Fix applied to both sites’ scripts</strong> (same underlying pattern, so both
+needed it): replaced the single-sample direction check with delta accumulators — <code>upAccum</code>/
+<code>downAccum</code> track cumulative movement in each direction, only toggling the header’s hidden state
+once accumulated movement exceeds 12px in one direction, resetting on any direction change. Also
+clamps <code>scrollY</code> to <code>≥0</code> to guard against iOS Safari’s elastic overscroll reporting out-of-range
+values during the bounce, which could otherwise corrupt the accumulators right at the page’s top or
+bottom. <strong>Not confirmed on a real device by Alfred — no physical phone available to test with.</strong>
+This is a well-reasoned fix for a well-documented class of mobile scroll-jitter bug, not a
+guaranteed one. Christopher, please re-test on your actual phone and report back — if 12px still
+isn’t enough (or is too much and feels laggy), that threshold is the first thing to tune.</p>
+<h2 id="round-11-2026-09-23-later-still--logo-hamburger-button-gap-service-site-reveal-still-open">Round 11 (2026-09-23, later still) — logo, hamburger, button gap; service-site reveal still open</h2>
+<p>Main-site polish requested after round 10: logo bigger, the hamburger visually reading as its own
+control instead of blending into the pill, a bit more breathing room between Contact/Donate.</p>
+<p><strong>What changed:</strong> <code>b0c40e9</code> (logo) <code>width_mobile</code> 28%→33%, <code>width_tablet</code> 26%→31%. <code>9bea1df</code>
+(icon+text button pair) <code>width</code> 46%→40%, <code>flex_gap</code> 6px→10px — freed by narrowing the button pair
+slightly rather than shrinking the hamburger, given <code>c48c922</code>’s width already produced a real
+overflow regression twice this session. <code>c48c922</code> (hamburger) given its own CSS “chip” treatment
+in <code>d09a84e</code> — a background (<code>#2c5470</code>) distinct from the pill’s own <code>#153243</code>, a softer 12px
+radius (not the pill’s full radius), and a small margin — since it’s a flex child of the same
+navy-background row, not literally outside the pill’s DOM. Christopher’s actual request (“drop
+outside the navbar”) is only partially honored by this — true separation would mean restructuring
+the row, which wasn’t attempted given the overflow-regression history in this exact area. If the
+chip treatment doesn’t read as distinct enough once actually seen, revisit with a real DOM
+restructure, carefully, rather than another CSS-only patch.</p>
+<p><strong>Verification hit real friction this round, worth understanding precisely.</strong> After saving via the
+classic-editor Update button (confirmed via a genuine <code>&amp;message=1</code> redirect, and separately via
+<code>get-post</code> showing the round-11 CSS text present in the live <code>post_content</code> field — the data is
+unambiguously correct), a direct <code>curl</code> fetch of the homepage still showed the OLD version, missing
+not just the round-11 addition but the entire <code>pir-header-hidden</code> script block. Clicking “Purge
+from cache” first (confirmed via a real <code>w3tc_note=pgcache_purge_post</code> URL parameter) didn’t
+resolve it either. <strong>This means W3TC’s purge alone isn’t sufficient for this specific kind of
+change</strong> — the WPX/XDN hosting-level cache (documented in <code>FOOTER-RECONNAISSANCE.md</code>’s caching
+note) is the more likely remaining layer, since it’s confirmed to require its own separate purge
+and isn’t reachable by any available tool. <strong>Christopher: please do your usual full purge (W3TC +
+WPX panel) and confirm</strong> — the underlying fix is verified correct at the data level, this is
+purely about which cache layer is still serving the old version.</p>
+<p><strong>Service-site real-mobile reveal — no new lead found, still genuinely open.</strong> Checked for a
+mobile-redirect/AMP plugin (<code>list-plugins</code> — none present) and a Content-Security-Policy header
+that could block inline script execution on real mobile specifically (<code>curl -I</code> — no CSP header at
+all). Neither explanation holds up. The round-10 delta-accumulator fix remains the most credible
+attempt so far, but per Christopher’s own choice this round (“blind attempt, revisit later”), this
+stays flagged as unresolved rather than layering on a fourth unconfirmed guess. Real next step,
+whenever convenient: Mac + Safari Web Inspector connected to the actual phone, to read real console
+output instead of continuing to infer from desktop/emulation behavior that’s already been shown not
+to reproduce the actual bug.</p>
+<h2 id="round-11-follow-up-2026-09-23-urgent--member-facing-usability--real-bugs-found-plus-a-significant-systemic-caching-finding">Round 11 follow-up (2026-09-23, urgent — member-facing usability) — real bugs found, plus a significant systemic caching finding</h2>
+<p>Christopher reported the hamburger had become “all but useless” — only reachable by scrolling
+within the pill, visible on only the right half of its own container, and never actually grew
+despite round 11’s chip styling. Three real, confirmed causes, not guessed this time:</p>
+<ol>
+<li><strong><code>toggle_size_mobile</code> had never actually been changed</strong> — every prior round touched the pill
+container’s width, never the nav-menu widget’s own icon-size setting. Fixed natively:
+<code>75df872</code>’s <code>toggle_size_mobile</code> 20px → 32px.</li>
+<li><strong><code>c48c922</code> had <code>flex_align_items_mobile: "flex-end"</code></strong> — pushing the icon toward whichever edge
+of its container is clipped/scrollable if the row overflows at all, instead of staying safely
+centered. Fixed natively to <code>"center"</code>.</li>
+<li><strong>Belt-and-suspenders, given this exact row has overflowed multiple times this session:</strong> added
+<code>flex-shrink:0</code> and <code>z-index:9999</code> on <code>c48c922</code> so nothing can squeeze or cover it, plus a hard
+<code>max-width</code> + <code>text-overflow:ellipsis</code> on the Contact/Donate buttons so their text can never push
+the hamburger out of the visible area again, regardless of what else changes in this row later.</li>
+</ol>
+<p>All three confirmed saved via a direct <code>get-post</code> read (<code>modified</code> timestamp advanced, new CSS text
+present in <code>post_content</code>) — the browser-based <code>&amp;message=1</code> URL check used in earlier rounds proved
+unreliable in this specific session (likely contention from a shared browser window), so this round
+leaned on the database read as the source of truth instead.</p>
+<p><strong>Significant finding, worth real attention:</strong> while chasing why native-setting changes (like
+<code>toggle_size_mobile</code> in earlier attempts) didn’t visibly land, found that <strong>every static asset on
+this site — including Elementor’s own per-post generated CSS files — is served with zero
+cache-busting version query strings</strong> (<code>?ver=...</code>), confirmed by grepping the full served HTML for
+<code>.css?ver=</code> / <code>.js?ver=</code> and finding literally none, not even on WordPress core’s own
+<code>jquery.min.js</code>, which always carries one by default. Elementor’s generated CSS file
+(<code>wp-content/uploads/elementor/css/post-9227.css</code>) is also served with <code>cache-control: public, max-age=31536000</code> — a full year. Combined, this means: once a browser (including a real visitor’s,
+or Christopher’s own) has loaded a given CSS/JS file URL once, it will keep serving that exact
+cached copy for up to a year, with <strong>no mechanism to ever learn a newer version exists</strong>, since the
+URL itself never changes to signal that. This is very likely a WPX Cloud edge-level optimization
+(the server header confirms <code>WPX CLOUD</code>), not a WordPress or Elementor setting — checked Autoptimize
+and W3TC’s own options tables directly, neither has an active “strip query strings” setting that
+would explain this. <strong>This is worth Christopher checking in the WPX hosting panel specifically</strong> —
+if there’s a “remove query strings from static resources” or similar toggle, disabling it would
+fix cache-busting properly and permanently, for every future change, not just this session’s.
+Until then, a genuine hard refresh / cache-clear on any given device remains the only reliable way
+to see a CSS/JS-file-level change — the full-page HTML cache (W3TC + WPX/XDN) is a separate, third
+caching layer on top of this, affecting the inline <code>&lt;style&gt;</code>/<code>&lt;script&gt;</code> content specifically.</p>
+<h2 id="round-12-2026-09-23-urgent--member-facing--the-actual-root-cause-of-stuck-inside-the-navbar-found">Round 12 (2026-09-23, urgent — member-facing) — the actual root cause of “stuck inside the navbar,” found</h2>
+<p>Christopher checked the WPX panel — purged it, no “remove query strings” toggle found there, so
+that specific lever isn’t available to him (noted, not chased further). More urgently: the icon
+did get bigger but “undesirably,” and the dropdown was still visually part of the pill. Asked
+directly for it to become its own component.</p>
+<p><strong>Real root cause, finally found — not a caching issue at all.</strong> <code>eab435b</code> (the outer mobile-row
+wrapper) has its own native settings: <code>overflow: hidden</code> <strong>and</strong> <code>border_radius_tablet: 50px</code> — it
+is itself a rounded, clipping pill, wrapping <code>11608e2</code> (which has its own navy <code>#153243</code> background</p>
+<ul>
+<li>12px radius) as a <strong>second, inner pill</strong>. Every round’s attempt to give <code>c48c922</code> (the hamburger)
+a visually distinct “chip” look — round 11’s background/radius/margin, all of it — was still a flex
+child living <em>inside both</em> of these nested clipped containers. Nothing could ever visually escape
+<code>eab435b</code>’s own <code>overflow:hidden</code> boundary no matter what was applied to <code>c48c922</code> itself. That is
+the actual reason it always read as “part of the same pill” — a real structural fact, confirmed via
+<code>get-element-settings</code> on <code>eab435b</code> directly, not a caching artifact.</li>
+</ul>
+<p><strong>Fix:</strong> <code>c48c922</code> set to <code>position: fixed</code> — pinned near the header’s top-right corner (<code>top:14px; right:14px</code>), 44×44px, its own navy background + a lighter blue border + shadow, genuinely floating
+independent of the pill entirely. A fixed-position element establishes its own containing block
+relative to the <em>viewport</em> and is not clipped by an ancestor’s <code>overflow:hidden</code> (true unless an
+ancestor sets <code>transform</code>/<code>filter</code>/<code>perspective</code> — checked <code>eab435b</code>, none of those are set, so
+this is safe). This is a structural fix Christopher asked for directly (“make it its own
+component”) after two rounds of in-flow styling couldn’t achieve real separation — the right call,
+not a workaround.</p>
+<p>Icon size (24px) and the hamburger’s own visual size are now set <strong>directly in this same CSS
+block</strong>, not left to <code>toggle_size_mobile</code> alone — that native setting goes through Elementor’s
+separately-cached per-post CSS file, the one confirmed to have no cache-busting query string. This
+inline <code>&lt;style&gt;</code> tag, by contrast, is embedded directly in the page HTML, so it only depends on the
+full-page cache (W3TC + WPX/XDN) — the layer Christopher does have a working purge routine for.
+Putting the icon sizing here too means it isn’t hostage to the un-purgeable static-asset cache.</p>
+<p>The dropdown menu (opens on tap) now positions relative to <code>c48c922</code> itself, since it’s the
+nearest positioned ancestor once fixed — it drops down from the now-independent button, not from
+the old pill-relative offset.</p>
+<p><strong>Confirmed saved via a direct database read</strong> (<code>get-post</code> shows the round-12 CSS in live
+<code>post_content</code>, <code>modified</code> timestamp advanced) — same verification approach as round 11’s
+follow-up, since the browser-based save-check has proven unreliable this session.</p>
+<h2 id="round-13-2026-09-23-urgent-immediate-follow-up--round-12s-fix-caused-three-new-regressions-all-fixed-in-one-combined-pass">Round 13 (2026-09-23, urgent, immediate follow-up) — round 12’s fix caused three new regressions, all fixed in one combined pass</h2>
+<p>Christopher reported all three immediately after round 12 went live: Contact/Donate shifted hard
+right instead of centered, the logo still hasn’t visibly grown, and the hamburger “isn’t seen at
+all anymore” / “cut off running off the bottom” — plus a new explicit request that the dropdown
+menu span the full width of the screen when open. Each traced to a real, specific cause rather than
+re-guessed:</p>
+<ol>
+<li><strong>Contact/Donate pushed to the right edge.</strong> <code>11608e2</code>’s native <code>flex_justify_content_mobile</code> is
+<code>space-between</code>. With 3 flex children (logo, buttons, hamburger) that put the buttons in a
+natural visual middle; pulling <code>c48c922</code> out of flow via <code>position:fixed</code> in round 12 left only
+2 children, and <code>space-between</code> snapped them to the two extreme ends instead. <strong>Fix:</strong> reserved
+the hamburger’s old ~60px footprint as <code>padding-right: 60px</code> on <code>11608e2</code> itself, restoring the
+same effective end-anchor <code>space-between</code> used to produce with 3 items — without touching the
+native justify-content setting, which is correct and shouldn’t change.</li>
+<li><strong>Logo still not visibly bigger</strong>, despite <code>b0c40e9</code>’s native <code>width_mobile: 33%</code> being
+double-confirmed correctly saved via <code>get-element-settings</code>. Same suspected cause as the
+hamburger icon before round 12’s fix: Elementor’s own per-post generated CSS file
+(<code>post-9227.css</code>) is served with a 1-year cache and zero cache-busting query string (documented
+above) — a <em>data-confirmed-correct, delivery-path-unconfirmed</em> problem, not a settings problem.
+<strong>Fix:</strong> moved logo sizing into the same reliably-delivered inline <code>&lt;style&gt;</code> pathway already
+used for the hamburger icon — <code>width: 40% !important</code> on <code>b0c40e9</code>, <code>width:100%</code> on its <code>img</code>/
+<code>svg</code> — so it no longer depends on the un-purgeable static-asset cache at all.</li>
+<li><strong>Hamburger “isn’t seen at all” / icon cut off running off the bottom.</strong> The round-12 button had
+no <code>overflow:hidden</code> of its own, so if the toggle’s real icon (rendered as
+<code>elementor-menu-toggle__icon--open</code>/<code>--close</code>, <code>e-font-icon-svg e-eicon-menu-bar</code>/<code>e-eicon-close</code>
+per an earlier <code>curl</code> finding) came in larger than expected, it could spill past the 44×44px
+box’s edges rather than being clipped or scaled to it. <strong>Fix:</strong> added <code>overflow:hidden</code> to the
+button itself, and broadened/tightened the icon-selector rules to cover every element type
+Elementor’s toggle can render (<code>svg</code>, <code>i</code>, <code>span</code>, plus the specific <code>--open</code>/<code>--close</code> classes)
+with a hard <code>22px</code> cap and <code>flex-shrink:0</code>, so nothing inside can ever exceed the button’s own
+bounds regardless of the icon’s natural size.</li>
+<li><strong>Dropdown menu made full-width</strong>, per Christopher’s explicit new request — changed from
+<code>position:absolute; right:0</code> (small anchored box) to <code>position:fixed; left:0; right:0; width:100vw</code>, dropping edge-to-edge below the now-fixed hamburger button (<code>top:66px</code>, clearing
+the button’s own <code>top:14px</code> + 44px height + margin) rather than being anchored relative to it.</li>
+</ol>
+<p>All four changes shipped together in a single <code>d09a84e</code> inline-CSS rewrite (same widget as every
+prior round’s CSS fixes), saved via the classic editor <code>#publish</code> click, and <strong>confirmed via a
+direct database read</strong>: <code>modified</code> advanced to <code>2026-09-23 19:45:19</code> and the round-13 block is
+present verbatim in live <code>post_content</code>. This confirms the WordPress-side save is real. It does
+<strong>not</strong> by itself confirm the visual result on a real mobile device — per this session’s own
+repeated lesson (round 9’s “false alarm” that turned out to be a real render gap, and the
+un-purgeable static-asset-cache issue documented above), a database-level save confirmation and a
+real-device visual confirmation are two different things. <strong>Christopher: please hard-refresh / do a
+real-device check once you’ve cleared W3TC + WPX/XDN (your usual purge routine) — that’s the one
+verification step I can’t do from here.</strong></p>
+<h2 id="round-14-2026-09-23-urgent-immediate-follow-up--the-real-reason-iphone-showed-nothing-found-and-fixed-structurally-not-guessed">Round 14 (2026-09-23, urgent, immediate follow-up) — the real reason iPhone showed nothing, found and fixed structurally; not guessed</h2>
+<p>Christopher’s report was precise enough to actually diagnose instead of guess again: hamburger
+invisible on real iPhone but visible (if janky) in Chrome’s mobile emulator; button cut off at the
+bottom and not sharing a centerline with Contact/Donate (shifted down); corners rounded on top only,
+not bottom; color reading as something other than what round 13 set. This round used the browser
+tools directly instead of relying on Christopher’s own device to find the cause:</p>
+<p><strong>Investigation.</strong> Fetched the live homepage HTML with <code>cache: 'no-store'</code> and confirmed round 13’s
+CSS (<code>padding-right:60px</code>, the full <code>overflow:hidden</code> button block) was genuinely being served, not
+stale-cached — ruling out caching as this round’s cause. Enumerated every <code>&lt;style&gt;</code>/<code>&lt;link&gt;</code> node in
+the live DOM: <code>post-9227.css</code> (Elementor’s own generated per-post stylesheet) loads at index 98 in
+document order; our inline <code>pir-header-mobile-pill-fix</code> tag loads at index 131, after it — but
+Elementor’s own generated selectors for elements are compound, two-class selectors
+(<code>.elementor-element.elementor-element-c48c922</code>, specificity 0,2,0), while every round’s CSS so far
+used a plain single-class selector (<code>.elementor-element-c48c922</code>, specificity 0,1,0). Under <code>!important</code>
+vs <code>!important</code>, source order only decides ties at <em>equal</em> specificity — Elementor’s own rules could
+still win outright on specificity alone for any property both happened to set, independent of load
+order. This had been a silent, unconfirmed risk sitting under every round since round 9.</p>
+<p><strong>Root cause 1 — invisible on iPhone, not a CSS problem at all.</strong> <code>c48c922</code> (the hamburger) was
+still a DOM descendant of <code>eab435b</code>, which has native <code>overflow: hidden</code>. Per spec, a
+<code>position: fixed</code> element’s containing block is the viewport, skipping non-positioned/
+non-transformed ancestors — <code>overflow: hidden</code> on an ancestor <em>shouldn’t</em> clip a fixed descendant.
+But iOS Safari has long-documented, real bugs where it clips <code>position: fixed</code> descendants of an
+<code>overflow: hidden</code> ancestor anyway, particularly inside compositing layers — almost certainly why
+spec-compliant desktop Chrome rendered something while a real iPhone rendered nothing. <strong>Fixed
+structurally, not with more CSS overrides:</strong> used <code>mcp-tools-move-element</code> to physically relocate
+<code>c48c922</code> in the actual page tree from two levels inside <code>eab435b</code> (<code>eab435b &gt; 11608e2 &gt; c48c922</code>)
+to a top-level sibling of <code>eab435b</code> itself. There is no <code>overflow: hidden</code> ancestor above it
+anymore — nothing for the iOS clipping bug to attach to, regardless of browser quirks. Its native
+<code>hide_desktop</code>/<code>hide_laptop</code> visibility classes travel with the element, not its DOM position, so
+desktop/tablet/mobile show/hide behavior is unchanged.</p>
+<p><strong>Root cause 2 — centerline mismatch, corner asymmetry, color.</strong> A hardcoded <code>top:14px; right:14px</code>
+guess has no way to track the row’s actual on-screen position, especially on iOS where the dynamic
+Safari toolbar changes the visual viewport height under the button’s feet as the page scrolls — this
+is the real reason it drifted from Contact/Donate’s centerline. The corner-radius asymmetry and
+color mismatch are consistent with the same specificity gap identified above: Elementor’s own
+per-post CSS very plausibly carries its own (higher-specificity) opinion on parts of this element
+that our single-class selector wasn’t reliably beating. <strong>Fixed:</strong> dropped <code>!important</code> from
+<code>top</code>/<code>right</code> in the static CSS (kept only as a pre-JS-load fallback) and added a small
+<code>requestAnimationFrame</code> loop (in the same <code>d09a84e</code> HTML widget, as a <code>&lt;script&gt;</code> after the
+<code>&lt;style&gt;</code>) that reads <code>.elementor-element-11608e2</code>’s real <code>getBoundingClientRect()</code> every frame and
+writes matching <code>top</code>/<code>right</code> values as inline styles — an inline style always beats a non-<code>!important</code>
+stylesheet rule, so this wins unconditionally once it runs, and it stays correct through the header’s
+own scroll-reveal transform, window resizes, and iOS viewport changes without needing to predict any
+of them. Every selector touching <code>c48c922</code> was also rewritten with the class repeated once
+(<code>.elementor-element-c48c922.elementor-element-c48c922</code>, specificity 0,2,0) — a standard, valid way
+to safely out-specify Elementor’s own compound-class selector regardless of load order, closing the
+gap found during investigation. Corner radius set via both the shorthand and all four explicit
+longhand properties (belt-and-suspenders against the same risk), uniform at 12px, matching the navy
+pill row’s own radius. Color: purple (<code>#7C3AED</code> background, <code>#A78BFA</code> border) — per Christopher’s
+explicit request, a deliberate signal color to make a round’s CSS visually obvious once it lands,
+and a genuine differentiator from the service subdomain’s green-blue.</p>
+<p><strong>Confirmed live on the actual served front-end, not just the database:</strong> fetched the homepage HTML
+directly (<code>cache: 'no-store'</code>) after publishing and verified in the raw response: the boosted
+selector, <code>#7c3aed</code>/<code>#a78bfa</code>, uniform corner-radius properties, the <code>requestAnimationFrame</code> script,
+and exactly one <code>data-id="c48c922"</code> node in the whole page (confirming the move relocated rather
+than duplicated it). This is a stronger verification than prior rounds’ database-only check, since
+it confirms what a real browser actually receives. <strong>What’s still unverified is the visual result on
+Christopher’s own iPhone</strong> — the structural fix (escaping the overflow:hidden ancestor) should
+resolve the “not rendering at all” report on principle, and the rAF sync should resolve the
+centerline mismatch on principle, but neither replaces an actual device check.</p>
+<h2 id="round-15-2026-09-23--hamburger-confirmed-visible-on-real-iphone-refinement-pass">Round 15 (2026-09-23) — hamburger confirmed visible on real iPhone; refinement pass</h2>
+<p>Christopher confirmed round 14 worked: <strong>the hamburger is finally showing on his real iPhone.</strong>
+Refinement requests from there: close the visible gap between the button and the row it sits in,
+darker purple (the round-14 shade read as too bright), extend that same purple to the dropdown’s
+current-active-page highlight, round all four corners of the button (not just top), nudge
+Contact/Donate a touch further left, and the logo “still doesn’t look any bigger” despite round
+13/14’s width bump.</p>
+<p><strong>The logo finding is the important one.</strong> Checked the logo’s own widget settings
+(<code>get-element-settings</code> on <code>08239b5</code>, the actual <code>theme-site-logo</code> widget inside <code>b0c40e9</code>): its own
+<code>width</code> is <code>{unit:"%", size:100}</code> — no independent cap on the widget itself. That rules out a
+widget-level ceiling and points at the exact same cause round 14 found for the hamburger: our CSS
+selectors have been plain single-class (<code>.elementor-element-b0c40e9</code>, specificity 0,1,0) the whole
+time, while Elementor’s own generated per-post CSS uses compound two-class selectors
+(<code>.elementor-element.elementor-element-b0c40e9</code>, specificity 0,2,0) that can win outright regardless
+of <code>!important</code> vs <code>!important</code> or source order. This was very likely the real reason the logo bump
+never visibly landed across rounds 11, 13, <em>and</em> 14 — the fix just hadn’t been applied to this
+element’s selectors yet. <strong>Fixed:</strong> repeated the class token
+(<code>.elementor-element-b0c40e9.elementor-element-b0c40e9</code>) the same way round 14 did for the
+hamburger, and the same guard was added to <code>11608e2</code>’s <code>padding-right</code> selector too, defensively.
+Bumped the container to 50% width (from 45%) at the same time.</p>
+<p><strong>Gap + centerline:</strong> the round-14 script vertically centered a fixed 44px button inside the row,
+which necessarily leaves visible space above/below whenever the row is taller than 44px. Changed the
+script to size the button to the row’s own height instead (clamped 36–64px) and pin <code>top</code> flush to
+the row’s top edge — the button’s height now equals the row’s height by construction, so there is no
+gap to leave, rather than a value to guess.</p>
+<p><strong>Corners:</strong> applied the same explicit shorthand + all-four-longhand radius directly to
+<code>.elementor-menu-toggle</code> (the inner button element), not just the outer <code>c48c922</code> container as round
+14 did — belt-and-suspenders in case the inner element’s own native <code>toggle_border_radius_tablet: 0</code>
+setting (found via <code>get-element-settings</code> on <code>75df872</code>) was ever showing through despite the outer
+container’s <code>overflow:hidden</code>.</p>
+<p><strong>Color:</strong> darker purple, <code>#5B21B6</code> background / <code>#7C3AED</code> border (from round 14’s brighter
+<code>#7C3AED</code>/<code>#A78BFA</code>). Also discovered the real native property for “current active page” —
+<code>color_menu_item_active</code>/<code>pointer_color_menu_item_active</code> on <code>75df872</code>, currently bound to a global
+color (<code>astglobalcolor5</code>) with <strong>no mobile-specific variant</strong>, meaning changing it directly would
+also change the <em>desktop</em> menu’s active-page color, which wasn’t asked for. Left the native setting
+alone and instead added scoped CSS targeting Elementor’s own <code>.elementor-item-active</code> class, wrapped
+in the existing <code>@media (max-width: 1024px)</code> block, boosted with the same repeated-class guard on
+<code>75df872</code> — same purple, mobile/dropdown only, desktop untouched.</p>
+<p><strong>Dropdown/button overlap:</strong> round 14 left the dropdown’s opening position as a hardcoded
+<code>top: 66px</code> while the button’s own position became dynamic — a real latent inconsistency once the
+button’s actual height/position could vary. The sync script now also measures the button’s live
+<code>getBoundingClientRect()</code> and sets the dropdown’s <code>top</code> to sit exactly <code>8px</code> below it, so the two can
+never visually collide or overlap regardless of the row’s real height on any given device.</p>
+<p><strong>Confirmed live on the actual served front-end</strong> (not just the database): fetched the homepage
+HTML directly after publishing and verified in the raw response — <code>#5b21b6</code>, <code>#7c3aed</code>,
+<code>width:50%</code>, <code>padding-right:74px</code>, the boosted logo selector, the <code>.elementor-item-active</code> CSS
+block, the dynamic-height script logic, and the dropdown-sync logic are all present. Real-device
+visual confirmation of <em>this</em> round’s changes specifically is still Christopher’s to do, though the
+core “does it show at all” question is now settled.</p>
+<h2 id="round-16-2026-09-24--dropdown-scroll-expand-on-open-darker-purple-navy-tap-state">Round 16 (2026-09-24) — dropdown scroll, expand-on-open, darker purple, navy tap state</h2>
+<p>Fast turnaround while Christopher was demo-prepping with Kenney. Fixes:</p>
+<ul>
+<li><strong>Dropdown wasn’t actually scrollable.</strong> <code>overflow-y:auto</code> had no <code>max-height</code> to scroll against,
+so a long menu just made the whole page tall instead of scrolling internally. Now <code>max-height</code> is
+set dynamically in JS (<code>100vh - dropdown's real top - 16px</code>), so it genuinely scrolls once content
+exceeds available screen height — needed for menus that grow with blog/content items.</li>
+<li><strong>Button expands slightly on open</strong>, per explicit request as a visual cue that content
+expanded — JS checks <code>aria-expanded</code> on the toggle and grows the button by 6px with a CSS
+<code>transition</code> for a smooth animate-in rather than a jump.</li>
+<li><strong>Purple darkened again</strong>: <code>#4C1D95</code>/<code>#5B21B6</code> (one step down from round 15’s <code>#5B21B6</code>/<code>#7C3AED</code>),
+applied consistently to both the button and the dropdown’s active-page highlight.</li>
+<li><strong>Tap/hover state on dropdown items was showing native teal-green</strong>
+(<code>background_color_dropdown_item_hover:#275B5B</code>, confirmed via <code>get-element-settings</code> on
+<code>75df872</code>) — the <em>service</em> subdomain’s color, not this site’s. Forced to PIR’s own navy
+(<code>#153243</code>) via scoped CSS on <code>:hover</code>/<code>:active</code>/<code>:focus</code>, mobile-only.</li>
+<li><strong>Gap between dropdown top and navbar bottom tightened</strong>, and made more robust: the dropdown’s
+position now tracks the <em>row’s</em> real bottom edge directly (<code>rowRect.bottom</code>) instead of the
+button’s own (clamped 36–64px) height, which could under-represent an unusually tall row. <code>GAP</code>
+reduced from 8px to 2px.</li>
+<li>Rounded-corner asymmetry between the highlighted item and the grey backdrop — Christopher
+confirmed this is intentional/acceptable, no change needed.</li>
+</ul>
+<p>Confirmed live via direct HTML fetch (same method as rounds 14-15): all six markers
+(<code>#4c1d95</code>, <code>#5b21b6</code>, <code>#153243</code>, the dynamic <code>max-height</code> calc, <code>aria-expanded</code> logic,
+<code>-webkit-overflow-scrolling</code>) present in the served response.</p>
+<h2 id="round-17-2026-09-24--drawer-was-scrolling-the-page-underneath-it-not-itself-fixed-with-a-real-ios-scroll-lock">Round 17 (2026-09-24) — drawer was scrolling the page underneath it, not itself; fixed with a real iOS scroll lock</h2>
+<p>Round 16 gave the dropdown <code>overflow-y:auto</code> + a dynamic <code>max-height</code>, but on real iPhone touch
+gestures inside the open drawer were scrolling the <em>page behind it</em>, not the drawer’s own content —
+a well-known iOS Safari behavior where a fixed-position overlay doesn’t reliably capture its own
+touch-scroll unless the page behind it is explicitly locked. Plain <code>body { overflow: hidden }</code> is
+not fully reliable on iOS; the standard, more robust fix is to pin the body itself with
+<code>position: fixed</code> (recording and restoring the scroll offset) while the drawer is open. Added to
+the sync script: <code>lockBody()</code>/<code>unlockBody()</code>, fired once per open/close transition (tracked via the
+toggle’s <code>aria-expanded</code>, not every animation frame). Also added <code>touch-action: pan-y</code> and
+<code>overscroll-behavior: contain</code> on the dropdown itself as belt-and-suspenders so iOS routes the
+gesture to the scrollable element specifically.</p>
+<p>Also added a <code>transition: max-height 0.25s ease</code> on the dropdown so it <strong>unfolds</strong> smoothly when
+its own content grows (e.g. a nested submenu expanding inline pushes its natural height up toward
+the already-computed ceiling) rather than snapping to the new size instantly — the same idea as
+round 16’s button-grows-on-open, applied to the drawer itself.</p>
+<p>Confirmed live via direct HTML fetch: <code>lockBody</code>/<code>unlockBody</code>, <code>touch-action:pan-y</code>,
+<code>overscroll-behavior</code>, the <code>pir-menu-open</code> class, and the <code>max-height</code> transition are all present
+in the served response.</p>
+<h2 id="round-18-2026-09-24--closing-out-the-saga-real-cause-of-scrolls-a-tiny-bit-then-snaps-back">Round 18 (2026-09-24) — closing out the saga: real cause of “scrolls a tiny bit then snaps back”</h2>
+<p>Christopher’s precise report on round 17: the drawer scrolled “a very tiny bit” then snapped back
+to its start, never reaching the lower menu items — round 17’s scroll-lock was necessary but not
+sufficient. <strong>Real cause, found by re-reading round 17’s own script:</strong> the <code>requestAnimationFrame</code>
+loop was rewriting <code>dropdown.style.top</code> and <code>dropdown.style.maxHeight</code> on <em>every single frame</em>,
+unconditionally, including while the user’s finger was actively scrolling inside the open drawer.
+On iOS, a touch-scroll gesture can nudge <code>window.innerHeight</code> (the dynamic toolbar reacting), and
+repainting a scrolling element’s own <code>max-height</code> while it’s mid-scroll fights the browser’s native
+scroll physics — the browser has to reconcile a changing content box against an in-progress
+gesture, and resolves it by resetting scroll position. That’s exactly “scrolls a bit, snaps back.”</p>
+<p><strong>Fix:</strong> stop recomputing the dropdown’s <code>top</code>/<code>max-height</code> every frame. A new <code>positionDropdown()</code>
+function computes both <strong>once</strong>, at the same open-transition moment <code>lockBody()</code> already fires
+(tracked via <code>aria-expanded</code>), not continuously. The button’s own position/size stays on the
+per-frame loop — it isn’t user-scrolled, so there’s no physics to fight there. An
+<code>orientationchange</code> listener re-runs <code>positionDropdown()</code> if the menu is still open when the device
+rotates, since that’s the one real case where the drawer’s available height needs to change after
+open. Also trimmed the reserved bottom margin from 16px to 8px, so slightly more of the viewport is
+actually usable — addressing Christopher’s “never uncovering so many pages people need.”</p>
+<p>Confirmed live via direct HTML fetch: <code>positionDropdown</code>, the once-per-transition call, and the
+<code>orientationchange</code> listener are all present in the served response; the old always-runs
+<code>maxHeight</code> line is gone. This closes out the header/mobile-nav saga (18 rounds) before starting the
+broader portal/changelog redesign work.</p>
+<hr>
+<p>Co-Authored-By: Alfred · ClaudeCodeCLI · Anthropic [Sonnet-5]</p>
+</details>
+</div></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">PIR® · Psychedelics In Recovery™</span><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> Entry portal</a><a href="https://psychedelicsinrecovery.github.io/404.html" target="_blank" rel="noopener"><i class="ph ph-map-trifold"></i> Curious what a wrong turn looks like?</a><a href="https://www.psychedelicsinrecovery.org/contact/" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("pir-theme", current);
+        });
+      })();
+    </script></body></html>

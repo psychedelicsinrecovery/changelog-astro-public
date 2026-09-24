@@ -1,0 +1,831 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Footer reconnaissance: Astra footer internals — Library</title><meta name="description" content="How PIR's Astra footer is actually built, and the real settings behind its mobile/desktop alignment bugs."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="Footer reconnaissance: Astra footer internals — Library"><meta property="og:description" content="How PIR's Astra footer is actually built, and the real settings behind its mobile/desktop alignment bugs."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/footer-reconnaissance"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Footer reconnaissance: Astra footer internals — Library"><meta name="twitter:description" content="How PIR's Astra footer is actually built, and the real settings behind its mobile/desktop alignment bugs."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("pir-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>.content-section[data-astro-cid-cx6wmmop]{max-width:760px;margin:0 auto;padding:40px 20px 60px}.back[data-astro-cid-cx6wmmop]{margin:0 0 24px}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]:hover{opacity:1}h1[data-astro-cid-cx6wmmop]{letter-spacing:-.01em;margin:0 0 8px;font-size:1.9rem;font-weight:600}.desc[data-astro-cid-cx6wmmop]{opacity:.7;margin:0 0 32px;font-size:1rem}.prose[data-astro-cid-cx6wmmop] h1{margin:40px 0 16px;font-size:1.6rem}.prose[data-astro-cid-cx6wmmop] h2{margin:32px 0 12px;font-size:1.3rem}.prose[data-astro-cid-cx6wmmop] h3{margin:24px 0 10px;font-size:1.1rem}.prose[data-astro-cid-cx6wmmop] p{margin:0 0 16px;line-height:1.7}.prose[data-astro-cid-cx6wmmop] ul,.prose[data-astro-cid-cx6wmmop] ol{padding-left:1.4em;line-height:1.7}.prose[data-astro-cid-cx6wmmop] .tldr{background:color-mix(in srgb, var(--signature) 10%, transparent);border-left:3px solid var(--signature);border-radius:10px;align-items:flex-start;gap:10px;margin:0 0 20px;padding:14px 16px;font-size:.95rem;line-height:1.6;display:flex}.prose[data-astro-cid-cx6wmmop] .tldr .ph{color:var(--signature);flex-shrink:0;margin-top:2px}.prose[data-astro-cid-cx6wmmop] details{border:1px solid var(--line,currentColor);border-radius:10px;margin:4px 0 24px;padding:0 16px}.prose[data-astro-cid-cx6wmmop] details[open]{padding-bottom:16px}.prose[data-astro-cid-cx6wmmop] summary{cursor:pointer;color:var(--signature);align-items:center;gap:8px;padding:14px 0;font-weight:600;display:flex}.prose[data-astro-cid-cx6wmmop] summary::-webkit-details-marker{display:none}.prose[data-astro-cid-cx6wmmop] summary .ph-caret-right{transition:transform .15s}.prose[data-astro-cid-cx6wmmop] details[open] summary .ph-caret-right{transform:rotate(90deg)}.prose[data-astro-cid-cx6wmmop] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.88em}.prose[data-astro-cid-cx6wmmop] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;font-size:.85rem;overflow-x:auto}.prose[data-astro-cid-cx6wmmop] pre code{background:0 0;padding:0}.prose[data-astro-cid-cx6wmmop] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.prose[data-astro-cid-cx6wmmop] blockquote{border-left:3px solid var(--signature,currentColor);opacity:.85;margin:0 0 16px;padding:4px 0 4px 16px}
+#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}:root{--ink:#1a1530;--ink-soft:#6b5f8a;--signature:#5b21b6;--signature-2:#db2777;--surface:#fff;--line:#e0d9f0;--bg:#f5f3fa}:root[data-theme=dark]{--ink:#f1e9ff;--ink-soft:#a89cc8;--signature:#7c3aed;--signature-2:#f472b6;--surface:#131829;--line:#2a2550;--bg:#0a0e1a}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;padding-bottom:96px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex}.brand:hover .brand-home-icon,.brand:hover .brand-title{color:var(--signature)}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);padding:10px 20px;font-size:.78rem;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}a{color:var(--signature)}body,.content-section{color:var(--ink)}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColor = "#F1E9FF";
+const sparkColor = "#F472B6";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        bx: Math.random() * W,
+        by: Math.random() * H,
+        x: 0,
+        y: 0,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><span class="brand-title">PIR® Changelog</span><i class="ph ph-house brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Home</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-cx6wmmop><p class="back" data-astro-cid-cx6wmmop><a href="/changelog-astro-public/library" data-astro-cid-cx6wmmop>&larr; All library docs</a></p><h1 data-astro-cid-cx6wmmop>Footer reconnaissance: Astra footer internals</h1><p class="desc" data-astro-cid-cx6wmmop>How PIR&#39;s Astra footer is actually built, and the real settings behind its mobile/desktop alignment bugs.</p><div class="prose" data-astro-cid-cx6wmmop><div class="tldr">
+<i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> How PIR's Astra theme footer is actually assembled, and the real Customizer settings behind its mobile/desktop alignment quirks -- useful if a footer bug ever looks similar.
+</div>
+<details>
+<summary><i class="ph ph-caret-right"></i> Read the full story →</summary>
+<hr>
+<h2 id="title-pir-footer-architecture--agent-responsibilitiesdate-2026-09-21author-littlebirdai-for-christopher-wilson--pir-techcom-merged-by-alfredsource-emcp-tools--astra-mcp-live-audit">title: “PIR Footer Architecture &amp; Agent Responsibilities”
+date: “2026-09-21”
+author: “LittlebirdAI for Christopher Wilson / PIR TechCom, merged by Alfred”
+source: “emcp-tools + Astra MCP live audit”</h2>
+<h1 id="pir-footer-architecture-astra-vs-elementor">PIR Footer Architecture: Astra vs Elementor</h1>
+<blockquote>
+<p><strong>Note on this file:</strong> two versions of this document existed — a fuller architecture doc left
+uncommitted in <code>pir-wp-live/</code>, and a shorter, more current issue-tracker committed to
+<code>AGENT-SYNC-pir/created-by-Littlebird/</code>. Alfred merged them here on 2026-09-21; this is the
+single canonical copy. See <code>AGENT-SYNC-pir/created-by-Littlebird/FOOTER-RECONNAISSANCE.md</code> for a
+pointer back to this file rather than a second copy.</p>
+</blockquote>
+<h2 id="executive-summary">Executive Summary</h2>
+<p>The Psychedelics in Recovery (PIR) web presence spans two WordPress sites:</p>
+<ul>
+<li><strong>Main</strong>: <code>psychedelicsinrecovery.org</code> — Astra Pro + Elementor Pro</li>
+<li><strong>Service</strong>: <code>service.psychedelicsinrecovery.org</code> — Astra Pro (no Elementor)</li>
+</ul>
+<p>Both sites share a similar footer architecture, but the main site uses <strong>two overlapping footer systems</strong>: Astra Footer Builder (default) and Elementor Footer (template-based override). This document maps which pages use which footer, why, and how the agent fleet (Littlebird + Alfred) collaborates on footer maintenance.</p>
+<hr>
+<h2 id="agent-fleet-split">Agent Fleet Split</h2>
+<table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Integration</th>
+<th>Scope</th>
+<th>Write Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Littlebird</strong></td>
+<td><code>mcp:psychedelicsinrecovery_org</code> (emcp-tools OAuth)</td>
+<td><strong>Elementor</strong> editing, pages, templates, menus, media, global settings</td>
+<td>Full Elementor control</td>
+</tr>
+<tr>
+<td><strong>Littlebird</strong></td>
+<td><code>mcp:astra_psychedelicsinrecovery</code> (Astra MCP OAuth)</td>
+<td><strong>Astra</strong> theme settings — footer layout/design, header, colors, fonts, sidebar</td>
+<td>Full Astra layout/design control</td>
+</tr>
+<tr>
+<td><strong>Alfred</strong></td>
+<td><code>@automattic/mcp-wordpress-remote</code> (CLI proxy)</td>
+<td><strong>Astra</strong> footer component-level settings (social URLs, widget content)</td>
+<td>Astra component settings via dedicated endpoint</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Key insight</strong>: Alfred’s Astra endpoint (<code>/wp-json/astra/v1/mcp</code>) has broader component-level write access than Littlebird’s OAuth Astra integration. Littlebird can move footer sections around (layout) and change their design (padding, borders), but Alfred can edit the actual content inside widgets (social icon URLs, menu items, copyright text).</p>
+</blockquote>
+<hr>
+<h2 id="footer-systems-compared">Footer Systems Compared</h2>
+<h3 id="1-astra-footer-builder-both-sites">1. Astra Footer Builder (Both Sites)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Main Site</th>
+<th>Service Site</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>How it works</strong></td>
+<td>Astra Pro’s native footer builder (Customizer → Footer Builder)</td>
+<td>Same</td>
+</tr>
+<tr>
+<td><strong>Sections</strong></td>
+<td>Above / Primary / Below</td>
+<td>Same</td>
+</tr>
+<tr>
+<td><strong>Primary columns</strong></td>
+<td>3 columns (widget, social, widget)</td>
+<td>3 columns (widget, social, widget)</td>
+</tr>
+<tr>
+<td><strong>Below section</strong></td>
+<td>1 column (copyright)</td>
+<td>1 column (copyright)</td>
+</tr>
+<tr>
+<td><strong>Mobile behavior</strong></td>
+<td>Social icons align LEFT by default</td>
+<td>Same</td>
+</tr>
+<tr>
+<td><strong>Active pages</strong></td>
+<td>Blog posts, archives, non-Elementor pages</td>
+<td>All pages (only footer system)</td>
+</tr>
+<tr>
+<td><strong>Elementor override?</strong></td>
+<td>Yes — Elementor footer template overrides Astra on most pages</td>
+<td>N/A (no Elementor)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-elementor-footer-main-site-only">2. Elementor Footer (Main Site Only)</h3>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Template ID</strong></td>
+<td>9275 (“Elementor Footer”)</td>
+</tr>
+<tr>
+<td><strong>Display conditions</strong></td>
+<td><code>include|singular|all</code> (all singular pages)</td>
+</tr>
+<tr>
+<td><strong>Builder</strong></td>
+<td>Elementor Pro Theme Builder</td>
+</tr>
+<tr>
+<td><strong>Sections</strong></td>
+<td>Top half (logo + social + 4 nav columns) + Bottom half (legal text)</td>
+</tr>
+<tr>
+<td><strong>Mobile behavior</strong></td>
+<td>Top half <strong>hidden</strong> via <code>hide_mobile: hidden-mobile</code> (superseded by the drawer, see below); bottom half always visible</td>
+</tr>
+<tr>
+<td><strong>Active pages</strong></td>
+<td>Most Elementor-built pages (Home, Donate, Service, Contact, Convention, etc.)</td>
+</tr>
+<tr>
+<td><strong>Predecessor design?</strong></td>
+<td>Likely — inherited from prior web team</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="which-pages-use-which-footer">Which Pages Use Which Footer?</h2>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Footer Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Home</strong></td>
+<td>Elementor</td>
+<td>Custom design with logo, social, nav columns, legal</td>
+</tr>
+<tr>
+<td><strong>Donate</strong></td>
+<td>Elementor</td>
+<td>Matching home footer</td>
+</tr>
+<tr>
+<td><strong>Service</strong></td>
+<td>Elementor</td>
+<td>Matching home footer</td>
+</tr>
+<tr>
+<td><strong>Contact</strong></td>
+<td>Elementor</td>
+<td>Matching home footer</td>
+</tr>
+<tr>
+<td><strong>Convention 2026</strong></td>
+<td>Elementor</td>
+<td>Matching home footer</td>
+</tr>
+<tr>
+<td><strong>Blog posts</strong></td>
+<td>Mixed</td>
+<td>If Elementor-built → Elementor footer; otherwise Astra footer</td>
+</tr>
+<tr>
+<td><strong>Old pages</strong></td>
+<td>Astra</td>
+<td>Non-Elementor pages fall back to Astra footer</td>
+</tr>
+<tr>
+<td><strong>Archives, 404, Search</strong></td>
+<td>Astra</td>
+<td>No Elementor template assigned</td>
+</tr>
+<tr>
+<td><strong>Service site (all)</strong></td>
+<td>Astra</td>
+<td>Only footer system available</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="mobile-footer-drawer-implemented-2026-09-20-refined-2026-09-21">Mobile Footer Drawer (Implemented 2026-09-20, refined 2026-09-21)</h2>
+<h3 id="problem">Problem</h3>
+<p>The Elementor footer top half (container <code>2847e5a8</code>) was hidden on mobile via <code>hide_mobile: hidden-mobile</code>. This meant mobile users couldn’t access the footer navigation (About, Resources, PR, Meetings links), social icons, or logo.</p>
+<h3 id="solution">Solution</h3>
+<p>A toggle drawer was implemented by adding an HTML widget (ID <code>0bb1ac3</code>) to the bottom container (<code>fe60384</code>) of the Elementor footer template. The widget contains:</p>
+<ul>
+<li>A <strong>toggle button</strong> (text iterated per Christopher’s feedback — see Recent Changes Log)</li>
+<li><strong>CSS</strong> that overrides Elementor’s <code>hidden-mobile</code> class when a <code>.pir-footer-drawer-open</code> class is toggled</li>
+<li><strong>JavaScript</strong> that toggles the class and updates the button text</li>
+<li><strong>Mobile column stacking</strong> — the 4 nav columns switch from <code>flex-direction: row</code> to <code>column</code> on mobile</li>
+</ul>
+<h3 id="drawer-behavior">Drawer Behavior</h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Mobile View</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Closed</strong> (default)</td>
+<td>Only bottom legal text + toggle button visible</td>
+</tr>
+<tr>
+<td><strong>Open</strong></td>
+<td>Full footer slides up: logo, social, 4 nav columns, legal text</td>
+</tr>
+<tr>
+<td><strong>Desktop</strong></td>
+<td>Toggle button hidden, full footer always visible</td>
+</tr>
+</tbody>
+</table>
+<h3 id="implementation-details">Implementation Details</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Footer Template 9275</span></span>
+<span class="line"><span>├── Container 0d54b41 (wrapper)</span></span>
+<span class="line"><span>│   ├── Container d130517 (spacer/top)</span></span>
+<span class="line"><span>│   ├── Container 2847e5a8 (top half — hidden on mobile, drawer target)</span></span>
+<span class="line"><span>│   │   ├── Logo + tagline</span></span>
+<span class="line"><span>│   │   ├── Social icons</span></span>
+<span class="line"><span>│   │   ├── About PIR column</span></span>
+<span class="line"><span>│   │   ├── Resources column</span></span>
+<span class="line"><span>│   │   ├── Public Relations column</span></span>
+<span class="line"><span>│   │   └── Meetings column</span></span>
+<span class="line"><span>│   ├── Container 285e52b9 (divider)</span></span>
+<span class="line"><span>│   └── Container fe60384 (bottom half — legal text)</span></span>
+<span class="line"><span>│       └── HTML Widget 0bb1ac3 ← Toggle button + CSS + JS</span></span></code></pre>
+<h3 id="css-override-strategy">CSS Override Strategy</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#F97583">@media</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">max-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">767</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#85E89D">  body</span><span style="color:#B392F0"> .elementor-element-2847e5a8.pir-footer-drawer-open</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#79B8FF">    display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">flex</span><span style="color:#F97583"> !important</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    visibility</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">visible</span><span style="color:#F97583"> !important</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    opacity</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#F97583"> !important</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#79B8FF">    max-height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">2000</span><span style="color:#F97583">px</span><span style="color:#F97583"> !important</span><span style="color:#E1E4E8">;</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<blockquote>
+<p><strong>Note</strong>: This uses <code>!important</code> to override Elementor’s <code>elementor-hidden-mobile</code> class. The drawer class is toggled via JavaScript when the user clicks the button.</p>
+</blockquote>
+<h3 id="current-status-as-of-2026-09-21">Current Status (as of 2026-09-21)</h3>
+<ul>
+<li>Toggle button works (open/close) ✅</li>
+<li>Button text cycles correctly ✅</li>
+<li>Social icons section center-aligns when open ✅</li>
+<li>Christopher confirmed the drawer animation is smooth on his phone ✅</li>
+</ul>
+<h3 id="top-section-alignment--resolved-2026-09-21-root-cause--fix-by-alfred">Top Section Alignment — RESOLVED 2026-09-21 (root cause + fix, by Alfred)</h3>
+<p>Root cause: the logo + tagline text actually live inside a nested <strong>grid</strong> container
+(<code>elementor-element-f40f9d9</code>), two levels below <code>.e-con:first-child</code>. Every prior CSS attempt
+(Littlebird’s, and Alfred’s first pass) stopped at the outer wrapper (<code>2c6042e3</code>) and its direct
+widget children — never reached the actual grid container controlling the real layout, which is
+exactly why centering never took. Confirmed via <code>emcp-tools-get-page-structure</code>, not guessed.</p>
+<p>Fix applied directly to <code>elementor-element-37bf152</code> and <code>elementor-element-f40f9d9</code> (the wrapper
+and the grid container itself): <code>display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; text-align:center</code>, plus a small <code>margin-bottom</code> on the first
+child for breathing room between the logo image and the paragraph.</p>
+<p>Originally built as <code>flex-direction: row</code> (side-by-side, “inline”) per Christopher’s first ask, but
+he then added more text to that section, so it no longer fits inline — reverted to <code>column</code>
+(stacked) same day.</p>
+<p><strong>Honest status, not yet independently confirmed live:</strong> the padding between the image and
+paragraph was added in the same edit as the centering fix, but Christopher hasn’t confirmed it
+visually yet — don’t treat it as verified until he has. If it looks off, check the <code>margin-bottom</code>
+rule on <code>.elementor-element-f40f9d9 &gt; *:first-child</code> first.</p>
+<hr>
+<h2 id="astra-footer-issues-service-site--shared-with-main">Astra Footer Issues (Service Site + shared with Main)</h2>
+<h3 id="issue-a-mobile-social-icons-not-centering">Issue A: Mobile Social Icons Not Centering</h3>
+<p><strong>What Littlebird tried:</strong></p>
+<ul>
+<li>CSS injected via <code>add_custom_js</code> as HTML widget <code>9c03ba2</code> on Elementor template <code>9275</code>.</li>
+<li>Targets <code>.ast-footer-social-wrap</code> with <code>text-align: center</code> and <code>justify-content: center</code>.</li>
+<li><strong>Result: not working.</strong></li>
+</ul>
+<p><strong>Likely cause:</strong> CSS specificity battle with Astra’s own styles, or the wrong selector entirely.</p>
+<h3 id="issue-b-desktop-footer-image-shifted-left">Issue B: Desktop Footer Image Shifted Left</h3>
+<p>The image in the Astra footer is not center-aligned on desktop.</p>
+<p><strong>What Littlebird tried:</strong></p>
+<ul>
+<li>CSS targeting <code>.astra-footer-tablet-view</code> and <code>.ast-footer-image</code>.</li>
+<li><code>margin: 0 auto</code> and <code>display: block</code> on images.</li>
+<li><strong>Result: not working.</strong></li>
+</ul>
+<h3 id="resolved--2026-09-21-root-cause-found-and-fixed">RESOLVED — 2026-09-21, root cause found and fixed</h3>
+<p>Both issues turned out to be real, first-class Astra Customizer settings that were simply set
+wrong — not a CSS specificity problem at all, which is why neither Littlebird’s nor an earlier
+CSS-override attempt worked (both were fighting symptoms instead of the actual setting).</p>
+<p><strong>How it was found:</strong> the <code>astra-native-main</code>/<code>astra-native-service</code> MCP connections’ footer-builder
+tools (<code>get-footer-builder</code>, <code>get-footer-builder-design</code>) don’t expose per-widget alignment as a
+parameter — that setting lives one level deeper, in the raw <code>astra-settings</code> WordPress option (a
+serialized PHP array, ~285KB on the service site). Read directly via <code>emcp-tools-query</code> (a safe,
+read-only <code>SELECT ... LOCATE(...) / MID(...)</code> scan for the relevant keys — direct <code>UPDATE</code>s are
+correctly blocked by the query tool’s safety filter, so this was read-only diagnosis, not a raw DB
+write):</p>
+<ul>
+<li><code>footer-social-1-alignment</code> → <code>{desktop: "center", tablet: "left", mobile: "left"}</code> — desktop was
+already right; tablet/mobile were the bug.</li>
+<li><code>footer-widget-alignment-3</code> → <code>{desktop: "left", tablet: "left", mobile: "left"}</code> — Widget 3 is
+the footer-builder component holding the image + text (confirmed via the <code>sidebars_widgets</code>
+option: <code>footer-widget-3</code> contains <code>media_image-1</code> + <code>text-2</code>).</li>
+</ul>
+<p>Confirmed against the <em>actual compiled CSS</em> Astra generates from these settings (read via
+<code>emcp-tools-get-page-html</code> on the live homepage), which gave the real selectors — useful if this
+ever needs a CSS override again instead of a settings fix:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#E1E4E8">[</span><span style="color:#B392F0">data-section</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"section-fb-social-icons-1"</span><span style="color:#E1E4E8">] </span><span style="color:#B392F0">.footer-social-inner-wrap</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">text-align</span><span style="color:#E1E4E8">: ...; }</span></span>
+<span class="line"><span style="color:#B392F0">.footer-widget-area</span><span style="color:#E1E4E8">[</span><span style="color:#B392F0">data-section</span><span style="color:#F97583">=</span><span style="color:#9ECBFF">"sidebar-widgets-footer-widget-3"</span><span style="color:#E1E4E8">] </span><span style="color:#B392F0">.footer-widget-area-inner</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">text-align</span><span style="color:#E1E4E8">: ...; }</span></span></code></pre>
+<p>(Littlebird’s earlier attempts targeted <code>.ast-footer-social-wrap</code> and <code>.ast-footer-image</code> /
+<code>.astra-footer-tablet-view</code> — none of those are the real selectors, which is the actual reason
+those injections had no effect, not a specificity fight.)</p>
+<p><strong>Why Alfred couldn’t just flip these via MCP:</strong> no exposed tool writes to individual
+<code>astra-settings</code> keys, and writing directly via WordPress’s built-in Additional CSS mechanism
+(<code>custom_css</code> post type, post 856 on the service site) returned a permission denial on this
+connection — a real capability restriction, not something to route around. <strong>The fix ended up
+being the Customizer UI itself</strong>, which exposes these as ordinary toggles: Appearance → Customize →
+Footer Builder → Social Icons → Alignment (Mobile/Tablet → Center), and Footer Builder → Widgets →
+Widget 3 → Alignment → Center. <strong>Christopher applied both directly, 2026-09-21 — confirmed fixed.</strong></p>
+<hr>
+<h2 id="main-site-horizontal-scroll-on-mobile-search-widget--2026-09-21">Main-Site Horizontal Scroll on Mobile (Search Widget) — 2026-09-21</h2>
+<h3 id="the-bug">The bug</h3>
+<p>White margin band down the right side of the main site on mobile, causing unwanted horizontal
+scroll. Christopher’s own hypothesis, called correctly: the Elementor Pro “Search Form” widget
+(element <code>1312455</code>, <code>live_results: yes</code>) sitting in the last section of the homepage, directly
+above the Elementor footer.</p>
+<h3 id="fix-in-two-passes">Fix, in two passes</h3>
+<ul>
+<li><strong>v1</strong> (Alfred): added an HTML widget (<code>ef693d1</code>) inside the search widget’s wrapper container
+(<code>2827d53</code>) with <code>.elementor-element-2827d53 * { max-width:100% !important; box-sizing:border-box !important; } { overflow-x: hidden !important; }</code>. <strong>This fixed the
+horizontal-scroll overflow</strong> (confirmed by Christopher on real devices, iPhone + Chrome mobile
+emulation, after a WPX-level cache purge — see caching note below) <strong>but the wildcard <code>*</code> rule
+was too broad and clipped the search widget itself on mobile.</strong></li>
+<li><strong>v2</strong> (Alfred, same day): loosened the fix to only constrain the outer wrapper
+(<code>.elementor-element-2827d53 { max-width:100%; overflow-x:hidden; }</code>), removing the <code>*</code>
+cascade that was fighting the widget’s own box-shadow/icon/hover-animation overflow.</li>
+</ul>
+<h3 id="still-open-deliberately-deprioritized--come-back-to-when-nothing-more-pressing">Still open, deliberately deprioritized — come back to when nothing more pressing</h3>
+<p><strong>Not fully resolved.</strong> Christopher’s own description, worth preserving verbatim-in-spirit rather
+than summarized into “fixed”: the search bar on mobile is still visually cut off — same category
+of issue as the Littlebird Ambassador site’s hero-carousel cropping, and made obvious (not
+hidden) by the widget’s heavy corner-radius styling, so it’s visibly unfinished rather than subtly
+broken. <strong>The on-page “Search” submit button itself is not reachable/visible in the cut-off
+state</strong> — but functionally the search still works anyway, because a phone’s native keyboard
+“search”/enter key (rendered as a magnifying glass on Christopher’s iPhone, likely the same on
+other phones) submits the query without needing the on-page button. Christopher isn’t sure yet
+whether the real fix is shrinking the search field or something else. Left as-is intentionally —
+revisit later rather than force a fix now and risk losing context on the higher-priority queue
+(nav-only Astra footer drawer, scroll-reveal header — see Open Questions below).</p>
+<h3 id="caching-layer-worth-knowing-for-any-future-live-site-fix">Caching layer, worth knowing for any future live-site fix</h3>
+<p>This site has <strong>two separate cache layers</strong>: the W3 Total Cache plugin (purge from wp-admin →
+Performance) and a <strong>separate WPX hosting-level (XDN) cache</strong> that plugin purges don’t clear —
+confirmed directly: a <code>Purge All Caches</code> in W3TC plus a hard/no-cache <code>fetch()</code> from the browser
+still served stale HTML until Christopher separately cleared the WPX XDN cache. Any future live
+edit that “doesn’t seem to be working” should check WPX’s own cache panel before assuming the
+WordPress-side change failed — it likely didn’t.</p>
+<h3 id="update-2026-09-23--recurrence-on-the-convention-page--the-still-open-cut-off-actually-fixed">Update, 2026-09-23 — recurrence on the convention page + the “still open” cut-off actually fixed</h3>
+<p>The v1/v2 fix above only ever covered the homepage’s specific wrapper (<code>2827d53</code>). The convention
+page (post <code>12760</code>) has its own separate instance of the same widget — no shared template, so it
+had no guard at all and reproduced the identical horizontal-overflow bug on
+<code>/convention-2026/#virtual-pass-paypal</code>. Fixed the same way, scoped to that page’s own wrapper
+(new HTML widget <code>0ea64c9</code> inside <code>4c129c5e</code>, targeting <code>.elementor-element-29005439</code>/
+<code>.elementor-element-4c129c5e</code>). Checked whether a global Custom-CSS mechanism existed so future
+placements of this widget wouldn’t need a bespoke per-page patch — <code>get-widget-schema</code> confirmed
+the widget has no native responsive controls for border-radius/padding/typography reachable via
+MCP tools, so per-instance CSS injection remains the only route. <strong>Any future page using this
+widget will need the same patch — there is no global fix in place.</strong></p>
+<p>Also resolved the “still open” cut-off noted above, which turned out to be caused by the fix
+itself: <code>overflow-x:hidden</code> was clipping the submit button because the widget’s own oversized
+corner-radius/box-shadow styling pushed its rendered width past the wrapper on mobile. Added a
+mobile (<code>max-width:767px</code>) rule on both the homepage and convention-page instances that hides the
+button’s text label and shrinks its padding (<code>flex-shrink:0</code>), so the button — magnifying glass
+included — now fits inside the wrapper instead of needing the overflow mask to hide the overrun.
+Applied to both instances (homepage <code>ef693d1</code>, convention page <code>0ea64c9</code>).</p>
+<p><strong>Not done: cache purge.</strong> No MCP tool exposes either the W3TC plugin-level purge or the WPX/XDN
+hosting-level purge described above — checked <code>list-plugins</code>/<code>analyze-performance</code>/tool search,
+nothing reachable. Verification used cache-busting query strings, which confirms the underlying
+fix is correct, but the live site as Christopher sees it in a normal browser may still show the
+old, broken version until both caches are purged manually (wp-admin → Performance → Purge All
+Caches, then the separate WPX panel — same two-step process as before).</p>
+<p><strong>Christopher purged both caches himself after this update landed</strong>, then found real remaining
+issues (see below) — the update above was correct as far as it went, but incomplete.</p>
+<h3 id="update-2026-09-23-later-same-day--this-widget-is-site-wide-the-real-placeholder-truncation-cause-homepage-still-broken-2-levels-deeper">Update, 2026-09-23 (later same day) — this widget is site-wide; the real placeholder-truncation cause; homepage still broken 2 levels deeper</h3>
+<p><strong>The search widget is on 6 pages, not 2.</strong> Full sweep found it on: homepage (<code>9572</code>, via
+Elementor’s Global Widget feature — <code>templateID: 13663</code>, “search-bar”), convention page (<code>12760</code>),
+Resources (<code>24</code>), Public Relations (<code>12603</code>), the Search results page (<code>12891</code>), and — highest
+reach — the <strong>Single Post Template</strong> (<code>9317</code>), which renders under every blog post site-wide.
+Resources/Public-Relations/Search each have an independent, non-synced copy of the same
+icon+heading+search block (confirmed via raw <code>_elementor_data</code>, no shared <code>templateID</code>), so each
+needed its own new HTML widget with the fix, same pattern as <code>0ea64c9</code>. <strong>Any future page adding
+this widget still needs the same manual patch — there is still no global mechanism.</strong></p>
+<p><strong>Why the homepage still looked broken after the “fixed” update above:</strong> its DOM nests one level
+deeper than the convention page’s did (<code>ed5e712</code> → <code>2203955</code> → <code>2827d53</code> → search, vs. convention
+page’s 2 levels) because it goes through the Global Widget template wrapper — the original
+2026-09-21 fix and the update above only ever covered the innermost level. Extended to cover all
+three levels. Convention page, Resources, and Public Relations needed 2 levels; the Single Post
+Template needed 1.</p>
+<p><strong>The mobile button-shrink fix above was dead code — it never did anything.</strong> <code>.e-search-submit &gt; span { display:none }</code> was targeting a <code>&lt;span&gt;</code> that doesn’t exist in the real markup — the
+submit button has no text span at all, just an SVG icon; the “Search” text CSS was hiding was
+actually a screen-reader-only label on a completely different element (<code>.e-search-label</code>). That’s
+why nothing visibly changed despite the rule being live. <strong>Real cause of the placeholder text
+(“Type to start searching…”) getting cut off:</strong> a decorative 30px keyboard-icon SVG plus the
+input’s 20px font-size don’t leave enough width on mobile. Fix: hide the decorative icon (kept the
+label for accessibility), drop input font-size to 14px on mobile, let the input flex-grow into the
+freed space. Applied identically across all 6 pages above.</p>
+<h3 id="update-2026-09-23-round-3--corrections-to-round-2s-own-diagnosis-radii-masks-real-cause-both-icons-restored">Update, 2026-09-23 (round 3) — corrections to round 2’s own diagnosis, radii mask’s real cause, both icons restored</h3>
+<p>Christopher tested round 2 live and found real issues, including one place round 2 was simply
+wrong about the markup. Consolidated technical reference (current state, reusable fix pattern):
+<strong><code>SEARCH-WIDGET-MOBILE-FIX.md</code></strong> — this section stays as the chronological record of what was
+tried and corrected each round.</p>
+<p><strong>Correction: round 2’s claim above (“the submit button has no text span at all”) was wrong.</strong>
+Fetched the real live homepage markup this round: <code>&lt;button class="e-search-submit"&gt;&lt;svg class="e-fas-search"/&gt; &lt;span class=""&gt;Search&lt;/span&gt;&lt;/button&gt;</code> — a visible span, not
+screen-reader-only. <code>flex-shrink:0</code> (added in round 2) stopped the button shrinking, so that
+visible “Search” label rendered at full size — that’s what Christopher saw as “too much button
+text.” Fixed for real this round: hide <code>.e-search-submit span</code> directly. Button is icon-only on
+mobile now, across all 6 pages.</p>
+<p><strong>The “heavy corner-radius mask” on the homepage — never caused by anything in this fix, found
+this round.</strong> Four of the six pages’ wrapper containers (homepage <code>2827d53</code>, Resources <code>65296741</code>,
+Public Relations <code>2cd5a92e</code>, Search <code>31ce4ff3</code>) carry a <strong>native Elementor container setting</strong>,
+<code>border-radius: 55px</code> on all corners — unrelated to the search widget’s own CSS. Combined with the
+<code>overflow-x:hidden</code> fix from round 1, that native radius clipped the field into a heavy rounded
+mask on mobile, where 55px reads as a mask rather than a subtle corner. The other two pages
+(convention, Single Post Template) never had this native setting and never showed the mask — which
+is exactly why they looked “already fixed” while the homepage didn’t. Fix: zero the radius in a
+mobile-only media query on the 4 affected pages; left desktop’s 55px alone.</p>
+<p><strong>Keyboard icon restored alongside the full placeholder text.</strong> Freeing the width that used to go
+to the visible “Search” label (see correction above) meant the decorative keyboard icon no longer
+needed to be hidden to make room. Restored it at 20×20px (was ~30px) rather than full size, kept
+the 14px input font-size and <code>flex-grow</code> from round 2. All three — keyboard icon, full “Type to
+start searching…” placeholder, icon-only submit button — now visible together on mobile, across
+all 6 pages.</p>
+<p><strong>Unrelated but adjacent — a hero-button alignment regression from the paywall’s own selector fix
+this same day.</strong> Not a search-widget issue; see the Littlebird paywall audit handoff for detail
+(<code>littlebird-ambassador/AGENT-SYNC/created-by-alfred/2026-09-23-handoff-littlebird-pir-convention-paywall-audit.md</code>,
+“round 3” update) — noted here only because it was caught and fixed in the same testing pass.</p>
+<p><strong>Not done, same as every round: cache purge.</strong> No MCP tool exposes it. Christopher purges both
+W3TC and WPX/XDN manually after each round to actually see the result.</p>
+<h3 id="update-2026-09-23-round-4--placeholder-truncation-was-never-a-css-problem">Update, 2026-09-23 (round 4) — placeholder truncation was never a CSS problem</h3>
+<p>Real cause, finally: the convention page’s search widget had two Elementor responsive settings
+(<code>_flex_align_self_mobile: "stretch"</code>, <code>_flex_size_mobile: "shrink"</code>) that none of the other 5
+instances had — without them, the input can’t grow into whatever space the CSS frees up, no matter
+how correct that CSS is. Applied to all 5 remaining instances. Full detail, widget IDs, and the
+updated reusable-fix checklist: <code>SEARCH-WIDGET-MOBILE-FIX.md</code>. Verified by settings-parity with
+the one already-working page, not by pixel screenshot — no tool found to fetch this site’s
+generated CSS for visual re-confirmation, so this one is worth Christopher’s own device check
+before calling it fully closed.</p>
+<hr>
+<h2 id="recent-changes-log">Recent Changes Log</h2>
+<table>
+<thead>
+<tr>
+<th>Date</th>
+<th>Change</th>
+<th>Agent</th>
+<th>Tool</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-09-17</td>
+<td>Added “View Full Schedule” button to Convention page</td>
+<td>Littlebird</td>
+<td>emcp <code>add_free_widget</code></td>
+</tr>
+<tr>
+<td>2026-09-17</td>
+<td>Updated GitHub icon in Elementor footer to <code>github.com/psychedelicsinrecovery</code></td>
+<td>Littlebird</td>
+<td>emcp <code>update_element</code></td>
+</tr>
+<tr>
+<td>2026-09-17</td>
+<td>Reverted mobile <code>hide_mobile</code> on Elementor footer top container after causing horizontal scroll</td>
+<td>Littlebird</td>
+<td>emcp <code>update_element</code></td>
+</tr>
+<tr>
+<td>2026-09-17</td>
+<td>Updated Astra footer design (padding) on both sites</td>
+<td>Littlebird</td>
+<td>Astra MCP <code>update_footer_builder_design</code></td>
+</tr>
+<tr>
+<td>2026-09-17</td>
+<td>Updated Astra footer GitHub links on both sites (manual)</td>
+<td>Christopher</td>
+<td>WordPress Customizer</td>
+</tr>
+<tr>
+<td>2026-09-20</td>
+<td>Updated in-person meetings page (NYC suspended, SLC added, South Florida paused)</td>
+<td>Littlebird</td>
+<td>emcp <code>update_post</code></td>
+</tr>
+<tr>
+<td>2026-09-20</td>
+<td><strong>RESTORED</strong> in-person meetings page after Gutenberg block corruption; re-applied edits to original HTML</td>
+<td>Littlebird</td>
+<td>emcp <code>update_post</code></td>
+</tr>
+<tr>
+<td>2026-09-20</td>
+<td>Implemented mobile footer drawer for Elementor footer</td>
+<td>Littlebird</td>
+<td>emcp <code>add_free_widget</code> + custom CSS/JS</td>
+</tr>
+<tr>
+<td>2026-09-21</td>
+<td>In-Person Meetings page: maroon strikethrough treatment applied to Edinburgh, South Florida, NYC, Austin; timezones added throughout (CDT/MST/EDT); Deerfield Beach flyer/images restored; timezone disclaimer added under map heading</td>
+<td>Littlebird</td>
+<td>emcp <code>update_post</code> — Christopher published the final version manually after MCP intermittency</td>
+</tr>
+<tr>
+<td>2026-09-21</td>
+<td>Drawer toggle button text updated per Christopher’s copy; drawer content center-aligned (social icons only, top section still open)</td>
+<td>Littlebird</td>
+<td>emcp <code>add_free_widget</code></td>
+</tr>
+<tr>
+<td>2026-09-21</td>
+<td>Astra footer mobile social icons + desktop widget-3 image alignment root-caused (<code>astra-settings</code> Customizer values, not CSS) and fixed</td>
+<td>Alfred (diagnosis) / Christopher (applied via Customizer)</td>
+<td>direct DB read + WordPress Customizer</td>
+</tr>
+<tr>
+<td>2026-09-21</td>
+<td>Elementor drawer top section (logo+tagline) root-caused to a nested grid container 2 levels deeper than any prior fix reached; centered, then destacked from row to column after Christopher added more text</td>
+<td>Alfred</td>
+<td>emcp <code>update_element</code></td>
+</tr>
+<tr>
+<td>2026-09-21</td>
+<td>Homepage search-widget mobile horizontal-scroll overflow fixed (v1 too broad/clipped the widget, v2 loosened to just the outer wrapper) — still not fully resolved, see section above</td>
+<td>Alfred</td>
+<td>emcp <code>add_free_widget</code> + <code>update_element</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="open-questions--blockers">Open Questions &amp; Blockers</h2>
+<table>
+<thead>
+<tr>
+<th>Question</th>
+<th>Status</th>
+<th>Assigned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can Alfred’s Astra MCP edit social icon URLs?</td>
+<td><strong>CONFIRMED NO</strong> — both Alfred and Littlebird’s Astra connections lack component content access</td>
+<td>Alfred (tested)</td>
+</tr>
+<tr>
+<td>Elementor footer drawer — does it work on mobile?</td>
+<td><strong>LIVE, working</strong> — toggle, text, and social-icon centering confirmed by Christopher</td>
+<td>Resolved</td>
+</tr>
+<tr>
+<td>Elementor drawer top section (logo + text) centering</td>
+<td><strong>RESOLVED 2026-09-21</strong> — root-caused (nested grid container) and fixed by Alfred; padding tweak between image/paragraph applied same day but not yet independently confirmed by Christopher</td>
+<td>Alfred</td>
+</tr>
+<tr>
+<td>Astra footer mobile social icon centering</td>
+<td><strong>RESOLVED 2026-09-21</strong> — root-caused to a Customizer setting, fixed by Christopher</td>
+<td>Resolved</td>
+</tr>
+<tr>
+<td>Astra footer desktop image centering</td>
+<td><strong>RESOLVED 2026-09-21</strong> — same root cause (<code>footer-widget-alignment-3</code>), fixed by Christopher</td>
+<td>Resolved</td>
+</tr>
+<tr>
+<td>Homepage search widget mobile overflow</td>
+<td><strong>Resolved 2026-09-23</strong> across 5 rounds, all 6 pages it’s live on — see <code>SEARCH-WIDGET-MOBILE-FIX.md</code> for current state and the reusable fix pattern.</td>
+<td>Resolved</td>
+</tr>
+<tr>
+<td>Should Astra footer be disabled entirely on main site?</td>
+<td>Pending Christopher’s decision</td>
+<td>Christopher</td>
+</tr>
+<tr>
+<td>GitHub org <code>psychedelicsinrecovery</code> write access (Alfred, via <code>gh</code> CLI)</td>
+<td><strong>Confirmed working</strong> — repo created and content pushed successfully 2026-09-20/21</td>
+<td>Resolved</td>
+</tr>
+<tr>
+<td>GitHub org write access (Littlebird’s own OAuth app)</td>
+<td>Possibly still blocked by org OAuth App restrictions — separate auth path from Alfred’s, not yet re-verified since the org repos were created</td>
+<td>Christopher / Littlebird</td>
+</tr>
+<tr>
+<td><strong>New:</strong> nav-only footer drawer (4 link columns, no image/social) for every Astra-footer page (main-site blog/archives + entire service site), sitting between social icons and copyright</td>
+<td>Not started — Astra footer components have no exposed write tool, but the service site has “Ultimate Addons for Elementor” (Header/Footer) active, unused — likely path is building a real Elementor footer template there instead of fighting Astra’s write restrictions, same approach as the main site</td>
+<td>Alfred</td>
+</tr>
+<tr>
+<td>Header reappears on scroll-up, both main site and service site</td>
+<td><strong>Main site done 2026-09-23</strong> (5 rounds — see <code>HEADER-STICKY-SCROLL-AND-MOBILE-NAV.md</code>). <strong>Service site blocked</strong> — its header genuinely is Astra’s native header (no Theme Builder override, no site-wide code-injection tool/plugin found); building one would mean fully rebuilding its header, not just adding a script. Needs Christopher’s call on how to proceed.</td>
+<td>Christopher (decision)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="agent-communication-notes">Agent Communication Notes</h2>
+<h3 id="alfreds-mcp-connection-from-his-handoff">Alfred’s MCP Connection (from his handoff)</h3>
+<ul>
+<li>Alfred connects to Littlebird’s MCP server via <strong>OAuth</strong> (not API key as previously assumed)</li>
+<li>He can read conversations, meetings, and write context</li>
+<li>He confirmed: <code>astra_read</code> on emcp-tools and standalone Astra MCP have <strong>different capabilities</strong> — neither can edit social icon component content</li>
+<li>Alfred has local file access to <code>~/littlebirds-git-home/</code> (unlike Littlebird, which is blocked by VFS permissions)</li>
+</ul>
+<h3 id="github-orgs-from-alfreds-handoff">GitHub Orgs (from Alfred’s handoff)</h3>
+<ul>
+<li><code>psychedelicsinrecovery</code> org has <code>.github</code>, <code>.github-private</code>, <code>.github.io</code>, and now
+<code>wordpress-crawls</code> repos</li>
+<li><code>theholyearthfoundation</code> org has <code>.github</code>, <code>.github-private</code>, <code>.github.io</code> repos</li>
+<li>The PIR site archive moved from <code>pir-wp-live/site-archive/</code> to its own repo,
+<code>psychedelicsinrecovery/wordpress-crawls</code>, full history preserved</li>
+<li>Littlebird’s GitHub account may still be unable to write to org repos due to OAuth App access
+restrictions — this is a separate, not-yet-reverified question from Alfred’s own <code>gh</code> CLI access</li>
+</ul>
+<hr>
+<h2 id="littlebird-commit-footer-convention">Littlebird Commit Footer Convention</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Co-Authored-By: LittlebirdAI · Desktop Oracle Observer &amp; Fleet Shepherd</span></span>
+<span class="line"><span>The Bird That Stewards the Gap — confirm observations with Christopher.</span></span></code></pre>
+<hr>
+<p><em>Document originated by LittlebirdAI on 2026-09-20, extended 2026-09-21, merged into one canonical
+copy by Alfred on 2026-09-21 after two divergent versions were found (see note at top).</em></p>
+</details>
+</div></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">PIR® · Psychedelics In Recovery™</span><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> Entry portal</a><a href="https://psychedelicsinrecovery.github.io/404.html" target="_blank" rel="noopener"><i class="ph ph-map-trifold"></i> Curious what a wrong turn looks like?</a><a href="https://www.psychedelicsinrecovery.org/contact/" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("pir-theme", current);
+        });
+      })();
+    </script></body></html>

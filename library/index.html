@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Library</title><meta name="description" content="Deeper technical write-ups behind the changelog — how things actually work, for anyone who wants to know."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="Library"><meta property="og:description" content="Deeper technical write-ups behind the changelog — how things actually work, for anyone who wants to know."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Library"><meta name="twitter:description" content="Deeper technical write-ups behind the changelog — how things actually work, for anyone who wants to know."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("pir-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>.content-section[data-astro-cid-edc2mqe3]{max-width:720px;margin:0 auto;padding:48px 20px}.back[data-astro-cid-edc2mqe3]{margin:0 0 16px}.back[data-astro-cid-edc2mqe3] a[data-astro-cid-edc2mqe3]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-edc2mqe3] a[data-astro-cid-edc2mqe3]:hover{opacity:1}h1[data-astro-cid-edc2mqe3]{margin:0 0 14px;font-size:2.2rem;font-weight:600}.intro[data-astro-cid-edc2mqe3]{opacity:.75;max-width:60ch;margin:0 0 32px;line-height:1.7}.library-list[data-astro-cid-edc2mqe3]{flex-direction:column;gap:10px;margin:0;padding:0;list-style:none;display:flex}.library-list[data-astro-cid-edc2mqe3] a[data-astro-cid-edc2mqe3]{color:inherit;border:1px solid;border-radius:10px;flex-direction:column;gap:4px;padding:16px 18px;text-decoration:none;transition:transform .15s;display:flex}.library-list[data-astro-cid-edc2mqe3] a[data-astro-cid-edc2mqe3]:hover{border-color:var(--signature);transform:translate(2px)}.entry-title[data-astro-cid-edc2mqe3]{font-size:1.02rem;font-weight:600}.entry-desc[data-astro-cid-edc2mqe3]{opacity:.7;font-size:.88rem}
+#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}:root{--ink:#1a1530;--ink-soft:#6b5f8a;--signature:#5b21b6;--signature-2:#db2777;--surface:#fff;--line:#e0d9f0;--bg:#f5f3fa}:root[data-theme=dark]{--ink:#f1e9ff;--ink-soft:#a89cc8;--signature:#7c3aed;--signature-2:#f472b6;--surface:#131829;--line:#2a2550;--bg:#0a0e1a}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;padding-bottom:96px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex}.brand:hover .brand-home-icon,.brand:hover .brand-title{color:var(--signature)}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);padding:10px 20px;font-size:.78rem;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}a{color:var(--signature)}body,.content-section{color:var(--ink)}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColor = "#F1E9FF";
+const sparkColor = "#F472B6";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        bx: Math.random() * W,
+        by: Math.random() * H,
+        x: 0,
+        y: 0,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><span class="brand-title">PIR® Changelog</span><i class="ph ph-house brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Home</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-edc2mqe3><p class="back" data-astro-cid-edc2mqe3><a href="/changelog-astro-public/" data-astro-cid-edc2mqe3>&larr; Home</a></p><h1 data-astro-cid-edc2mqe3>📚 Library</h1><p class="intro" data-astro-cid-edc2mqe3>The changelog is the plain-language summary. This is the deeper record — real technical write-ups, kept for anyone who wants to understand how things actually work, not just that they got fixed.</p><ul class="library-list" data-astro-cid-edc2mqe3><li data-astro-cid-edc2mqe3><a href="/changelog-astro-public/library/capabilities-astra" data-astro-cid-edc2mqe3><span class="entry-title" data-astro-cid-edc2mqe3>Astra theme MCP capabilities</span><span class="entry-desc" data-astro-cid-edc2mqe3>What the Astra-native MCP tools can and can&#39;t touch on this site.</span></a></li><li data-astro-cid-edc2mqe3><a href="/changelog-astro-public/library/capabilities-emcp-tools" data-astro-cid-edc2mqe3><span class="entry-title" data-astro-cid-edc2mqe3>Elementor MCP (emcp) tool capabilities</span><span class="entry-desc" data-astro-cid-edc2mqe3>What the Elementor MCP tools can and can&#39;t touch on this site.</span></a></li><li data-astro-cid-edc2mqe3><a href="/changelog-astro-public/library/footer-reconnaissance" data-astro-cid-edc2mqe3><span class="entry-title" data-astro-cid-edc2mqe3>Footer reconnaissance: Astra footer internals</span><span class="entry-desc" data-astro-cid-edc2mqe3>How PIR&#39;s Astra footer is actually built, and the real settings behind its mobile/desktop alignment bugs.</span></a></li><li data-astro-cid-edc2mqe3><a href="/changelog-astro-public/library/how-to-reconnect-mcp" data-astro-cid-edc2mqe3><span class="entry-title" data-astro-cid-edc2mqe3>How to reconnect the MCP tools</span><span class="entry-desc" data-astro-cid-edc2mqe3>What to do when the WordPress MCP connection drops mid-session.</span></a></li><li data-astro-cid-edc2mqe3><a href="/changelog-astro-public/library/site-health-and-plugins" data-astro-cid-edc2mqe3><span class="entry-title" data-astro-cid-edc2mqe3>Site health, caching layers, and plugin inventory</span><span class="entry-desc" data-astro-cid-edc2mqe3>The two separate cache layers (W3TC + WPX/XDN) and what&#39;s actually installed on this site.</span></a></li><li data-astro-cid-edc2mqe3><a href="/changelog-astro-public/library/header-sticky-scroll-and-mobile-nav" data-astro-cid-edc2mqe3><span class="entry-title" data-astro-cid-edc2mqe3>The header saga: sticky scroll-reveal + mobile pill nav</span><span class="entry-desc" data-astro-cid-edc2mqe3>18 rounds of real WordPress/Elementor debugging -- scroll-reveal, the mobile hamburger, iOS scroll-lock bugs, and the specificity gap that explained half of it.</span></a></li><li data-astro-cid-edc2mqe3><a href="/changelog-astro-public/library/search-widget-mobile-fix" data-astro-cid-edc2mqe3><span class="entry-title" data-astro-cid-edc2mqe3>The search widget&#39;s mobile horizontal-scroll saga</span><span class="entry-desc" data-astro-cid-edc2mqe3>Four rounds tracking down why a search box kept causing sideways scroll on phones, site-wide.</span></a></li></ul></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">PIR® · Psychedelics In Recovery™</span><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> Entry portal</a><a href="https://psychedelicsinrecovery.github.io/404.html" target="_blank" rel="noopener"><i class="ph ph-map-trifold"></i> Curious what a wrong turn looks like?</a><a href="https://www.psychedelicsinrecovery.org/contact/" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("pir-theme", current);
+        });
+      })();
+    </script></body></html>

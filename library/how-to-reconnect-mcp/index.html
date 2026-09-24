@@ -1,0 +1,300 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to reconnect the MCP tools — Library</title><meta name="description" content="What to do when the WordPress MCP connection drops mid-session."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="How to reconnect the MCP tools — Library"><meta property="og:description" content="What to do when the WordPress MCP connection drops mid-session."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-to-reconnect-mcp"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to reconnect the MCP tools — Library"><meta name="twitter:description" content="What to do when the WordPress MCP connection drops mid-session."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("pir-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>.content-section[data-astro-cid-cx6wmmop]{max-width:760px;margin:0 auto;padding:40px 20px 60px}.back[data-astro-cid-cx6wmmop]{margin:0 0 24px}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]:hover{opacity:1}h1[data-astro-cid-cx6wmmop]{letter-spacing:-.01em;margin:0 0 8px;font-size:1.9rem;font-weight:600}.desc[data-astro-cid-cx6wmmop]{opacity:.7;margin:0 0 32px;font-size:1rem}.prose[data-astro-cid-cx6wmmop] h1{margin:40px 0 16px;font-size:1.6rem}.prose[data-astro-cid-cx6wmmop] h2{margin:32px 0 12px;font-size:1.3rem}.prose[data-astro-cid-cx6wmmop] h3{margin:24px 0 10px;font-size:1.1rem}.prose[data-astro-cid-cx6wmmop] p{margin:0 0 16px;line-height:1.7}.prose[data-astro-cid-cx6wmmop] ul,.prose[data-astro-cid-cx6wmmop] ol{padding-left:1.4em;line-height:1.7}.prose[data-astro-cid-cx6wmmop] .tldr{background:color-mix(in srgb, var(--signature) 10%, transparent);border-left:3px solid var(--signature);border-radius:10px;align-items:flex-start;gap:10px;margin:0 0 20px;padding:14px 16px;font-size:.95rem;line-height:1.6;display:flex}.prose[data-astro-cid-cx6wmmop] .tldr .ph{color:var(--signature);flex-shrink:0;margin-top:2px}.prose[data-astro-cid-cx6wmmop] details{border:1px solid var(--line,currentColor);border-radius:10px;margin:4px 0 24px;padding:0 16px}.prose[data-astro-cid-cx6wmmop] details[open]{padding-bottom:16px}.prose[data-astro-cid-cx6wmmop] summary{cursor:pointer;color:var(--signature);align-items:center;gap:8px;padding:14px 0;font-weight:600;display:flex}.prose[data-astro-cid-cx6wmmop] summary::-webkit-details-marker{display:none}.prose[data-astro-cid-cx6wmmop] summary .ph-caret-right{transition:transform .15s}.prose[data-astro-cid-cx6wmmop] details[open] summary .ph-caret-right{transform:rotate(90deg)}.prose[data-astro-cid-cx6wmmop] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.88em}.prose[data-astro-cid-cx6wmmop] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;font-size:.85rem;overflow-x:auto}.prose[data-astro-cid-cx6wmmop] pre code{background:0 0;padding:0}.prose[data-astro-cid-cx6wmmop] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.prose[data-astro-cid-cx6wmmop] blockquote{border-left:3px solid var(--signature,currentColor);opacity:.85;margin:0 0 16px;padding:4px 0 4px 16px}
+#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}:root{--ink:#1a1530;--ink-soft:#6b5f8a;--signature:#5b21b6;--signature-2:#db2777;--surface:#fff;--line:#e0d9f0;--bg:#f5f3fa}:root[data-theme=dark]{--ink:#f1e9ff;--ink-soft:#a89cc8;--signature:#7c3aed;--signature-2:#f472b6;--surface:#131829;--line:#2a2550;--bg:#0a0e1a}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;padding-bottom:96px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex}.brand:hover .brand-home-icon,.brand:hover .brand-title{color:var(--signature)}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);padding:10px 20px;font-size:.78rem;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}a{color:var(--signature)}body,.content-section{color:var(--ink)}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColor = "#F1E9FF";
+const sparkColor = "#F472B6";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      stars.push({
+        bx: Math.random() * W,
+        by: Math.random() * H,
+        x: 0,
+        y: 0,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><span class="brand-title">PIR® Changelog</span><i class="ph ph-house brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Home</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-cx6wmmop><p class="back" data-astro-cid-cx6wmmop><a href="/changelog-astro-public/library" data-astro-cid-cx6wmmop>&larr; All library docs</a></p><h1 data-astro-cid-cx6wmmop>How to reconnect the MCP tools</h1><p class="desc" data-astro-cid-cx6wmmop>What to do when the WordPress MCP connection drops mid-session.</p><div class="prose" data-astro-cid-cx6wmmop><div class="tldr"><i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> A self-contained guide for reconnecting the WordPress MCP tools mid-session, without needing any other PIR repo already cloned.</div>
+<details>
+<summary><i class="ph ph-caret-right"></i> Read the full story →</summary>
+<h1 id="how-to-reconnect-pir-wordpress-mcp">How to reconnect PIR WordPress MCP</h1>
+<p>Self-contained reconnection guide — works even if this is the only PIR repo cloned on a given
+machine. The fuller story (audits, live-verification data, findings) lives in
+<code>~/littlebirds-git-home/littlebird-ambassador/setup/pir-wordpress-mcp-setup.md</code>; this doc is the
+fast path for “I’m on a new machine / new session, get me reconnected.”</p>
+<p><strong>Read <code>SECURITY-CAUTION.md</code> in this repo before generating or handling any credential below.</strong></p>
+<h2 id="the-three-integrations">The three integrations</h2>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Endpoint pattern</th>
+<th>Auth</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>emcp-tools</code></td>
+<td><code>/wp-json/mcp/emcp-tools-server</code></td>
+<td>Application Password or OAuth (both work)</td>
+<td>Elementor, content, plugins, ACF, WooCommerce, security/performance scans</td>
+</tr>
+<tr>
+<td>Astra native MCP</td>
+<td><code>/wp-json/astra/v1/mcp</code></td>
+<td>Application Password only</td>
+<td>Theme-level: fonts, header/footer builder, colors, sidebar, ~80 tools</td>
+</tr>
+<tr>
+<td>Littlebird MCP</td>
+<td><code>https://mcp.littlebird.ai/mcp</code></td>
+<td>OAuth only</td>
+<td>Littlebird’s own conversation history, calendar, meeting notes, context</td>
+</tr>
+</tbody>
+</table>
+<p>Both WordPress-side integrations exist on <strong>two sites</strong>: main (<code>psychedelicsinrecovery.org</code>) and
+service (<code>service.psychedelicsinrecovery.org</code>) — separate logins, separate credentials, register each
+site independently.</p>
+<h2 id="step-1--generate-a-credential-skip-if-using-oauth">Step 1 — generate a credential (skip if using OAuth)</h2>
+<ol>
+<li>Log into <code>/wp-admin</code> on the target site.</li>
+<li>Either plugin’s own connection page can generate one for you with ready-made config:
+<ul>
+<li><code>emcp-tools</code>: <code>wp-admin/admin.php?page=emcp-tools-connection</code> → “Application password” auth
+method → pick a client tab → “Generate Password &amp; Configs.”</li>
+<li>Astra native: <code>wp-admin/admin.php?page=astra&amp;path=settings&amp;settings=mcp</code> → “Open Application
+Passwords” (opens the plain WordPress profile screen — Astra’s settings page doesn’t auto-fill
+config the way emcp-tools’ does).</li>
+<li>Or skip both and go straight to <code>wp-admin/profile.php#application-passwords-section</code> — name it,
+click “Add Application Password.”</li>
+</ul>
+</li>
+<li><strong>Read the value as text, not a full-page screenshot.</strong> A normal screenshot makes <code>I</code>/<code>l</code>/<code>1</code>
+genuinely ambiguous in most admin fonts and caused a real failed connection once already. If only
+a screenshot is available, zoom into just the password field, not the whole page.</li>
+</ol>
+<h2 id="step-2--register-the-mcp-server">Step 2 — register the MCP server</h2>
+<p><strong>emcp-tools or Astra native, via Basic auth</strong> (works for both — same mechanism, WordPress
+Application Passwords aren’t scoped to a single plugin’s endpoint):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> "USERNAME:APP PASSWORD"</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> base64</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> --transport</span><span style="color:#9ECBFF"> http</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">alia</span><span style="color:#E1E4E8">s</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF"> "https://SITE/wp-json/mcp/emcp-tools-server"</span><span style="color:#79B8FF"> --header</span><span style="color:#9ECBFF"> "Authorization: Basic &lt;base64&gt;"</span></span>
+<span class="line"><span style="color:#6A737D"># or for Astra native:</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> --transport</span><span style="color:#9ECBFF"> http</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">alia</span><span style="color:#E1E4E8">s</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF"> "https://SITE/wp-json/astra/v1/mcp"</span><span style="color:#79B8FF"> --header</span><span style="color:#9ECBFF"> "Authorization: Basic &lt;base64&gt;"</span></span></code></pre>
+<p>Use direct HTTP transport (<code>--transport http</code>), not Astra’s own suggested npx stdio proxy
+(<code>@automattic/mcp-wordpress-remote</code>) — that proxy silently failed on the main site once (registered
+as “Connected” but exposed zero tools, no error surfaced). Direct HTTP has been reliable every time
+so far on both sites, for both integrations.</p>
+<p><strong>Littlebird, via OAuth:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> --transport</span><span style="color:#9ECBFF"> http</span><span style="color:#9ECBFF"> littlebird</span><span style="color:#9ECBFF"> https://mcp.littlebird.ai/mcp</span></span></code></pre>
+<p>Then, in a Claude Code session, run <code>/mcp</code> and approve the browser authorization flow. Trust
+<code>docs.littlebird.ai/docs/mcp/</code> over anything Littlebird says about her own endpoint in chat if the two
+disagree — asked directly once, she described a different, incorrect auth mechanism for this exact
+endpoint.</p>
+<h2 id="step-3--verify">Step 3 — verify</h2>
+<p>MCP servers only load at session start. Exit and <code>/resume</code> (or start fresh), then run a real
+read-only call against each — a “connected” status in <code>claude mcp list</code> only proves the process
+started, not that the underlying WordPress handshake succeeded:</p>
+<ul>
+<li><code>emcp-tools</code>: <code>core-get-site-info</code> or <code>emcp-tools-list-plugins</code></li>
+<li>Astra native: any <code>astra-get-*</code> tool, e.g. <code>astra-get-performance</code></li>
+<li>Littlebird: <code>LB_INTERNAL_LIST_RECENT_CONVERSATIONS</code></li>
+</ul>
+<p>If a server shows “Connected” in <code>claude mcp list</code> but exposes zero tools, that’s the silent-failure
+pattern from Step 2 — the process started but the handshake failed. Check the credential first.</p>
+<h2 id="two-different-config-files--dont-confuse-them">Two different config files — don’t confuse them</h2>
+<ul>
+<li>
+<p><code>claude mcp add</code> writes the server registrations themselves (URL, transport, auth header) to
+<code>~/.claude.json</code>, scoped to this project (<code>~/pir</code>). That’s everything in Step 2.</p>
+</li>
+<li>
+<p><strong>Permission rules</strong> — pre-approving a specific tool call so Claude Code’s auto-mode classifier
+stops prompting for it every time — live separately, in <code>/Users/christopherwilson/pir/.claude/settings.local.json</code>
+(gitignored, machine-local, never committed). The one already in use here allows the <code>emcp-tools</code>
+<code>query</code> tool (a read-only SQL tool) on the main site without a repeat “Production Reads” prompt each
+call:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "permissions"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "allow"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">      "mcp__emcp-psychedelicsinrecovery-org__emcp-tools-query"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "mcp__emcp-service-psychedelicsinrecovery-org__emcp-tools-query"</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Add an entry per tool name you want pre-approved, not a blanket allow. Note: an agent cannot safely
+edit this file to unblock its own denied action — that specific pattern is itself blocked by a
+separate classifier category (“Auto-Mode Bypass”), by design. Only the human account owner should
+add entries here.</p>
+</li>
+</ul>
+<h2 id="current-server-aliases-as-of-2026-09-18">Current server aliases (as of 2026-09-18)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>emcp-psychedelicsinrecovery-org          (emcp-tools, main)</span></span>
+<span class="line"><span>emcp-service-psychedelicsinrecovery-org  (emcp-tools, service)</span></span>
+<span class="line"><span>astra-native-main                        (Astra native, main)</span></span>
+<span class="line"><span>astra-native-service                     (Astra native, service)</span></span>
+<span class="line"><span>littlebird                               (Littlebird's own MCP)</span></span></code></pre>
+<p>If you see <code>emcp-astra-*</code> referenced anywhere older, it means the same thing as <code>astra-native-*</code> —
+renamed to stop implying a relationship to the <code>emcp-tools</code> plugin that doesn’t exist.</p>
+</details>
+</div></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">PIR® · Psychedelics In Recovery™</span><a href="https://psychedelicsinrecovery.github.io" target="_blank" rel="noopener"><i class="ph ph-arrow-square-out"></i> Entry portal</a><a href="https://psychedelicsinrecovery.github.io/404.html" target="_blank" rel="noopener"><i class="ph ph-map-trifold"></i> Curious what a wrong turn looks like?</a><a href="https://www.psychedelicsinrecovery.org/contact/" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("pir-theme", current);
+        });
+      })();
+    </script></body></html>
