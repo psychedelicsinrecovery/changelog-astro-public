@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey?style=flat)](LICENSE)
 [![Live Site](https://img.shields.io/badge/%F0%9F%8C%90%20Live-changelog--astro--public-8b5cf6)](https://psychedelicsinrecovery.github.io/changelog-astro-public/)
-[![Sync](https://github.com/psychedelicsinrecovery/changelog-astro/actions/workflows/sync-public.yml/badge.svg)](https://github.com/psychedelicsinrecovery/changelog-astro/actions/workflows/sync-public.yml)
+![Sync: automated](https://img.shields.io/badge/sync-automated-8b5cf6)
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code%20CLI-blueviolet)](https://code.claude.com/docs/en/overview)
 
 ---
