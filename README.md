@@ -29,6 +29,9 @@ jargon — written for someone outside the fleet who wants to know what changed 
 This README is also rendered as the live site's own homepage — so if you're reading this on the
 website, 👋 hi, same file.
 
+🪞 Reading this on GitHub in `changelog-astro-public`? That repo is the automatic, **read-only public mirror**: the
+site is built from the private source and pushed there, so changes are made at the source.
+
 ## 🗂️ What's here
 
 - `changelog/` — one markdown file per shipped entry, `YYYY-MM-DD-short-slug.md`. Kept as a sibling
