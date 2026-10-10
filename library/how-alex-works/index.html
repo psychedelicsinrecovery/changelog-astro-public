@@ -1,0 +1,426 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How A.L.E.X. works (and why it&#39;s built this way) — Library</title><meta name="description" content="The full walkthrough of PIR's helper: how a question travels, the safety rules that run before any AI, where the knowledge comes from, the helpdesks, the web desk, privacy, hosting and costs, and the helpers around her."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="How A.L.E.X. works (and why it's built this way) — Library"><meta property="og:description" content="The full walkthrough of PIR's helper: how a question travels, the safety rules that run before any AI, where the knowledge comes from, the helpdesks, the web desk, privacy, hosting and costs, and the helpers around her."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-alex-works"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How A.L.E.X. works (and why it's built this way) — Library"><meta name="twitter:description" content="The full walkthrough of PIR's helper: how a question travels, the safety rules that run before any AI, where the knowledge comes from, the helpdesks, the web desk, privacy, hosting and costs, and the helpers around her."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("pir-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>.content-section[data-astro-cid-cx6wmmop]{max-width:760px;margin:0 auto;padding:40px 20px 60px}.back[data-astro-cid-cx6wmmop]{margin:0 0 24px}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]:hover{opacity:1}h1[data-astro-cid-cx6wmmop]{letter-spacing:-.01em;margin:0 0 8px;font-size:1.9rem;font-weight:600}.desc[data-astro-cid-cx6wmmop]{opacity:.7;margin:0 0 32px;font-size:1rem}.prose[data-astro-cid-cx6wmmop] h1{margin:40px 0 16px;font-size:1.6rem}.prose[data-astro-cid-cx6wmmop] h2{margin:32px 0 12px;font-size:1.3rem}.prose[data-astro-cid-cx6wmmop] h3{margin:24px 0 10px;font-size:1.1rem}.prose[data-astro-cid-cx6wmmop] p{margin:0 0 16px;line-height:1.7}.prose[data-astro-cid-cx6wmmop] ul,.prose[data-astro-cid-cx6wmmop] ol{padding-left:1.4em;line-height:1.7}.prose[data-astro-cid-cx6wmmop] .tldr{background:color-mix(in srgb, var(--signature) 10%, transparent);border-left:3px solid var(--signature);overflow-wrap:break-word;border-radius:12px;margin:0 0 20px;padding:14px 18px 14px 50px;font-size:.97rem;line-height:1.65;display:block;position:relative}.prose[data-astro-cid-cx6wmmop] .tldr .ph{color:var(--signature);font-size:1.25rem;position:absolute;top:16px;left:16px}.prose[data-astro-cid-cx6wmmop] .tldr>strong:first-of-type{letter-spacing:.14em;text-transform:uppercase;color:var(--signature);margin-bottom:4px;font-size:.74rem;display:block}.prose[data-astro-cid-cx6wmmop] details{border:1px solid var(--line,currentColor);border-radius:10px;margin:4px 0 24px;padding:0 16px}.prose[data-astro-cid-cx6wmmop] details[open]{padding-bottom:16px}.prose[data-astro-cid-cx6wmmop] summary{cursor:pointer;color:var(--signature);align-items:center;gap:8px;padding:14px 0;font-weight:600;display:flex}.prose[data-astro-cid-cx6wmmop] summary::-webkit-details-marker{display:none}.prose[data-astro-cid-cx6wmmop] summary .ph-caret-right{transition:transform .15s}.prose[data-astro-cid-cx6wmmop] details[open] summary .ph-caret-right{transform:rotate(90deg)}.prose[data-astro-cid-cx6wmmop] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.88em}.prose[data-astro-cid-cx6wmmop] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;font-size:.85rem;overflow-x:auto}.prose[data-astro-cid-cx6wmmop] pre code{background:0 0;padding:0}.prose[data-astro-cid-cx6wmmop] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.prose[data-astro-cid-cx6wmmop] blockquote{border-left:3px solid var(--signature,currentColor);opacity:.85;margin:0 0 16px;padding:4px 0 4px 16px}
+</style><style>@import "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap";#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}h1,h2,.brand-title{font-optical-sizing:auto;font-family:Fraunces,Georgia,serif}:root{--ink:#1a1530;--ink-soft:#6b5f8a;--signature:#5b21b6;--signature-2:#db2777;--surface:#fff;--line:#e0d9f0;--bg:#f5f3fa}:root[data-theme=dark]{--ink:#f1e9ff;--ink-soft:#a89cc8;--signature:#7c3aed;--signature-2:#f472b6;--surface:#131829;--line:#2a2550;--bg:#0a0e1a}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;padding-bottom:96px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex}.brand:hover .brand-home-icon,.brand:hover .brand-title{color:var(--signature)}.brand-favicon{width:1.15rem;height:1.15rem}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);padding:10px 20px;font-size:.78rem;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}a{color:var(--signature)}body,.content-section{color:var(--ink)}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColorDark = "#F1E9FF";
+const sparkColorDark = "#F472B6";
+const starColorLight = "#6D28D9";
+const sparkColorLight = "#DB2777";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  var starColor = starColorDark;
+  var sparkColor = sparkColorDark;
+  function syncTheme() {
+    var isLight = document.documentElement.dataset.theme === "light";
+    starColor = isLight ? starColorLight : starColorDark;
+    sparkColor = isLight ? sparkColorLight : sparkColorDark;
+  }
+  syncTheme();
+  new MutationObserver(syncTheme).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      var bx = Math.random() * W;
+      var by = Math.random() * H;
+      stars.push({
+        bx: bx,
+        by: by,
+        x: bx,
+        y: by,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><img src="/changelog-astro-public/favicon.svg" alt="" class="brand-favicon"><span class="brand-title">PIR® AstroLog</span><i class="ph ph-door-open brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Porch</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io" rel="noopener"><i class="ph ph-house"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-cx6wmmop><p class="back" data-astro-cid-cx6wmmop><a href="/changelog-astro-public/library" data-astro-cid-cx6wmmop>&larr; All library docs</a></p><h1 data-astro-cid-cx6wmmop>How A.L.E.X. works (and why it&#39;s built this way)</h1><p class="desc" data-astro-cid-cx6wmmop>The full walkthrough of PIR&#39;s helper: how a question travels, the safety rules that run before any AI, where the knowledge comes from, the helpdesks, the web desk, privacy, hosting and costs, and the helpers around her.</p><div class="prose" data-astro-cid-cx6wmmop><div class="tldr"><i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> A.L.E.X. answers only from PIR®'s own published pages and shows where every answer came from. Crisis and dosing messages are caught by plain, predictable rules <em>before</em> any AI runs. She keeps no chat logs, turns committee requests into private threads with tracked tickets, and costs PIR® nothing to run today.</div>
+<p><strong>A.L.E.X.</strong> (<em>Astral Logic Endpoint eXpander</em>, she/they) is the helper in PIR®’s Discord and on the web. She runs on
+<strong>Alexandrina</strong>, a small, open engine named for the great Library of Alexandria. Each section below opens on its own,
+so read what you’re curious about. 🌌 <em>Updated October 9, 2026.</em></p>
+<details>
+<summary><i class="ph ph-planet"></i> Meet A.L.E.X. and Alexandrina</summary>
+<ul>
+<li><strong>A.L.E.X.</strong> is PIR®’s helper: a warm, plain-spoken presence who answers questions with sources and opens
+helpdesk tickets. Her motto: <em>a lantern, not the path.</em> She never gives dosing, medical or legal advice and isn’t a
+crisis line.</li>
+<li><strong>Alexandrina</strong> is the engine underneath: <em>Astral Logic Endpoint eXpander: Automated Neural Distributed Resource
+Inferring Nexus Architecture</em> (11 words, 11 letters). It’s built so any community can have its own “library”:
+PIR® is the first, and A.L.E.X. is PIR®’s librarian.</li>
+<li><strong>One engine, many libraries.</strong> A new community is a folder of settings (its name, its pages, its crisis text,
+its desks), not a new program. That keeps the code small enough to read in an afternoon and test on every change.</li>
+<li>Her own window: <a href="https://drasticstatic.github.io/alexandrina-public-preview/">Alexandrina</a>, including the
+<a href="https://drasticstatic.github.io/alexandrina-public-preview/oracle.html">Oracle</a> for anyone lost on the site.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-path"></i> The life of a question, step by step</summary>
+<ol>
+<li><strong>You ask.</strong> Type <code>/ask</code> in Discord, tap <strong>Ask A.L.E.X.</strong> in the 🗨️ask-alex channel, or (soon) just type in that channel.</li>
+<li><strong>Safety gate.</strong> Before anything else, the message is checked against plain rules for crisis language and for
+dosing or sourcing questions. If either matches, the answer is fixed text, and no AI ever sees the message
+(see <em>Safety before AI</em>).</li>
+<li><strong>Search.</strong> The question is matched against PIR®’s indexed passages two ways at once: by <strong>keywords</strong> (a classic
+search ranking called BM25) and, when available, by <strong>meaning</strong> (embeddings). The two ranked lists are blended
+with a method called <em>reciprocal rank fusion</em>, so a passage that both methods like rises to the top.</li>
+<li><strong>Confidence check.</strong> If nothing matches well enough, A.L.E.X. says so and offers the closest pages and a ticket,
+rather than guessing.</li>
+<li><strong>Write.</strong> The best passages and the question (never your name or ID) go to a language model with strict
+instructions: answer only from these passages, cite them by number, stay short and kind.</li>
+<li><strong>Cite.</strong> Citations are cleaned up and turned into links to the exact pages used, so you can read the source yourself.</li>
+<li><strong>Reply.</strong> In Discord the answer is private to you when you use the chat panel. Tap 👍 / 👎 to say how it did.</li>
+</ol>
+<p>A typical answer takes a few seconds; the free models used during the pilot can take up to about fifteen.</p>
+</details>
+<details>
+<summary><i class="ph ph-shield-check"></i> Safety before AI</summary>
+<ul>
+<li><strong>Crisis first.</strong> Words and phrases that suggest someone may be in danger trigger PIR®’s crisis resources right away,
+copied verbatim from PIR®’s <a href="https://www.psychedelicsinrecovery.org/crisis-resources/">Crisis Resources</a> page
+(988 in the US, Crisis Text Line, Fireside Project, Samaritans in the UK and more). No AI is involved, so nothing can
+go wrong in the wording, and it’s instant.</li>
+<li><strong>Dosing and sourcing.</strong> Questions about doses, combinations or getting substances get a kind, fixed reply that
+points to PIR®’s <a href="https://www.psychedelicsinrecovery.org/safety-and-ethics/">Safety &amp; Ethics</a> page.</li>
+<li><strong>Medical and legal questions</strong> are steered to qualified professionals.</li>
+<li><strong>Tested every time.</strong> An automated test suite checks that crisis messages always route to resources (100%), that
+refusals hold, and that private committee material can never appear in a public answer. Nothing ships if they fail.</li>
+<li><strong>In the helpdesks too.</strong> If a ticket or web-desk message contains crisis language, the person sees crisis
+resources immediately instead of a “ticket opened” message.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-books"></i> Where the knowledge comes from</summary>
+<ul>
+<li><strong>PIR®’s two websites</strong>, archived as readable Markdown on GitHub (the <code>wordpress-crawls</code> archive): every page of
+psychedelicsinrecovery.org and the service site.</li>
+<li><strong>Published literature:</strong> the 12 Steps, 12 Traditions, Preamble, Guiding Principles, Safety Guidelines, Integration
+and a Plan of Action, the FAQ and meeting scripts, from the Literature Committee’s
+<a href="https://psychedelicsinrecovery.github.io/literature-committee-public/">public library</a>.</li>
+<li><strong>The helpdesk how-to guides.</strong></li>
+<li>All of it is split into a few hundred short passages and indexed. A <strong>reindex</strong> automation rebuilds the index when
+the sources change.</li>
+<li><strong>What’s never included:</strong> unpublished committee manuscripts, private repositories, members’ messages, and anything
+not already public on PIR®’s sites.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-pen-nib"></i> The writers: language models with a fallback chain</summary>
+<ul>
+<li>During the pilot, answers are written by <strong>open models hosted by NVIDIA</strong> on their free tier. <strong>Claude Haiku</strong>
+(Anthropic) can be switched on with one setting if the Tech Committee approves a small monthly budget.</li>
+<li>Models are tried <strong>in order</strong>, each with a time limit. If one is slow or retired, the next takes over.</li>
+<li>If <strong>every</strong> model fails, A.L.E.X. says so plainly and shows the most relevant pages and a ticket button, so
+there’s never a made-up answer.</li>
+<li>Lesson learned: free models can be retired without warning. A health page reports which models are active, and a
+monthly reminder checks for retirements.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-ticket"></i> The helpdesks: tickets that never get lost</summary>
+<table>
+<thead>
+<tr>
+<th>Desk</th>
+<th>For</th>
+<th>Ticket IDs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/techcom</code></td>
+<td>Websites, email, forms, Zoom, calendar</td>
+<td><code>TECH-12</code></td>
+</tr>
+<tr>
+<td><code>/litcom</code></td>
+<td>Literature requests, corrections, ideas</td>
+<td><code>LIT-12</code></td>
+</tr>
+<tr>
+<td><code>/github</code></td>
+<td>PIR®’s GitHub repos, Pages and access</td>
+<td><code>GH-12</code></td>
+</tr>
+<tr>
+<td><code>/pr</code></td>
+<td>Social media, press, brand, De Vine News</td>
+<td><code>PR-12</code></td>
+</tr>
+<tr>
+<td><code>/mod</code></td>
+<td>Talking to the moderators privately</td>
+<td>(Discord only)</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>A short form asks for a subject, details and (optionally) urgency.</li>
+<li>A <strong>private thread</strong> opens that only you and that committee can see, and the committee is pinged.</li>
+<li>Problems and requests become a <strong>GitHub Issue</strong>; ideas become a <strong>GitHub Discussion</strong>, in private desk repositories.</li>
+<li>Committee members press <strong>Claim → In progress → Resolved</strong>; the labels on GitHub follow automatically.</li>
+<li>Resolved threads are archived; a <strong>Reopen</strong> button brings them back. <code>/ticket TECH-12</code> shows status any time.</li>
+<li>You’re recorded only as a <strong>scrambled tag</strong> (a one-way hash), never your Discord ID.</li>
+<li><strong>Volunteering uses the same path:</strong> the <strong>Serve</strong> buttons in 🛠service-opportunities open a desk form prefilled
+with “I’d like to serve”, so every offer of help reaches a real person.</li>
+</ol>
+</details>
+<details>
+<summary><i class="ph ph-chat-circle-dots"></i> The 🗨️ask-alex chat and conversation mode</summary>
+<ul>
+<li><strong>The chat panel</strong> (pinned in 🗨️ask-alex) works with buttons and forms: <strong>Ask A.L.E.X.</strong>, <strong>Ask a follow-up</strong>
+(she remembers your last question inside the private message itself, not in a database), and <strong>Turn into a
+ticket</strong>, which suggests the right desk and fills in the form for you.</li>
+<li><strong>Conversation mode</strong> lets members simply type in 🗨️ask-alex; A.L.E.X. replies in a thread. This is the one place
+she reads messages, and only in that channel and its threads. It runs on a tiny always-on server, because Discord
+needs a live connection for typed messages. Nothing is stored, and the privacy policy names this exception.</li>
+<li>Gentle rate limits keep it calm for everyone.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-envelope-simple"></i> The web helpdesk (no Discord needed)</summary>
+<ul>
+<li>At the <a href="https://psychedelicsinrecovery.github.io/alex-desk-public/portal.html">web desk</a>, anyone can open and follow
+a ticket.</li>
+<li><strong>Password-free sign-in:</strong> you enter your email and get a one-time link that works <strong>once, for 15 minutes</strong>. No
+password ever exists to leak, and there’s no account to create.</li>
+<li><strong>Your email address is never stored.</strong> Tickets are matched to you by a scrambled tag of your address, the same way
+Discord tickets use a tag instead of an ID.</li>
+<li>Sign-in emails come from PIR®’s own <strong>helpdesk@</strong> mailbox, with a backup sender if it’s ever down. Replies to that
+email reach a human.</li>
+<li>Committee replies on GitHub show up under <strong>My tickets</strong>, and your replies go back to the committee’s thread.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-lock-key"></i> Privacy by design</summary>
+<table>
+<thead>
+<tr>
+<th>Kept</th>
+<th>Never kept</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tickets you choose to open (subject, details, status) in private repositories</td>
+<td>Your questions to <code>/ask</code> or the chat panel</td>
+</tr>
+<tr>
+<td>A scrambled tag linking you to your tickets</td>
+<td>Your Discord ID, email address or chat history</td>
+</tr>
+<tr>
+<td>Counts and timings for health checks (no message text)</td>
+<td>Anything from channels other than #ask-alex</td>
+</tr>
+</tbody>
+</table>
+<p>Full details, in plain language: the <a href="https://psychedelicsinrecovery.github.io/alex-desk-public/privacy.html">privacy notice</a>.</p>
+</details>
+<details>
+<summary><i class="ph ph-cloud"></i> Where it runs, what it costs, who owns it</summary>
+<ul>
+<li><strong>Vercel</strong> (free tier) handles Discord commands, buttons and the web desk.</li>
+<li><strong>GitHub</strong> (free) hosts the pages, the tickets and the automations.</li>
+<li><strong>A Google Cloud e2-micro server</strong> (free tier) keeps the conversation-mode connection open. Its public internet
+address costs about <strong>$3.65 a month</strong> once the trial credit ends in early 2027; a member covers it, and it’s recorded
+on PIR®’s ledger.</li>
+<li>Accounts belong to PIR®, more than one trusted servant can reach them, and every step is written down, so A.L.E.X.
+never depends on one person. She can be paused instantly and switched off completely without losing any ticket.</li>
+<li>More: <a href="https://psychedelicsinrecovery.github.io/alex-desk-public/sustainability.html">Sustainability</a>.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-users-three"></i> The helpers around A.L.E.X.</summary>
+<p>PIR®’s Discord has a small cast, each with a name, a voice and one job:</p>
+<ul>
+<li><strong>☄️ C.A.T.A.L.Y.S.T.</strong> (<em>Collaborative Agents Tending And Lifting Your Service Together</em>): the Tech Committee’s
+behind-the-scenes helpers (🌿 Alfred, 🌵 Cosmos, ☕ Littlebird) who post announcements, keep channel descriptions
+tidy and send reminders. They never read members’ messages.</li>
+<li><strong>🧚 C.A.R.L.</strong> (roles), <strong>🛡️ D.Y.N.O.</strong> (spam safety), <strong>🗓️ S.E.S.H.</strong> (events), <strong>🧵 H.Y.P.H.A.</strong> (keeps threads
+alive) and <strong>🎨 V.I.S.I.O.N.</strong> (art).</li>
+<li>Real bots show Discord’s <strong>APP</strong> badge and never DM you first asking for anything. The full cast:
+<a href="https://github.com/psychedelicsinrecovery/tech-committee-public/blob/main/docs/public/DISCORD-PERSONAS.md">Personas</a>.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-compass"></i> Design choices and lessons learned</summary>
+<ul>
+<li><strong>Commands and forms first, chat-reading last.</strong> Most of A.L.E.X. uses Discord’s “interactions” model: she only
+receives what you type into her own commands and forms. Reading messages is limited to #ask-alex.</li>
+<li><strong>Built in the open, in PIR®’s own organization.</strong> Private working repositories publish filtered public copies
+automatically, by an allowlist, so private material can’t slip out.</li>
+<li><strong>Firecrawl Alexandria isn’t our database.</strong> It’s a catalog of outside data sources; PIR®’s knowledge lives in its
+own small index. Alexandria may later power a clearly labeled research feature.</li>
+<li><strong>Least privilege.</strong> Each app gets only the permissions its job needs, and powerful ones are granted temporarily.</li>
+<li><strong>A person’s edit always wins.</strong> Automations that update channel descriptions never overwrite something a person
+changed by hand.</li>
+<li><strong>Secrets never travel through chat or code.</strong> Diagnostics can say “this key works” without ever showing it.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-signpost"></i> What's next, and how to help</summary>
+<ul>
+<li>Next up: conversation mode going live, a private-group request desk, living status boards, a cached FAQ for
+instant answers, and links that jump straight to the quoted sentence. Later: a testnet
+<a href="https://psychedelicsinrecovery.github.io/alex-desk-public/web3.html">Web3 desk</a> preview.</li>
+<li>The full plan: <a href="https://psychedelicsinrecovery.github.io/alex-desk-public/roadmap.html">Roadmap</a>.</li>
+<li><strong>Help build it:</strong> no coding needed. Tap <strong>Serve with TechCom</strong> in PIR®’s Discord, or open a <code>/techcom</code> ticket.</li>
+</ul>
+</details>
+</div></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">PIR® · Psychedelics In Recovery™</span><a href="https://psychedelicsinrecovery.github.io" rel="noopener"><i class="ph ph-house"></i> Entry portal</a><a href="/changelog-astro-public/"><i class="ph ph-door-open"></i> Astro Porch</a><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io/404.html" rel="noopener"><i class="ph ph-map-trifold"></i> Curious what a wrong turn looks like?</a><a href="https://github.com/psychedelicsinrecovery/changelog-astro-public" target="_blank" rel="noopener"><i class="ph ph-github-logo"></i> Source repo</a><a href="https://www.psychedelicsinrecovery.org/contact/" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("pir-theme", current);
+        });
+      })();
+    </script></body></html>

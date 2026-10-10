@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Why the site got slow (and why it wasn&#39;t Claude, Littlebird, or AI) — Library</title><meta name="description" content="The real, traced-to-the-evidence story of the PIR® slowdown — what we checked, what WPX found in server logs, what's fixed, and a plain-language guide to bots vs. AI agents vs. simple automation."><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"><meta property="og:title" content="Why the site got slow (and why it wasn't Claude, Littlebird, or AI) — Library"><meta property="og:description" content="The real, traced-to-the-evidence story of the PIR® slowdown — what we checked, what WPX found in server logs, what's fixed, and a plain-language guide to bots vs. AI agents vs. simple automation."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/why-the-site-was-slow-and-it-wasnt-ai"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Why the site got slow (and why it wasn't Claude, Littlebird, or AI) — Library"><meta name="twitter:description" content="The real, traced-to-the-evidence story of the PIR® slowdown — what we checked, what WPX found in server logs, what's fixed, and a plain-language guide to bots vs. AI agents vs. simple automation."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><script>
+      (function () {
+        var saved = localStorage.getItem("pir-theme");
+        var theme = saved === "light" || saved === "dark" ? saved : "dark";
+        document.documentElement.dataset.theme = theme;
+      })();
+    </script><style>.content-section[data-astro-cid-cx6wmmop]{max-width:760px;margin:0 auto;padding:40px 20px 60px}.back[data-astro-cid-cx6wmmop]{margin:0 0 24px}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]{opacity:.7;font-family:monospace;font-size:.85rem;text-decoration:none}.back[data-astro-cid-cx6wmmop] a[data-astro-cid-cx6wmmop]:hover{opacity:1}h1[data-astro-cid-cx6wmmop]{letter-spacing:-.01em;margin:0 0 8px;font-size:1.9rem;font-weight:600}.desc[data-astro-cid-cx6wmmop]{opacity:.7;margin:0 0 32px;font-size:1rem}.prose[data-astro-cid-cx6wmmop] h1{margin:40px 0 16px;font-size:1.6rem}.prose[data-astro-cid-cx6wmmop] h2{margin:32px 0 12px;font-size:1.3rem}.prose[data-astro-cid-cx6wmmop] h3{margin:24px 0 10px;font-size:1.1rem}.prose[data-astro-cid-cx6wmmop] p{margin:0 0 16px;line-height:1.7}.prose[data-astro-cid-cx6wmmop] ul,.prose[data-astro-cid-cx6wmmop] ol{padding-left:1.4em;line-height:1.7}.prose[data-astro-cid-cx6wmmop] .tldr{background:color-mix(in srgb, var(--signature) 10%, transparent);border-left:3px solid var(--signature);overflow-wrap:break-word;border-radius:12px;margin:0 0 20px;padding:14px 18px 14px 50px;font-size:.97rem;line-height:1.65;display:block;position:relative}.prose[data-astro-cid-cx6wmmop] .tldr .ph{color:var(--signature);font-size:1.25rem;position:absolute;top:16px;left:16px}.prose[data-astro-cid-cx6wmmop] .tldr>strong:first-of-type{letter-spacing:.14em;text-transform:uppercase;color:var(--signature);margin-bottom:4px;font-size:.74rem;display:block}.prose[data-astro-cid-cx6wmmop] details{border:1px solid var(--line,currentColor);border-radius:10px;margin:4px 0 24px;padding:0 16px}.prose[data-astro-cid-cx6wmmop] details[open]{padding-bottom:16px}.prose[data-astro-cid-cx6wmmop] summary{cursor:pointer;color:var(--signature);align-items:center;gap:8px;padding:14px 0;font-weight:600;display:flex}.prose[data-astro-cid-cx6wmmop] summary::-webkit-details-marker{display:none}.prose[data-astro-cid-cx6wmmop] summary .ph-caret-right{transition:transform .15s}.prose[data-astro-cid-cx6wmmop] details[open] summary .ph-caret-right{transform:rotate(90deg)}.prose[data-astro-cid-cx6wmmop] code{background:color-mix(in srgb, currentColor 8%, transparent);border-radius:4px;padding:.1em .35em;font-family:ui-monospace,SF Mono,monospace;font-size:.88em}.prose[data-astro-cid-cx6wmmop] pre{background:color-mix(in srgb, currentColor 6%, transparent);border-radius:10px;padding:16px;font-size:.85rem;overflow-x:auto}.prose[data-astro-cid-cx6wmmop] pre code{background:0 0;padding:0}.prose[data-astro-cid-cx6wmmop] hr{border:none;border-top:1px solid var(--line,#ddd);margin:32px 0}.prose[data-astro-cid-cx6wmmop] blockquote{border-left:3px solid var(--signature,currentColor);opacity:.85;margin:0 0 16px;padding:4px 0 4px 16px}
+</style><style>@import "https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap";#starfield-canvas[data-astro-cid-dac3vbt4]{z-index:-1;pointer-events:none;position:fixed;inset:0}h1,h2,.brand-title{font-optical-sizing:auto;font-family:Fraunces,Georgia,serif}:root{--ink:#1a1530;--ink-soft:#6b5f8a;--signature:#5b21b6;--signature-2:#db2777;--surface:#fff;--line:#e0d9f0;--bg:#f5f3fa}:root[data-theme=dark]{--ink:#f1e9ff;--ink-soft:#a89cc8;--signature:#7c3aed;--signature-2:#f472b6;--surface:#131829;--line:#2a2550;--bg:#0a0e1a}*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);margin:0;padding-bottom:96px;font-family:system-ui,-apple-system,Segoe UI,sans-serif}.site-header{border-bottom:1px solid var(--line);flex-wrap:wrap;justify-content:space-between;align-items:center;gap:.75rem;max-width:780px;margin:0 auto;padding:16px 20px;display:flex}.brand{color:var(--ink);align-items:center;gap:.4rem;font-size:.95rem;font-weight:700;text-decoration:none;display:inline-flex}.brand:hover .brand-home-icon,.brand:hover .brand-title{color:var(--signature)}.brand-favicon{width:1.15rem;height:1.15rem}.brand-home-icon{color:var(--signature);font-size:.9rem}.brand-sep{color:var(--line)}.brand-home-label{color:var(--ink-soft);font-size:.85rem;font-weight:400}.nav-links{flex-wrap:wrap;align-items:center;gap:1.1rem;display:flex}.nav-links a{color:var(--signature);align-items:center;gap:.35rem;font-size:.85rem;text-decoration:none;display:inline-flex}.nav-links a:hover{text-decoration:underline}.theme-toggle{border:1px solid var(--line);background:var(--surface);width:30px;height:30px;color:var(--signature);cursor:pointer;border-radius:999px;justify-content:center;align-items:center;padding:0;display:inline-flex}.theme-icon-light,.theme-icon-dark{font-size:.95rem;display:none}:root[data-theme=dark] .theme-icon-light,:root:not([data-theme=dark]) .theme-icon-dark{display:inline}.universal-footer{z-index:40;-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb, var(--bg) 88%, transparent);border-top:1px solid var(--line);color:var(--ink-soft);padding:10px 20px;font-size:.78rem;position:fixed;bottom:0;left:0;right:0}.footer-inner{text-align:center;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 18px;max-width:900px;margin:0 auto;display:flex}.footer-inner a{color:var(--ink-soft);align-items:center;gap:.3rem;text-decoration:none;display:inline-flex}.footer-inner a:hover{color:var(--signature)}.footer-brand{color:var(--ink);font-weight:600}a{color:var(--signature)}body,.content-section{color:var(--ink)}
+</style></head><body><canvas id="starfield-canvas" aria-hidden="true" data-astro-cid-dac3vbt4></canvas><script>(function(){const starColorDark = "#F1E9FF";
+const sparkColorDark = "#F472B6";
+const starColorLight = "#6D28D9";
+const sparkColorLight = "#DB2777";
+
+(function () {
+  var canvas = document.getElementById("starfield-canvas");
+  if (!canvas) return;
+  var ctx = canvas.getContext("2d");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var stars = [];
+  var sparks = [];
+  var mouse = { x: -9999, y: -9999 };
+  var lastMouse = { x: -9999, y: -9999 };
+  var W, H;
+
+  var starColor = starColorDark;
+  var sparkColor = sparkColorDark;
+  function syncTheme() {
+    var isLight = document.documentElement.dataset.theme === "light";
+    starColor = isLight ? starColorLight : starColorDark;
+    sparkColor = isLight ? sparkColorLight : sparkColorDark;
+  }
+  syncTheme();
+  new MutationObserver(syncTheme).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initStars() {
+    stars = [];
+    var count = Math.min(140, Math.floor((W * H) / 9000));
+    for (var i = 0; i < count; i++) {
+      var bx = Math.random() * W;
+      var by = Math.random() * H;
+      stars.push({
+        bx: bx,
+        by: by,
+        x: bx,
+        y: by,
+        r: Math.random() * 1.4 + 0.4,
+        bright: Math.random() < 0.22,
+        phase: Math.random() * Math.PI * 2,
+        speed: 0.4 + Math.random() * 0.6,
+      });
+    }
+  }
+
+  function onResize() {
+    resize();
+    initStars();
+  }
+  window.addEventListener("resize", onResize);
+  resize();
+  initStars();
+
+  var MAGNET_RADIUS = 90;
+
+  function drawSpike(x, y, r) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.strokeStyle = starColor;
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 0.6;
+    ctx.beginPath();
+    ctx.moveTo(-r * 2.6, 0);
+    ctx.lineTo(r * 2.6, 0);
+    ctx.moveTo(0, -r * 2.6);
+    ctx.lineTo(0, r * 2.6);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function updateStars(t) {
+    for (var i = 0; i < stars.length; i++) {
+      var s = stars[i];
+      var dx = s.bx - mouse.x;
+      var dy = s.by - mouse.y;
+      var dist = Math.sqrt(dx * dx + dy * dy);
+      var tx = s.bx;
+      var ty = s.by;
+      if (dist < MAGNET_RADIUS) {
+        var f = 1 - dist / MAGNET_RADIUS;
+        var push = f * f * 26;
+        var ang = Math.atan2(dy, dx);
+        tx = s.bx + Math.cos(ang) * push;
+        ty = s.by + Math.sin(ang) * push;
+      }
+      s.x += (tx - s.x) * 0.18;
+      s.y += (ty - s.y) * 0.18;
+
+      var twinkle = 0.5 + 0.5 * Math.sin(t * 0.001 * s.speed + s.phase);
+      var alpha = s.bright ? 0.55 + twinkle * 0.45 : 0.22 + twinkle * 0.3;
+      ctx.beginPath();
+      ctx.fillStyle = starColor;
+      ctx.globalAlpha = alpha;
+      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+      ctx.fill();
+      if (s.bright) drawSpike(s.x, s.y, s.r);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function spawnSparks(x, y) {
+    var dx = x - lastMouse.x;
+    var dy = y - lastMouse.y;
+    if (lastMouse.x < -9000) {
+      lastMouse.x = x;
+      lastMouse.y = y;
+      return;
+    }
+    for (var i = 0; i < 2; i++) {
+      if (sparks.length > 80) sparks.shift();
+      var jitter = (Math.random() - 0.5) * 0.6;
+      sparks.push({
+        x: x,
+        y: y,
+        vx: dx * 0.12 + jitter,
+        vy: dy * 0.12 + jitter,
+        life: 1,
+        size: 1 + Math.random() * 1.6,
+      });
+    }
+    lastMouse.x = x;
+    lastMouse.y = y;
+  }
+
+  function updateSparks() {
+    for (var i = sparks.length - 1; i >= 0; i--) {
+      var p = sparks[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vx *= 0.92;
+      p.vy *= 0.92;
+      p.vy += 0.01;
+      p.life -= 0.022;
+      if (p.life <= 0) {
+        sparks.splice(i, 1);
+        continue;
+      }
+      ctx.beginPath();
+      ctx.fillStyle = sparkColor;
+      ctx.globalAlpha = Math.max(p.life, 0);
+      ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  window.addEventListener("mousemove", function (e) {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    spawnSparks(e.clientX, e.clientY);
+  });
+  window.addEventListener("mouseleave", function () {
+    mouse.x = -9999;
+    mouse.y = -9999;
+  });
+
+  function loop(t) {
+    ctx.clearRect(0, 0, W, H);
+    if (!reduced) {
+      updateStars(t || 0);
+      updateSparks();
+    }
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+})();
+})();</script><header class="site-header"><a href="/changelog-astro-public/" class="brand"><img src="/changelog-astro-public/favicon.svg" alt="" class="brand-favicon"><span class="brand-title">PIR® AstroLog</span><i class="ph ph-door-open brand-home-icon"></i><span class="brand-sep">|</span><span class="brand-home-label">Porch</span></a><nav class="nav-links"><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io" rel="noopener"><i class="ph ph-house"></i> GitHub Pages entry portal</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light/dark mode"><i class="ph ph-sun theme-icon-light"></i><i class="ph ph-moon theme-icon-dark"></i></button></nav></header><main><section class="content-section" data-astro-cid-cx6wmmop><p class="back" data-astro-cid-cx6wmmop><a href="/changelog-astro-public/library" data-astro-cid-cx6wmmop>&larr; All library docs</a></p><h1 data-astro-cid-cx6wmmop>Why the site got slow (and why it wasn&#39;t Claude, Littlebird, or AI)</h1><p class="desc" data-astro-cid-cx6wmmop>The real, traced-to-the-evidence story of the PIR® slowdown — what we checked, what WPX found in server logs, what&#39;s fixed, and a plain-language guide to bots vs. AI agents vs. simple automation.</p><div class="prose" data-astro-cid-cx6wmmop><div class="tldr"><i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> The site has been slow on and off for a while — longer than any AI tooling has been involved, confirmed by WPX hosting's own server logs. The real cause: ordinary search-engine/SEO bots (not AI) repeatedly hitting our events calendar's "live" pages, which can't be cached and forced the server to redo heavy work on every bot visit. We've confirmed this with real before/after numbers, not just WPX's word for it. Alfred and Littlebird structurally cannot cause this kind of slowdown — they connect through a private, authenticated tool, never as public bot traffic. Below: the actual investigation, in full, in accordions so you can skip to what you care about.</div>
+<details>
+<summary><i class="ph ph-caret-right"></i> 🔍 The investigation, blow by blow →</summary>
+<p>This section is the real working log, not a cleaned-up summary — the same level of detail Alfred and
+Christopher were working with in real time, so anyone can see exactly what was checked and why,
+instead of just taking “it’s fixed” on faith.</p>
+<p><strong>First correction, up front</strong>: the slowness itself goes back further than late September — well
+before Claude or Littlebird had any real hands-on access to the site. That timing is important,
+because it’s the single clearest piece of evidence that AI tooling was never the cause.</p>
+<h3 id="round-one-the-caching-settings-were-quietly-broken">Round one: the caching settings were quietly broken</h3>
+<p>While chasing a performance complaint, Alfred read W3 Total Cache’s actual saved configuration file
+directly off the server (not just the admin screen, which can be misleading) and found that three
+important settings — <strong>Minify</strong>, <strong>Database Cache</strong>, and <strong>Object Cache</strong> — had all been silently
+switched off. The file’s own leftover data showed it had last been saved from one specific settings
+tab, which is a known W3 Total Cache quirk: saving one tab can silently reset checkboxes on other
+tabs that weren’t part of that save. Nobody did this on purpose; it was the plugin’s own save
+behavior.</p>
+<p>With Minify off, the browser had to download <strong>93 separate CSS and JavaScript files</strong> on every page
+load instead of a handful of combined ones. Turning Minify, DB Cache, and Object Cache back on
+dropped that to <strong>15 files</strong>, and the site’s own internal performance score went from <strong>80 to 88</strong>
+immediately. Real improvement — but the site was <em>still</em> reported as slow afterward, which meant
+there was more going on.</p>
+<h3 id="round-two-finding-a-second-more-serious-pattern">Round two: finding a second, more serious pattern</h3>
+<p>To rule things in or out properly, Alfred fetched a handful of real pages directly and timed them.
+Pages that hadn’t been recently visited (and so weren’t cached yet) took <strong>3 to over 11 seconds</strong> to
+generate — <code>/contact/</code> alone took 11.4 seconds on a cold hit. Once a page was cached, the same page
+loaded in <strong>150–400 milliseconds</strong>. That gap pointed at two separate things worth checking: how long
+the server takes to build an <em>uncached</em> page, and whether something was stopping pages from staying
+cached in the first place.</p>
+<p>Then, while proactively trying to “warm” the cache by requesting many pages at once, something more
+concerning showed up: firing about 30 requests to the site in close succession caused <strong>more than
+half of them to time out completely after 10 seconds, with nothing returned at all</strong> — not slow,
+just silence. That specific pattern (several requests at once failing outright) usually points to a
+server running out of available worker processes, not just a slow page.</p>
+<h3 id="taking-it-to-wpx-with-real-evidence-instead-of-a-vague-complaint">Taking it to WPX, with real evidence instead of a vague complaint</h3>
+<p>At this point the question shifted from “what can we fix in WordPress” to “what are our hosting
+plan’s actual limits,” so a support ticket went to <strong>WPX</strong> with the exact numbers above — not “the
+site feels slow,” but specific timings, specific pages, and the exact failure pattern.</p>
+<p>WPX’s own team confirmed, from their side:</p>
+<ul>
+<li><strong>3 PHP worker processes per website</strong> on our current plan (a hard ceiling on how many requests can
+be handled genuinely at the same time).</li>
+<li><strong>A 200-requests-per-minute rate limit</strong>, which is normally hard to hit by accident.</li>
+<li>That this particular limit is part of their DDoS-protection layer and isn’t something that gets
+raised just by asking.</li>
+</ul>
+<p>They also pulled real server logs and found two concrete things:</p>
+<ol>
+<li><strong><code>wp-cron</code> (WordPress’s internal scheduler) was firing more than once per second</strong> — far more
+often than it should. WPX fixed this directly: they turned off the automatic trigger and replaced
+it with a proper server-level task running every 5 minutes.</li>
+<li><strong>The real driver of the CPU spikes: automated bots repeatedly hitting the events calendar’s
+“live” query pages</strong> — specifically ones using the calendar’s dynamic view settings
+(technical names: <code>eventDisplay</code>, <code>posts_per_page</code>, <code>tribe-bar-date</code>). Calendar views like this
+show real-time data and can’t be saved as a static cached page, so <em>every single bot visit</em> forced
+the server to do real, heavy work from scratch. One of the bots WPX named was <strong>MJ12Bot</strong>, which
+belongs to <strong>Majestic</strong>, a UK company that crawls websites to build a commercial link-analysis
+database — a completely ordinary, non-AI, SEO-industry bot that visits a huge share of public
+websites on the internet, PIR® included.</li>
+</ol>
+<p>WPX added a protective check specifically on those calendar query pages and confirmed, from their own
+monitoring, that CPU usage stabilized within days.</p>
+<h3 id="closing-it-out-with-our-own-numbers-not-just-a-vendors-word">Closing it out, with our own numbers, not just a vendor’s word</h3>
+<p>Rather than call it done because WPX said so, the events calendar plugin (confirmed to actually be
+the thing generating those bot-bait pages) was temporarily switched off entirely, every cache was
+cleared, and the same pages that were timed at the start were timed again.</p>
+<p><strong>Before</strong> (the original cold readings): <code>/contact/</code> 11.4s, <code>/resources/</code> 9.3s, <code>/history/</code> 4.4s,
+<code>/vision/</code> 3.1s.</p>
+<p><strong>After disabling the plugin</strong> (fresh cold readings, same pages): <code>/contact/</code> 3.3s, <code>/resources/</code>
+4.5s, <code>/history/</code> 2.9s, <code>/vision/</code> 2.9s — roughly <strong>2–3× faster even on an uncached hit</strong>, before any
+caching benefit at all.</p>
+<p><strong>After properly warming the cache</strong> (every real page on both sites fetched once, deliberately, one
+at a time rather than all at once — mindful of that 3-worker ceiling): every page tested on the main
+site loaded in well under a second on the next visit (most around 0.3–0.9s), and the service site
+came in consistently under half a second. These aren’t projections — they’re real, just-measured
+numbers.</p>
+<p><strong>One honest caveat, left open on purpose</strong>: a separate, smaller mystery is still unresolved with
+WPX — a direct database change to one small script not showing up live for over an hour, even on a
+response that WPX’s own headers said wasn’t served from cache. It’s a real oddity, flagged to WPX
+directly, tracked, and not urgent — nothing about it suggests it’s connected to the slowness above,
+and it’s called out here rather than quietly dropped.</p>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> 🤖 "Bot" doesn't mean "AI" — the actual difference →</summary>
+<p>This mix-up is extremely common, so it’s worth explaining clearly, once, for everyone:</p>
+<ul>
+<li><strong>A bot</strong>, in the context of a website, is just <em>any computer program that visits web pages
+automatically</em> instead of a person clicking around. Search engines run bots to find and index
+pages (that’s how PIR® shows up in Google). SEO companies like Majestic run bots to study links
+between sites. Spammers run bots too. None of this requires AI — the first web bots existed in the
+1990s, decades before anything like Claude existed.</li>
+<li><strong>An AI agent</strong> (like Alfred, who writes this changelog, or Littlebird) is something different
+entirely: a person directs it, in a private conversation, to go do a specific task — write
+something, fix something, look something up — and it reports back. It isn’t out crawling the
+public internet on its own; it’s doing exactly what it was asked, when it was asked, the way the
+investigation above shows step by step.</li>
+<li><strong>A bot’s name is just a label it picks for itself</strong>, and anyone can type anything there — it
+proves nothing. WPX’s logs mentioning traffic “calling itself Claude” is not evidence that
+Anthropic (the company that makes Claude) did anything; it only means <em>some</em> automated visitor
+used that word in a header nobody checks, the same way anyone can put any name in an email’s “From”
+field.</li>
+</ul>
+<p>The structural reason AI tools couldn’t have caused this: <strong>Alfred and Littlebird never visit the
+site the way a bot or a regular visitor does.</strong> They connect through a private, logged-in tool
+(called “EMCP Tools”) built specifically for this — not through public pages, not anonymously, and
+not in a way that shows up as “bot traffic” at all. It’s simply a different road into the site
+entirely, and the investigation above — reading actual config files, timing actual pages, finding an
+actual plugin — is what that road looks like in practice: deliberate, human-directed, and visible.</p>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> ⌨️ CLI, MCP, OAuth — a plain-language glossary →</summary>
+<p>Since PIR® will keep leaning on these tools, here’s what the jargon actually means:</p>
+<ul>
+<li><strong>CLI</strong> (command-line interface): a text-based way of giving a computer program instructions,
+instead of clicking buttons. This is how Christopher and Alfred mostly work together — it’s not
+mysterious, it’s just typing instead of clicking, the same way the investigation above was carried
+out as a real back-and-forth conversation, not something running unattended.</li>
+<li><strong>MCP</strong> (Model Context Protocol): the specific, permissioned connection that lets an AI assistant
+like Alfred actually <em>do</em> things on a real site (read a page, fix a setting) instead of only
+talking about it. Every MCP connection is something a person deliberately set up and can remove.</li>
+<li><strong>OAuth</strong>: a standard way of granting an app access to part of an account <em>without</em> ever handing
+over a password. If you’ve ever clicked “Sign in with Google,” that’s OAuth. It’s a security
+feature, not a risk.</li>
+<li><strong>Agent</strong>: a general term for an AI assistant that can take real actions (not just chat) toward a
+goal a person gave it — check its work, look things up, make a change — while reporting back what
+it did. Still always person-directed; “agent” describes capability, not autonomy.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> 🛍️ Also not AI: our order confirmation emails →</summary>
+<p>Someone recently wondered if our WooCommerce order confirmation emails were AI-generated. They’re
+not — they’re simple, rule-based automation: “when an order is placed, send this pre-written
+template.” No AI writes or decides anything there; it’s the same kind of automation email services
+have used for 20+ years, just running on our store. Worth naming explicitly, since “automated” and
+“AI” get conflated just as often as “bot” and “AI” do.</p>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> ✅ Where things stand right now →</summary>
+<ul>
+<li><strong>Runaway background scheduler</strong>: found and fixed by WPX (automatic <code>wp-cron</code> replaced with a
+clean 5-minute server cron).</li>
+<li><strong>Bot traffic on the events calendar</strong>: found, confirmed with real timing data, protected by WPX’s
+own CAPTCHA rule, and the plugin is temporarily off site-wide while a longer-term, less
+bot-exposed setup is worked out.</li>
+<li><strong>Measured result</strong>: cold-page load times down roughly 2–3× even before caching kicks in, and
+every real page on both sites now loads in under a second once warmed — re-confirmed today with
+fresh timings, not assumed.</li>
+<li><strong>A separate, smaller caching oddity</strong> on the service subdomain: still open with WPX, tracked,
+explicitly not urgent, and explicitly not hidden.</li>
+<li><strong>Alfred and Littlebird</strong>: cleared, structurally, not just by claim — a completely different
+connection into the site than how bots or regular traffic ever arrive.</li>
+</ul>
+<p>PIR® is going to keep using AI tools like Claude and Littlebird going forward — carefully, with real
+humans directing every action, the same way this whole investigation happened — because they
+genuinely help a small, volunteer-run fellowship get more done than its people alone have time for.
+Hopefully this makes the “how” a lot less mysterious, and a lot easier to trust. 🙏</p>
+</details>
+</div></section></main><footer class="universal-footer"><div class="footer-inner"><span class="footer-brand">PIR® · Psychedelics In Recovery™</span><a href="https://psychedelicsinrecovery.github.io" rel="noopener"><i class="ph ph-house"></i> Entry portal</a><a href="/changelog-astro-public/"><i class="ph ph-door-open"></i> Astro Porch</a><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise"></i> Changelog</a><a href="/changelog-astro-public/library"><i class="ph ph-books"></i> Library</a><a href="https://psychedelicsinrecovery.github.io/404.html" rel="noopener"><i class="ph ph-map-trifold"></i> Curious what a wrong turn looks like?</a><a href="https://github.com/psychedelicsinrecovery/changelog-astro-public" target="_blank" rel="noopener"><i class="ph ph-github-logo"></i> Source repo</a><a href="https://www.psychedelicsinrecovery.org/contact/" target="_blank" rel="noopener"><i class="ph ph-chat-circle-text"></i> Reach out</a></div></footer><script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        if (!btn) return;
+        btn.addEventListener("click", function () {
+          var current = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+          document.documentElement.dataset.theme = current;
+          localStorage.setItem("pir-theme", current);
+        });
+      })();
+    </script></body></html>
