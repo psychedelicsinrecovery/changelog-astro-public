@@ -66,6 +66,11 @@ pir-wp-live's own private technical docs.
 
 Push to `main` and the sync workflow rebuilds and republishes automatically.
 
+## 📄 License
+- 💻 **Code:** MIT, see [`LICENSE`](LICENSE)
+- 📝 **Written content** (docs, changelog and library prose, READMEs): CC BY-SA 4.0, see [`LICENSE-CONTENT`](LICENSE-CONTENT)
+- 🏷️ **Names, logos and marks:** not covered by either license, see [`TRADEMARKS.md`](TRADEMARKS.md)
+
 ---
 
 *Maintained by [psychedelicsinrecovery](https://github.com/psychedelicsinrecovery) · w/ Anthropic's Claude Code CLI*
