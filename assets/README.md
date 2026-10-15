@@ -2,9 +2,11 @@
 
 This folder is the one home for screenshots and images used by the AstroLog. Anything placed here rides the sync workflow to the public site and becomes a permanent, native asset of the repository - no external image hosts needed.
 
+New here? Open the friendly walkthrough: [walkthrough.html](https://psychedelicsinrecovery.github.io/changelog-astro-public/assets/walkthrough.html) - the same guide, with the three paths laid out step by step.
+
 ## How to add an image (the 60-second version)
 
-1. Go to this repo on GitHub, open the `assets` folder, click **Add file -> Upload files**.
+1. Go to this repo on GitHub, open the `assets` folder, click **Add file -> Upload files**. (Or press `.` on the repo page to open github.dev and drag the file in.)
 2. Name the file first, following the convention below (you can rename in the upload dialog).
 3. Commit to `main`. That's it - the next sync run publishes it at:
 
