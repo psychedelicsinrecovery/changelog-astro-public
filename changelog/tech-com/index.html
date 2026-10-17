@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tech Com — Changelog</title><meta name="description" content="What's shipped for Tech Com, in plain language."><meta name="theme-color" content="#06050e"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="alternate" type="application/rss+xml" title="PIR® AstroLog changelog" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml"><!-- Link previews (Discord, WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com"><meta property="og:site_name" content="PIR® AstroLog"><meta property="og:type" content="website"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com"><meta property="og:title" content="Tech Com — Changelog"><meta property="og:description" content="What's shipped for Tech Com, in plain language."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="629"><meta property="og:image:alt" content="PIR®, Psychedelics In Recovery™: the fellowship's mark over a night sky, with glowing mushrooms by a lake."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tech Com — Changelog"><meta name="twitter:description" content="What's shipped for Tech Com, in plain language."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta name="twitter:image:alt" content="PIR®, Psychedelics In Recovery™: the fellowship's mark over a night sky, with glowing mushrooms by a lake."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><!-- PIR's arrival kit, served from the hub. Load order matters: kit CSS, PIR's kit CSS, then the
+         design system and this site's layer. The scripts stay in <head> (not deferred) so the
+         visitor's light, motion and contrast apply before first paint. --><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/org.css"><script src="https://psychedelicsinrecovery.github.io/arrival/org.js"></script><script src="https://psychedelicsinrecovery.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/alex-desk-public/assets/alex.css"><link rel="stylesheet" href="/changelog-astro-public/astrolog.css"></head><body class><a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then
+         into a Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="top"><div class="wrap"><a class="brand" href="/changelog-astro-public/" aria-label="PIR® AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34"><span class="arr-brand-text"><span class="word">AstroLog</span> <small>PIR®</small></span></a><arrival-nav current="changelog"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><div class="wrap page-head" style="max-width:860px"><a class="crumb" href="/changelog-astro-public/changelog"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i>All projects</a><h1><i class="ph-fill ph-wrench title-ic" aria-hidden="true"></i> Tech Com</h1><p class="lede">The committee that keeps the clocks wound - minutes and infrastructure, from Tech 2.0 to the AstroLog (Tech 3.0).</p><div class="stats"><span><b>14</b> entries</span></div></div><section class="band" style="padding-top:.5rem;padding-bottom:4.5rem" aria-label="Tech Com entries"><div class="wrap" style="max-width:860px"><div class="controls"><label class="searchbar"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i><input type="search" id="search-input" placeholder="Search entries" aria-label="Search changelog entries"></label><div class="tabs" role="group" aria-label="Filter by priority"><button type="button" data-priority="all" aria-pressed="true">All</button><button type="button" data-priority="P1-high" aria-pressed="false">High</button><button type="button" data-priority="P2-medium" aria-pressed="false">Medium</button><button type="button" data-priority="P3-low" aria-pressed="false">Low</button></div></div><ol class="chart" id="changelog-list"><li class="chart-month" data-month="2026-10">October 2026</li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="techcom october report: the helpdesks, the astrolog, and a pipeline made honest <div class=&quot;tldr&quot;><i class=&quot;ph ph-wrench&quot;></i> <strong>tl;dr:</strong> techcom's monthly report to the gsr subcommittee, october 17, 2026. the a.l.e.x. helpdesks are live on discord and the web, the astrolog changelog is live as the fellowship's service record with a desk for every committee, a 24-hour publishing outage was repaired and the pipeline hardened, and techcom remains on-call via whatsapp. attendance this period: christopher, littlebird and alfred, plus ongoing collaboration with the convention, pr, gsr and board threads through whatsapp.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+*submitted for the october 17, 2026 gsr meeting; also filed here so the record and the report are the same document.*
+
+## what we worked on
+
+- **the pir helpdesks are live.** type /techcom, /litcom, /github, /pr or /mod anywhere in discord to open a private thread with the right team; the [helpdesk portal](https://psychedelicsinrecovery.github.io/alex-desk-public/portal.html) serves non-discord members; [a.l.e.x.](https://psychedelicsinrecovery.github.io/alex-desk-public/) answers questions from pir's own pages, with sources.
+- **the astrolog changelog is live** as the fellowship's service record, with a desk for every committee, including a new gsr desk gathering minutes and reports. minutes on google drive are migrating in, retroactive entries included, with original sources kept linked.
+- **we repaired a 24-hour publishing outage** in the changelog pipeline and hardened it with a leak check so private service notes never reach the public site.
+- **the convention hub and galleries** reflect the concluded gathering, and recorded sessions are on the pir youtube channel.
+- **a lingering cdn issue** on psychedelicsinrecovery.org was traced to its root cause with our host and resolved (wpx ticket #517528).
+- **a new walkthrough** teaches any fellowship member how to contribute images to the record, no coding needed.
+
+## how to reach us
+
+techcom is on-call via whatsapp rather than hosting regular meetings: come find us in the whatsapp threads, or open a /techcom ticket. if you want to learn github service, we teach; if you already know it, we would love your hands.
+
+*related: [gsr records: intake open](/changelog-astro-public/changelog/gsr-com/2026-10-15-intake-gsr-records-open) · [the september gsr meeting](/changelog-astro-public/changelog/gsr-com/2026-09-19-gsr-september-meeting).*
+
+</details>"><a href="/changelog-astro-public/changelog/tech-com/2026-10-17-techcom-monthly-report"><time class="when" datetime="2026-10-17">Oct 17</time><span class="what"><b>TechCom October report: the helpdesks, the AstroLog, and a pipeline made honest<span data-arr-new-tag hidden></span></b><span class="gist">TechCom&#39;s monthly report to the GSR Subcommittee, October 17, 2026. The A.L.E.X. helpdesks are live on Discord and the web, the AstroLog Changelog is live as the…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W with LittlebirdAI</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="the day the pipeline stood back up: four landmines, one leak check, and a reworded confession <div class=&quot;tldr&quot;><i class=&quot;ph ph-wrench&quot;></i> <strong>tl;dr:</strong> for 24 hours the public site stood still while the build tripped over four small frontmatter mistakes, a naming convention, and finally one lazy commit message. this is the honest story of the outage and the repair, kept as the record asks: wrong turns included.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## what broke, in order
+
+1. **spaces around slashes.** four entries carried a `repo:` field with spaces around a slash (a multi-desk shorthand). the route generator reads that field as a single desk slug, so the build fell over. the fix became a rule: <b>one entry, one desk</b> - pick a primary desk, cross-link from the body.
+2. **the screenshots come home.** two screenshots living on outside hosts were moved into the record's own <code>assets/</code> folder, named for permanent ledger sorting, and a night-sky walkthrough was written to teach any fellowship member the three ways to contribute an image.
+3. **the leak check spoke for the first time.** with the routes fixed, the build finally completed - which meant the ledger leak check ran for the first time. it hunts for private commit-message text inside the public build, and it caught a commit whose subject was the single word &quot;placeholders&quot; - exactly twelve characters, the minimum it takes seriously - colliding with the public build's own legitimate use of that same word.
+4. **the reword.** commit messages cannot be edited in place, so the one commit was reworded through an interactive rebase into something distinctive. history was rewritten; every message stayed byte-identical; the needle was gone. the lesson, now standing: <b>private commit subjects should be distinctive</b> - a generic one-word subject can accidentally match public text and trip the check.
+
+## what the fellowship got out of it
+
+- a hardened pipeline with a leak check that has now proven it works.
+- native, permanent screenshots and a contributor walkthrough.
+- the final root cause of the cdn mystery from wpx system admins (ticket #517528): a leftover value from a payment suspension period had sealed the panel's front-end toggle.
+- everything published at once after a full day of silence - the whole day rose together.
+
+*written retroactively at the chair's request, so this thread's story sits in the record like every other desk's.*
+
+</details>"><a href="/changelog-astro-public/changelog/tech-com/2026-10-16-the-pipeline-stood-back-up"><time class="when" datetime="2026-10-16">Oct 16</time><span class="what"><b>The day the pipeline stood back up: four landmines, one leak check, and a reworded confession<span data-arr-new-tag hidden></span></b><span class="gist">For 24 hours the public site stood still while the build tripped over four small frontmatter mistakes, a naming convention, and finally one lazy commit message. This is…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W with LittlebirdAI</span></span></span></a></li><li class="chart-month" data-month="2024-07">July 2024</li><li class="star low" data-month="2024-07" data-priority="P3-low" data-search="holding steady before the launch <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> unchanged from june — the calm before the launch. this is the last of the twelve surviving documents; the story picks up again in the 2026 astrolog.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1ob4v89bamkz-dtka4mhiy2kugm5-_jr-0mckurjznxu/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech committee report for july, 2024
+
+this report is unchanged since last month's update in june.
+
+committee continues to communicate via email and whatsapp. we continue to answer emails coming through info@pir.org and tech@pir.org to edit meeting schedules, add new meetings and update the weekly digest mailer and answer general questions.
+
+we will soon be launching the new website after hundreds of hours of work on this project. we're excited to debut it and receive feedback. we have created a survey which will be distributed to the fellowship after which we will host an open meeting to answer questions and address common themes in the feedback we receive. details coming soon.
+
+thank you for allowing us to be of service.
+
+dave m
+tech chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2024-07-11-holding-steady-before-launch"><time class="when" datetime="2024-07-11">Jul 11</time><span class="what"><b>Holding steady before the launch<span data-arr-new-tag hidden></span></b><span class="gist">Unchanged from June — the calm before the launch. This is the last of the twelve surviving documents; the story picks up again in the 2026 AstroLog.</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2024-06">June 2024</li><li class="star low" data-month="2024-06" data-priority="P3-low" data-search="the new website readies for launch <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> hundreds of hours in, the new website is nearly ready — with a fellowship survey and an open feedback meeting planned to welcome it.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1opodzgoqqfuhvzdupuydz4zzq3exxjga-q8avyu85pq/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech committee report for june, 2024
+
+committee continues to communicate via email and whatsapp. we continue to answer emails coming through info@pir.org and tech@pir.org to edit meeting schedules, add new meetings and update the weekly digest mailer and answer general questions.
+
+we will soon be launching the new website after hundreds of hours of work on this project. we're excited to debut it and receive feedback. we have created a survey which will be distributed to the fellowship after which we will host an open meeting to answer questions and address common themes in the feedback we receive. details coming soon.
+
+thank you for allowing us to be of service.
+
+dave m
+tech chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2024-06-08-new-website-readies-for-launch"><time class="when" datetime="2024-06-08">Jun 8</time><span class="what"><b>The new website readies for launch<span data-arr-new-tag hidden></span></b><span class="gist">Hundreds of hours in, the new website is nearly ready — with a fellowship survey and an open feedback meeting planned to welcome it.</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2024-05">May 2024</li><li class="star low" data-month="2024-05" data-priority="P3-low" data-search="the cost of keeping meetings online <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> hosting paid through may 2025, and the full annual price of keeping the fellowship online, laid out in plain numbers: $1,559.68 across siteground, zoom, and mailchimp.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1-nfdyrssfznqy9bfzicv3gdqmoxbar-alc3ksxzorxo/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+committee continues to communicate via email and whatsapp. we continue to answer emails coming through info@pir.org and tech@pir.org to edit meeting schedules, add new meetings and update the weekly digest mailer and answer general questions.
+
+our annual website hosting has been renewed once again. it has been paid through may 6, 2025. my credit card is on file with the hosting company (siteground) and i will be seeking reimbursement.
+
+our zoom accounts will be coming up for their annual renewal next month. please find the associated cost below. since taking over the zoom meetings the tech committee has cut down on the vast majority of zoom related issues. thank you for putting your trust in us!
+
+please find the annual projected budget for the three services the fellowship utilizes to maintain meetings and our online presence:
+
+| service    | frequency | price            |
+|------------|-----------|------------------|
+| siteground | annual    | $359.88          |
+| zoom       | annual    | $299.80          |
+| mail chimp | monthly   | $900/yr - $75/mo |
+| **total**  |           | **$1,559.68**    |
+
+thank you for letting us be of service.
+
+dave m,
+tech comm chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2024-05-04-the-cost-of-keeping-meetings-online"><time class="when" datetime="2024-05-04">May 4</time><span class="what"><b>The cost of keeping meetings online<span data-arr-new-tag hidden></span></b><span class="gist">Hosting paid through May 2025, and the full annual price of keeping the fellowship online, laid out in plain numbers: $1,559.68 across SiteGround, Zoom, and Mailchimp.</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2024-04">April 2024</li><li class="star low" data-month="2024-04" data-priority="P3-low" data-search="hosting renews and budget season opens <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> hosting renewal on the horizon at $359.88, the digest mailer still growing, and next year's budget taking shape. (if that renewal number feels familiar, see [the lights came back on](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-the-lights-came-back-on/) — some stories rhyme.)</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1tkeopoqizcd94hdmjhxh8cheq9_hvfm7aklb-vil-rk/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+committee continues to communicate via email and whatsapp. we continue to answer emails coming through info@pir.org (thank you prism!) and tech@pir.org to edit meeting schedules, add new meetings and update the weekly digest mailer.
+
+we are discussing other options for the digest mailer which continues to grow in size.
+
+our website hosting will renew on may 6, 2024 at a cost of $359.88
+we will submit a detailed budget for next month's ig meeting.
+
+please feel free to reach out via email tech@psychedelicsinrecovery.org if you have any questions.
+
+thank you for allowing us to be of service.
+
+dave m
+tech comm chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2024-04-13-hosting-renews-budget-season-opens"><time class="when" datetime="2024-04-13">Apr 13</time><span class="what"><b>Hosting renews and budget season opens<span data-arr-new-tag hidden></span></b><span class="gist">Hosting renewal on the horizon at $359.88, the digest mailer still growing, and next year&#39;s budget taking shape. (If that renewal number feels familiar, see the lights…</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2024-03">March 2024</li><li class="star low" data-month="2024-03" data-priority="P3-low" data-search="we will build it ourselves <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> after weighing contractor quotes, dave m and david l decide to build the redesign themselves — and the 7th tradition buttons prepare to move to pir's own accounts.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1ogcdqxvbynufuqwljzl5acqfmiocu5tjwp04wde7w6u/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+we have not met formally since the last intergroup meeting although the committee continues to communicate via email and whatsapp. we continue to answer emails coming through info@pir.org (thank you prism!) and tech@pir.org to edit meeting schedules, add new meetings and update the weekly digest mailer. as of writing this report there are no outstanding requests for assistance.
+
+after reviewing quotes for other contractors to assist with the website design, both david l and dave m came to agreement that we should attempt to do it ourselves. we have a direction forward and have begun the groundwork to integrate the tools needed for the redesign.
+
+we are in contact with erin s on the 501 committee to assist in changing over the 7th tradition buttons to the pir accounts. that should be completed soon.
+
+i continue to work on next years budget and will have it completed once we get a clear view of all costs for the new website.
+
+please feel free to reach out via email tech@psychedelicsinrecovery.org if you have any questions.
+
+thank you for allowing us to be of service.
+
+dave m
+tech comm chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2024-03-12-we-will-build-it-ourselves"><time class="when" datetime="2024-03-12">Mar 12</time><span class="what"><b>We will build it ourselves<span data-arr-new-tag hidden></span></b><span class="gist">After weighing contractor quotes, Dave M and David L decide to build the redesign themselves — and the 7th Tradition buttons prepare to move to PIR&#39;s own accounts.</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2024-02">February 2024</li><li class="star low" data-month="2024-02" data-priority="P3-low" data-search="the redesign begins behind the scenes <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> alex officially comes aboard as professional web designer; everything runs smoothly and — a rare and beautiful sentence in any service report — there are no outstanding requests.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1fg_2tae-nd2uupv9dhzhmidtag4uv9fd244vbwm-dwy/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech committee of pir - february intergroup report
+
+* we have enlisted the help of a professional web designer, alex, who has been able to start working on the overhaul of the front facing, and service websites.
+* everything has been working smoothly, we have not had any notable problems since my last report.
+* we continue to field requests regarding the meetings, front facing website, and service website.
+   * as of the writing of this there is no outstanding request for service.
+* i hope to have more information regarding the front facing website next month.
+
+thank you for letting us be of service.
+
+-dave m
+tech committee chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2024-02-10-redesign-begins-behind-the-scenes"><time class="when" datetime="2024-02-10">Feb 10</time><span class="what"><b>The redesign begins behind the scenes<span data-arr-new-tag hidden></span></b><span class="gist">Alex officially comes aboard as professional web designer; everything runs smoothly and — a rare and beautiful sentence in any service report — there are no outstanding…</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2024-01">January 2024</li><li class="star low" data-month="2024-01" data-priority="P3-low" data-search="meet alex — the website overhaul begins <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> an introductory call with alex, a web developer who might help with the long-dreamed front-facing website overhaul. spoiler from the future: he does, and hundreds of hours of fellowship work follow.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/14m1gzpgnmdany6fd41jd3v52rdnu9qyjyrxs0pjdmkq/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech committee of pir - intergroup report
+last meeting of the tech committee was tuesday, january 9, 2024. we continue to answer requests to update the website, in person meetings, et cetera. at time of writing this report there are no outstanding requests.
+
+our last meeting was dedicated to an introductory call with a new contact, alex, who may be able to help us accomplish one of our long-term goals of overhauling the front facing website. please see the bullet point notes of that meeting below.
+
+* alex's background is in web development for business application and software engineering, but has made many websites like the one we are trying to create.
+* david l and dave m introduced alex to the service website, what we like and what needs to be polished.
+* we communicated to alex what our needs are, what functionality is required - aesthetically pleasing and functional blog / social media integration. import current content into newly designed templates.
+* alex believes he can accomplish most of what we need, but we may need outside help with graphic and artistic design. alex has contacts that could help with this. graphic services will require an energy exchange ($).
+* alex feels comfortable starting work on this, tech comm will provide alex with credentials to work on our server, to begin designing behind the scenes.
+* we will reconvene next week to check in on progress and see where alex may need assistance.
+
+thank you for letting us be of service.
+-dave m
+tech comm chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2024-01-10-meet-alex-overhaul-begins"><time class="when" datetime="2024-01-10">Jan 10</time><span class="what"><b>Meet Alex — the website overhaul begins<span data-arr-new-tag hidden></span></b><span class="gist">An introductory call with Alex, a web developer who might help with the long-dreamed front-facing website overhaul. Spoiler from the future: he does, and hundreds of…</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2023-12">December 2023</li><li class="star low" data-month="2023-12" data-priority="P3-low" data-search="calendar complete and a service email coming <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> a month of rest, a finished calendar page, committee pages taking shape — and the service email separation just weeks away.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1dawhff1ybpmvhath4yabkcgcsa_jpz2gsrcgebhu8cs/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech committee report
+intergroup for november, 2023
+chair: dave m
+
+we have taken the last month off. tech committee continues to work on service website. calendar page complete and working. still customizing committee pages.
+
+we will be moving towards a separate service email in the next couple weeks.
+
+thank you for letting us be of service.
+
+dave m,
+tech comm chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2023-12-09-calendar-complete-service-email-coming"><time class="when" datetime="2023-12-09">Dec 9</time><span class="what"><b>Calendar complete and a service email coming<span data-arr-new-tag hidden></span></b><span class="gist">A month of rest, a finished calendar page, committee pages taking shape — and the service email separation just weeks away.</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2023-11">November 2023</li><li class="star low" data-month="2023-11" data-priority="P3-low" data-search="a document database is born <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the idea that eventually became today's astrolog: putting minutes and reports somewhere the whole fellowship can reach them, on the service website itself.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1pnys6htlujcpo37bv5whtrifm1a2qwaq739ojfdwvps/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech committee report
+intergroup for november, 2023
+chair: dave m
+
+tech committee has moved forward to create a document database that will be accessible to the fellowship via the service website.
+an example of this can be seen on our tech page of the website at
+http://service.psychedelicsinrecovery.org/tech-committee/ where you can see past tech comm meeting minutes and gsr reports. we hope to be able to expand this to all other committees soon.
+
+tech committee will soon be separating service meetings onto their own email. this will give more space to highlight service opportunities in pir as a whole.
+
+thank you for letting us be of service,
+dave m, tech comm chair
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2023-11-09-document-database-born"><time class="when" datetime="2023-11-09">Nov 9</time><span class="what"><b>A document database is born<span data-arr-new-tag hidden></span></b><span class="gist">The idea that eventually became today&#39;s AstroLog: putting minutes and reports somewhere the whole fellowship can reach them, on the service website itself.</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2023-10">October 2023</li><li class="star low" data-month="2023-10" data-priority="P3-low" data-search="the calendar lands on staging <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> four volunteers around one agenda: the service calendar goes live on staging, a crisis-lines page appears, and rick and lauren take on taming the pir inbox.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1ytzhdweglfj_pjbfddjphuhaq5ziesxwapor4cqcb60/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech comm 10.28.23 - 9am pacific
+
+attendance: davem, erin b, rick s, lauren d
+
+old biz -
+* website updates, service website.
+* dave m put service calendar on staging site, working well.
+new biz -
+* dave put crisis lines page on website. suggestion to add fireside project to crisis lines. dave updated page.
+* rick and lauren are going to take on organizing the existing documents inside our pir gmail account.
+* dave m is going to send out instructions to rick and lauren.
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2023-10-28-calendar-lands-on-staging"><time class="when" datetime="2023-10-28">Oct 28</time><span class="what"><b>The calendar lands on staging<span data-arr-new-tag hidden></span></b><span class="gist">Four volunteers around one agenda: the service calendar goes live on staging, a crisis-lines page appears, and Rick and Lauren take on taming the PIR inbox.</span><span class="sub"><span class="pri low">Low</span><span class="by">Tech Committee</span></span></span></a></li><li class="star low" data-month="2023-10" data-priority="P3-low" data-search="keeping meetings safe with host training <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> dave m's october intergroup report: hands-on zoom security training for hosts and co-hosts, steady progress on the service website, and a digest email already outgrowing its shoes.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1xbn_k-4etnleg0wplpnvzpfujqdyaonzbpt9bwxfmo0/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+ig tech report for october 2023
+
+october intergroup of pir
+chairperson: dave m.
+date of ig: 10.14.23
+
+this month the tech committee has helping meetings deal with disruptive individuals by training hosts and co-hosts how to properly secure a zoom meeting. we made ourselves available to the fellowship personally and in a chair training where we demonstrated how to operate zoom security functions.
+
+we are still working on the service website.
+
+our digest email continues to grow and is getting clipped. we are hoping to propose a new solution for disbursement of meeting list.
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024) — [the story of how these documents came home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2023-10-18-keeping-meetings-safe"><time class="when" datetime="2023-10-18">Oct 18</time><span class="what"><b>Keeping meetings safe with host training<span data-arr-new-tag hidden></span></b><span class="gist">Dave M&#39;s October Intergroup report: hands-on Zoom security training for hosts and co-hosts, steady progress on the service website, and a digest email already…</span><span class="sub"><span class="pri low">Low</span><span class="by">Dave M</span></span></span></a></li><li class="chart-month" data-month="2023-08">August 2023</li><li class="star low" data-month="2023-08" data-priority="P3-low" data-search="tech 2.0 kicks off with a new zoom link <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the oldest document in the archive: tech 2.0's founding agenda — a fresh zoom link, a service website check-in, and a social-media to-do list. this is where the preserved record begins.</div>
+
+*original document: [google doc](https://docs.google.com/document/d/1xatxn02jf7nkqo12fqicwcc57pemeybgguw1yldh75y/view)*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the original document in full →</summary>
+
+```text
+tech 2.0 agenda/minutes
+4pm pst 8/11/23 new zoom link
+service website update:
+old biz:
+social media update: prism, clif, youtube upgrade specs? change youtube handle? googledrive redo
+new biz:
+ig statement re zoom “rules”, eg 15 min prior login, host key, outstanding mtngs (non pir owned).
+```
+
+</details>
+
+*part of the preserved tech committee archive (2023–2024). the story of how these documents came home lives in [the post that reunited them](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up/).*"><a href="/changelog-astro-public/changelog/tech-com/2023-08-11-tech-20-kicks-off"><time class="when" datetime="2023-08-11">Aug 11</time><span class="what"><b>Tech 2.0 kicks off with a new Zoom link<span data-arr-new-tag hidden></span></b><span class="gist">The oldest document in the archive: Tech 2.0&#39;s founding agenda — a fresh Zoom link, a service website check-in, and a social-media to-do list. This is where the…</span><span class="sub"><span class="pri low">Low</span><span class="by">Tech Committee</span></span></span></a></li></ol><p class="empty" id="no-results" hidden>No entries match that search or filter.</p></div></section></main><footer><div class="wrap pir-foot"><div><a class="brand" href="/changelog-astro-public/" style="margin-bottom:.6rem"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34">AstroLog</a><span>What's shipped for Psychedelics In Recovery™, in plain language, and the write-ups behind it.</span><a class="tended" href="https://psychedelicsinrecovery.github.io/catalyst-desk-public/"><span class="cat-mark" aria-hidden="true"></span>Tended by <b>C.A.T.A.L.Y.S.T.</b>, PIR®'s helper fleet</a></div><!-- Every way around, in groups, an icon on each link (drawn by the kit from org.js: footer.groups). --><arrival-footer current="changelog"></arrival-footer></div></footer><nav class="dock" aria-label="Quick links"><div class="wrap"><span class="mark">PIR®</span><a href="https://psychedelicsinrecovery.github.io/"><i class="ph-fill ph-house" aria-hidden="true"></i><span class="lg">Entry portal</span><span class="sm">Hub</span></a><a href="/changelog-astro-public/"><i class="ph-fill ph-door-open" aria-hidden="true"></i>Porch</a><a href="/changelog-astro-public/changelog" aria-current="page"><i class="ph-fill ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a><a href="/changelog-astro-public/library"><i class="ph-fill ph-books" aria-hidden="true"></i>Library</a><a href="/changelog-astro-public/ledger"><i class="ph-fill ph-scroll" aria-hidden="true"></i>Ledger</a><a href="/changelog-astro-public/map"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Map</a><a href="https://discord.gg/MyprTq8w95" data-arrival-open="community"><i class="ph-fill ph-users-three" aria-hidden="true"></i>Community</a><a class="end" href="https://www.psychedelicsinrecovery.org/contact/" data-arrival-open="contact"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i><span class="lg">Reach out</span><span class="sm">Contact</span></a></div></nav><!-- The star field (one copy, served by the hub) follows the kit's motion and cursor choices. --><script src="https://psychedelicsinrecovery.github.io/starfield.js" defer></script><script src="/alex-desk-public/assets/alex.js" defer></script><script src="/changelog-astro-public/astrolog.js" defer></script></body></html><script type="module">var e=document.getElementById(`search-input`),t=document.querySelectorAll(`.tabs button[data-priority]`),n=document.querySelectorAll(`#changelog-list .star`),r=document.querySelectorAll(`#changelog-list .chart-month`),i=document.getElementById(`no-results`),a=`all`;function o(){let t=e.value.trim().toLowerCase(),o=new Set,s=0;n.forEach(e=>{let n=(a===`all`||e.dataset.priority===a)&&(!t||(e.dataset.search??``).includes(t));e.hidden=!n,n&&(s++,o.add(e.dataset.month??``))}),r.forEach(e=>e.hidden=!o.has(e.dataset.month??``)),i.hidden=s>0,window.dispatchEvent(new Event(`scroll`))}e?.addEventListener(`input`,o),t.forEach(e=>e.addEventListener(`click`,()=>{t.forEach(e=>e.setAttribute(`aria-pressed`,`false`)),e.setAttribute(`aria-pressed`,`true`),a=e.dataset.priority??`all`,o()}));</script>

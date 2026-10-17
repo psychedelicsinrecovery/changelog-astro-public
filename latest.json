@@ -1,0 +1,962 @@
+{
+  "updated": "2026-10-17T16:08:41.596Z",
+  "entries": [
+    {
+      "title": "TechCom October report: the helpdesks, the AstroLog, and a pipeline made honest",
+      "date": "2026-10-17",
+      "priority": "medium",
+      "project": "Tech Com",
+      "icon": "wrench",
+      "url": "/changelog-astro-public/changelog/tech-com/2026-10-17-techcom-monthly-report",
+      "gist": "TechCom's monthly report to the GSR Subcommittee, October 17, 2026. The A.L.E.X. helpdesks are live on Discord and the web, the AstroLog Changelog is live as…"
+    },
+    {
+      "title": "LitCom October report: the book launch, old minutes on the record, and a fellowshipping month",
+      "date": "2026-10-17",
+      "priority": "medium",
+      "project": "Lit Com",
+      "icon": "book-open-text",
+      "url": "/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-monthly-report",
+      "gist": "LitCom's monthly report to the GSR Subcommittee, October 17, 2026. October was a fellowshipping month as members supported the convention and each other. The…"
+    },
+    {
+      "title": "Member materials 2025-2026: the gap being filled, and the FAQs that came in from the cold",
+      "date": "2026-10-17",
+      "priority": "low",
+      "project": "Lit Com",
+      "icon": "book-open-text",
+      "url": "/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-member-materials-teaser",
+      "gist": "A teaser for the gap years: in 2025 LitCom built out PIR's member materials - the first batch of FAQs, printed materials, the Twelve Steps poster - and in…"
+    },
+    {
+      "title": "GSR records go live: September's minutes unfolded, every desk gets a page",
+      "date": "2026-10-17",
+      "priority": "medium",
+      "project": "GSR Committee",
+      "icon": "users-three",
+      "url": "/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-records-go-live",
+      "gist": "The GSR desk went from an intake notice to a living record on meeting day: the September 19 minutes unfolded into three entries, the TechCom and LitCom…"
+    },
+    {
+      "title": "The day the pipeline stood back up: four landmines, one leak check, and a reworded confession",
+      "date": "2026-10-16",
+      "priority": "medium",
+      "project": "Tech Com",
+      "icon": "wrench",
+      "url": "/changelog-astro-public/changelog/tech-com/2026-10-16-the-pipeline-stood-back-up",
+      "gist": "For 24 hours the public site stood still while the build tripped over four small frontmatter mistakes, a naming convention, and finally one lazy commit…"
+    }
+  ],
+  "items": [
+    {
+      "type": "ledger",
+      "t": "████ ██████ ████████ ██████ ██ ████████ ████ ████████ ██████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-17",
+      "d": "2026-10-17",
+      "ts": "2026-10-17T16:08:14Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "██████ ████ ████████ ████ ████ ████ ████████ ██████ ████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-17",
+      "d": "2026-10-17",
+      "ts": "2026-10-17T15:42:16Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "██████ ████ ████ ██ ████████ ██████ ████ ██████ ████ ██████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-17",
+      "d": "2026-10-17",
+      "ts": "2026-10-17T15:21:37Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████ ██████ ██████ ██████ ████ ████████ ████████ ████ ██ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-17",
+      "d": "2026-10-17",
+      "ts": "2026-10-17T15:20:32Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ██ ████████ ████████ ██████ ██████ ████████ ████████ ████ ██████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-17",
+      "d": "2026-10-17",
+      "ts": "2026-10-17T15:20:23Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Assets: swap crossed screenshot names - ticket and XDN panel were mislabeled",
+      "k": "ledger · AstroLog",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/changelog-astro-public/commit/b6d8c97fb860b601edd5d2c9edeefcbec68411c1",
+      "d": "2026-10-16",
+      "ts": "2026-10-17T14:51:17Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "TechCom October report: the helpdesks, the AstroLog, and a pipeline made honest",
+      "k": "changelog · Tech Com",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-17-techcom-monthly-report",
+      "d": "2026-10-17",
+      "who": "Christopher W with LittlebirdAI"
+    },
+    {
+      "type": "entry",
+      "t": "LitCom October report: the book launch, old minutes on the record, and a fellowshipping month",
+      "k": "changelog · Lit Com",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-monthly-report",
+      "d": "2026-10-17",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "Member materials 2025-2026: the gap being filled, and the FAQs that came in from the cold",
+      "k": "changelog · Lit Com",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-member-materials-teaser",
+      "d": "2026-10-17",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "GSR records go live: September's minutes unfolded, every desk gets a page",
+      "k": "changelog · GSR Committee",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-records-go-live",
+      "d": "2026-10-17",
+      "who": "Christopher W with LittlebirdAI"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ██████ ████████ ██ ████████ ██ ████ ████████ ████ ████████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T17:45:19Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████ ████ ████████ ██████ ████ ████████ ████ ██████ ████ ████████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T14:04:39Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The pushes had dropped each file's opening --- fence",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/ff8d9e8a93366f4bf2a75b47feedffe911689109",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T13:43:49Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Extras CSS bumped to v4 (the highlight link styling)",
+      "k": "ledger · convention-astro",
+      "i": "palette",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/9a4bd8bd808b68e095793736bd7a915c4b3c8eae",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T13:38:51Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The highlight-card link gets its gold styling",
+      "k": "ledger · convention-astro",
+      "i": "palette",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/ff79a166772d56658872004a415dd2ed5a415447",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T13:38:00Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Highlight cards can carry a link",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/166cf50dc39b37141f84a03484cd9bdefed09ad9",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T13:36:58Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The streamed card points at the YouTube channel now",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/175cb93962d3fe9af04d9354025aa0e786e0f0ff",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T13:36:11Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ████████ ████████ ████ ████ ██████ ████████ ████ ████ ████████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T13:24:37Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████ ████ ██████ ████ ████ ████ ████████ ██ ████ ████████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T12:27:59Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Restore the gallery index: the download-link handoff served app shells",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/5180973193356ae25f19bf4fa309a3bcb5386dc8",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T12:20:20Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The download-link handoff served app shells",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/1af760a537d743f37279c4f52ee3144f1fcd67c1",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T12:18:14Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Dock-safe cues, honest pagination, centered buttons, consent beside the reach-out",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/a170628912afcc13d7ea0b4f82dd05979eebf786",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T12:13:38Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Add social cards",
+      "k": "ledger · convention-astro",
+      "i": "notebook",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/4317b6517a301f6b0b77b90d7ad4f144b8e0d2bb",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T12:13:27Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████ ████████ ██████ ████ ██████ ████████ ████ ████ ████████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T11:24:38Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The switcher script can see the manifest now",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/e1cd3b74b4d021fdc37a1fd41828d32fbe06be56",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T11:24:24Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The cue sits inline above the gallery-wall marquee",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/2936a14b62e362d111822d980bc268b699ffa1f5",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T11:20:55Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The gallery wall and the album switcher",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/f9ad64abaa4cd4b82c2f51eeb003f6ae76d63065",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T11:20:21Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The lightbox comes unstuck, the cue clears the dock, jumps stop under the navbar",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/12caa6799978ce5ffae53ff2f8759acb19804034",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T11:19:43Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The h1 and lede center their own boxes",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/cc772d2fcf9e30826b843ba6c00e144dfcc04718",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:25:41Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████ ████████ ████ ██ ████ ████████ ████ ████ ██████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:24:27Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The hero cue waits for the DOM",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/4f7232649197f2f61ba80fe067df1a68bb1c077d",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:22:39Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The hero becomes a plain centered block",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/6cf931e19526c3825edcb7b0afc36498c2451244",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:22:24Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The progress line hugs the navbar's bottom, the cue appears in every hero",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/e0e5591a4691ce25ff191b97a6679f8c258633b2",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:19:31Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "This round's styles in their own cascade slot",
+      "k": "ledger · convention-astro",
+      "i": "palette",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/c5d4cba5f00c6a630ac13e9401dbb8de3e16a530",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:19:11Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Marquee in the hero, albums you can click into a lightbox",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/42fffb1518e898bdff60b806a5438d5d70c28022",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:18:17Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The More panel's flyout children come out of hiding",
+      "k": "ledger · GitHub hub",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/psychedelicsinrecovery.github.io/commit/7c3973c04a1dbb6d0835b9f68616b2e0411eb0b5",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T10:17:03Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Kit 1.3.1: More panel flyout side menus + the Desks group",
+      "k": "ledger · GitHub hub",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/psychedelicsinrecovery.github.io/commit/44aee00a8c2ff22a1bedd19b7b064f1365957605",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T09:37:53Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████ ████ ██████ ██ ████ ████████ ████ ████ ████████ ██████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T08:56:34Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The brand dropdown comes to the Convention, the progress line starts at zero",
+      "k": "ledger · convention-astro",
+      "i": "sparkle",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/495d64203e86ff8de4191118bf53fc830568ad90",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T08:54:38Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The walkthrough gets the full kit: org.js lands, the reach-out moves to center stage",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/3c3484054e05a8be7d86f6d322cb9c125d78a263",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T08:53:20Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The complete gallery index, head and body together",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/e9d1a83754136a33f92f8fd7a637c8cd6bdb4ab9",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T08:49:58Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "PLACEHOLDER - will be replaced",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/d2c0df25d1b9270cd1c0629183f07a0105d08f54",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T08:47:59Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ████████ ████ ████████ ██ ████ ██████ ████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T08:41:26Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "██████ ████ ██████ ████████ ████ ██████ ████████ ████████ ████████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-16",
+      "d": "2026-10-16",
+      "ts": "2026-10-16T08:41:26Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Add the assets walkthrough page, point the README to it, and log the pipeline repair",
+      "k": "ledger · AstroLog",
+      "i": "wrench",
+      "h": "https://github.com/psychedelicsinrecovery/changelog-astro-public/commit/5b76e513c860fdd373ce890c5734e9315e1066af",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T08:41:26Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Move and rename screenshot imports at root to /assets/",
+      "k": "ledger · AstroLog",
+      "i": "gear-six",
+      "h": "https://github.com/psychedelicsinrecovery/changelog-astro-public/commit/58d87b349f3303699c1e4f51ef58d9995804ad8f",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T08:41:26Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ████████ ████ ████████ ██ ████ ██████ ████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T08:41:26Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ██████ ██ ████ ██████ ██ ██████ ████ ████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T08:41:26Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ████ ██████ ██ ████ ████████ ████ ██ ██████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T08:41:25Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ██████ ████ ████████ ██████ ██ ████ ████████ ████ ██",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T08:41:25Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ██████ ██████ ████ ██ ████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-16T08:38:52Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The day the pipeline stood back up: four landmines, one leak check, and a reworded confession",
+      "k": "changelog · Tech Com",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-16-the-pipeline-stood-back-up",
+      "d": "2026-10-16",
+      "who": "Christopher W with LittlebirdAI"
+    },
+    {
+      "type": "entry",
+      "t": "The ping that broke the silence, and the suite speaks past-tense",
+      "k": "changelog · WordPress sites",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-the-ping-that-broke-the-silence",
+      "d": "2026-10-16",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The neighborhood nav, a hero unmasked, and the flyout set free",
+      "k": "changelog · convention-astro",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-neighborhood-nav-and-the-flyout-set-free",
+      "d": "2026-10-16",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The kit lands on the gallery, and the marquee learns to be held",
+      "k": "changelog · convention-astro",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-kit-lands-on-the-gallery",
+      "d": "2026-10-16",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The gallery wall, the album switcher, and the lightbox that hid in plain sight",
+      "k": "changelog · convention-astro",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-gallery-wall-and-the-album-switcher",
+      "d": "2026-10-16",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The app shell that ate the gallery, and the connector that slept",
+      "k": "changelog · gallery",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gallery/2026-10-16-the-app-shell-that-ate-the-gallery",
+      "d": "2026-10-16",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "Jetpack wanted its cut, and the bridge went quiet",
+      "k": "changelog · WordPress sites",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-jetpack-wanted-its-cut",
+      "d": "2026-10-16",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "Ghost paragraphs and the Array that ate the hub",
+      "k": "changelog · WordPress sites",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-ghost-paragraphs-and-the-array-that-ate-the-hub",
+      "d": "2026-10-16",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The kit arrives at last",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/fcdae0738f321a605f97b09dec7238384dc0bea0",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T21:47:17Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The header grows a dropdown, the albums get polish, the modal takes over",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/0413f0f75b39c5b429b18c47bede3c80412dc530",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T21:44:59Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The marquee lands here; heroes get compact; chrome gets cache-busted and wired",
+      "k": "ledger · convention-astro",
+      "i": "lightning",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/f6e3e36cf4427a66695d9fe9c35d8eb5fbdd5495",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T21:39:21Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ████████ ████ ████████ ██ ████████ ██ ████████ ██████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T21:01:21Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ████ ████████ ██████ ████████ ████████ ██ ██████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:55:12Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "The tile marquee arrives, and the chrome matches the hub",
+      "k": "ledger · gallery",
+      "i": "palette",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/a69dcac9a1a6a21a6ba98fd1bbc1f6a1c60fedaf",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:50:27Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Arrival: More panel scrolls when its tree grows",
+      "k": "ledger · GitHub hub",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/psychedelicsinrecovery.github.io/commit/19c8c384100850b9aca34f99391292f6120d32c4",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:46:56Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ██████ ██████ ████ ████ ██ ████ ████████ ████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:44:15Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Assets: README walkthrough - the 60-second import guide for the fellowship",
+      "k": "ledger · AstroLog",
+      "i": "notebook",
+      "h": "https://github.com/psychedelicsinrecovery/changelog-astro-public/commit/57a16da46903fa23bd5f3658670287ad27652619",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:43:49Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Hub chrome, centered hero, and the Drive is gone",
+      "k": "ledger · gallery",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/gallery/commit/a2610256145c12730da3444be12c45a09abefd5d",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:21:57Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Centered heroes; the galleries CTA goes loud; the story grows past 2026",
+      "k": "ledger · convention-astro",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/convention-astro/commit/a33c1aaea054d05b9aa42a1befe0c249c6c63c90",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:14:33Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "Kit: a Gatherings group (Convention, Galleries, Schedule, Live stream) joins the nav",
+      "k": "ledger · GitHub hub",
+      "i": "arrows-clockwise",
+      "h": "https://github.com/psychedelicsinrecovery/psychedelicsinrecovery.github.io/commit/0f52572abdbb70abdd7501b2650e86048b367f25",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T20:12:48Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "ledger",
+      "t": "████████ ████ ████████ ████████ ██ ████ ████ ████████",
+      "k": "ledger · AstroLog source · private",
+      "i": "lock-simple",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger#d-2026-10-15",
+      "d": "2026-10-15",
+      "ts": "2026-10-15T18:41:22Z",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The XDN comes home while the family gets a shoutout",
+      "k": "changelog · WordPress sites",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-15-xdn-comes-home",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The proposals shelf: intake open",
+      "k": "changelog · Intergroup",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2026-10-15-the-proposals-shelf",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The canvas that ate the page - a debugging story with a headless browser",
+      "k": "changelog · convention-astro",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-the-canvas-that-ate-the-page",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The assets shelf gets a walkthrough, and the pipeline breathes again",
+      "k": "changelog · GitHub home & brand",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-15-the-assets-shelf-gets-a-walkthrough",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "Gatherings joins the nav; gallery tiles go visual; suite heroes center; WP fixes",
+      "k": "changelog · GitHub home & brand",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-15-suite-gatherings-and-gallery-tiles",
+      "d": "2026-10-15",
+      "who": "Christopher W with LittlebirdAI"
+    },
+    {
+      "type": "entry",
+      "t": "Intergroup & SSS records: intake open",
+      "k": "changelog · Intergroup",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2026-10-15-intake-intergroup-and-sss-records-open",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "GSR records: intake open",
+      "k": "changelog · GSR Committee",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-15-intake-gsr-records-open",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "Feedback round: the marquee lands on the Convention gallery, the walkthrough meets the kit, the Drive ID rises from the dead",
+      "k": "changelog · convention-astro",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-gallery-pages-and-modal-fixes",
+      "d": "2026-10-15",
+      "who": "Christopher W with LittlebirdAI"
+    },
+    {
+      "type": "entry",
+      "t": "Convention Hub night-sky restyle; home CTA repointed; MCP is back",
+      "k": "changelog · convention-astro",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-convention-hub-night-sky",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "A gallery of our own - and a Convention site to hold the story",
+      "k": "changelog · convention-astro",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-a-gallery-of-our-own",
+      "d": "2026-10-15",
+      "who": "Christopher W"
+    },
+    {
+      "type": "doc",
+      "t": "Contacts - who is who in this story",
+      "k": "library",
+      "i": "book-open-text",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/library/contacts",
+      "d": "2026-10-15"
+    },
+    {
+      "type": "doc",
+      "t": "The resource shelf",
+      "k": "library",
+      "i": "book-open-text",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/library/resources-the-resource-shelf",
+      "d": "2026-10-15"
+    },
+    {
+      "type": "entry",
+      "t": "The XDN takes a breather while WPX system admins step in",
+      "k": "changelog · WordPress sites",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-xdn-takes-a-breather",
+      "d": "2026-10-14",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The porch grows to twelve desks",
+      "k": "changelog · GitHub home & brand",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-14-the-porch-grows-to-twelve",
+      "d": "2026-10-14",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The morning the websites took a breather — and the safeguards the fellowship built out of it",
+      "k": "changelog · WordPress sites",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-the-lights-came-back-on",
+      "d": "2026-10-14",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The fellowship's founding documents get a glow-up — By-Laws go emoji-rich, twelve legacy minutes preserved in full",
+      "k": "changelog · WordPress sites",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up",
+      "d": "2026-10-14",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "Every committee gets its own desk button, the growth badge learns some manners, and three new pages join the family",
+      "k": "changelog · WordPress sites",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-13-techcom-round-4",
+      "d": "2026-10-13",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "One navbar on every PIR page and desk, one window for every way to reach PIR, a map of everything, and a donate page",
+      "k": "changelog · GitHub home & brand",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-13-one-navbar-every-desk-a-map-and-one-window-for-every-way-in",
+      "d": "2026-10-13",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The ledger: every public change in plain words, plus reading mode and what's new since your last visit",
+      "k": "changelog · GitHub home & brand",
+      "i": "star-four",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-12-the-ledger-reading-mode-whats-new",
+      "d": "2026-10-12",
+      "who": "Christopher W"
+    },
+    {
+      "type": "entry",
+      "t": "The main site moves onto WPX's CDN, plus three wasted requests per page removed",
+      "k": "changelog · WordPress sites",
+      "i": "sparkle",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-12-main-site-moves-onto-wpx-cdn",
+      "d": "2026-10-12",
+      "who": "Christopher W"
+    },
+    {
+      "type": "doc",
+      "t": "Why the site got slow (and why it wasn't Claude, Littlebird, or AI)",
+      "k": "library",
+      "i": "book-open-text",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/library/why-the-site-was-slow-and-it-wasnt-ai",
+      "d": "2026-10-08"
+    },
+    {
+      "type": "doc",
+      "t": "PIR's email setup, explained for volunteers",
+      "k": "library",
+      "i": "book-open-text",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/library/email-and-domain-basics",
+      "d": "2026-10-04"
+    },
+    {
+      "type": "doc",
+      "t": "How A.L.E.X. works (and why it's built this way)",
+      "k": "library",
+      "i": "book-open-text",
+      "h": "https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-alex-works",
+      "d": "2026-10-04"
+    }
+  ]
+}

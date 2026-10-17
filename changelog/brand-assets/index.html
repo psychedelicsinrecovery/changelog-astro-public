@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>GitHub home &amp; brand — Changelog</title><meta name="description" content="What's shipped for GitHub home &amp; brand, in plain language."><meta name="theme-color" content="#06050e"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="alternate" type="application/rss+xml" title="PIR® AstroLog changelog" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml"><!-- Link previews (Discord, WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets"><meta property="og:site_name" content="PIR® AstroLog"><meta property="og:type" content="website"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets"><meta property="og:title" content="GitHub home &amp; brand — Changelog"><meta property="og:description" content="What's shipped for GitHub home &amp; brand, in plain language."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="629"><meta property="og:image:alt" content="PIR®, Psychedelics In Recovery™: the fellowship's mark over a night sky, with glowing mushrooms by a lake."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="GitHub home &amp; brand — Changelog"><meta name="twitter:description" content="What's shipped for GitHub home &amp; brand, in plain language."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/social-card.jpg"><meta name="twitter:image:alt" content="PIR®, Psychedelics In Recovery™: the fellowship's mark over a night sky, with glowing mushrooms by a lake."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><!-- PIR's arrival kit, served from the hub. Load order matters: kit CSS, PIR's kit CSS, then the
+         design system and this site's layer. The scripts stay in <head> (not deferred) so the
+         visitor's light, motion and contrast apply before first paint. --><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/org.css"><script src="https://psychedelicsinrecovery.github.io/arrival/org.js"></script><script src="https://psychedelicsinrecovery.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/alex-desk-public/assets/alex.css"><link rel="stylesheet" href="/changelog-astro-public/astrolog.css"></head><body class><a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then
+         into a Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="top"><div class="wrap"><a class="brand" href="/changelog-astro-public/" aria-label="PIR® AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34"><span class="arr-brand-text"><span class="word">AstroLog</span> <small>PIR®</small></span></a><arrival-nav current="changelog"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><div class="wrap page-head" style="max-width:860px"><a class="crumb" href="/changelog-astro-public/changelog"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i>All projects</a><h1><i class="ph-fill ph-github-logo title-ic" aria-hidden="true"></i> GitHub home &amp; brand</h1><p class="lede">PIR&#39;s open GitHub surfaces: the hub, this AstroLog, logos and brand files.</p><div class="stats"><span><b>8</b> entries</span></div></div><section class="band" style="padding-top:.5rem;padding-bottom:4.5rem" aria-label="GitHub home &amp; brand entries"><div class="wrap" style="max-width:860px"><div class="controls"><label class="searchbar"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i><input type="search" id="search-input" placeholder="Search entries" aria-label="Search changelog entries"></label><div class="tabs" role="group" aria-label="Filter by priority"><button type="button" data-priority="all" aria-pressed="true">All</button><button type="button" data-priority="P1-high" aria-pressed="false">High</button><button type="button" data-priority="P2-medium" aria-pressed="false">Medium</button><button type="button" data-priority="P3-low" aria-pressed="false">Low</button></div></div><ol class="chart" id="changelog-list"><li class="chart-month" data-month="2026-10">October 2026</li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="the assets shelf gets a walkthrough, and the pipeline breathes again <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the sync pipeline is whole again: the frontmatter typo is fixed, the two screenshots are home in <strong>assets/</strong> (moved by christopher through github.dev), the shelf now has its own friendly walkthrough page, and the arrival kit learns flyout side menus plus a desks group - staged and riding with the next hub push.</div>
+
+<details open>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 🩹 how the pipeline got stuck (and unstuck)
+
+three causes, stacked like dominoes:
+
+1. **the loader is non-recursive.** desk entries landed in subfolders (`bod/`, `intergroup/`) and the content loader only reads the top of `changelog/`. fixed by keeping every entry flat and letting the `repo:` frontmatter assign its desk.
+2. **a frontmatter typo.** the convention hub's night-sky entry carried `repo: &quot;wordpress / convention-hub&quot;` - spaces around the slash - which produced a route with no valid repo parameter and killed every build with &quot;missing parameter: repo&quot;. the desk is now `convention-astro`, matching its sibling entries; the entry's words were untouched.
+3. **screenshots loose at the repo root.** the validate step expects every root path to be classified, and two freshly-dropped screenshots weren't. christopher moved both into `assets/` with their convention names - `2025-10-08-david-lee-ticket-102161.png` and `2026-10-14-xdn-panel-main-domain-building.png` - using github.dev, github's editor in the browser.
+
+## 🪞 an honest note
+
+during the repair, one of the keeper's own pushes went out with placeholder text that briefly overwrote the [david lee memorial](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-10-08-in-memory-of-david-lee/) and the xdn entry. both were restored within the hour from the public build, and nothing public ever changed - the site was already stalled. the lesson is now a standing rule in the workshop: real content in hand before any push. the ledger makes no exceptions for its own keepers.
+
+## 📖 the walkthrough
+
+the shelf now has a [walkthrough of its own](https://psychedelicsinrecovery.github.io/changelog-astro-public/assets/walkthrough.html), built in the same night-sky style as [the gallery's](https://psychedelicsinrecovery.github.io/gallery/walkthrough.html): three paths - send it to a trusted servant, use github in your browser (github.dev included), or walk the full terminal process - plus the naming convention, the privacy care, and the promise that nothing here can break the site. the [readme](https://github.com/psychedelicsinrecovery/changelog-astro/blob/main/assets/readme.md) keeps its 60-second version and points to the new page.
+
+## 🧭 the arrival kit 1.3.1 (staged)
+
+in the hub's `arrival/` folder, ready for its next push:
+
+- **the more panel grows side menus.** each category - gatherings, helpers, get involved, about, desks - is now a parent: tap it and a scrollable side menu opens beside the panel, positioned to fit the screen, closable with the escape key or a click away.
+- **the desks group joins the nav.** all twelve committee desks - wordpress sites, a.l.e.x. &amp; helpdesks, github home &amp; brand, tech com, board, intergroup, gsr, pr, publications, newspaper, book, lit com - each linking to its own stream of entries.
+- the panel's list scrolls in its own wrapper now, so the side menus never get clipped by the tree.
+
+*the ledger keeps its own house in order, then shows everyone how it's done.*
+
+</details>"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-15-the-assets-shelf-gets-a-walkthrough"><time class="when" datetime="2026-10-15">Oct 15</time><span class="what"><b>The assets shelf gets a walkthrough, and the pipeline breathes again<span data-arr-new-tag hidden></span></b><span class="gist">The sync pipeline is whole again: the frontmatter typo is fixed, the two screenshots are home in assets/ (moved by Christopher through github.dev), the shelf now has…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="gatherings joins the nav; gallery tiles go visual; suite heroes center; wp fixes <div class=&quot;tldr&quot;><i class=&quot;ph ph-confetti&quot;></i> <strong>tl;dr:</strong> the suite's navbar now has a gatherings group (convention, galleries, schedule, live stream) and the more panel reads as a tree instead of a mile-long list. the gallery page trades its text marquee for six illustrated preview tiles and matches the hub's header and footer. convention heroes center-align suite-wide, the galleries cta goes loud, and the story grows past 2026. on wordpress: the home button reads &quot;view the convention hub&quot; and the propagating teaser lost its dead emoji for a real checkmark, now linking to gallery.psychedelicsinrecovery.org.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> what changed →</summary>
+
+## 🧭 the navbar: gatherings, parents and children (hub kit)
+
+- `arrival/org.js` gains a **gatherings** nav group: convention, galleries, schedule, live stream — each with its own icon and note. the kit's more panel renders group parents as headers with children offset beneath, so nothing grows into a vertical mile.
+- convention and galleries are now **registered sites** in the kit, so their welcome cards speak in the suite's voice.
+- footer &quot;explore&quot; lists convention and galleries too.
+- new `arrival/more-tree.css`, injected by org.js next to itself on every suite page: parent labels, children indented with a hairline rule.
+- verified byte-perfect after push: the diff against the previous org.js shows exactly the four intended insertions and nothing else.
+
+## 🖼️ the gallery: a marquee you can see (gallery repo)
+
+- the text marquee became an **image-tile track**: six hand-built svg previews (the opening ceremony, panels &amp; speakers, the first hug in person, candlelight meetings, art &amp; creativity, fellowship dinners), looping gently, captions on hover, pausing on hover, and honest about being placeholders — a note says real photos take their places as albums come in.
+- header and footer now use the **hub's chrome** (`.wrap` / `.brand` / `.pir-foot`), so the gallery finally wears the same navbar and footer as psychedelicsinrecovery.github.io.
+- hero centers per the suite preference.
+- the dead drive folder is gone from index and walkthrough: the send-it-in path now goes through [pir's contact page](https://www.psychedelicsinrecovery.org/contact/) — send photos to a trusted servant and they place them with care.
+- six svg tiles live at `assets/placeholders/tile-1.svg` … `tile-6.svg`.
+
+## 🎪 the convention site: louder, longer, centered (convention-astro)
+
+- **centered heroes** across the site (chrome css override): kicker, heading, lede, facts and ctas all align center.
+- &quot;the gallery&quot; button is now **&quot;the convention galleries&quot;** — first in the row, gold→violet gradient, a soft glow, and an arrow that steps on hover.
+- two new cards complete the what-happened grid at six: **the gallery is growing** and **the story continues in 2027** — the site now reads as the home of pir®'s conventions, with denver 2026 as the highlighted first chapter rather than the only one.
+- the gallery page's dead drive link became the walkthrough link.
+
+## 🏠 wordpress (home page, id 9572)
+
+- &quot;view the announcement&quot; → **&quot;view the convention hub&quot;** (link already correct).
+- the propagating teaser's dead 🗸 emoji (u+1f5f8, a glyph many system fonts lack — it showed as a box) is now an **inline svg checkmark**, font-independent, and its link points at [gallery.psychedelicsinrecovery.org](https://gallery.psychedelicsinrecovery.org/) instead of the github url. &quot;will be live shortly&quot; stays true for now: the vanity domain wasn't resolving yet at publish time (pixieset cname/ssl still propagating).
+
+## 🧩 notes for the next pair of hands
+
+- **verify the live url, not just the raw file**: github raw returns 200 the moment a commit lands, but pages can lag a minute behind — and one earlier &quot;done&quot; was checked against raw only. cache-busted curls of the deployed pages caught everything this time.
+- writing elementor elements on one page stays **strictly sequential**; reads can parallelize.
+- the `get_page_html` tool result can truncate at the head — for body-level verification, curl the live url with a cache-buster instead.
+- the google drive folder `1zul1fhkdlwjlkrthzftocefofl-pitu` is confirmed 404. until a permanent intake home exists, the send-it-in path via the contact page is the canonical way in.
+
+</details>"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-15-suite-gatherings-and-gallery-tiles"><time class="when" datetime="2026-10-15">Oct 15</time><span class="what"><b>Gatherings joins the nav; gallery tiles go visual; suite heroes center; WP fixes<span data-arr-new-tag hidden></span></b><span class="gist">The suite&#39;s navbar now has a Gatherings group (Convention, Galleries, Schedule, Live stream) and the More panel reads as a tree instead of a mile-long list. The gallery…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W with LittlebirdAI</span></span></span></a></li><li class="star low" data-month="2026-10" data-priority="P3-low" data-search="the porch grows to twelve desks <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the astrolog's porch is now twelve bentos: a board of directors card arrives, de vine news moves into its own &quot;newspaper committee&quot; desk, and intergroup and book committee join the family - with the service structure subcommittee nested under intergroup and forapir under publications. the committee map of the fellowship, in card form.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+the porch started as a handful of desks and kept growing as the committees claimed their rooms. today's arrangement, twelve cards:
+
+1. **wordpress sites** - the four sites and their long story with wpx.
+2. **a.l.e.x. &amp; helpdesks** - the discord helper and the never-loses-a-request helpdesks.
+3. **github home &amp; brand** - the hub, this astrolog, logos and brand files.
+4. **tech com** - live, minutes from tech 2.0 to tech 3.0.
+5. **board of directors** - b.o.d. minutes and governance records, coming soon.
+6. **intergroup** - minutes and reports, with the **service structure subcommittee** nested here. coming soon.
+7. **gsr committee** - coming soon.
+8. **pr committee** - coming soon.
+9. **publications committee** - with **forapir** living here. coming soon.
+10. **newspaper committee** - home of de vine news, dashboard linked. grew out of pr.
+11. **book committee** - grew out of lit com. coming soon.
+12. **lit com** - minutes and tools, beyond the whatsapp thread.
+
+a note on the family tree: the **newspaper** and **book** committees began as pr's and lit com's work respectively, and now both live as part of the **publications committee** family - but they'll serve their own astrominutes streams here, so their cards stand as quasi-parents on the porch. intergroup plays the same role for its service structure subcommittee. the bentos show the shape of service as it actually is, not as an org chart wishes it were.
+
+</details>
+
+*twelve desks, one porch.*"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-14-the-porch-grows-to-twelve"><time class="when" datetime="2026-10-14">Oct 14</time><span class="what"><b>The porch grows to twelve desks<span data-arr-new-tag hidden></span></b><span class="gist">The AstroLog&#39;s porch is now twelve bentos: a Board of Directors card arrives, De Vine News moves into its own &quot;Newspaper Committee&quot; desk, and Intergroup and Book…</span><span class="sub"><span class="pri low">Low</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="one navbar on every pir page and desk, one window for every way to reach pir, a map of everything, and a donate page <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> pir's hub, this astrolog, a.l.e.x., every helpdesk, the c.a.t.a.l.y.s.t. chalkboard and alexandrina's window now share one navbar, with an icon on every link, that stays on one row at any screen size. &quot;reach out&quot; opens one window with every way to reach pir, &quot;community&quot; opens one with every place the fellowship gathers, and there's a <a href=&quot;https://psychedelicsinrecovery.github.io/changelog-astro-public/map&quot;>map</a> of every page and desk, a <a href=&quot;https://psychedelicsinrecovery.github.io/donate/&quot;>donate page</a>, and a share card of its own for every desk.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 🧭 one navbar, everywhere
+- every page has the same kind of header: the name on the left, the pages in the middle, and on the hub, the astrolog, a.l.e.x. and the desks, the light and motion controls on the right. each link has an icon beside its name.
+- it never wraps onto a second row. when the bar runs short, the less-used links tuck into a **more** menu; on phones and narrow windows the whole bar becomes one **menu** button that opens a grouped panel of everything (and says &quot;close&quot; while it's open). arrow keys and esc work in every menu.
+- the footer lists every way around in groups, an icon on each link, and links to the **roadmap** and **sustainability** pages on every site.
+
+## 💬 one window for every way to reach pir®
+- every &quot;reach out&quot; link opens one window listing every path: pir's contacts on github (contacts.md), the contact form on psychedelicsinrecovery.org, the service site's contact form, and info@, with a button to copy the address. before, some links went to github and some to the main site.
+- &quot;community&quot; opens a window with pir's discord (the public invite), the committees' channels (litcom's `#🖨lit-com` for now; the others will be added as each committee names its channel publicly), the main site's whatsapp threads, and a sneak peek at a network of our own: profiles and posts on open protocols, paired with a dao, anonymity first. no dates; a direction, not a promise.
+
+## 🗺️ a map of everything
+- the [map](https://psychedelicsinrecovery.github.io/changelog-astro-public/map) shows every place these pages lead, each with the picture its link shows when shared: the hub and the astrolog, a.l.e.x. and **every desk** (litcom, techcom, githubdesk, pr, boarddesk), c.a.t.a.l.y.s.t., alexandrina, the ways to get involved, and pir's own sites. the same map is on the [hub](https://psychedelicsinrecovery.github.io/map/).
+
+## 💜 a donate page
+- the [donate page](https://psychedelicsinrecovery.github.io/donate/) points to pir's own 7th tradition page on psychedelicsinrecovery.org. a note on how pir stays self-supporting under its traditions holds its place until the full wording is written, there's a thank-you list for anyone who'd like to be named (first name and last initial, only with permission), and a slot for giving with crypto that isn't open yet. no wallet addresses.
+
+## 🖼️ a share card for every desk
+- paste a desk's link into discord, whatsapp or imessage and it now arrives with that desk's own card instead of a shared one. no card shows a count, so a cached preview never goes stale.
+- the astrolog's own pages (changelog, library, map, roadmap, sustainability) have cards of their own too.
+
+## 📖 reading, round two
+- beside reading mode, the light and motion drawer now has **text size** steps and a **comfortable line length** switch, on the hub, the astrolog, a.l.e.x. and the desks. both are remembered.
+
+## 🌱 roadmap and sustainability
+- the [roadmap](https://psychedelicsinrecovery.github.io/changelog-astro-public/roadmap) says what's next, and the [sustainability](https://psychedelicsinrecovery.github.io/changelog-astro-public/sustainability) page writes down everything that keeps these pages running, so none of it depends on anyone's memory. each desk has its own roadmap and sustainability notes in its public repository.
+
+</details>"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-13-one-navbar-every-desk-a-map-and-one-window-for-every-way-in"><time class="when" datetime="2026-10-13">Oct 13</time><span class="what"><b>One navbar on every PIR page and desk, one window for every way to reach PIR, a map of everything, and a donate page<span data-arr-new-tag hidden></span></b><span class="gist">PIR&#39;s hub, this AstroLog, A.L.E.X., every helpdesk, the C.A.T.A.L.Y.S.T. chalkboard and Alexandrina&#39;s window now share one navbar, with an icon on every link, that…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star low" data-month="2026-10" data-priority="P3-low" data-search="the ledger: every public change in plain words, plus reading mode and what's new since your last visit <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the astrolog has a new page, the <a href=&quot;/changelog-astro-public/ledger&quot;>ledger</a>: every public change to pir's open repositories on github, in plain words, gathered fresh every day. there's also a one-tap reading mode, and a quiet count in the header of what's new since your last visit.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 📜 the ledger
+- the changelog tells the story of finished work. the [ledger](/ledger) is the day-by-day record underneath it: each public change, sorted into kinds like fixes, look and feel, records and docs, or behind the scenes, and grouped by month, day and repository. each row links to the change itself on github.
+- it reads **public repositories only**. committee material, the wordpress source and the helpdesks' own sources are private and are never read.
+- people appear by first name and last initial, in keeping with pir's anonymity traditions. automatic publishes, merges and bot chores are left out, and the page says how many.
+- it gathers itself again every morning, so it's never more than a day behind.
+
+## 📖 reading mode
+- the book button in the header gives you the calmest page in one tap: daybreak, nothing moving, more contrast, and no cursor effects. tap it again to go back to exactly how you had it. it's also in the **light &amp; motion** drawer and on the first-visit panel (&quot;just let me read&quot;).
+
+## ✦ what's new since your last visit
+- when you come back, a small count beside the search button shows how many entries, write-ups and ledger changes are new since you were last here. open it to see them at the top of search; new links on the page get a small mark. first visits show nothing.
+
+</details>"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-12-the-ledger-reading-mode-whats-new"><time class="when" datetime="2026-10-12">Oct 12</time><span class="what"><b>The ledger: every public change in plain words, plus reading mode and what&#39;s new since your last visit<span data-arr-new-tag hidden></span></b><span class="gist">The AstroLog has a new page, the ledger: every public change to PIR&#39;s open repositories on GitHub, in plain words, gathered fresh every day. There&#39;s also a one-tap…</span><span class="sub"><span class="pri low">Low</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="choose how you arrive: a welcome guide, one search for everything, and a preview card for every entry <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> pir®'s github hub and this astrolog now greet first-time visitors with a short &quot;choose how you arrive&quot; (light, motion, contrast and cursor effects), offer a welcome guide that explains what's here and where the community talks, and share one <kbd>/</kbd> search across both sites. every entry and write-up also gets its own link-preview card, with a star of its own.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 🌌 choose how you arrive
+- the first time you open the hub or the astrolog, a small panel asks how you'd like the page: **night sky** (pir's home look), **daybreak** for bright rooms, or **follow the sky** (daybreak by day, night after seven).
+- pick how much moves: **still**, **drift** (stars twinkle and part around your pointer), or **shooting stars** (the odd meteor, and a comet tail behind your pointer). cursor effects have their own on/off switch, and there's a **more contrast** switch for easier reading.
+- if your device already asks for less motion or more contrast, those are chosen for you. your choice is saved in your browser only. it follows you between the hub and the astrolog, and a.l.e.x.'s desks pick up your light too.
+- change any of it later from the **light &amp; motion** drawer in the header, or the quick buttons beside it.
+
+## 🧭 a welcome guide
+- open it from the drawer, by pressing <kbd>?</kbd>, or with the **welcome guide** link in the footer. eight short steps light up the eight points of a star: what this site is, changelog versus library, search, light and motion, who's doing the work, where the community talks (pir's discord, with crisis resources right beside it), and the main site.
+- there's a space for a few words of welcome from kevin f. it stays empty on purpose until he writes them.
+
+## 🔎 one search for everything
+- press <kbd>/</kbd> (or <kbd>⌘</kbd> <kbd>k</kbd>) on any page of the hub or the astrolog. it searches every entry, write-up, project, helpdesk and page on both sites, ranks matches as you type, and can change the light or motion for you.
+- everything the old jump palette offered is still there, including a.l.e.x.'s <code>/ask</code>, <code>/techcom</code>, <code>/litcom</code> and <code>/mod</code> commands to copy.
+
+## 🙋 who's doing the work
+- every entry now credits who did it, by first name and last initial in keeping with pir's anonymity traditions, with a github picture when there is one and a small night sky with initials when there isn't.
+- the hub lists everyone, including trusted servants who haven't made an entry yet, so you can see how this will look as more people pitch in.
+
+## ✨ a preview card for every entry
+- share a link to any entry or write-up in discord, whatsapp or imessage and it arrives with its own card: the title, who made it, and a small constellation whose brightest star is that entry, in the same rose, gold or teal as its star on the chart.
+- the **copy a link** button under each entry does the copying for you.
+
+</details>"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-12-choose-how-you-arrive"><time class="when" datetime="2026-10-12">Oct 12</time><span class="what"><b>Choose how you arrive: a welcome guide, one search for everything, and a preview card for every entry<span data-arr-new-tag hidden></span></b><span class="gist">PIR®&#39;s GitHub hub and this AstroLog now greet first-time visitors with a short &quot;Choose how you arrive&quot; (light, motion, contrast and cursor effects), offer a welcome…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star low" data-month="2026-10" data-priority="P3-low" data-search="the astrolog gets a new look, a star chart of everything shipped, and an rss feed <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> this changelog and library now share the same look as a.l.e.x. and pir's helpdesks, so every pir® page on github feels like one place. shipped work is drawn as a star chart you can read top to bottom, you can press <kbd>/</kbd> anywhere to jump straight to any entry, and there's an rss feed if you'd like new entries to come to you.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## one look across pir's github pages
+- the astrolog and the github hub now use the same design system as a.l.e.x. and the helpdesk portals: the same type, colors, cards, and light and dark themes. it's loaded from one shared place, so when that look improves, every pir page improves with it.
+- your light or dark choice carries across all of them.
+
+## shipped work as a star chart
+- each finished piece of work is a star on a line that fills in as you scroll. rose stars are high priority, gold are medium, teal are low.
+- the changelog page now has an &quot;everything, newest first&quot; view across all projects, grouped by month, alongside the per-project pages.
+- every project with entries now has its own card, including a.l.e.x. and the github home, which didn't have one before.
+
+## easier to find things
+- press <kbd>/</kbd> (or <kbd>⌘</kbd> <kbd>k</kbd>) on any page to search every entry, write-up, and project and jump straight there.
+- library write-ups show reading time, a table of contents on longer pieces, an &quot;expand all&quot; button for the collapsible sections, and a print-friendly version that opens every section.
+- a wrong link inside the astrolog now lands on a calm &quot;you're not lost&quot; page that guesses where you meant to go, instead of github's generic error.
+
+## subscribe if you'd like
+- the changelog has an [rss feed](https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml). add it to any feed reader, or to a discord or slack rss bot, and new entries will show up there as they ship.
+
+</details>"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-11-astrolog-joins-the-alex-family-look"><time class="when" datetime="2026-10-11">Oct 11</time><span class="what"><b>The AstroLog gets a new look, a star chart of everything shipped, and an RSS feed<span data-arr-new-tag hidden></span></b><span class="gist">This changelog and library now share the same look as A.L.E.X. and PIR&#39;s helpdesks, so every PIR® page on GitHub feels like one place. Shipped work is drawn as a star…</span><span class="sub"><span class="pri low">Low</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="pir's logos now have an official home on github <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> pir's logos and brand guidelines now live in one public place — <a href=&quot;https://github.com/psychedelicsinrecovery/brand-assets&quot;>psychedelicsinrecovery/brand-assets</a> — with published literature to follow, so nobody has to dig through website media or personal drives.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+official files used to be scattered across the wordpress media library and individual volunteers'
+drives. github is becoming pir's single source of truth for media:
+
+- **[brand-assets](https://github.com/psychedelicsinrecovery/brand-assets)** — the pir® logos
+  (legacy versions for now), plain-language **brand guidelines** for the pir® and psychedelics in
+  recovery™ marks, and a roadmap for clean vector versions.
+- **literature (coming next)** — the 2026 editions of pir's published pieces (steps, traditions,
+  preamble, guiding principles, faq, safety guidelines, meeting script) with stable links the website
+  and a.l.e.x. can point to.
+
+</details>"><a href="/changelog-astro-public/changelog/brand-assets/2026-10-04-github-home-for-pir-brand-and-literature"><time class="when" datetime="2026-10-04">Oct 4</time><span class="what"><b>PIR&#39;s logos now have an official home on GitHub<span data-arr-new-tag hidden></span></b><span class="gist">PIR&#39;s logos and brand guidelines now live in one public place — psychedelicsinrecovery/brand-assets — with published literature to follow, so nobody has to dig through…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li></ol><p class="empty" id="no-results" hidden>No entries match that search or filter.</p></div></section></main><footer><div class="wrap pir-foot"><div><a class="brand" href="/changelog-astro-public/" style="margin-bottom:.6rem"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34">AstroLog</a><span>What's shipped for Psychedelics In Recovery™, in plain language, and the write-ups behind it.</span><a class="tended" href="https://psychedelicsinrecovery.github.io/catalyst-desk-public/"><span class="cat-mark" aria-hidden="true"></span>Tended by <b>C.A.T.A.L.Y.S.T.</b>, PIR®'s helper fleet</a></div><!-- Every way around, in groups, an icon on each link (drawn by the kit from org.js: footer.groups). --><arrival-footer current="changelog"></arrival-footer></div></footer><nav class="dock" aria-label="Quick links"><div class="wrap"><span class="mark">PIR®</span><a href="https://psychedelicsinrecovery.github.io/"><i class="ph-fill ph-house" aria-hidden="true"></i><span class="lg">Entry portal</span><span class="sm">Hub</span></a><a href="/changelog-astro-public/"><i class="ph-fill ph-door-open" aria-hidden="true"></i>Porch</a><a href="/changelog-astro-public/changelog" aria-current="page"><i class="ph-fill ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a><a href="/changelog-astro-public/library"><i class="ph-fill ph-books" aria-hidden="true"></i>Library</a><a href="/changelog-astro-public/ledger"><i class="ph-fill ph-scroll" aria-hidden="true"></i>Ledger</a><a href="/changelog-astro-public/map"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Map</a><a href="https://discord.gg/MyprTq8w95" data-arrival-open="community"><i class="ph-fill ph-users-three" aria-hidden="true"></i>Community</a><a class="end" href="https://www.psychedelicsinrecovery.org/contact/" data-arrival-open="contact"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i><span class="lg">Reach out</span><span class="sm">Contact</span></a></div></nav><!-- The star field (one copy, served by the hub) follows the kit's motion and cursor choices. --><script src="https://psychedelicsinrecovery.github.io/starfield.js" defer></script><script src="/alex-desk-public/assets/alex.js" defer></script><script src="/changelog-astro-public/astrolog.js" defer></script></body></html><script type="module">var e=document.getElementById(`search-input`),t=document.querySelectorAll(`.tabs button[data-priority]`),n=document.querySelectorAll(`#changelog-list .star`),r=document.querySelectorAll(`#changelog-list .chart-month`),i=document.getElementById(`no-results`),a=`all`;function o(){let t=e.value.trim().toLowerCase(),o=new Set,s=0;n.forEach(e=>{let n=(a===`all`||e.dataset.priority===a)&&(!t||(e.dataset.search??``).includes(t));e.hidden=!n,n&&(s++,o.add(e.dataset.month??``))}),r.forEach(e=>e.hidden=!o.has(e.dataset.month??``)),i.hidden=s>0,window.dispatchEvent(new Event(`scroll`))}e?.addEventListener(`input`,o),t.forEach(e=>e.addEventListener(`click`,()=>{t.forEach(e=>e.setAttribute(`aria-pressed`,`false`)),e.setAttribute(`aria-pressed`,`true`),a=e.dataset.priority??`all`,o()}));</script>

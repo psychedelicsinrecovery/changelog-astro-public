@@ -1,0 +1,113 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sustainability — PIR® AstroLog</title><meta name="description" content="What keeps PIR's GitHub pages running: the tokens, the scheduled jobs, the shared kit, the desks and the cached previews, and what to do for each."><meta name="theme-color" content="#06050e"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="alternate" type="application/rss+xml" title="PIR® AstroLog changelog" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml"><!-- Link previews (Discord, WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/sustainability"><meta property="og:site_name" content="PIR® AstroLog"><meta property="og:type" content="website"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/sustainability"><meta property="og:title" content="Sustainability — PIR® AstroLog"><meta property="og:description" content="What keeps PIR's GitHub pages running: the tokens, the scheduled jobs, the shared kit, the desks and the cached previews, and what to do for each."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/page/sustainability.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="PIR's sustainability page: nothing left to memory, over a patch of night sky."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Sustainability — PIR® AstroLog"><meta name="twitter:description" content="What keeps PIR's GitHub pages running: the tokens, the scheduled jobs, the shared kit, the desks and the cached previews, and what to do for each."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/page/sustainability.jpg"><meta name="twitter:image:alt" content="PIR's sustainability page: nothing left to memory, over a patch of night sky."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><!-- PIR's arrival kit, served from the hub. Load order matters: kit CSS, PIR's kit CSS, then the
+         design system and this site's layer. The scripts stay in <head> (not deferred) so the
+         visitor's light, motion and contrast apply before first paint. --><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/org.css"><script src="https://psychedelicsinrecovery.github.io/arrival/org.js"></script><script src="https://psychedelicsinrecovery.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/alex-desk-public/assets/alex.css"><link rel="stylesheet" href="/changelog-astro-public/astrolog.css"><style>.repo-doc[data-astro-cid-2rvo52bu]{max-width:46rem;margin:0 auto;padding:2.75rem 1.25rem 3rem}.repo-doc[data-astro-cid-2rvo52bu] h1{margin:0 0 1rem;font-size:clamp(2.1rem,5vw,2.6rem);line-height:1.1}.repo-doc[data-astro-cid-2rvo52bu] table{border-collapse:collapse;width:100%;margin:0 0 1.25rem;font-size:.92rem;display:block;overflow-x:auto}.repo-doc[data-astro-cid-2rvo52bu] th,.repo-doc[data-astro-cid-2rvo52bu] td{text-align:left;vertical-align:top;border-bottom:1px solid var(--border);padding:.55rem .65rem}.repo-doc[data-astro-cid-2rvo52bu] h3{margin-top:2rem}.repo-doc[data-astro-cid-2rvo52bu] .prose{background:color-mix(in srgb, var(--background) 72%, transparent)}
+</style></head><body class><a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then
+         into a Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="top"><div class="wrap"><a class="brand" href="/changelog-astro-public/" aria-label="PIR® AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34"><span class="arr-brand-text"><span class="word">AstroLog</span> <small>PIR®</small></span></a><arrival-nav current="sustainability"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><section class="repo-doc" data-astro-cid-2rvo52bu><div class="prose" data-astro-cid-2rvo52bu><h1 id="-sustainability-what-keeps-these-pages-running">🌱 Sustainability: what keeps these pages running</h1>
+<div class="tldr"><i class="ph ph-plant"></i> <span><strong>TL;DR:</strong> PIR®'s GitHub pages cost nothing to host. What keeps them alive is a short list of things that quietly expire or drift: the publishing tokens, the scheduled jobs, a shared kit, one generator for the desk portals, and cached link previews. Each is written down here, so none of it depends on anyone's memory.</span></div>
+<p>This covers PIR’s hub on GitHub, this AstroLog and the helpdesk portals together. It’s also this
+repository’s <code>SUSTAINABILITY.md</code>, and the hub keeps a shorter copy for its own repository. A.L.E.X.,
+PIR’s Discord helper, has its own page about what it takes to run it:
+<a href="https://psychedelicsinrecovery.github.io/alex-desk-public/sustainability.html">A.L.E.X.’s sustainability</a>.</p>
+<h2 id="-the-pieces">🧩 The pieces</h2>
+<table>
+<thead>
+<tr>
+<th>Repository</th>
+<th>What it is</th>
+<th>How it goes live</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/psychedelicsinrecovery/psychedelicsinrecovery.github.io"><code>psychedelicsinrecovery.github.io</code></a> (public)</td>
+<td>The hub: <code>/</code>, <code>/donate/</code>, <code>/map/</code>, the 404, and the <strong>arrival kit</strong> every page loads</td>
+<td>GitHub Pages, straight from <code>main</code></td>
+</tr>
+<tr>
+<td><code>changelog-astro</code> (private)</td>
+<td>The source of this AstroLog: entries, write-ups, the Astro site</td>
+<td>A workflow builds it and publishes <strong>only the finished pages</strong></td>
+</tr>
+<tr>
+<td><a href="https://github.com/psychedelicsinrecovery/changelog-astro-public"><code>changelog-astro-public</code></a> (public)</td>
+<td>The built AstroLog you’re reading</td>
+<td>GitHub Pages, from what the workflow pushes</td>
+</tr>
+<tr>
+<td><code>alex-desk</code> (private)</td>
+<td>A.L.E.X. itself, and <code>site/build.py</code>, which builds A.L.E.X.’s pages <strong>and</strong> writes the four desk portals</td>
+<td>A workflow builds <code>site/dist</code> and publishes it to <a href="https://github.com/psychedelicsinrecovery/alex-desk-public"><code>alex-desk-public</code></a>, which also serves the shared design system (<code>alex.css</code>, <code>alex.js</code>)</td>
+</tr>
+<tr>
+<td><code>litcom-desk</code>, <code>techcom-desk</code>, <code>github-desk</code>, <code>pr-desk</code> (private)</td>
+<td>Each committee’s helpdesk: tickets stay private; only <code>portal/</code> is public</td>
+<td>A workflow copies <code>portal/</code> (plus the license, roadmap and sustainability files) to <code>&lt;desk&gt;-public</code></td>
+</tr>
+<tr>
+<td><code>catalyst-desk</code> (private)</td>
+<td>The C.A.T.A.L.Y.S.T. chalkboard</td>
+<td>A workflow copies <code>site/</code> to <a href="https://github.com/psychedelicsinrecovery/catalyst-desk-public"><code>catalyst-desk-public</code></a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="️-what-can-quietly-stop-and-what-to-do">🛠️ What can quietly stop, and what to do</h2>
+<h3 id="-the-publishing-tokens-public_repo_token">🔑 The publishing tokens (<code>PUBLIC_REPO_TOKEN</code>)</h3>
+<p>Each private repository above keeps a classic personal access token as the secret
+<code>PUBLIC_REPO_TOKEN</code>, and uses it to push into its public twin. When it expires, <strong>that site stops
+updating with no sign on the site itself</strong>; the desks’ workflows skip quietly with a notice.
+<em>What to do:</em> renew before the expiry date (scopes <code>repo</code> + <code>workflow</code>), update the secret in every
+repository that uses it, and run each workflow once by hand.</p>
+<h3 id="-the-ledgers-private-lane-ledger_token-optional">🔒 The ledger’s private lane (<code>LEDGER_TOKEN</code>, optional)</h3>
+<p>The <a href="https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger">ledger</a> shows PIR’s
+private work masked. The build reads the opted-in private repositories with a <code>LEDGER_TOKEN</code> secret
+when there is one (read-only “Contents” on those repositories), else <code>PUBLIC_REPO_TOKEN</code>; any it
+can’t read are carried, masked, from the committed snapshot. <em>What to do:</em> add a fine-grained
+<code>LEDGER_TOKEN</code> to keep those rows live; refresh the snapshot with
+<code>LEDGER_TOKEN=$(gh auth token) npm run ledger:snapshot</code> in <code>astro/</code>.</p>
+<h3 id="️-the-daily-ledger-rebuild">🗓️ The daily ledger rebuild</h3>
+<p>The publish workflow also runs every morning (<code>cron: "23 10 * * *"</code>, UTC), so the ledger is never
+more than a day behind, and checks that no private subject leaks into the build. <em>What to do:</em> if
+the ledger’s newest day looks old, read the workflow’s run history.</p>
+<h3 id="-the-hourly-readme-mirror">🪞 The hourly README mirror</h3>
+<p>The hub’s <code>README.md</code> copies the organization profile (<code>psychedelicsinrecovery/.github</code>) every hour.
+GitHub switches off scheduled workflows in a public repository after 60 days without activity.
+<em>What to do:</em> edit the profile, never the copy; re-enable the workflow if it stops.</p>
+<h3 id="-the-arrival-kit-is-shared-and-vendored">🧰 The arrival kit is shared, and vendored</h3>
+<p><code>arrival.js</code> + <code>arrival.css</code> on the hub are copies of <code>drasticstatic/my-template</code> →
+<code>changelog-template/arrival/</code>; <code>org.js</code> + <code>org.css</code> are PIR’s own. The AstroLog and every desk portal
+load them from the hub by full URL. <em>What to do:</em> upgrade by copying the two kit files unchanged;
+push the hub <strong>before</strong> the AstroLog, and the AstroLog before rebuilding the desks.</p>
+<h3 id="-three-stylesheets-one-header">🎨 Three stylesheets, one header</h3>
+<p><code>alex.css</code> (the design system, from <code>alex-desk-public</code>) and this site’s <code>astrolog.css</code> were written
+before the kit’s navbar. The hub’s <code>arrival/org.css</code> keeps their old <code>.top nav a</code> rules and alex.css’s
+bare <code>section</code> padding out of the kit’s navbar, footer, windows and map. <em>What to do:</em> if a header
+or footer looks off after a design-system change, check the “PIR’s header” block in <code>org.css</code> first.</p>
+<h3 id="-the-desk-portals-are-generated">🏭 The desk portals are generated</h3>
+<p>The LitCom, TechCom, GitHub and PR portals (<code>&lt;desk&gt;/portal/index.html</code>, <code>README.md</code>, <code>404.html</code>) are
+written by <code>alex-desk/site/build.py --desks ..</code>, the same code that builds A.L.E.X.’s pages. Each
+desk’s share image (<code>portal/social-card.jpg</code>) is the card this AstroLog builds at
+<code>/og/page/&lt;desk&gt;.jpg</code> (words in <code>astro/src/og/pages.ts</code>), copied in. <em>What to do:</em> change a desk’s
+page in <code>build.py</code>, run <code>python3 site/build.py --desks ..</code> from <code>alex-desk</code>, and commit each desk’s
+<code>portal/</code> in its own repository. Hand edits to a desk’s <code>portal/index.html</code> are overwritten.</p>
+<h3 id="️-cached-link-previews">🖼️ Cached link previews</h3>
+<p>Discord, WhatsApp, iMessage, Telegram and LinkedIn keep their own copy of a link’s preview for days
+or weeks. No card carries a count, so none goes stale on its own. <em>What to do:</em> after a card
+changes, refresh the important links; <code>psychedelicsinrecovery/.github</code> → <code>SOCIAL-PREVIEWS.md</code> lists
+every page with a tailored card and how to refresh each app (Telegram: send the link to @WebpageBot).</p>
+<h3 id="-wallet-giving-later">👛 Wallet giving, later</h3>
+<p>The crypto slot on <a href="https://psychedelicsinrecovery.github.io/donate/"><code>/donate/</code></a> is empty on
+purpose. <em>What to do:</em> when the wallet module (Reown AppKit, Web3Auth for email sign-in) is switched
+on, add <code>https://psychedelicsinrecovery.github.io</code> to both domain allowlists, with a real client ID.
+Never put a wallet address in <code>org.js</code>.</p>
+<h3 id="-links-that-leave-github">🔗 Links that leave GitHub</h3>
+<p>The nav, the contact and community windows and the map point at psychedelicsinrecovery.org (its
+contact form, 7th Tradition and WhatsApp pages), the service site’s contact form, CONTACTS.md and
+the Discord invite. <em>What to do:</em> if one of those addresses changes, update the hub’s
+<code>arrival/org.js</code> (one place) and this AstroLog’s <code>astro/src/data/map.ts</code>.</p>
+<h3 id="-dependencies">📦 Dependencies</h3>
+<p>Astro, Satori and sharp are pinned in <code>astro/package-lock.json</code>. <em>What to do:</em> upgrade on purpose,
+build locally, and check a few share cards before pushing.</p>
+<h2 id="-who-looks-after-it">🙋 Who looks after it</h2>
+<p>Christopher W, with Alfred (Claude Code). Questions or corrections: open a <code>/techcom</code> ticket in
+PIR’s Discord. <em>Last reviewed 2026-10-13.</em></p>
+</div></section></main><footer><div class="wrap pir-foot"><div><a class="brand" href="/changelog-astro-public/" style="margin-bottom:.6rem"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34">AstroLog</a><span>What's shipped for Psychedelics In Recovery™, in plain language, and the write-ups behind it.</span><a class="tended" href="https://psychedelicsinrecovery.github.io/catalyst-desk-public/"><span class="cat-mark" aria-hidden="true"></span>Tended by <b>C.A.T.A.L.Y.S.T.</b>, PIR®'s helper fleet</a></div><!-- Every way around, in groups, an icon on each link (drawn by the kit from org.js: footer.groups). --><arrival-footer current="sustainability"></arrival-footer></div></footer><nav class="dock" aria-label="Quick links"><div class="wrap"><span class="mark">PIR®</span><a href="https://psychedelicsinrecovery.github.io/"><i class="ph-fill ph-house" aria-hidden="true"></i><span class="lg">Entry portal</span><span class="sm">Hub</span></a><a href="/changelog-astro-public/"><i class="ph-fill ph-door-open" aria-hidden="true"></i>Porch</a><a href="/changelog-astro-public/changelog"><i class="ph-fill ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a><a href="/changelog-astro-public/library"><i class="ph-fill ph-books" aria-hidden="true"></i>Library</a><a href="/changelog-astro-public/ledger"><i class="ph-fill ph-scroll" aria-hidden="true"></i>Ledger</a><a href="/changelog-astro-public/map"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Map</a><a href="https://discord.gg/MyprTq8w95" data-arrival-open="community"><i class="ph-fill ph-users-three" aria-hidden="true"></i>Community</a><a class="end" href="https://www.psychedelicsinrecovery.org/contact/" data-arrival-open="contact"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i><span class="lg">Reach out</span><span class="sm">Contact</span></a></div></nav><!-- The star field (one copy, served by the hub) follows the kit's motion and cursor choices. --><script src="https://psychedelicsinrecovery.github.io/starfield.js" defer></script><script src="/alex-desk-public/assets/alex.js" defer></script><script src="/changelog-astro-public/astrolog.js" defer></script></body></html>
