@@ -2,7 +2,7 @@
 
 This folder is the one home for screenshots and images used by the AstroLog. Anything placed here rides the sync workflow to the public site and becomes a permanent, native asset of the repository - no external image hosts needed.
 
-New here? Open the friendly walkthrough: [walkthrough.html](https://psychedelicsinrecovery.github.io/changelog-astro-public/assets/walkthrough.html) - the same guide, with the three paths laid out step by step.
+New here? Open the friendly walkthrough: [walkthrough-astrolog.html](https://psychedelicsinrecovery.github.io/gallery/walkthrough-astrolog.html) - the same guide, with the three paths laid out step by step. It lives in the gallery repo now, home of the fellowship's how-to guides, alongside the gallery's own photo walkthrough.
 
 ## How to add an image (the 60-second version)
 
