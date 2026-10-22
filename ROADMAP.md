@@ -10,6 +10,18 @@ page. This is also the repository's `ROADMAP.md`. A.L.E.X. keeps
 
 ## ✅ Just landed
 
+- 🧰 **Arrival kit 1.4, unchanged from the template**: Donate and the welcome guide in every footer,
+  the More dropdown and the Menu, on every page and desk; one footer shape everywhere; the Foyers
+  (Committees, then Infrastructure) and the helpdesks as native groups; a dock that shows when it
+  scrolls on a phone.
+- 🤲 **A [gratitude pledge](https://psychedelicsinrecovery.github.io/pledge/)**: a thank-you signed
+  with a wallet. No money: nothing sent, nothing recorded, no counts.
+- 💡 **[Proposals](https://psychedelicsinrecovery.github.io/changelog-astro-public/proposals)** and
+  **[Resources](https://psychedelicsinrecovery.github.io/changelog-astro-public/resources)** at
+  addresses of their own. The first proposal: SiteGround auto-renewal safeguards.
+- 🛎️ **Every foyer opens with its helpdesk door**, and the GSR Desk and BoardDesk have share cards
+  of their own.
+
 - 🧭 **One navbar on every page**: the hub, the AstroLog, A.L.E.X. and every desk, with an icon on
   every link, folding into "More" and then a Menu on smaller screens instead of wrapping.
 - 💬 **One window for every way to reach PIR®** (CONTACTS.md, both contact forms, info@), and one
@@ -32,6 +44,22 @@ page. This is also the repository's `ROADMAP.md`. A.L.E.X. keeps
   email sign-in. The slot is there now, empty on purpose.
 - 🔒 **Live private rows on the ledger**, once a read-only `LEDGER_TOKEN` is added.
 
+## 🤝 Stewardship and succession
+
+So these pages outlive any one person (today drasticstatic, Christopher W, owns or administers the
+GitHub organization and holds the tokens that publish them). Details on the
+[sustainability](https://psychedelicsinrecovery.github.io/changelog-astro-public/sustainability) page.
+
+- [ ] At least two owners for the GitHub organization, from PIR's own trusted servants
+- [ ] Publishing through org-owned automation (a GitHub App, or an org bot account), not personal tokens
+- [ ] A token register: every token and secret, its owner and its expiry date
+- [ ] A renewal runbook, with a reminder a month before each expiry
+- [ ] Hand-over steps written down: adding an owner, transferring repositories, domains and the wallet-connect project
+- [ ] Exports and backups of the repositories and anything outside GitHub, on a schedule
+- [ ] A publishing token (or org automation) for the C.A.T.A.L.Y.S.T. chalkboard, whose public page waits without one
+- [ ] Wallet connect: PIR's own Reown project (a one-line `org.js` change), if PIR wants one
+- [ ] The domain and DNS: the [SiteGround auto-renewal safeguards](https://psychedelicsinrecovery.github.io/changelog-astro-public/proposals/2026-10-22-siteground-auto-renewal-safeguards), if the Board and TechCom agree
+
 ## 🌌 Later, and still being explored
 
 - 🙏 **Thanks you can claim yourself:** a contributor could add their name to the contribution ledger
@@ -42,4 +70,4 @@ page. This is also the repository's `ROADMAP.md`. A.L.E.X. keeps
   Lens and Farcaster, paired with a DAO and run by group conscience, anonymity first. A direction,
   not a promise.
 
-*Maintained by Christopher W with Alfred (Claude Code). Last reviewed 2026-10-13.*
+*Maintained by Christopher W with Alfred (Claude Code). Last reviewed 2026-10-22.*
