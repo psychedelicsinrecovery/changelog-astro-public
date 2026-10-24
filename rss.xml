@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PIR® AstroLog: what's shipped</title>
+    <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog</link>
+    <atom:link href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml" rel="self" type="application/rss+xml" />
+    <description>Confirmed, finished work for Psychedelics In Recovery™, in plain language.</description>
+    <language>en-us</language>
+    <item>
+      <title>One kit, one footer, every door: Foyers in groups, a gratitude pledge, and proposals in the open</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-22-kit-1-4-foyers-pledge-proposals</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-22-kit-1-4-foyers-pledge-proposals</guid>
+      <pubDate>Thu, 22 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>Every PIR® page on GitHub now runs the same arrival kit (1.4) as the other organizations, with nothing patched on top. Donate and the welcome guide are in every footer, the More dropdown and the Menu; the footer has one clean shape everywhere; the Foyers and the helpdesks open in groups (Committees, then Infrastructure), with the GSR Desk and BoardDesk's own front door. New: a gratitude pledge…</description>
+    </item>
+    <item>
+      <title>The PR foyer is populated: six meetings, October 2025 to May 2026</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-19-pr-foyer-populated</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-19-pr-foyer-populated</guid>
+      <pubDate>Mon, 19 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>The PR Committee's foyer now carries its record: six meetings unfolded, October 2025 through May 2026 - from the podcast pilot to De Vine's birth on paper to the parked newsletter. The source is the committee's AI-scribed minutes, provided by Christopher while Anne's Google Doc is still pending viewer approval - a live example of why the changelog is now the canonical public record: a doc meant…</description>
+    </item>
+    <item>
+      <title>Foyers, not rows: the grid reads in columns, and the Election Committee finds its desk</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-18-foyers-grid-and-election-committee</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-18-foyers-grid-and-election-committee</guid>
+      <pubDate>Sun, 18 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Chris caught the porch grid reading the wrong way: it was filled row by row, so his columns came out scrambled. Fixed - the foyers now read GSR/PR/BOD/Intergroup down the left, LitCom/Publications/Book/Newspaper down the middle, TechCom/WordPress/GitHub/A.L.E.X. down the right, with the flyout in engagement order and &quot;Committees&quot;/&quot;Infrastructure&quot; categories inside it. The changelog's card page…</description>
+    </item>
+    <item>
+      <title>TechCom October report: the helpdesks, the AstroLog, and a pipeline made honest</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-17-techcom-monthly-report</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-17-techcom-monthly-report</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>TechCom's monthly report to the GSR Subcommittee, October 17, 2026. The A.L.E.X. helpdesks are live on Discord and the web, the AstroLog Changelog is live as the fellowship's service record with a desk for every committee, a 24-hour publishing outage was repaired and the pipeline hardened, and TechCom remains on-call via WhatsApp. Attendance this period: Christopher, Littlebird and Alfred, plus…</description>
+    </item>
+    <item>
+      <title>LitCom October report: the book launch, old minutes on the record, and a fellowshipping month</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-monthly-report</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-monthly-report</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Lit Com</category>
+      <description>LitCom's monthly report to the GSR Subcommittee, October 17, 2026. October was a fellowshipping month as members supported the convention and each other. The &quot;Living Psychedelic Sober&quot; book launch is woven through PIR's web presence, historical minutes are being populated onto the AstroLog with 2025-2026 gaps to be filled soon, a second batch of FAQ questions is in the works for the main site,…</description>
+    </item>
+    <item>
+      <title>Member materials 2025-2026: the gap being filled, and the FAQs that came in from the cold</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-member-materials-teaser</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/lit-com/2026-10-17-litcom-member-materials-teaser</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Lit Com</category>
+      <description>A teaser for the gap years: in 2025 LitCom built out PIR's member materials - the first batch of FAQs, printed materials, the Twelve Steps poster - and in 2026 the work turned to carrying the PIR® trademark into those documents. When TechCom's keys arrived, the front-end FAQs needed updating - and a whole second set of FAQs, worked long ago and buried on the LitCom Drive, turned out to already…</description>
+    </item>
+    <item>
+      <title>October 2026 subcommittee reports: a book on Amazon, minutes going public, and a convention remembered</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-subcommittee-reports</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-subcommittee-reports</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>The subcommittee reports from October 17, 2026: PR is rebuilding its host bench and pushed the convention gallery; LitCom is fellowshipping and queuing a second FAQ batch; Tech is moving every committee's minutes onto the public record - this very desk; the Convention Committee counted just over 100 in person and began planning 2027 virtual and 2028 in Utah; and &quot;Living Psychedelic Sober&quot; is now…</description>
+    </item>
+    <item>
+      <title>GSR records go live: September's minutes unfolded, every desk gets a page</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-records-go-live</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-records-go-live</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>The GSR desk went from an intake notice to a living record on meeting day: the September 19 minutes unfolded into three entries, the TechCom and LitCom monthly reports filed alongside them, a build fix so every one of the twelve desks has a page even before its first entry, and the porch grid re-ordered the way the fellowship reads it.</description>
+    </item>
+    <item>
+      <title>October 2026: Tradition 10, a new board, and the record goes public</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-october-2026-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-october-2026-meeting</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>The October 17, 2026 GSR meeting, the first with the fellowship's service record unfolding in public. Tradition 10 held the floor - outside issues, neutrality, primary purpose - the September minutes were approved, and a new Board of Directors was announced with Rick B as President and a January transition. Next meeting: Saturday, November 21, 2026, noon Eastern.</description>
+    </item>
+    <item>
+      <title>Fourteen written reports from thirteen groups</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-group-reports</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-17-gsr-group-reports</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>The written group reports from the GSR Monthly Reports form, October 2026: fourteen submissions from thirteen groups, recorded as submitted. Sunday Integration carries the room at 41; Sunday Integration's Chair and GSR roles open in January; Glasgow's new group is finding its feet; and the open-service list runs from Friday 11th Step Mysticism's chair to Sunday Big Book Study's co-chair.</description>
+    </item>
+    <item>
+      <title>The GSR Desk opens its doors</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/alex-desk/2026-10-17-gsr-desk-public-live</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/alex-desk/2026-10-17-gsr-desk-public-live</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>A.L.E.X. &amp; helpdesks</category>
+      <description>A new helpdesk portal went live the same afternoon the GSR meeting showcased the record: gsr-desk-public, modeled on the PR Desk, with the /gsr command, a &quot;looking for another desk&quot; concierge, and the GSR minutes desk one click away. GitHub Pages still needs enabling on the new repo - one click - and the other desks inherit the visibility and concierge fixes next.</description>
+    </item>
+    <item>
+      <title>The concierge layer: dividers in the flyout, a GSR row everywhere, and the Board's front door</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/alex-desk/2026-10-17-alex-desk-concierge-layer</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/alex-desk/2026-10-17-alex-desk-concierge-layer</guid>
+      <pubDate>Sat, 17 Oct 2026 12:00:00 GMT</pubDate>
+      <category>A.L.E.X. &amp; helpdesks</category>
+      <description>A small shared helper - arrival/concierge.js - now dresses the Helpdesks dropdown on every page that loads it: &quot;Committees&quot; and &quot;Infrastructure desks&quot; section dividers, the GSR Desk row injected wherever a desks list lacks it, BoardDesk pointed at its real front door, and a new BoardDesk portal. Every concierge page on the AstroLog greets you with its helpdesk's door, and the GSR and Board desks…</description>
+    </item>
+    <item>
+      <title>The day the pipeline stood back up: four landmines, one leak check, and a reworded confession</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-16-the-pipeline-stood-back-up</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2026-10-16-the-pipeline-stood-back-up</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>For 24 hours the public site stood still while the build tripped over four small frontmatter mistakes, a naming convention, and finally one lazy commit message. This is the honest story of the outage and the repair, kept as the record asks: wrong turns included.</description>
+    </item>
+    <item>
+      <title>The ping that broke the silence, and the suite speaks past-tense</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-the-ping-that-broke-the-silence</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-the-ping-that-broke-the-silence</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>Chris's ping brought the EMCP bridge back after ~50 dark minutes, and the whole post-convention pass landed: the Convention Hub hero now says the gathering has concluded, its Live Stream card points to the archive with Revisit, the livestream page wears a record disclaimer with the YouTube channel link, and convention-astro's streamed highlight card links straight to the recordings - built,…</description>
+    </item>
+    <item>
+      <title>The neighborhood nav, a hero unmasked, and the flyout set free</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-neighborhood-nav-and-the-flyout-set-free</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-neighborhood-nav-and-the-flyout-set-free</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>convention-astro</category>
+      <description>Christopher's second feedback round of the day, all shipped: marquees become full carousels with arrows, page dots and a counter; a scroll cue bows at the bottom of every hero and fades on scroll; the progress line moved to the navbar's bottom edge; &quot;click me 1st&quot; became &quot;Neighborhood Nav&quot;; the left-offset hero was unmasked (A.L.E.X. had claimed .hero as a two-column grid); the kit's More-panel…</description>
+    </item>
+    <item>
+      <title>The kit lands on the gallery, and the marquee learns to be held</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-kit-lands-on-the-gallery</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-kit-lands-on-the-gallery</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>convention-astro</category>
+      <description>Christopher's feedback round on the gallery suite came back with a dozen fixes, and all of them shipped: the arrival kit finally renders on the gallery index AND its footer on the walkthrough, the brand dropdowns pulse with a &quot;click me 1st&quot; hint, both marquees are now draggable with the mouse, the text marquee is back beside the image one, album chips became real buttons, the Convention site CTA…</description>
+    </item>
+    <item>
+      <title>The gallery wall, the album switcher, and the lightbox that hid in plain sight</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-gallery-wall-and-the-album-switcher</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-16-the-gallery-wall-and-the-album-switcher</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>convention-astro</category>
+      <description>Round three, same day. The stray &quot;download button&quot; at the page bottom turned out to be the lightbox itself: its CSS was scoped to .pir-conv but the overlay lives outside it, so it rendered as an unstyled stub while silently locking the scroll. Unscoped, it works. The Convention gallery hero became a gallery wall - framed, tilted tiles with a warm spotlight and a live &quot;photos gathered&quot; chip - and…</description>
+    </item>
+    <item>
+      <title>The app shell that ate the gallery, and the connector that slept</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gallery/2026-10-16-the-app-shell-that-ate-the-gallery</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gallery/2026-10-16-the-app-shell-that-ate-the-gallery</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>gallery</category>
+      <description>The download links Littlebird handed to the terminal served the Littlebird app's own page shell instead of the files, so a faithful commit replaced both gallery pages with stubs (47 insertions, 813 deletions). Both pages were restored through the GitHub API directly and verified at the source. The WordPress connector turned out to be connected-but-disabled - the panel said connected while every…</description>
+    </item>
+    <item>
+      <title>Jetpack wanted its cut, and the bridge went quiet</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-jetpack-wanted-its-cut</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-jetpack-wanted-its-cut</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The WordPress.com connector mystery ended with a plot twist: it connects fine and even sees both PIR sites, but site-scoped editing demands a Jetpack AI or Complete plan - the paywall was the silence all along. EMCP (the free plugin bridge on WPX) stays our editing route, and mid-session it went down for 25+ minutes across every PIR server at once - the WPX-side bridge, not the connectors.…</description>
+    </item>
+    <item>
+      <title>Ghost paragraphs and the Array that ate the hub</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-ghost-paragraphs-and-the-array-that-ate-the-hub</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-16-ghost-paragraphs-and-the-array-that-ate-the-hub</guid>
+      <pubDate>Fri, 16 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>Two post-convention layout regressions, two different bugs, both fixed and verified in a real browser. The Live Stream page's day-card grid was shattered by empty autop paragraphs (ghosts bred from HTML comments on the last content round-trip), and the Convention Hub collapsed to a 190px column because Elementor string-cast a stored object into a literal e-con-Array class, which silently drops…</description>
+    </item>
+    <item>
+      <title>The XDN comes home while the family gets a shoutout</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-15-xdn-comes-home</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-15-xdn-comes-home</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The escalated XDN case resolved the same evening - Martin G. at WPX System Admins unstuck the rebuild and confirmed &quot;the issue has been resolved.&quot; And the root cause is now on the record: a left-over value from the suspension period had sealed the toggle shut from the front end. The WPX family also got a public shoutout in the AstroLog's contacts library.</description>
+    </item>
+    <item>
+      <title>The proposals shelf: intake open</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2026-10-15-the-proposals-shelf</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2026-10-15-the-proposals-shelf</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Intergroup</category>
+      <description>Population of data in progress. Each committee is able to share proposals with Intergroup, so the ledger keeps a shelf for them. The shelf lives here on the Intergroup desk, with every source linked live to its Google Drive original, and it's listed on the AstroLog's /proposals page beside the proposals written out in full.</description>
+    </item>
+    <item>
+      <title>The canvas that ate the page - a debugging story with a headless browser</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-the-canvas-that-ate-the-page</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-the-canvas-that-ate-the-page</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>convention-astro</category>
+      <description>The Convention site looked &quot;blank - only background&quot; even with correct deploys. The culprit: the starfield canvas rendered as a static 900px-tall block ABOVE the page, pushing all content below the fold. Diagnosed with a headless browser, fixed with one CSS rule, verified the same way.</description>
+    </item>
+    <item>
+      <title>The assets shelf gets a walkthrough, and the pipeline breathes again</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-15-the-assets-shelf-gets-a-walkthrough</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-15-the-assets-shelf-gets-a-walkthrough</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>The sync pipeline is whole again: the frontmatter typo is fixed, the two screenshots are home in assets/ (moved by Christopher through github.dev), the shelf now has its own friendly walkthrough page, and the arrival kit learns flyout side menus plus a Desks group - staged and riding with the next hub push.</description>
+    </item>
+    <item>
+      <title>Gatherings joins the nav; gallery tiles go visual; suite heroes center; WP fixes</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-15-suite-gatherings-and-gallery-tiles</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-15-suite-gatherings-and-gallery-tiles</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>The suite's navbar now has a Gatherings group (Convention, Galleries, Schedule, Live stream) and the More panel reads as a tree instead of a mile-long list. The gallery page trades its text marquee for six illustrated preview tiles and matches the hub's header and footer. Convention heroes center-align suite-wide, the galleries CTA goes loud, and the story grows past 2026. On WordPress: the home…</description>
+    </item>
+    <item>
+      <title>Intergroup &amp; SSS records: intake open</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2026-10-15-intake-intergroup-and-sss-records-open</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2026-10-15-intake-intergroup-and-sss-records-open</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>Intergroup</category>
+      <description>Population of data in progress. The Intergroup (IG) and Spiritual Solutions Subcommittee (SSS) records are being gathered and filed onto this desk. Sources are linked live to their Google Drive originals - the lineage rule of this ledger. IG is an archived committee: it stopped meeting shortly after SSS wrapped its work, and GSR is now the fellowship's decision-making body - but the desk stays…</description>
+    </item>
+    <item>
+      <title>GSR records: intake open</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-15-intake-gsr-records-open</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-10-15-intake-gsr-records-open</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>Population of data in progress. GSR is now the fellowship's decision-making body, and its records are being gathered here - going back years, not just weeks. The October 17, 2026 minutes are on the desk, unfolded across three entries; the September 19, 2026 minutes are unfolded across three more; and the legacy records from October 2023 through 2025 are arriving from the Drive archives. Sources…</description>
+    </item>
+    <item>
+      <title>Feedback round: the marquee lands on the Convention gallery, the walkthrough meets the kit, the Drive ID rises from the dead</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-gallery-pages-and-modal-fixes</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-gallery-pages-and-modal-fixes</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>convention-astro</category>
+      <description>Chris's afternoon feedback, addressed in full. The big catch: the Drive folder was never dead — our pages carried a typo'd folder ID; the real one works. The illustrated marquee moved to the Convention gallery page, the walkthrough finally loads the arrival kit, the gallery header became a dropdown of gallery pages, trusted-servant buttons now fire the Reach-out modal, and the WP home speaks in…</description>
+    </item>
+    <item>
+      <title>Convention Hub night-sky restyle; home CTA repointed; MCP is back</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-convention-hub-night-sky</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-convention-hub-night-sky</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>convention-astro</category>
+      <description>The WordPress MCP came back and the queued styling work landed: the Convention Hub page now wears the Night Sky layout (hero, pills, six-card grid, closing section), the home page's &quot;View the Announcement&quot; button points to /convention-hub/, and a galleries-propagating teaser sits under it.</description>
+    </item>
+    <item>
+      <title>A gallery of our own - and a Convention site to hold the story</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-a-gallery-of-our-own</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/convention-astro/2026-10-15-a-gallery-of-our-own</guid>
+      <pubDate>Thu, 15 Oct 2026 12:00:00 GMT</pubDate>
+      <category>convention-astro</category>
+      <description>A WhatsApp request to connect Anne R.'s Pixieset album went wonderfully rogue and became two new fellowship repositories: the PIR® Gallery (every album we make, kept on GitHub) and the Convention site (the story of the Inaugural). A CNAME record now points gallery.psychedelicsinrecovery.org at Pixieset, the WordPress Convention Hub page is live, and the whole story is cross-linked from every…</description>
+    </item>
+    <item>
+      <title>The XDN takes a breather while WPX system admins step in</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-xdn-takes-a-breather</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-xdn-takes-a-breather</guid>
+      <pubDate>Wed, 14 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The main domain's XDN toggle was found switched off - likely a side effect of the temporary suspension during the payment lapse. Support resets didn't unstick the rebuild, so the ticket was escalated to the System Admins (Mon-Fri, 09:30-18:00 GMT+3). Sites are healthy; the edge is just catching its breath.</description>
+    </item>
+    <item>
+      <title>The porch grows to twelve desks</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-14-the-porch-grows-to-twelve</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-14-the-porch-grows-to-twelve</guid>
+      <pubDate>Wed, 14 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>The AstroLog's porch is now twelve bentos: a Board of Directors card arrives, De Vine News moves into its own &quot;Newspaper Committee&quot; desk, and Intergroup and Book Committee join the family - with the Service Structure subcommittee nested under Intergroup and forapir under Publications. The committee map of the fellowship, in card form.</description>
+    </item>
+    <item>
+      <title>The morning the websites took a breather — and the safeguards the fellowship built out of it</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-the-lights-came-back-on</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-the-lights-came-back-on</guid>
+      <pubDate>Wed, 14 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>For a few hours both PIR® websites went dark. The cause was ordinary and human: a hosting renewal invoice ($299.90, due October 7) slipped past its due date, and the provider suspended the account. Nothing was lost — payment restored everything within minutes. What came out of it matters more: the board is turning on auto-renewal, billing notices will reach a role mailbox instead of one personal…</description>
+    </item>
+    <item>
+      <title>The fellowship's founding documents get a glow-up — By-Laws go emoji-rich, twelve legacy minutes preserved in full</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up</guid>
+      <pubDate>Wed, 14 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>Two documents got the care they deserved today: the By-Laws now render on GitHub like a friendly webpage instead of a wall of legal text, and twelve Tech Committee reports from 2023–2024 are preserved in the AstroLog with their complete text — each as its own dated entry, now living on the Tech Com desk in the proper order of the work they describe. The fellowship's institutional memory should…</description>
+    </item>
+    <item>
+      <title>Every committee gets its own desk button, the growth badge learns some manners, and three new pages join the family</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-13-techcom-round-4</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-13-techcom-round-4</guid>
+      <pubDate>Tue, 13 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>Seven committee pages now carry their own helpdesk desk button, so a request for help lands directly with the right team instead of in a generic pile. The growth badge got its third revision: a cleaner close button with a pulse-glow ring, and it now hides (together with the cart) when you scroll down and returns when you scroll up, just like the navbar. Three new pages went live — the PIR®…</description>
+    </item>
+    <item>
+      <title>One navbar on every PIR page and desk, one window for every way to reach PIR, a map of everything, and a donate page</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-13-one-navbar-every-desk-a-map-and-one-window-for-every-way-in</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-13-one-navbar-every-desk-a-map-and-one-window-for-every-way-in</guid>
+      <pubDate>Tue, 13 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>PIR's hub, this AstroLog, A.L.E.X., every helpdesk, the C.A.T.A.L.Y.S.T. chalkboard and Alexandrina's window now share one navbar, with an icon on every link, that stays on one row at any screen size. &quot;Reach out&quot; opens one window with every way to reach PIR, &quot;Community&quot; opens one with every place the fellowship gathers, and there's a map of every page and desk, a donate page, and a share card of…</description>
+    </item>
+    <item>
+      <title>The ledger: every public change in plain words, plus reading mode and what's new since your last visit</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-12-the-ledger-reading-mode-whats-new</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-12-the-ledger-reading-mode-whats-new</guid>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>The AstroLog has a new page, the ledger: every public change to PIR's open repositories on GitHub, in plain words, gathered fresh every day. There's also a one-tap reading mode, and a quiet count in the header of what's new since your last visit.</description>
+    </item>
+    <item>
+      <title>The main site moves onto WPX's CDN, plus three wasted requests per page removed</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-12-main-site-moves-onto-wpx-cdn</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-12-main-site-moves-onto-wpx-cdn</guid>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>psychedelicsinrecovery.org now runs through WPX's content delivery network, the way the service site already did. Until today the main site was served straight from a single origin server. Real-visitor data showed pages taking about 8 seconds on mobile before anything appeared. Cached pages now arrive from WPX's edge in under a fifth of a second. Separately, three broken stylesheet requests that…</description>
+    </item>
+    <item>
+      <title>Choose how you arrive: a welcome guide, one search for everything, and a preview card for every entry</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-12-choose-how-you-arrive</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-12-choose-how-you-arrive</guid>
+      <pubDate>Mon, 12 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>PIR®'s GitHub hub and this AstroLog now greet first-time visitors with a short &quot;Choose how you arrive&quot; (light, motion, contrast and cursor effects), offer a welcome guide that explains what's here and where the community talks, and share one / search across both sites. Every entry and write-up also gets its own link-preview card, with a star of its own.</description>
+    </item>
+    <item>
+      <title>A fifth PIR site launches, and the events calendar's real root cause gets found</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-11-publicrelations-site-launched-calendar-root-cause-found</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-11-publicrelations-site-launched-calendar-root-cause-found</guid>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>publicrelations.psychedelicsinrecovery.org is up — the fifth PIR subdomain, continuing the &quot;every committee gets its own lightweight WordPress site&quot; plan. Separately, we found the actual reason the events calendar could be overwhelmed by bot traffic in the first place (not just a stopgap fix), and we're working with WPX to apply the real one before bringing the calendar back.</description>
+    </item>
+    <item>
+      <title>The AstroLog gets a new look, a star chart of everything shipped, and an RSS feed</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-11-astrolog-joins-the-alex-family-look</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-11-astrolog-joins-the-alex-family-look</guid>
+      <pubDate>Sun, 11 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>This changelog and library now share the same look as A.L.E.X. and PIR's helpdesks, so every PIR® page on GitHub feels like one place. Shipped work is drawn as a star chart you can read top to bottom, you can press / anywhere to jump straight to any entry, and there's an RSS feed if you'd like new entries to come to you.</description>
+    </item>
+    <item>
+      <title>The WhatsApp previews and the malformed 206</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-10-the-whatsapp-previews-and-the-malformed-206</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-10-the-whatsapp-previews-and-the-malformed-206</guid>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>During inaugural-convention week, WhatsApp link previews served days-old data. Root cause found two layers deep: our og:image was a WebP (fixed on our side), but the transfer layer was also malformed - ranged HTTP/2 requests came back as HTTP 206 with an impossible &quot;content-encoding: gzip,br&quot; header and a truncated body (curl error 61). WPX's Denis S. disabled W3 Total Cache's GZIP compression,…</description>
+    </item>
+    <item>
+      <title>Live Stream Hub v5: color-coded time zones, one-click day cards, and a new schedule poster</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-10-live-stream-hub-v5-color-coded-zones</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-10-live-stream-hub-v5-color-coded-zones</guid>
+      <pubDate>Sat, 10 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The Convention live-stream page got its biggest polish yet: every session now lists color-coded PDT / EDT / BST / NZDT times, each day image + title + button is one big clickable card, the &quot;To watch&quot; instructions are a clear 3-step list, and a new sacred-medicine schedule poster (San Pedro, ayahuasca vine, wachuma blooms) went live — including the social preview image.</description>
+    </item>
+    <item>
+      <title>The great slowness investigation</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-05-the-great-slowness-investigation</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-05-the-great-slowness-investigation</guid>
+      <pubDate>Mon, 05 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The deepest dig on this desk: intermittent 3-11 second pages and total timeouts, chased through three layers of causes in one ticket - a 3-PHP-worker ceiling and 200 req/min rate limit, wp-cron firing more than once per second, a bot storm hammering the events calendar's uncached query URLs - and finally the true root cause: W3 Total Cache's query-string caching was switched off, so every…</description>
+    </item>
+    <item>
+      <title>A new helpdesk@ address, checkout follow-ups, and a look back at PIR's email</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-04-new-helpdesk-email-and-our-email-history</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-04-new-helpdesk-email-and-our-email-history</guid>
+      <pubDate>Sun, 04 Oct 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>PIR now has helpdesk@psychedelicsinrecovery.org for the new helpdesks, convention checkout follow-ups are set up and tested, and we documented how PIR's email has evolved since 2020.</description>
+    </item>
+    <item>
+      <title>Meet A.L.E.X. — a Discord helper and real helpdesks are on the way</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/alex-desk/2026-10-04-meet-alex-helpdesks-in-the-works</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/alex-desk/2026-10-04-meet-alex-helpdesks-in-the-works</guid>
+      <pubDate>Sun, 04 Oct 2026 12:00:00 GMT</pubDate>
+      <category>A.L.E.X. &amp; helpdesks</category>
+      <description>PIR is piloting A.L.E.X., a Discord helper that answers questions only from PIR's own published materials (with sources), plus private helpdesks for LitCom, TechCom, GitHub, and moderation — so requests stop getting lost in chat threads.</description>
+    </item>
+    <item>
+      <title>PIR's logos now have an official home on GitHub</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-04-github-home-for-pir-brand-and-literature</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/brand-assets/2026-10-04-github-home-for-pir-brand-and-literature</guid>
+      <pubDate>Sun, 04 Oct 2026 12:00:00 GMT</pubDate>
+      <category>GitHub home &amp; brand</category>
+      <description>PIR's logos and brand guidelines now live in one public place — psychedelicsinrecovery/brand-assets — with published literature to follow, so nobody has to dig through website media or personal drives.</description>
+    </item>
+    <item>
+      <title>The mobile menu now scrolls properly to reach every page</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-24-mobile-menu-now-scrolls-properly</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-24-mobile-menu-now-scrolls-properly</guid>
+      <pubDate>Thu, 24 Sep 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The open mobile menu now scrolls smoothly and reliably all the way down, confirmed on a real iPhone — and grows with a submenu's content before it needs to scroll at all.</description>
+    </item>
+    <item>
+      <title>The mobile menu button now works reliably on phones — including iPhone</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-23-mobile-menu-button-now-reliable</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-23-mobile-menu-button-now-reliable</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The mobile menu button was unreliable across phones/browsers — now confirmed working on a real iPhone, not just testing tools.</description>
+    </item>
+    <item>
+      <title>The site header now stays out of your way while you scroll — and comes right back when you need it</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-23-header-stays-out-of-your-way</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-23-header-stays-out-of-your-way</guid>
+      <pubDate>Wed, 23 Sep 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The nav bar tucks itself away as you scroll down a page and slides right back the moment you scroll up, so it's out of the way when you're reading and there when you need it.</description>
+    </item>
+    <item>
+      <title>Footer social icons now properly centered on mobile</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-22-footer-icons-centered-on-mobile</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-22-footer-icons-centered-on-mobile</guid>
+      <pubDate>Tue, 22 Sep 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The footer's social icons weren't centered on phones, and its image wasn't centered on desktop either. Both are now fixed.</description>
+    </item>
+    <item>
+      <title>SMTP 451 4.7.1 - the fifty-emails lesson</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-21-the-fifty-emails-lesson</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-09-21-the-fifty-emails-lesson</guid>
+      <pubDate>Mon, 21 Sep 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>A bulk send to ~100 recipients hit WPX's mail throttle: 50 emails per 30 minutes per mailbox. Not a bug - a deliberate guard on a mail service built for correspondence, not campaigns. The lesson the fellowship's mailers keep re-learning since 2023: bulk belongs on a dedicated sender.</description>
+    </item>
+    <item>
+      <title>September meeting: Tradition 9, minutes approved, and a chair's horizon</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-09-19-gsr-september-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-09-19-gsr-september-meeting</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>The GSR Subcommittee met Saturday, September 19, 2026 at 12:00 PM Eastern on Zoom, chaired by Karyn S, with fourteen members present. Tradition 9 opened a candid discussion about serving while short-handed, the prior minutes were approved 7-12, subcommittee reports covered PR, the Convention and the Book Committee, and Karyn shared that she will hand off the GSR chair role at the end of 2026.…</description>
+    </item>
+    <item>
+      <title>Sixteen groups report in: attendance, motions and open service roles</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-09-19-gsr-group-reports</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2026-09-19-gsr-group-reports</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>The September GSR written reports, recorded as submitted: sixteen groups checked in. Attendance ranged from 2 in Ann Arbor to about 40 at Sunday Integration. Sunday Integration passed three motions at its 8/30 business meeting, and the open service roles worth filling this quarter are chair, greeter, facilitator, time keeper and GSR positions across eight groups.</description>
+    </item>
+    <item>
+      <title>A Message from the PIR Board to the Fellowship</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2026-09-19-a-message-from-the-pir-board</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2026-09-19-a-message-from-the-pir-board</guid>
+      <pubDate>Sat, 19 Sep 2026 12:00:00 GMT</pubDate>
+      <category>Board of Directors</category>
+      <description>Attachment A of the September GSR minutes: the Board's letter to the fellowship on how we hold disagreement in service. Disagreement is healthy; questioning a volunteer's integrity without evidence and without raising the concern privately first is not. The Board asks that concerns go directly to the person or committee involved, or to the Board, in keeping with Tradition Twelve.</description>
+    </item>
+    <item>
+      <title>The Election Committee's first town hall: how the fellowship recommends its board</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2026-06-20-election-committee-town-hall</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2026-06-20-election-committee-town-hall</guid>
+      <pubDate>Sat, 20 Jun 2026 12:00:00 GMT</pubDate>
+      <category>Board of Directors</category>
+      <description>June 20, 2026: the first-ever town hall facilitated by the Election Committee, the temporary committee charged with gathering the fellowship's recommendations for the new board - President, Treasurer, member-at-large positions and an External Advisor role - with the board voting on the recommendations, as 501(c)(3) best practices require. The form closed July 31; the committee's deliberations…</description>
+    </item>
+    <item>
+      <title>The Election Committee's desk: opened June 20, hibernated August 23</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2026-06-20-election-committee-desk</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2026-06-20-election-committee-desk</guid>
+      <pubDate>Sat, 20 Jun 2026 12:00:00 GMT</pubDate>
+      <category>Board of Directors</category>
+      <description>The Election Committee - the temporary committee that gathered the fellowship's recommendations and seated the 2027 board - opened its desk with its first town hall on June 20, 2026, worked through the summer, held its last meeting on August 23, 2026, and hibernated the desk with the work done. The new board was revealed to the fellowship in the October 17, 2026 GSR meeting. Nested here as a BOD…</description>
+    </item>
+    <item>
+      <title>Imagick, loopbacks, and the https that wasn't</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-05-27-imagick-loopbacks-and-the-https-that-wasnt</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-05-27-imagick-loopbacks-and-the-https-that-wasnt</guid>
+      <pubDate>Wed, 27 May 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>A live-chat morning with WPX that settled a whole season of Site Health warnings in one sitting: imagick installed on all four sites, the firewall taught that our own server IPs are friends (the whitelisting that later made agent automation safe), MariaDB 10.5 and no Redis declared features rather than flaws - and the service site's https error turning out to be one missing &quot;s&quot; in our own URL…</description>
+    </item>
+    <item>
+      <title>PR, May 9, 2026: the newsletter parks, the summer plans</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-05-09-pr-may-2026-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-05-09-pr-may-2026-meeting</guid>
+      <pubDate>Sat, 09 May 2026 12:00:00 GMT</pubDate>
+      <category>PR Committee</category>
+      <description>With volunteers scarce, the newsletter is parked with honesty: the May edition ships in PDF, the June edition may be the last unless support appears, and the call for volunteers goes out through GSR and community channels. Attention turns to the podcast, trainings (WordPress and Opus Clip), moderation guidelines with legal input, and summer events - with Christopher tasked to explore AI and…</description>
+    </item>
+    <item>
+      <title>Three reminders and one EPP code: the transfer completes</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-04-15-three-reminders-and-one-epp-code</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-04-15-three-reminders-and-one-epp-code</guid>
+      <pubDate>Wed, 15 Apr 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>Between March and April 2026, WPX's migration team sent three automated alarms titled &quot;IMPORTANT! Domain transfer failed&quot; — but the actual problem was one missing password: the EPP Auth Info code, which every registrar must provide on request. Once it reached WPX, the transfer completed, and psychedelicsinrecovery.org came fully home.</description>
+    </item>
+    <item>
+      <title>PR, April 12, 2026: rebuilding the newsletter workflow</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-04-12-pr-april-2026-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-04-12-pr-april-2026-meeting</guid>
+      <pubDate>Sun, 12 Apr 2026 12:00:00 GMT</pubDate>
+      <category>PR Committee</category>
+      <description>The newsletter workflow is rebuilt from Canva's drag-and-drop fragility into a sustainable pipeline: Douglas takes editor-in-chief, Ryan collects submissions, Karyn gathers intercommittee reports, contributions flow through WhatsApp and a single Google Drive, and Christopher is tasked with exploring GitHub and AI-agent formatting in the background - while the committee keeps the human approach…</description>
+    </item>
+    <item>
+      <title>PR, March 13, 2026: a small room, big plans</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-03-13-pr-march-2026-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-03-13-pr-march-2026-meeting</guid>
+      <pubDate>Fri, 13 Mar 2026 12:00:00 GMT</pubDate>
+      <category>PR Committee</category>
+      <description>A two-person meeting - Karyn and Rob P - still moves the committee's work: Rob takes Reddit outreach (ten podcast links posted), learns Opus Clip and Riverside for shorts, and starts rewriting episode descriptions with searchable labels; Anne's thread carries archived newsletters and a possible quarterly cadence. The minutes' own header carries a typo - &quot;13 March 20269&quot; - recorded here honestly.</description>
+    </item>
+    <item>
+      <title>PR, February 14, 2026: Integration Radio, Episode 3, is out</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-02-14-pr-february-2026-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2026-02-14-pr-february-2026-meeting</guid>
+      <pubDate>Sat, 14 Feb 2026 12:00:00 GMT</pubDate>
+      <category>PR Committee</category>
+      <description>Integration Radio Episode 3 launches the day of the meeting, live on Spotify, Apple and YouTube. The committee agrees on a bi-weekly cadence and a standardized release checklist, decides each De Vine edition will carry a podcast highlight box, drafts a monthly content tracker, and aims Denver 2026 messaging at ten years of Psychedelics In Recovery™ – PIR®. Notably, the minutes themselves were…</description>
+    </item>
+    <item>
+      <title>The domain comes home (and buys its ticket twice)</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-01-30-the-domain-comes-home</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-01-30-the-domain-comes-home</guid>
+      <pubDate>Fri, 30 Jan 2026 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The psychedelicsinrecovery.org domain transfer from SiteGround hit a snag: the checkout flow sold a duplicate hosting plan instead of charging for the transfer, and the site greeted visitors with &quot;Not Found.&quot; A records were re-pointed while WPX's system admins untangled the billing.</description>
+    </item>
+    <item>
+      <title>The Board closes the year: quarterly meeting, December 29, 2025</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2025-12-29-the-board-closes-the-year</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2025-12-29-the-board-closes-the-year</guid>
+      <pubDate>Mon, 29 Dec 2025 12:00:00 GMT</pubDate>
+      <category>Board of Directors</category>
+      <description>The quarterly Board meeting of December 29, 2025, in full: PIR®'s trademark registered with the verified statement due March 2026 (Calyx Law representing), Rick B stepping down as Secretary with Anne unanimously appointed, Karyn S formalized as voting Member at Large, treasury at $13,789.79, the Denver Fall 2026 convention proposed, and a Decennial Report introduced. Source: the original minutes…</description>
+    </item>
+    <item>
+      <title>A fresh certificate for publications</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-12-13-fresh-certificate-for-publications</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-12-13-fresh-certificate-for-publications</guid>
+      <pubDate>Sat, 13 Dec 2025 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>A small, satisfying fix: the publications subdomain's SSL certificate was acting up, WPX deleted and reissued it, and everything went back to normal. Two months into the WPX era, the small machinery hums.</description>
+    </item>
+    <item>
+      <title>PR, November 8, 2025: De Vine is born on paper</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2025-11-08-pr-november-2025-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2025-11-08-pr-november-2025-meeting</guid>
+      <pubDate>Sat, 08 Nov 2025 12:00:00 GMT</pubDate>
+      <category>PR Committee</category>
+      <description>The De Vine News newsletter is born on paper: a January launch, Katherine's template, a monthly cadence with website signup, and a deliberate lead with spiritual principles rather than steps &quot;to avoid controversy&quot; - committee squares, quarterly board updates, and a service board for open positions. The podcast stands at six recorded episodes; the Iceland Eclipse Festival fee question goes to the…</description>
+    </item>
+    <item>
+      <title>PR, October 11, 2025: the podcast gets its runway</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2025-10-11-pr-october-2025-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/pr-com/2025-10-11-pr-october-2025-meeting</guid>
+      <pubDate>Sat, 11 Oct 2025 12:00:00 GMT</pubDate>
+      <category>PR Committee</category>
+      <description>The PR Committee of Psychedelics In Recovery™ – PIR® puts the podcast on its runway: the pilot is recorded by Karin and Topher, edited by Ian Yeh, production moves to Riverside, and launch is targeted for November 1. The De Vine News newsletter takes its first real shape - a Step of the Month, an announcement square for every committee - with editorial standards written down: anonymity, no…</description>
+    </item>
+    <item>
+      <title>Tech 2.0 begins: the fellowship moves to WPX</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-10-09-the-fellowship-moves-to-wpx</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-10-09-the-fellowship-moves-to-wpx</guid>
+      <pubDate>Thu, 09 Oct 2025 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>The entry our whole WPX era hangs from: the free migration request that brought psychedelicsinrecovery.org from SiteGround to WPX, cache plugins pre-configured to the host's settings, and nameservers handed over. Tech 2.0 starts here.</description>
+    </item>
+    <item>
+      <title>In memory of David L</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-10-08-in-memory-of-david-lee</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-10-08-in-memory-of-david-lee</guid>
+      <pubDate>Wed, 08 Oct 2025 12:00:00 GMT</pubDate>
+      <category>WordPress sites</category>
+      <description>A moment of remembrance for David L - the fellowship member whose hands first reached out to WPX on October 8, 2025, and who carried our sites through the migration, the certificates, and the domain transfer. Every page that loads quickly today stands on ground he helped move us to. Rest well, David.</description>
+    </item>
+    <item>
+      <title>April 2025: a mediation-committee proposal, a name change for the Book Committee, and MAPS Denver</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2025-04-19-gsr-april-2025-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2025-04-19-gsr-april-2025-meeting</guid>
+      <pubDate>Sat, 19 Apr 2025 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>April 2025: Prism proposed a mediation committee, Cheryl proposed renaming the Book Committee, PR asked for recovery and psychedelic podcast recommendations, the fellowship looked toward MAPS in Denver that June, and Anne's 14-month rotation as IG and GSR committees chair came due.</description>
+    </item>
+    <item>
+      <title>December 2024: Tradition 12, an Exeter research proposal, and a chair elected</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2024-12-21-gsr-december-2024-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2024-12-21-gsr-december-2024-meeting</guid>
+      <pubDate>Sat, 21 Dec 2024 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>December 2024: Tradition 12 on safe, sacred, inclusive spaces; the 12&amp;12 writing committee rewriting Step 1; the retreat eyeing Oregon; a major FAQ revision on the PIR website with Christopher W. elected LitCom chair for 2025; the book revision nearing completion; PayPal and TechSoup accounts arrived; and the University of Exeter proposed studying PIR academically.</description>
+    </item>
+    <item>
+      <title>November 2024: Berkeley ends, Salt Lake City begins, and the donate button gets a workaround</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2024-11-16-gsr-november-2024-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2024-11-16-gsr-november-2024-meeting</guid>
+      <pubDate>Sat, 16 Nov 2024 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>November 2024: the Berkeley in-person meeting ends and comes off the website, Salt Lake City launches a new in-person meeting, the donate button is broken (PayPal works - members donate manually to todd@joyoflivingsober.com), and two committees are being born: PR and Retreat 2025, each waiting on the digest-to-calendar transition to finish first.</description>
+    </item>
+    <item>
+      <title>Board report to Intergroup: the tax exemption arrives</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2024-11-16-board-report-to-intergroup</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/intergroup/2024-11-16-board-report-to-intergroup</guid>
+      <pubDate>Sat, 16 Nov 2024 12:00:00 GMT</pubDate>
+      <category>Intergroup</category>
+      <description>&quot;With profound excitement&quot;: on October 10, 2024, the IRS granted tax exemption to all contributions to Psychedelics in Recovery, effective December 4, 2023. Trademark application research for pro bono representation underway; the Board continues meeting with the Book Subcommittee. Source: the original report in Google Drive.</description>
+    </item>
+    <item>
+      <title>Holding steady before the launch</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-07-11-holding-steady-before-launch</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-07-11-holding-steady-before-launch</guid>
+      <pubDate>Thu, 11 Jul 2024 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Unchanged from June — the calm before the launch. This is the last of the twelve surviving documents; the story picks up again in the 2026 AstroLog.</description>
+    </item>
+    <item>
+      <title>The new website readies for launch</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-06-08-new-website-readies-for-launch</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-06-08-new-website-readies-for-launch</guid>
+      <pubDate>Sat, 08 Jun 2024 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Hundreds of hours in, the new website is nearly ready — with a fellowship survey and an open feedback meeting planned to welcome it.</description>
+    </item>
+    <item>
+      <title>The cost of keeping meetings online</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-05-04-the-cost-of-keeping-meetings-online</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-05-04-the-cost-of-keeping-meetings-online</guid>
+      <pubDate>Sat, 04 May 2024 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Hosting paid through May 2025, and the full annual price of keeping the fellowship online, laid out in plain numbers: $1,559.68 across SiteGround, Zoom, and Mailchimp.</description>
+    </item>
+    <item>
+      <title>Hosting renews and budget season opens</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-04-13-hosting-renews-budget-season-opens</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-04-13-hosting-renews-budget-season-opens</guid>
+      <pubDate>Sat, 13 Apr 2024 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Hosting renewal on the horizon at $359.88, the digest mailer still growing, and next year's budget taking shape. (If that renewal number feels familiar, see the lights came back on — some stories rhyme.)</description>
+    </item>
+    <item>
+      <title>We will build it ourselves</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-03-12-we-will-build-it-ourselves</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-03-12-we-will-build-it-ourselves</guid>
+      <pubDate>Tue, 12 Mar 2024 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>After weighing contractor quotes, Dave M and David L decide to build the redesign themselves — and the 7th Tradition buttons prepare to move to PIR's own accounts.</description>
+    </item>
+    <item>
+      <title>The Board takes shape: the 2024 founding meetings</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2024-03-08-the-board-takes-shape</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/bod/2024-03-08-the-board-takes-shape</guid>
+      <pubDate>Fri, 08 Mar 2024 12:00:00 GMT</pubDate>
+      <category>Board of Directors</category>
+      <description>The founding year, in full: from a four-person planning call in March 2024 to a mission statement voted unanimously in June, the 501c3 path with consultant Jason B, the first Open Board with the whole fellowship, the HAF Oregon pilot carefully held at Tradition 10's edge, and the PIRBSC book chapter where David L counselled caution about a sole proprietorship. Source: the original notes in…</description>
+    </item>
+    <item>
+      <title>The redesign begins behind the scenes</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-02-10-redesign-begins-behind-the-scenes</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-02-10-redesign-begins-behind-the-scenes</guid>
+      <pubDate>Sat, 10 Feb 2024 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Alex officially comes aboard as professional web designer; everything runs smoothly and — a rare and beautiful sentence in any service report — there are no outstanding requests.</description>
+    </item>
+    <item>
+      <title>Meet Alex — the website overhaul begins</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-01-10-meet-alex-overhaul-begins</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-01-10-meet-alex-overhaul-begins</guid>
+      <pubDate>Wed, 10 Jan 2024 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>An introductory call with Alex, a web developer who might help with the long-dreamed front-facing website overhaul. Spoiler from the future: he does, and hundreds of hours of fellowship work follow.</description>
+    </item>
+    <item>
+      <title>Calendar complete and a service email coming</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-12-09-calendar-complete-service-email-coming</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-12-09-calendar-complete-service-email-coming</guid>
+      <pubDate>Sat, 09 Dec 2023 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>A month of rest, a finished calendar page, committee pages taking shape — and the service email separation just weeks away.</description>
+    </item>
+    <item>
+      <title>A document database is born</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-11-09-document-database-born</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-11-09-document-database-born</guid>
+      <pubDate>Thu, 09 Nov 2023 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>The idea that eventually became today's AstroLog: putting minutes and reports somewhere the whole fellowship can reach them, on the service website itself.</description>
+    </item>
+    <item>
+      <title>The calendar lands on staging</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-10-28-calendar-lands-on-staging</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-10-28-calendar-lands-on-staging</guid>
+      <pubDate>Sat, 28 Oct 2023 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Four volunteers around one agenda: the service calendar goes live on staging, a crisis-lines page appears, and Rick and Lauren take on taming the PIR inbox.</description>
+    </item>
+    <item>
+      <title>October 2023: the 501 questions, background checks, and a fellowship finding its footing</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2023-10-23-gsr-october-2023-meeting</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/gsr-com/2023-10-23-gsr-october-2023-meeting</guid>
+      <pubDate>Mon, 23 Oct 2023 12:00:00 GMT</pubDate>
+      <category>GSR Committee</category>
+      <description>The oldest GSR record on this desk, circa October 2023: the fellowship deep in the 501(c)(3) transition - GSRs debating background checks for Board members, conflict-of-interest questions, and the Kacie advisor vote - alongside chat-security work in Zoom and group reports from fifteen meetings. Integration averaged 60 attendees even then.</description>
+    </item>
+    <item>
+      <title>Keeping meetings safe with host training</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-10-18-keeping-meetings-safe</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-10-18-keeping-meetings-safe</guid>
+      <pubDate>Wed, 18 Oct 2023 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>Dave M's October Intergroup report: hands-on Zoom security training for hosts and co-hosts, steady progress on the service website, and a digest email already outgrowing its shoes.</description>
+    </item>
+    <item>
+      <title>Tech 2.0 kicks off with a new Zoom link</title>
+      <link>https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-08-11-tech-20-kicks-off</link>
+      <guid isPermaLink="true">https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-08-11-tech-20-kicks-off</guid>
+      <pubDate>Fri, 11 Aug 2023 12:00:00 GMT</pubDate>
+      <category>Tech Com</category>
+      <description>The oldest document in the archive: Tech 2.0's founding agenda — a fresh Zoom link, a service website check-in, and a social-media to-do list. This is where the preserved record begins.</description>
+    </item>
+  </channel>
+</rss>

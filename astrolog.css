@@ -1,0 +1,196 @@
+/* 🌵 PIR® AstroLog — layered on the shared A.L.E.X. design system.
+   Load order: alex.css (tokens, nav, cards, buttons, palette, footer; served from
+   /alex-desk-public/assets/alex.css so the whole PIR family moves together) → this file.
+   Only what's specific to a changelog + library lives here. */
+
+/* ── shell ── */
+body{padding-bottom:58px}
+.toast{bottom:4.6rem}
+.brand img{border-radius:9px}
+.brand .word{background:linear-gradient(110deg,var(--fg) 20%,var(--violet) 60%,var(--cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:520px){.brand small{display:none}}
+/* The header's links are the arrival kit's navbar (kit 1.2), styled in the hub's arrival/org.css. */
+main{min-height:60vh}
+.page-head{padding-block:3.6rem 1.6rem}
+.page-head h1{font-size:clamp(2.4rem,5.6vw,3.8rem);font-weight:800;letter-spacing:-.03em;margin:.35rem 0 .7rem}
+.page-head .lede{margin:0 0 1rem}
+.crumb{display:inline-flex;align-items:center;gap:.4rem;font:500 .82rem var(--mono);color:var(--muted);text-decoration:none}
+.crumb:hover{color:var(--fg)}
+.crumb .ph-fill{transition:transform .2s}.crumb:hover .ph-fill{transform:translateX(-3px)}
+.stats{display:flex;flex-wrap:wrap;gap:.45rem;font:500 .8rem var(--mono);color:var(--muted)}
+.stats span{padding:.3rem .65rem;border:1px solid var(--line);border-radius:999px;background:var(--panel)}
+.stats b{color:var(--fg);font-weight:600}
+.band{padding-block:3.5rem}
+
+/* ── frozen dock (always visible; the cross-surface quick links) ── */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:45;height:50px;display:flex;align-items:center;
+  border-top:1px solid var(--line);background:color-mix(in srgb,var(--ink) 80%,transparent);
+  backdrop-filter:blur(16px) saturate(140%);-webkit-backdrop-filter:blur(16px) saturate(140%)}
+.dock .wrap{display:flex;align-items:center;gap:.25rem;width:100%;overflow-x:auto;scrollbar-width:none}
+.dock .wrap::-webkit-scrollbar{display:none}
+.dock .mark{font:700 .9rem var(--serif);color:var(--fg);margin-right:.6rem;white-space:nowrap}
+.dock a{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;color:var(--muted);text-decoration:none;font-size:.82rem;font-weight:500;padding:.35rem .6rem;border-radius:999px}
+.dock a:hover,.dock a[aria-current=page]{color:var(--fg);background:var(--panel)}
+.dock a .ph-fill{color:var(--violet)}
+.dock .end{margin-left:auto}
+@media (max-width:620px){.dock .mark{display:none}.dock a{font-size:.78rem;padding:.35rem .5rem}}
+
+/* ── the star chart: shipped work as a constellation ── */
+.chart{list-style:none;margin:0;padding:0 0 0 2.1rem;position:relative;--fill:0}
+.chart::before,.chart::after{content:"";position:absolute;left:9px;top:.9rem;width:2px;border-radius:2px}
+.chart::before{bottom:.9rem;background:var(--line)}
+.chart::after{height:calc((100% - 1.8rem) * var(--fill));background:linear-gradient(180deg,var(--violet),var(--cyan) 55%,var(--gold));box-shadow:0 0 12px color-mix(in srgb,var(--cyan) 60%,transparent);transition:height .25s linear}
+.chart-month{position:relative;margin:1.4rem 0 .5rem;font:600 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.chart-month:first-child{margin-top:0}
+.chart-month::before{content:"";position:absolute;left:calc(-2.1rem + 6px);top:50%;width:8px;height:8px;margin-top:-4px;border-radius:50%;background:var(--ink);border:2px solid var(--teal)}
+.star{position:relative;--tone:var(--gold)}
+.star.high{--tone:var(--rose)}.star.low{--tone:var(--teal)}
+.star::before,.star::after{content:"";position:absolute;pointer-events:none}
+.star::before{left:calc(-2.1rem - 4px);top:calc(1.05rem - 14px);width:36px;height:36px;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--tone) 55%,transparent),transparent 65%);opacity:.35;transition:opacity .5s,transform .5s}
+.star::after{left:calc(-2.1rem + 3px);top:calc(1.05rem - 7px);width:14px;height:14px;background:var(--tone);
+  clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);opacity:.55;transform:scale(.7);transition:opacity .5s,transform .5s}
+.star.lit::before{opacity:1}.star.lit::after{opacity:1;transform:scale(1)}
+.star a{display:grid;grid-template-columns:auto 1fr;gap:.25rem 1rem;align-items:baseline;padding:.6rem .85rem;margin-left:-.35rem;border-radius:14px;text-decoration:none;color:var(--fg);border:1px solid transparent;transition:background .2s,border-color .2s,transform .2s}
+.star a:hover{background:var(--panel);border-color:var(--line);transform:translateX(3px);color:var(--fg)}
+.star a:hover~*,.star:hover::after{transform:scale(1.25)}
+.star .when{font:500 .78rem var(--mono);color:var(--muted);white-space:nowrap;min-width:3.6rem}
+.star .what{min-width:0}
+.star .what b{display:block;font:600 1.02rem/1.35 var(--serif);text-wrap:balance}
+.star .sub{display:flex;flex-wrap:wrap;gap:.3rem .7rem;margin-top:.25rem;font-size:.82rem;color:var(--muted)}
+.star .sub .ph-fill{color:var(--violet);margin-right:.2rem}
+.star .gist{display:block;margin-top:.3rem;font-size:.9rem;line-height:1.5;color:var(--muted)}
+.star[hidden],.chart-month[hidden]{display:none}
+@media (max-width:560px){.star a{grid-template-columns:1fr;gap:.1rem}}
+
+/* ── priority chip ── */
+.pri{display:inline-flex;align-items:center;gap:.35rem;font:600 .7rem var(--mono);padding:.22rem .55rem;border-radius:999px;border:1px solid color-mix(in srgb,var(--tone) 45%,transparent);color:var(--tone);background:color-mix(in srgb,var(--tone) 12%,transparent);--tone:var(--gold)}
+.pri.high{--tone:var(--rose)}.pri.low{--tone:var(--teal)}
+.pri::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}
+
+/* ── porch ── */
+.porch{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:center;padding-block:4.5rem 3rem;min-height:calc(88vh - var(--nav))}
+.porch>*{min-width:0}
+@media (max-width:940px){.porch{grid-template-columns:1fr;min-height:0;padding-top:3rem;gap:2.2rem}}
+.porch h1{font-size:clamp(3.4rem,10vw,6.4rem);font-weight:800;letter-spacing:-.04em;line-height:.92;margin:.2rem 0 .7rem;
+  background:linear-gradient(110deg,var(--fg) 12%,var(--violet) 42%,var(--cyan) 68%,var(--gold));background-size:200% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:sheen 10s ease-in-out infinite}
+.porch .lede{max-width:33rem}
+.ledger{padding:1.5rem 1.4rem 1.2rem}
+.ledger-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.ledger-head h2{font-size:1.35rem;margin:0}
+.ledger-head a{font:600 .8rem var(--mono);color:var(--teal);text-decoration:none;white-space:nowrap}
+.ledger-head a:hover{color:var(--fg)}
+:root:not([data-theme=light]) .porch .lede,:root:not([data-theme=light]) .porch .acro{text-shadow:0 1px 14px rgba(6,5,14,.95)}
+
+/* ── project + library cards ── */
+.desk.soon{border-style:dashed}
+.desk.soon .ico .ph-fill{opacity:.6}
+.desk .count{margin-top:auto;padding-top:.7rem;display:flex;justify-content:space-between;align-items:center;font:600 .78rem var(--mono);color:var(--teal)}
+.desk .count .ph-fill{transition:transform .25s}a.desk:hover .count .ph-fill{transform:translateX(4px)}
+.desk .badge{font:600 .66rem var(--mono);color:var(--muted);border:1px solid var(--line-strong);border-radius:999px;padding:.12rem .45rem;margin-left:.5rem;vertical-align:middle}
+.desk .ext{margin-top:auto;padding-top:.7rem;font:600 .78rem var(--mono);color:var(--cyan);text-decoration:none}
+.desk .ext:hover{color:var(--fg)}
+.lib{display:flex;flex-direction:column;gap:.45rem;text-decoration:none;color:var(--fg);transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+a.lib:hover{transform:translateY(-4px);box-shadow:var(--glow);border-color:var(--line-strong);color:var(--fg)}
+.lib .ico{font-size:1.7rem}
+.lib h3{margin:.3rem 0 0;font-size:1.12rem;line-height:1.25}
+.lib p{margin:0;color:var(--muted);font-size:.93rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.lib .meta{margin-top:auto;padding-top:.6rem;font:500 .74rem var(--mono);color:var(--faint);display:flex;gap:.8rem}
+.lib[hidden]{display:none}
+.more{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.3rem;font:600 .85rem var(--mono);color:var(--teal);text-decoration:none}
+.more:hover{color:var(--fg)}
+
+/* ── search + filters ── */
+.controls{display:flex;flex-wrap:wrap;gap:.7rem;align-items:center;margin:0 0 1.6rem}
+.searchbar{flex:1 1 260px;display:flex;align-items:center;gap:.6rem;padding:0 .95rem;height:46px;border-radius:14px;border:1px solid var(--line-strong);background:var(--panel-solid);transition:border-color .2s,box-shadow .2s}
+.searchbar:focus-within{border-color:var(--violet);box-shadow:0 0 0 4px color-mix(in srgb,var(--violet) 20%,transparent)}
+.searchbar .ph-fill{color:var(--muted)}
+.searchbar input{all:unset;flex:1;font:500 .95rem var(--sans);color:var(--fg);min-width:0}
+.searchbar input::placeholder{color:var(--faint)}
+.controls .tabs{margin:0}
+.controls .tabs button[aria-pressed=true]{background:color-mix(in srgb,var(--violet) 18%,var(--panel-solid));color:var(--fg)}
+.empty{color:var(--muted);padding:1rem 0}
+
+/* ── entry + article pages ── */
+.entry{max-width:46rem;padding-block:3rem 4rem}
+.entry h1,.doc .prose>h1{font-size:clamp(2rem,4.6vw,3.1rem);font-weight:700;letter-spacing:-.02em;margin:.9rem 0 1.2rem}
+.meta-row{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem;font:500 .8rem var(--mono);color:var(--muted)}
+.meta-row a{color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:.3rem}
+.meta-row a:hover{color:var(--fg)}
+.meta-row .ph-fill{color:var(--violet)}
+.pn{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem}
+.pn a{display:flex;flex-direction:column;gap:.3rem;text-decoration:none;color:var(--fg)}
+.pn a:hover{border-color:var(--line-strong);box-shadow:var(--glow);color:var(--fg)}
+.pn .lbl{font:600 .72rem var(--mono);color:var(--teal)}
+.pn b{font:600 1rem/1.35 var(--serif)}
+.pn .next{text-align:right;grid-column:2}
+@media (max-width:640px){.pn{grid-template-columns:1fr}.pn .next{grid-column:1;text-align:left}}
+.doc .desc{font-size:1.14rem;color:var(--muted);margin:0 0 1rem}
+.doc-tools{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;margin:1rem 0 1.8rem}
+.doc-tools .tool{height:32px}
+/* alex.css gives .tool display:flex, which beat the [hidden] attribute: on a write-up with no folded
+   sections the "Expand all" button showed with nothing to expand, so it looked broken. */
+.doc-tools .tool[hidden]{display:none}
+
+/* ── markdown content (entries, library docs, README) ── */
+.prose{font-size:1.02rem}
+.prose p,.prose li{line-height:1.72}
+.prose a{text-decoration:underline;text-decoration-color:color-mix(in srgb,var(--violet) 50%,transparent)}
+.prose img{max-width:100%;height:auto;border-radius:12px}
+/* Monospace document blocks: wrap long lines instead of scrolling sideways, and scroll
+   vertically inside a fixed height so a long transcript never runs away down the page. */
+.prose pre{padding:1rem 1.1rem;border-radius:14px;background:var(--panel-solid);border:1px solid var(--line);font-size:.86rem;line-height:1.55;
+  white-space:pre-wrap;word-break:break-word;max-height:32rem;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.prose pre::-webkit-scrollbar{width:8px}
+.prose pre::-webkit-scrollbar-thumb{background:var(--line-strong);border-radius:8px}
+.prose pre code{background:none;padding:0}
+.prose h2 i.ph,.prose h3 i.ph{color:var(--violet)}
+.prose .tldr{position:relative;display:block;margin:0 0 1.6rem;padding:1.15rem 1.3rem 1.15rem 3.6rem;border-radius:18px;line-height:1.65;
+  border:1px solid transparent;background:linear-gradient(var(--panel-solid),var(--panel-solid)) padding-box,linear-gradient(110deg,var(--violet),var(--cyan),var(--gold)) border-box;
+  box-shadow:0 20px 60px -34px var(--violet)}
+.prose .tldr>.ph,.prose .tldr>i{position:absolute;left:1.05rem;top:1.05rem;width:1.9rem;height:1.9rem;display:grid;place-items:center;border-radius:50%;font-size:1.05rem;color:var(--gold);background:color-mix(in srgb,var(--gold) 14%,transparent)}
+.prose .tldr>strong:first-of-type{display:block;margin-bottom:.25rem;font:600 .72rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--gold)}
+.prose details{margin:.8rem 0 1.2rem;border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:0 1.2rem;transition:border-color .2s}
+.prose details[open]{border-color:var(--line-strong);padding-bottom:1rem}
+.prose details:hover{border-color:var(--line-strong)}
+.prose summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:.55rem;padding:1rem 0;font-weight:700;color:var(--fg)}
+.prose summary::-webkit-details-marker{display:none}
+.prose summary .ph-caret-right{color:var(--violet);transition:transform .2s}
+.prose details[open]>summary .ph-caret-right{transform:rotate(90deg)}
+.prose details[open]>summary{border-bottom:1px solid var(--line);margin-bottom:.8rem}
+.prose details>*:last-child{margin-bottom:0}
+.readme{padding:2rem 2.1rem}
+.readme h1{font-size:clamp(1.8rem,3.6vw,2.4rem);margin-bottom:.8rem}
+.readme h2{font-size:1.35rem;margin-top:2rem}
+.readme img{display:inline;vertical-align:middle;border-radius:4px}
+@media (max-width:640px){.readme{padding:1.4rem 1.2rem}}
+
+/* ── article table of contents (alex .doc/.toc base) ── */
+.doc{padding-top:2.6rem}
+.doc .toc nav{display:block}
+.doc .toc a{font-size:.86rem}
+.doc .toc a.d3{padding-left:1.4rem;font-size:.82rem}
+@media (max-width:900px){.doc .toc nav{display:flex}.doc .toc a.d3{padding-left:.65rem}}
+
+/* ── 404 ── */
+.guess .btn{padding:.6rem 1rem;font-size:.9rem}
+
+@media (prefers-reduced-motion:reduce){.chart::after{transition:none}.star::before,.star::after{transition:none}}
+@media print{.dock,#starfield-canvas{display:none}body{padding-bottom:0}.prose details{border:0;padding:0}.prose details>summary{border:0}}
+
+/* phones: the frozen dock carries the page links; the header folds its own into the kit's Menu */
+.dock .sm{display:none}
+.prose .crumb{text-decoration:none}
+@media (max-width:520px){.dock .lg{display:none}.dock .sm{display:inline}}
+@media (max-width:400px){.tool kbd{display:none}.dock a .ph-fill{display:none}}
+
+/* ── arrival kit pieces in the AstroLog ── */
+#starfield-canvas{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.meta-who{display:inline-flex;align-items:center;gap:.45rem}
+.star .sub .by{display:inline-flex;align-items:center;gap:.35rem}
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1rem;margin:2.2rem 0 0;font-size:.88rem;color:var(--muted)}
+.share .tool .ph-fill{color:var(--violet)}
+
+/* Star chart rows: a long unbroken word (a URL, a repository name) wraps instead of widening a phone screen. */
+.chart .what,.chart .gist{min-width:0;overflow-wrap:anywhere}
