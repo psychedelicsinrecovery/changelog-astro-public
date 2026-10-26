@@ -27,19 +27,29 @@ Each private repository above keeps a classic personal access token as the secre
 updating with no sign on the site itself**; the desks' workflows skip quietly with a notice.
 *What to do:* renew before the expiry date (scopes `repo` + `workflow`), update the secret in every
 repository that uses it, and run each workflow once by hand.
+- **`catalyst-desk` and `board-of-directors` since 2026-10-26:** their own fine-grained
+  `public-sync-desks`. It reaches only `catalyst-desk-public` and `board-of-directors-public`, with
+  Contents + Workflows read/write, and has **no expiration**.
+- **The Board's proposal collector** reads committee proposals with a separate read-only
+  `COMMITTEE_READ_TOKEN` (`committee-read`, no expiration). Both are written up in each repository's
+  own SUSTAINABILITY.md.
 
-### 🔒 The ledger's private lane (`LEDGER_TOKEN`, optional)
+### 🔒 The ledger's private lane (`LEDGER_TOKEN`)
 The [ledger](https://psychedelicsinrecovery.github.io/changelog-astro-public/ledger) shows PIR's
 private work masked. The build reads the opted-in private repositories with a `LEDGER_TOKEN` secret
 when there is one (read-only "Contents" on those repositories), else `PUBLIC_REPO_TOKEN`; any it
-can't read are carried, masked, from the committed snapshot. *What to do:* add a fine-grained
-`LEDGER_TOKEN` to keep those rows live; refresh the snapshot with
-`LEDGER_TOKEN=$(gh auth token) npm run ledger:snapshot` in `astro/`.
+can't read are carried, masked, from the committed snapshot.
+- **Set since 2026-10-26:** the fine-grained `ledger-read-pir`, owned by `psychedelicsinrecovery`,
+  reaching all its repositories with Contents read-only, and with **no expiration**.
+- *To replace it:* make a new read-only token the same way, set it as `LEDGER_TOKEN` on
+  `changelog-astro`, and run the publish workflow once. Refresh the snapshot with
+  `LEDGER_TOKEN=$(gh auth token) npm run ledger:snapshot` in `astro/`.
 
 ### 🗓️ The daily ledger rebuild
 The publish workflow also runs every morning (`cron: "23 10 * * *"`, UTC), so the ledger is never
 more than a day behind, and checks that no private subject leaks into the build. *What to do:* if
-the ledger's newest day looks old, read the workflow's run history.
+the ledger's newest day looks old, read the workflow's run history. The workflow builds on **Node 24**
+(since 2026-10-26): Astro 7.4 needs Node 22.23.4 or newer, and a bare `22` resolved to 22.23.3.
 
 ### 🪞 The hourly README mirror
 The hub's `README.md` copies the organization profile (`psychedelicsinrecovery/.github`) every hour.
