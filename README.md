@@ -1,13 +1,32 @@
+<!-- readme-standard: 2026-11-02 -->
+<div align="center">
+
+<img src="assets/banner.svg" width="100%" alt="PIR's changelog and library: a road of twelve stops lights one at a time, a stop for each thing shipped.">
+
 # 🌵 PIR® Changelog & Library
 
-> A running, public-safe record of what's shipped for Psychedelics In Recovery™ — plus a growing
-> library of the deeper technical write-ups behind it, for anyone who wants to actually understand
-> how this all works.
+*A running, public-safe record of what's shipped for Psychedelics In Recovery™, and the library behind it.*
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-lightgrey?style=flat)](LICENSE)
 [![Live Site](https://img.shields.io/badge/%F0%9F%8C%90%20Live-changelog--astro--public-8b5cf6)](https://psychedelicsinrecovery.github.io/changelog-astro-public/)
 ![Sync: automated](https://img.shields.io/badge/sync-automated-8b5cf6)
 [![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code%20CLI-blueviolet)](https://code.claude.com/docs/en/overview)
+![For](https://img.shields.io/badge/For-Anyone_who_wants_to_know_what_changed-64748b?style=flat-square)
+
+<img src="assets/icons/map-pin.svg" width="16" height="16" alt=""> **You are here:** PIR® › source `changelog-astro` (private) → twin `changelog-astro-public` (public) · `main` is the working branch
+
+</div>
+
+## <img src="assets/icons/compass.svg" width="24" height="24" alt=""> TL;DR
+
+1. <img src="assets/icons/sprout.svg" width="16" height="16" alt=""> **What this is.** A plain-language, dated record of what has shipped for [psychedelicsinrecovery.org](https://www.psychedelicsinrecovery.org), with a `/library` of write-ups for the curious. This file is also the live site's homepage.
+2. <img src="assets/icons/users-round.svg" width="16" height="16" alt=""> **Who it is for.** Someone outside the fleet who wants to know what changed and why it mattered.
+3. <img src="assets/icons/footprints.svg" width="16" height="16" alt=""> **Do this first.** [Read the live site](https://psychedelicsinrecovery.github.io/changelog-astro-public/). To add an entry, create `changelog/YYYY-MM-DD-short-slug.md`.
+
+> A running, public-safe record of what's shipped for Psychedelics In Recovery™ — plus a growing
+> library of the deeper technical write-ups behind it, for anyone who wants to actually understand
+> how this all works.
+
 
 ---
 
@@ -66,6 +85,10 @@ pir-wp-live's own private technical docs.
 
 Push to `main` and the sync workflow rebuilds and republishes automatically.
 
+## <img src="assets/icons/git-pull-request.svg" width="24" height="24" alt=""> Suggest a change
+
+Noticed something? Type `/techcom` in [PIR®'s Discord](https://discord.gg/MyprTq8w95). Members with access can open an [issue](https://github.com/psychedelicsinrecovery/changelog-astro/issues) or a pull request against `main`; TechCom reads them and a person with the role merges. The source is private, so a visitor sees a 404 there.
+
 ## 📄 License
 - 💻 **Code:** MIT, see [`LICENSE`](LICENSE)
 - 📝 **Written content** (docs, changelog and library prose, READMEs): CC BY-SA 4.0, see [`LICENSE-CONTENT`](LICENSE-CONTENT)
@@ -76,3 +99,5 @@ Push to `main` and the sync workflow rebuilds and republishes automatically.
 *Maintained by [psychedelicsinrecovery](https://github.com/psychedelicsinrecovery) · w/ Anthropic's Claude Code CLI*
 
 Co-Authored-By: Alfred · ClaudeCodeCLI · Anthropic [Sonnet-5]
+
+<sub>The front door follows the living [README standard](https://github.com/drasticstatic/my-template/blob/main/README-STANDARD.md). Copy it, improve it.</sub>
