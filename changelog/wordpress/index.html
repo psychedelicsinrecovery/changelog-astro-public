@@ -1,0 +1,694 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WordPress sites — Changelog</title><meta name="description" content="What's shipped for WordPress sites, in plain language."><meta name="theme-color" content="#06050e"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="alternate" type="application/rss+xml" title="PIR® AstroLog changelog" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml"><!-- Link previews (Discord, WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress"><meta property="og:site_name" content="PIR® AstroLog"><meta property="og:type" content="website"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress"><meta property="og:title" content="WordPress sites — Changelog"><meta property="og:description" content="What's shipped for WordPress sites, in plain language."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/page/porch.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The PIR® AstroLog's porch: what's shipped, and how it works, over a patch of night sky."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="WordPress sites — Changelog"><meta name="twitter:description" content="What's shipped for WordPress sites, in plain language."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/page/porch.jpg"><meta name="twitter:image:alt" content="The PIR® AstroLog's porch: what's shipped, and how it works, over a patch of night sky."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><!-- PIR's arrival kit, served from the hub. Load order matters: kit CSS, PIR's kit CSS, then the
+         design system and this site's layer. The scripts stay in <head> (not deferred) so the
+         visitor's light, motion and contrast apply before first paint. --><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/org.css"><script src="https://psychedelicsinrecovery.github.io/arrival/org.js"></script><script src="https://psychedelicsinrecovery.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/alex-desk-public/assets/alex.css"><link rel="stylesheet" href="/changelog-astro-public/astrolog.css"></head><body class><a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then
+         into a Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="top"><div class="wrap"><a class="brand" href="/changelog-astro-public/" aria-label="PIR® AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34"><span class="arr-brand-text"><span class="word">AstroLog</span> <small>PIR®</small></span></a><arrival-nav current="changelog"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><div class="wrap page-head" style="max-width:860px"><a class="crumb" href="/changelog-astro-public/changelog"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i>All projects</a><h1><i class="ph-fill ph-browsers title-ic" aria-hidden="true"></i> WordPress sites</h1><p class="lede">psychedelicsinrecovery.org and its subdomains: headers, mobile nav, search, speed.</p><div class="stats"><span><b>25</b> entries</span></div><div class="desk-cta" style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:.55rem;align-items:center"><a href="https://psychedelicsinrecovery.github.io/techcom-desk-public/" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.05rem;border-radius:999px;background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none;box-shadow:0 4px 18px rgba(6,5,14,.35)"><i class="ph-fill ph-lifebuoy" aria-hidden="true"></i> Looking for the helpdesk? Open the TechCom Desk</a><a href="https://psychedelicsinrecovery.github.io/alex-desk-public/#desks" style="display:inline-flex;align-items:center;gap:.5rem;padding:.6rem 1.05rem;border-radius:999px;background:var(--surface-muted);color:var(--heading);font-weight:600;border:1px solid var(--line-strong);text-decoration:none"><i class="ph-fill ph-ticket" aria-hidden="true"></i> Every helpdesk</a></div></div><section class="band" style="padding-top:.5rem;padding-bottom:4.5rem" aria-label="WordPress sites entries"><div class="wrap" style="max-width:860px"><div class="controls"><label class="searchbar"><i class="ph-fill ph-magnifying-glass" aria-hidden="true"></i><input type="search" id="search-input" placeholder="Search entries" aria-label="Search changelog entries"></label><div class="tabs" role="group" aria-label="Filter by priority"><button type="button" data-priority="all" aria-pressed="true">All</button><button type="button" data-priority="P1-high" aria-pressed="false">High</button><button type="button" data-priority="P2-medium" aria-pressed="false">Medium</button><button type="button" data-priority="P3-low" aria-pressed="false">Low</button></div></div><ol class="chart" id="changelog-list"><li class="chart-month" data-month="2026-10">October 2026</li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="the ping that broke the silence, and the suite speaks past-tense <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> chris's ping brought the emcp bridge back after ~50 dark minutes, and the whole post-convention pass landed: the convention hub hero now says the gathering has concluded, its live stream card points to the archive with revisit, the livestream page wears a record disclaimer with the youtube channel link, and convention-astro's streamed highlight card links straight to the recordings - built, broken by lost frontmatter fences, repaired from git history, and verified green.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 📡 the ping
+
+at 09:58 chris pinged the emcp bridge and it woke mid-sentence. lesson kept: after a long silence, a human ping (a wpx panel visit or plugin re-ping) has revived the bridge every time. the pattern now has three data points.
+
+## 🏠 the convention hub, past-tense
+
+- hero pills: the date pill now reads october 8-11, 2026 - the gathering has concluded; the stream pill became the galleries are growing. the hero kept its hub language (the gatherings of psychedelics in recovery™ – pir®, the convention hub).
+- the live stream card speaks past tense - the stream has wrapped for 2026, revisit → - with its link unchanged.
+- verified in served html: new strings present, old strings gone, home page untouched (its heading break and two-link teaser from the morning still intact).
+
+## 📼 the livestream page wears its record badge
+
+the livestream page (non-elementor, post 14495) got a disclaimer container at the top: the page is the record as it stood for those visiting at the time of the event, now serving those looking for the recordings - with the youtube channel link up front. the purchase-tense intro stays beneath as the historical how-to-watch steps.
+
+## ▶️ convention-astro links the recordings
+
+the streamed highlight card on the convention site's overview gained a real call-to-action: watch the recordings on youtube (data spine got a typed optional link field; the bento renderer renders it; extras.css v4 styles it gold). along the way the pages deploy went red twice: two full-file pushes had dropped each file's opening frontmatter fence - the same class of handoff corruption as the app-shell stubs, but self-inflicted this time. rebuilt both files from the pre-incident blobs, re-applied the edits, build verified green locally, pushed the repair (ff8d9e8). new standing rule: full-file pushes of .astro files get a local build check before the push, and the opening --- fence is on the pre-flight checklist.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-16-the-ping-that-broke-the-silence"><time class="when" datetime="2026-10-16">Oct 16</time><span class="what"><b>The ping that broke the silence, and the suite speaks past-tense<span data-arr-new-tag hidden></span></b><span class="gist">Chris&#39;s ping brought the EMCP bridge back after ~50 dark minutes, and the whole post-convention pass landed: the Convention Hub hero now says the gathering has…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="jetpack wanted its cut, and the bridge went quiet <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the wordpress.com connector mystery ended with a plot twist: it connects fine and even sees both pir sites, but site-scoped editing demands a jetpack ai or complete plan - the paywall was the silence all along. emcp (the free plugin bridge on wpx) stays our editing route, and mid-session it went down for 25+ minutes across every pir server at once - the wpx-side bridge, not the connectors. meanwhile the convention-hub social cards were verified fully live, and the hub's remaining edits were staged and ready for the bridge's return.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 💳 the jetpack paywall
+
+once enabled, the wordpress.com connector listed both sites - psychedelicsinrecovery.org and service.psychedelicsinrecovery.org, both jetpack-connected self-hosted installs - but reported mcp_access: unavailable, reason jetpack_paid_plan_required. site-scoped tools (editing pages) need jetpack ai or jetpack complete; listing works free. this explains why the connector felt dead despite showing connected: it was never disabled in essence, it was gated. chris had suspected the standard route was jetpack ai - confirmed. decision for another day: whether the jetpack ai yearly (with its writing assistant) is worth it, or emcp keeps carrying the load for free.
+
+## 🌉 the bridge outage
+
+right after the home-page edits landed (08:27), every pir mcp server - psychedelicsinrecovery.org, service., and astra. - started refusing tool lookups simultaneously. the sites themselves served fine over https throughout; only the mcp bridge went quiet. backoff retries at 2, 5, 10, 15, and 25+ minutes all missed. pattern from yesterday: the bridge recovered after a re-ping; the wpx panel's plugin status is the place to look if it stays dark.
+
+## ✅ what the outage didn't stop
+
+- social cards verified live: chris's 4317b65 push carried both jpgs (~90kb each), og:image tags point correctly, both urls serve 200. that queue item is closed.
+- the convention-hub audit completed via plain curl: cards, dual gallery links, and the past-and-upcoming line all in place. two edits staged for the bridge's return: hero pills get the concluded state (the date pill gains the gathering has concluded; the stream pill becomes the galleries are growing), and the live stream card copy moves to past tense while keeping its link.
+- one flag raised for chris: the livestream page itself is still purchase-tense (your virtual pass, bookmark instructions) - rewriting ticket language needs a human call.
+- the vanity gallery.psychedelicsinrecovery.org still returns silence ~17 hours into its propagation window; the pixieset direct link remains the working route.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-16-jetpack-wanted-its-cut"><time class="when" datetime="2026-10-16">Oct 16</time><span class="what"><b>Jetpack wanted its cut, and the bridge went quiet<span data-arr-new-tag hidden></span></b><span class="gist">The WordPress.com connector mystery ended with a plot twist: it connects fine and even sees both PIR sites, but site-scoped editing demands a Jetpack AI or Complete…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="ghost paragraphs and the array that ate the hub <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> two post-convention layout regressions, two different bugs, both fixed and verified in a real browser. the live stream page's day-card grid was shattered by empty autop paragraphs (ghosts bred from html comments on the last content round-trip), and the convention hub collapsed to a 190px column because elementor string-cast a stored object into a literal e-con-array class, which silently drops every width rule. standing rules now on the books: content_width goes in as the string boxed, never an object, and page payloads ship comment-free.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 👻 ghost paragraphs on the live stream
+
+the day-card grid on the convention live stream page (post 14495) rendered with cards stacked odd and gaps in the wrong places. real-browser inspection showed empty paragraph elements sitting between the stream cards - and since the grid is css grid-template-columns: repeat(3, 1fr), each ghost <p> quietly ate a column slot.
+
+root cause: the previous content update had pushed a payload that had been round-tripped through wordpress's rendered view, which bakes wpautop artifacts into the stored content - html comments become empty paragraphs, line breaks become stray <br> seams. re-saving that payload doubled the damage.
+
+the fix: a fully cleaned payload - every html comment stripped, the style block collapsed to a single line, empty paragraphs removed, block seams normalized - pushed through the bridge. verified after the push: three day cards in the grid, zero empty paragraphs, all 13 zoom links and all 8 modals intact, disclaimer and day pills in place.
+
+## 📐 the array that ate the hub
+
+the convention hub page (post 14756) rendered as a narrow, letter-stacked column. the stored elementor data was healthy, the minify-cache css bundles all served 200 with the right rules inside - but the browser was collapsing everything to about 190px.
+
+the tell: the hero container (f49b429) and the cards grid (e040089) carried a class that does not exist in any stylesheet: e-con-array. elementor reads the content_width setting and concatenates e-con- + its value; when the value is stored as an object instead of the string boxed, the cast produces the literal string array. e-con-array matches no rule, so the container loses its width constraints and everything inside shrinks to content.
+
+diagnosis came from measuring, not guessing: a headless chromium pass showed the h2 at 193px in a 1440px viewport, and flipping e-con-array to e-con-boxed live in the dom snapped the grid from 129px to 587px instantly. the fix was then written for real: content_width set to the string boxed on both containers, the cache regenerated, and the render verified clean - zero array classes, full-width hero, the three-by-two card grid intact.
+
+## 📏 rules for the road
+
+- content_width is always pushed as the string boxed (or full) - never as a size object. the object form is what the elementor editor ui produces for some flows, but it string-casts into e-con-array on render.
+- wordpress page payloads ship comment-free and single-line per style block. html comments are autop bait, and wpautop ghosts are grid-killers.
+- verify with a real browser. curl can see the css is present while the dom classes make it moot; the pdf export lies in both directions.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-16-ghost-paragraphs-and-the-array-that-ate-the-hub"><time class="when" datetime="2026-10-16">Oct 16</time><span class="what"><b>Ghost paragraphs and the Array that ate the hub<span data-arr-new-tag hidden></span></b><span class="gist">Two post-convention layout regressions, two different bugs, both fixed and verified in a real browser. The Live Stream page&#39;s day-card grid was shattered by empty autop…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="the xdn comes home while the family gets a shoutout <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the escalated xdn case resolved the same evening - martin g. at wpx system admins unstuck the rebuild and confirmed &quot;the issue has been resolved.&quot; and the root cause is now on the record: a left-over value from the suspension period had sealed the toggle shut from the front end. the wpx family also got a public shoutout in the astrolog's contacts library.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 🎉 the unstick
+
+the escalation from [the breather entry](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-xdn-takes-a-breather/) lasted barely an afternoon of working hours. on october 14 at 17:53, two replies landed almost together:
+
+- **nikolay georgiev** confirmed the xdn was still stuck after his resets and that he had escalated to the system admins, with their working window (mon-fri, 09:30-18:00 gmt+3).
+- **martin georgiev, wpx system admin**, closed the loop: &quot;the issue has been resolved.&quot;
+
+christopher's verification habit held: certificate live for both the apex and www on both xdn ips, the site serving through the cdn with cache hits, cart/checkout/account pages correctly bypassing cache, and mail untouched - the same checklist [velina's ssl fix](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/) passed on october 5.
+
+## 🧾 the root cause, on the record
+
+the answer to &quot;what actually happened&quot; arrived on october 15, and it is a small classic of how systems fail quietly. in martin g.'s words: a **left-over value from the suspension period** had prevented any actions on the xdn. while it stayed active in the backend and the website kept loading from the xdn, that parameter blocked every front-end action on it - including retrieving its status (on/off).
+
+which explains everything the panel was doing: the rebuild spinning on &quot;building,&quot; the resets that wouldn't take, the status that wouldn't read. the toggle was never broken - it was sealed shut by a leftover from the payment lapse, and only a system admin could remove the seal. ticket #517528 is now closed, with thanks to nikolay g., nikolai r., and martin g. by name.
+
+## 📜 asking for the minutes
+
+one more exchange mattered for how we keep records: christopher asked wpx to &quot;provide details on what happened for this page being built out for our members to see how wpx helps us,&quot; pointing at this very changelog. nikolai r. forwarded the inquiry to the system admins, martin g. supplied the write-up above, and christopher closed the ticket with thanks. a support team helping write the public record of their own good work - exactly how it should go.
+
+and the shoutout: the wpx family now appears in [the contacts library](https://psychedelicsinrecovery.github.io/changelog-astro-public/library/contacts/) - the people behind the tickets, thanked in public.
+
+## 🧭 the pattern, for next time
+
+1. **verify with the checklist**, not with hope: cert on both hostnames and both ips, cdn serving with cache hits, sensitive pages bypassing, mail untouched.
+2. **escalations are patience problems, not data problems** - the source of truth was never at risk.
+3. **a suspension can leave residue after it lifts.** when a control panel acts sealed after a billing event, ask the provider to check for left-over suspension values before suspecting the feature itself.
+4. **ask for the write-up while the ticket is warm** - the details land in the astrolog while everyone still remembers them.
+
+*the edge caught its breath; the fellowship kept meeting.*
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-15-xdn-comes-home"><time class="when" datetime="2026-10-15">Oct 15</time><span class="what"><b>The XDN comes home while the family gets a shoutout<span data-arr-new-tag hidden></span></b><span class="gist">The escalated XDN case resolved the same evening - Martin G. at WPX System Admins unstuck the rebuild and confirmed &quot;the issue has been resolved.&quot; And the root cause is…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="the xdn takes a breather while wpx system admins step in <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the main domain's xdn toggle was found switched off - likely a side effect of the temporary suspension during the payment lapse. support resets didn't unstick the rebuild, so the ticket was escalated to the system admins (mon-fri, 09:30-18:00 gmt+3). sites are healthy; the edge is just catching its breath.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+<img src=&quot;https://psychedelicsinrecovery.github.io/changelog-astro-public/assets/2026-10-14-xdn-panel-main-domain-building.png&quot; alt=&quot;the wpx xdn panel: the main domain's rebuild spinning, all four subdomains on&quot; style=&quot;max-width:100%;border-radius:12px;margin:1rem 0&quot; loading=&quot;lazy&quot; />
+
+*the xdn panel on the morning of october 14: the main domain's rebuild spinning (blurred here for privacy), the four subdomains happily on.*
+
+## 🕳️ how the toggle fell
+
+christopher opened [ticket #517528](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/) (&quot;xdn toggled off&quot;) asking the polite question: *was this us?* the screenshot showed the main domain's xdn status spinning on &quot;building&quot; while all four subdomains - service, publications, newsletter, publicrelations - sat comfortably on.
+
+the suspicion: the toggle-off happened **upon the temporary suspension** during the payment lapse - a side effect nobody ordered, discovered only because the builds stopped deploying. nikolay g. at wpx tried resetting the xdn a few times on his end; it stayed stuck. the ticket now sits **escalated** with the system admins, whose window is monday-friday, 09:30-18:00 gmt+3.
+
+## 🧘 why this one is calm
+
+everything behind the xdn is intact: pages render, edits save, and the fellowship keeps meeting on zoom as always. the xdn is a delivery layer, not the source of truth - when it unsticks, the queued changes simply appear. worst case, a cache is a patience problem, not a data problem.
+
+this continues the story told in [the lights came back on](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-the-lights-came-back-on/) - same hosting scare, next chapter. and the fuller background - why the site ever felt slow, and why it wasn't ai - lives in the library: [why the site got slow](https://psychedelicsinrecovery.github.io/changelog-astro-public/library/why-the-site-was-slow-and-it-wasnt-ai/).
+
+*one reset at a time.*
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-14-xdn-takes-a-breather"><time class="when" datetime="2026-10-14">Oct 14</time><span class="what"><b>The XDN takes a breather while WPX system admins step in<span data-arr-new-tag hidden></span></b><span class="gist">The main domain&#39;s XDN toggle was found switched off - likely a side effect of the temporary suspension during the payment lapse. Support resets didn&#39;t unstick the…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="the morning the websites took a breather — and the safeguards the fellowship built out of it <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> for a few hours both pir® websites went dark. the cause was ordinary and human: a hosting renewal invoice ($299.90, due october 7) slipped past its due date, and the provider suspended the account. nothing was lost — payment restored everything within minutes. what came out of it matters more: the board is turning on auto-renewal, billing notices will reach a role mailbox instead of one personal inbox, and hosting now has a place in the fellowship's break-glass plan.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 🌑 what happened
+
+on the morning of october 14, both [psychedelicsinrecovery.org](https://www.psychedelicsinrecovery.org) and [service.psychedelicsinrecovery.org](https://service.psychedelicsinrecovery.org) began serving the hosting provider's parking page instead of our sites. the root cause was not a hack, a crash, or a bad deploy — it was an invoice. the annual hosting renewal (invoice #20007218114, $299.90) had come due on october 7, its warning emails had landed in one person's inbox, and the provider suspended the account for non-payment.
+
+a trusted servant noticed, escalated to the treasurer, and the invoice was paid. the sites came back within minutes of payment — **nothing was lost**. the provider keeps 90 days of backups even in the worst case, but the worst case never came.
+
+## 🔍 what we learned
+
+the websites, the store, **and every @psychedelicsinrecovery.org role mailbox** live on that one hosting account. its renewal notices went to a personal inbox — which makes a single person's email the one thread the fellowship's whole web presence hangs from. the provider also auto-deletes accounts after 7 days unpaid; we were never close to that line, but there's no reason to ever walk near it.
+
+this is precisely the kind of single-point-of-failure the fellowship's succession and break-glass planning exists to catch. this week, it caught one.
+
+## 🛡️ the safeguards
+
+1. **auto-renewal goes on.** the card already on file will now handle renewals automatically — proposed to the board, and the first vote came back within minutes: a yes.
+2. **billing gets a watchdog.** wpx billing notices will be forwarded to board@psychedelicsinrecovery.org, while the account's own email stays exactly as it is (the provider ties the account to it, and we're not moving that). a copy, not a move.
+3. **a calendar backstop.** a reminder roughly two weeks before every renewal, so the automatic isn't the only thing watching.
+4. **a place in the break-glass plan.** hosting billing now sits alongside the 2fa recovery codes in the succession documentation, so the next trusted servant inherits the map, not the mystery.
+
+## ☕ while we were dark
+
+here's the part worth remembering: the fellowship barely noticed. meetings ran on zoom as always, whatsapp threads kept flowing, and the discord community stayed connected — because the fellowship was never really the website. the website is just one of its lamps.
+
+*one day at a time — and, when needed, one invoice at a time.*
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-14-the-lights-came-back-on"><time class="when" datetime="2026-10-14">Oct 14</time><span class="what"><b>The morning the websites took a breather — and the safeguards the fellowship built out of it<span data-arr-new-tag hidden></span></b><span class="gist">For a few hours both PIR® websites went dark. The cause was ordinary and human: a hosting renewal invoice ($299.90, due October 7) slipped past its due date, and the…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="the fellowship's founding documents get a glow-up — by-laws go emoji-rich, twelve legacy minutes preserved in full <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> two documents got the care they deserved today: the by-laws now render on github like a friendly webpage instead of a wall of legal text, and twelve tech committee reports from 2023–2024 are preserved in the astrolog with their complete text — each as its own dated entry, now living on the tech com desk in the proper order of the work they describe. the fellowship's institutional memory should be easy to find, easy to read, and impossible to lose.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 📜 the by-laws get their glow-up
+
+the [by-laws of psychedelics in recovery™ – pir®](https://github.com/psychedelicsinrecovery/.github/blob/main/bylaws.md) have always been thorough — ten articles, officer job descriptions, the conflict-of-interest policy, the annual statement form. what they hadn't been was *easy to visit*. the blob page read like a pdf that wandered into a terminal.
+
+now it reads like the fellowship itself: emoji-coded article headers (🗳️ meetings, 🪑 directors, 🧭 officers...), a friendly intro that tells you what you're looking at and why it's the canonical source, and a full table of contents. the legal text is untouched — this is presentation, not revision. and like the original document, the by-laws now have **subtabs**: [officers](https://github.com/psychedelicsinrecovery/.github/blob/main/bylaws/officers.md), [members at-large](https://github.com/psychedelicsinrecovery/.github/blob/main/bylaws/members-at-large.md), [compliance requirements](https://github.com/psychedelicsinrecovery/.github/blob/main/bylaws/compliance-requirements.md), and the [conflict of interest appendix](https://github.com/psychedelicsinrecovery/.github/blob/main/bylaws/conflict-of-interest.md).
+
+this matters because the by-laws now serve as the **single source** the websites render from: the main site's by-laws page and the service site's by-laws page both point here, and the google drive link lives in exactly one place — on the main site's page. one document, one canonical copy, one place to update.
+
+## 📚 twelve reports, twelve entries
+
+meanwhile, the legacy tech committee minutes got the deeper treatment. when the old tech committee page was rebuilt, its links pointed to google docs — links that could one day expire, taking a year of service history with them.
+
+so the twelve documents now live **in the changelog itself, as twelve dated entries** — each dated with the day its document was written, so they rest in the true chronological order of the work, from the first tech 2.0 agenda in august 2023 to the calm before the website launch in july 2024. every one carries the complete text, collapsible and searchable, plus a link back to the original google doc. they live on their own [tech com desk](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/) — tech 3.0 giving the minutes of tech 2.0 a permanent porch of their own.
+
+the archive, in order:
+
+1. [tech 2.0 kicks off with a new zoom link](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-08-11-tech-20-kicks-off/) — aug 11, 2023
+2. [keeping meetings safe with host training](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-10-18-keeping-meetings-safe/) — oct 18, 2023
+3. [the calendar lands on staging](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-10-28-calendar-lands-on-staging/) — oct 28, 2023
+4. [a document database is born](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-11-09-document-database-born/) — nov 9, 2023
+5. [calendar complete and a service email coming](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-12-09-calendar-complete-service-email-coming/) — dec 9, 2023
+6. [meet alex — the website overhaul begins](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-01-10-meet-alex-overhaul-begins/) — jan 10, 2024
+7. [the redesign begins behind the scenes](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-02-10-redesign-begins-behind-the-scenes/) — feb 10, 2024
+8. [we will build it ourselves](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-03-12-we-will-build-it-ourselves/) — mar 12, 2024
+9. [hosting renews and budget season opens](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-04-13-hosting-renews-budget-season-opens/) — apr 13, 2024
+10. [the cost of keeping meetings online](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-05-04-the-cost-of-keeping-meetings-online/) — may 4, 2024
+11. [the new website readies for launch](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-06-08-new-website-readies-for-launch/) — jun 8, 2024
+12. [holding steady before the launch](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2024-07-11-holding-steady-before-launch/) — jul 11, 2024
+
+a small mystery solved along the way: the old page carried a thirteenth link that led not to a document at all but to the by-laws. a stray link, now untangled — the by-laws have their own canonical home, and the minutes have this one.
+
+## 🧭 the pattern
+
+both changes serve the same instinct: **the fellowship's memory should live somewhere that can't expire.** google drive is a great place to work; it's a risky place to *rest*. git history doesn't have a 7-day auto-delete, doesn't need a renewal invoice, and never asks anyone to re-share a link.
+
+and there's a roadmap hiding in these old reports: they mention digest mailers, document databases, and minutes flows — ideas the 2026 committees are still carrying forward. if you served in those years and your report is missing, say the word — uploading is easy, retroactive included. the a.l.e.x. helpdesk and the tech committee are already plotting how to make future minutes flow straight into git, automatically, with room for the pr and publications committee desks already waiting on the porch.
+
+*preserving the past is also service.*
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-14-canonical-documents-glow-up"><time class="when" datetime="2026-10-14">Oct 14</time><span class="what"><b>The fellowship&#39;s founding documents get a glow-up — By-Laws go emoji-rich, twelve legacy minutes preserved in full<span data-arr-new-tag hidden></span></b><span class="gist">Two documents got the care they deserved today: the By-Laws now render on GitHub like a friendly webpage instead of a wall of legal text, and twelve Tech Committee…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="every committee gets its own desk button, the growth badge learns some manners, and three new pages join the family <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> seven committee pages now carry their own helpdesk desk button, so a request for help lands directly with the right team instead of in a generic pile. the growth badge got its third revision: a cleaner close button with a pulse-glow ring, and it now hides (together with the cart) when you scroll down and returns when you scroll up, just like the navbar. three new pages went live — the pir® timeline, the newsletter committee's comeback, and the publications umbrella. every pir page now draws from one color family, back-to-top buttons took their places in the heroes, and the committee minutes began their move to github, in the open.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 🎫 a desk of one's own
+
+every committee page on the service site — literature, tech, pr, gsr, intergroup, forapir and the board of directors — now links **its own desk** in the a.l.e.x. helpdesk family, with the how-the-desks-work guide beside it. before, a fellow with a question had to know which door to knock on; now the door introduces itself. type <code>/techcom</code>, <code>/litcom</code>, <code>/pr</code>, <code>/github</code> or <code>/mod</code> anywhere in discord, fill in the short form, and a private thread opens that only you and that team can see. no discord? the [helpdesk portal](https://psychedelicsinrecovery.github.io/alex-desk-public/portal.html) does the same job in a browser.
+
+## 🌟 the growth badge, third revision
+
+the little &quot;we're always growing&quot; badge — the one that gently suggests a force-refresh when a page looks stale — came back with better manners:
+
+- the close button moved to the top-left as a simple **x with a pulse-glow ring** (no more embossed oval — you asked, we listened).
+- on phones it sits properly centered.
+- it now **hides together with the cart when you scroll down and both return when you scroll up**, exactly like the navbar — it keeps out of the way while you read.
+- dismiss it and it stays gone for 14 days, then checks in again. it's a reminder, not a popup ad.
+
+## 📄 three new pages join the family
+
+- **[the pir® timeline](https://service.psychedelicsinrecovery.org/timeline/)** — the fellowship's story, in order, on one page.
+- **[the newsletter committee](https://service.psychedelicsinrecovery.org/newsletter-committee/)** — *de vine news* rises again.
+- **[the publications committee](https://service.psychedelicsinrecovery.org/publications-committee/)** — the umbrella page for the book, forapir, the legacy 12-step pages and the newsletter.
+
+## 🎨 one color family, site-wide
+
+calendars now wear a greenish-blue, zoom links a bright blue, minutes a green, the github root a dark purple with light-purple text, and the astrolog a dark purple with light-blue text. small thing, big difference: your eyes learn the map.
+
+## ⬆️ back to top, whenever you've scrolled too far
+
+the gsr page's clock icon-box became a back-to-top control, the useful forms baked themselves into the hero banner, and literature, pr and tech heroes all gained a back-to-top button of their own. more pages get theirs in the next round.
+
+## 📚 the minutes begin their move to github
+
+the by-laws now live as a canonical, versioned [bylaws.md](https://github.com/psychedelicsinrecovery/.github/blob/main/bylaws.md) in the open — always viewable, never a permission-blocked link — and the legacy tech committee minutes follow the next day (that entry is its own story). where the minutes will live from now on is no longer a google doc with a locked door; it's a changelog the whole fellowship can read.
+
+*round 4 of the tech committee's service sprint — logged with gratitude for every fellow who clicks, reads, and force-refreshes.*
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-13-techcom-round-4"><time class="when" datetime="2026-10-13">Oct 13</time><span class="what"><b>Every committee gets its own desk button, the growth badge learns some manners, and three new pages join the family<span data-arr-new-tag hidden></span></b><span class="gist">Seven committee pages now carry their own helpdesk desk button, so a request for help lands directly with the right team instead of in a generic pile. The growth badge…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="the main site moves onto wpx's cdn, plus three wasted requests per page removed <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> psychedelicsinrecovery.org now runs through wpx's content delivery network, the way the service site already did. until today the main site was served straight from a single origin server. real-visitor data showed pages taking about 8 seconds on mobile before anything appeared. cached pages now arrive from wpx's edge in under a fifth of a second. separately, three broken stylesheet requests that every page was making are gone.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## why the main site felt slower than the service site
+
+google's real-visitor data (the last 28 days) is only available for the main site, and it was the
+clearest signal yet: about **8 seconds on mobile and 7 seconds on desktop** before the first content
+appeared. looking at how the site was actually wired up explained a lot of it. the service site and
+the committee portals all sit behind wpx's cdn, but the main domain still pointed straight at the
+origin server. every visitor's request travelled all the way to one machine.
+
+## the move, done carefully
+
+- before switching anything, we tested the cdn directly. at first it answered with a &quot;not configured
+  yet&quot; page, so we held off rather than risk an outage, and checked with wpx on the right order.
+- the switch itself happened in the domain's dns settings. we added the new addresses with a short
+  cache time first, so an undo would have taken minutes rather than hours. only then did we remove
+  the old ones.
+- **email was left exactly as it was**, since mail runs separately from the cdn.
+- within minutes, the cdn was serving the real site with a valid certificate. cached pages now load
+  from wpx's edge in about **0.18 seconds** to first byte.
+- we double-checked that the store's **cart, checkout, and account pages are never cached**, so no
+  one can ever see someone else's cart.
+
+## three wasted requests per page, gone
+
+one add-on plugin was asking every page to load three stylesheets from a folder that doesn't exist.
+each failed request didn't just waste bandwidth; it made the server build a full &quot;page not found&quot;
+response from scratch on every single visit, competing for the same small pool of server workers
+real visitors need. a tiny code snippet now stops those requests. nothing changed visually, because
+those files never loaded anything to begin with.
+
+## what we'll measure next
+
+real-visitor numbers update over a rolling 28-day window, so we'll check back on that 8-second
+figure in the coming weeks. in the meantime, the next round of improvements is lined up: lighter
+images on the service site, fewer font files, and the events calendar's return.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-12-main-site-moves-onto-wpx-cdn"><time class="when" datetime="2026-10-12">Oct 12</time><span class="what"><b>The main site moves onto WPX&#39;s CDN, plus three wasted requests per page removed<span data-arr-new-tag hidden></span></b><span class="gist">psychedelicsinrecovery.org now runs through WPX&#39;s content delivery network, the way the service site already did. Until today the main site was served straight from a…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="a fifth pir site launches, and the events calendar's real root cause gets found <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> <strong>publicrelations.psychedelicsinrecovery.org</strong> is up — the fifth pir subdomain, continuing the &quot;every committee gets its own lightweight wordpress site&quot; plan. separately, we found the actual reason the events calendar could be overwhelmed by bot traffic in the first place (not just a stopgap fix), and we're working with wpx to apply the real one before bringing the calendar back.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## a fifth committee site
+
+`publicrelations.psychedelicsinrecovery.org` joined `newsletter.` and `publications.` as the third
+dedicated committee portal — each a lean wordpress install a committee can manage on its own,
+without needing access to the main or service sites. part of a longer-term plan to bring all of
+pir's web presence into a shared look and feel while keeping day-to-day ownership split by
+committee.
+
+while setting it up, a dns cleanup pass turned up a small inconsistency worth a mention for
+transparency: `publications.psychedelicsinrecovery.org` currently has two separate dns records
+pointing at two different (but both valid) addresses — the site works correctly either way, and
+we're checking with our host whether that's intentional before touching it.
+
+## the events calendar's real root cause
+
+the events calendar was switched off site-wide after bot traffic was found overwhelming the
+server (covered in [why the site got
+slow](/library/why-the-site-was-slow-and-it-wasnt-ai)) — a necessary stopgap, but not a full
+explanation. digging further found the actual mechanism: a caching setting that controls whether
+pages with a web address like `?eventdisplay=month&amp;date=...` can be cached at all was switched off
+sitewide. with it off, those pages — which is exactly how the calendar's &quot;today,&quot; &quot;this month,&quot; and
+specific-date views work — get rebuilt from scratch on *every single visit*, whether that visit
+comes from a bot or a real person. the calendar wasn't uniquely fragile; it just generated more of
+these uncacheable pages than anything else on the site.
+
+the fix is identified (turn that setting on, so common calendar views get cached and reused instead
+of rebuilt every time), but the control for it is currently locked in our caching plugin's admin
+screen for a reason we haven't pinned down yet — we're working with our hosting provider to sort
+that out. once it's resolved and tested, the plan is to bring the calendar back.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-11-publicrelations-site-launched-calendar-root-cause-found"><time class="when" datetime="2026-10-11">Oct 11</time><span class="what"><b>A fifth PIR site launches, and the events calendar&#39;s real root cause gets found<span data-arr-new-tag hidden></span></b><span class="gist">publicrelations.psychedelicsinrecovery.org is up — the fifth PIR subdomain, continuing the &quot;every committee gets its own lightweight WordPress site&quot; plan. Separately,…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="the whatsapp previews and the malformed 206 <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> during inaugural-convention week, whatsapp link previews served days-old data. root cause found two layers deep: our og:image was a webp (fixed on our side), but the transfer layer was also malformed - ranged http/2 requests came back as http 206 with an impossible &quot;content-encoding: gzip,br&quot; header and a truncated body (curl error 61). wpx's denis s. disabled w3 total cache's gzip compression, and previews came back to life hours before the streams went live.</div>
+
+*source: wpx ticket #733952, &quot;malformed content-encoding on ranged http/2 responses breaks meta/whatsapp crawler&quot; (wpx support portal).*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## the symptom that looked like caching
+
+the new [convention live-stream hub](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-10-live-stream-hub-v5-color-coded-zones/) wouldn't preview in whatsapp: stale, days-old scrape data, falling back to the bare domain. the sharing debugger insisted on **curl error 61 (bad_content_encoding) with response code 206**.
+
+the probe that cracked it: plain gets returned perfect 200s with valid gzip; any request carrying a **range** header came back as http 206 with a `content-encoding: gzip,br` header and a body truncated to the range length - an undecodable stream. meta's crawler does exactly those resumed fetches, chokes mid-transfer, and falls back to its last successful scrape. the same probe even returned a 412 on a later try: unstable at the edge, not in the cache. purging w3 total cache and autoptimize changed nothing.
+
+## the two fixes
+
+1. **ours**: the og:image was a webp, which whatsapp's renderer can't display, and an seo-plugin cache held the old image after it was corrected to a jpeg. once both were fixed, whatsapp fetched the page fresh on its own.
+2. **theirs**: denis s. took wp-admin access via a temporary `wpx` user (created and removed cleanly - attribution requested and honored), investigated, and **disabled w3 total cache's gzip compression**.
+
+## the verification
+
+re-tested from our side before the weekend: fresh loads returned clean 200s with a single correct `content-encoding: gzip`; ranged requests returned **well-formed 206s serving raw bytes** with proper content-range headers; whatsapp previews rendered correctly, including the new convention schedule image.
+
+one line for the record: **if w3tc's gzip compression is ever re-enabled, re-test ranged responses first.** the fix lives in a checkbox someone could innocently flip.
+
+</details>
+
+*the preview was never the problem; the pipe was.*"><a href="/changelog-astro-public/changelog/wordpress/2026-10-10-the-whatsapp-previews-and-the-malformed-206"><time class="when" datetime="2026-10-10">Oct 10</time><span class="what"><b>The WhatsApp previews and the malformed 206<span data-arr-new-tag hidden></span></b><span class="gist">During inaugural-convention week, WhatsApp link previews served days-old data. Root cause found two layers deep: our og:image was a WebP (fixed on our side), but the…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-10" data-priority="P2-medium" data-search="live stream hub v5: color-coded time zones, one-click day cards, and a new schedule poster <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the convention live-stream page got its biggest polish yet: every session now lists <strong>color-coded</strong> pdt / edt / bst / nzdt times, each day image + title + button is <strong>one big clickable card</strong>, the &quot;to watch&quot; instructions are a clear 3-step list, and a new sacred-medicine schedule poster (san pedro, ayahuasca vine, wachuma blooms) went live — including the social preview image.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## time zones, color-coded
+- every session in the day modals now carries a sub-line with <strong>pdt (cyan), edt (orange), bst (violet), nzdt (green)</strong> under the gold denver chip — the same code the printed poster uses.
+- modal headers now say &quot;other zones listed per session.&quot;
+
+## one container per day
+- the three separate click targets (image, title, button) are merged into a single large card per day: image, title, and a day-colored button (friday flame red-orange, saturday violet, sunday sunset pink — matching the day artwork). one click anywhere on the card opens the schedule &amp; zoom rooms.
+
+## clearer &quot;to watch&quot; instructions
+- the one-paragraph instruction became a <strong>3-step list</strong>: tap a day card → find your session and &quot;join on zoom&quot; (with registration email handy — waiting room + email sign-in protect live sessions) → recordings will be hosted on the <a href=&quot;https://www.youtube.com/@psychedelicsinrecovery&quot;>pir youtube channel</a> after the convention.
+- modal footers updated to match: recordings language replaces the old &quot;select sessions also stream live&quot; line.
+
+## new schedule poster (v3)
+- sacred-medicine art nouveau frame: san pedro left, ayahuasca vine right, wachuma blossoms, calm navy center — schedule stays the star.
+- day headers colored to match the web day cards; trademark standardized to <strong>psychedelics in recovery™ – pir®</strong>.
+- featured image + yoast og:image now serve the new poster (verified live in whatsapp previews with v2; v3 inherits the same path).
+
+## under the hood
+- yoast indexable cache had pinned the old featured image (14702); fixed via re-save, og:image now attachment 14718.
+- mobile keeps the full-viewport (100vw/100vh) modal treatment so schedules stay readable on phones.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-10-live-stream-hub-v5-color-coded-zones"><time class="when" datetime="2026-10-10">Oct 10</time><span class="what"><b>Live Stream Hub v5: color-coded time zones, one-click day cards, and a new schedule poster<span data-arr-new-tag hidden></span></b><span class="gist">The Convention live-stream page got its biggest polish yet: every session now lists color-coded PDT / EDT / BST / NZDT times, each day image + title + button is one big…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-10" data-priority="P1-high" data-search="the great slowness investigation <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the deepest dig on this desk: intermittent 3-11 second pages and total timeouts, chased through three layers of causes in one ticket - a 3-php-worker ceiling and 200 req/min rate limit, wp-cron firing more than once per second, a bot storm hammering the events calendar's uncached query urls - and finally the true root cause: w3 total cache's query-string caching was switched off, so every calendar url was rebuilt by php on every visit. along the way, a &quot;stale server&quot; mystery turned out to be wpcode's own internal cache.</div>
+
+*source: wpx ticket #667985, &quot;need help understanding php/process concurrency limits on our plan&quot; (wpx support portal). a companion piece for the fellowship lives in the library: [why the site was slow - and it wasn't ai](https://psychedelicsinrecovery.github.io/changelog-astro-public/library/why-the-site-was-slow-and-it-wasnt-ai/).*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## the symptoms
+
+on a cold cache, pages took **3-11+ seconds** to generate (curl-measured ttfb: /contact/ 11.4s, /resources/ 9.3s). cached pages were fast (~150-400ms). worse: ~30 parallel requests to warm the cache after a plugin change and **more than half timed out at 10 seconds** with zero bytes - not slow, simply absent.
+
+## the ceilings
+
+ilia r. (technical support shift lead) confirmed the plan's shape: **3 php workers per site**, and a **200 requests/minute** rate limit that lives in the ddos layer for the whole server and can't be raised per-account. modest numbers - until something multiplies work.
+
+## the first multiplier: wp-cron
+
+the logs showed wp-cron events firing **more than once per second**. wpx disabled automatic wp-cron and set a real server-level cron every 5 minutes - though, as christopher later caught, that cron initially covered only the service subdomain; the main site's queue sat with **20+ overdue scheduled events** that never ran even when wp-cron.php answered with a clean 200. that gap became its own follow-up.
+
+## the second multiplier: bots on the calendar
+
+georgi y. (security &amp; optimization) traced the cpu spikes to automated crawlers hammering the events calendar's dynamic query strings (`eventdisplay`, `posts_per_page`, `tribe-bar-date`) - urls that bypass page caching and force real php work per hit. wpx deployed a targeted **captcha challenge** on those query strings, and cpu stabilized. the calendar plugin was deactivated site-wide as a stopgap.
+
+## the root cause
+
+then the real mechanism surfaced: w3 total cache's **&quot;cache uris with query string variables&quot;** setting (`pgcache.cache.query`) was **false** in the saved config on both sites - so *any* url with a query string skipped the page cache entirely and was rebuilt from scratch on every request, calendar or not. the calendar wasn't special; it just generated more query-string urls than anything else. the setting was greyed out in w3tc's own ui (a suspected side effect of varnish being enabled at 127.0.0.1:6081), which is what had kept it invisible. the resolution - and the calendar's return - is told in [the publicrelations site entry](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-11-publicrelations-site-launched-calendar-root-cause-found/).
+
+## the mystery solved in passing
+
+mid-investigation, a separate ghost: a wpcode footer snippet on the service site, confirmed correct in the database, kept serving its **old** version byte-for-byte even on responses marked `x-cache-status: miss`. the varnish hypothesis fell (wpx confirmed the config; the cdn wasn't the culprit; the dashboard cache-clear test ruled it out). the real culprit was wpcode's **own internal snippet cache**, which never refreshed on edit. forced rebuild, instant fix. a fine reminder: sometimes the stale layer is the plugin you forgot has a cache of its own.
+
+also logged while the door was open: publications carried two a records (16 and 34 - harmless, but noted), and the brand-new publicrelations subdomain had only a self-signed placeholder cert while the real one was pending.
+
+</details>
+
+*every ghost had an address; it just took a week to read them all.*"><a href="/changelog-astro-public/changelog/wordpress/2026-10-05-the-great-slowness-investigation"><time class="when" datetime="2026-10-05">Oct 5</time><span class="what"><b>The great slowness investigation<span data-arr-new-tag hidden></span></b><span class="gist">The deepest dig on this desk: intermittent 3-11 second pages and total timeouts, chased through three layers of causes in one ticket - a 3-PHP-worker ceiling and 200…</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star low" data-month="2026-10" data-priority="P3-low" data-search="a new helpdesk@ address, checkout follow-ups, and a look back at pir's email <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> pir now has <strong>helpdesk@psychedelicsinrecovery.org</strong> for the new helpdesks, convention checkout follow-ups are set up and tested, and we documented how pir's email has evolved since 2020.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## new this week
+- **helpdesk@psychedelicsinrecovery.org** — the reply-to address for a.l.e.x.'s helpdesks and,
+  later, password-free sign-in emails.
+- **convention checkout follow-ups** — if someone starts buying a convention 2026 virtual pass but
+  doesn't finish, a friendly reminder can go out (set up and tested with the convention team's inbox).
+
+## pir's email, over the years
+| when | what |
+|---|---|
+| 2020 – 2022 | **mailpoet** sent the *online meetings weekly digest* — meeting lists and small announcements |
+| ~2022 – mid-2025 | **mailchimp** |
+| june 2025 → now | **brevo** — signups and campaigns |
+| january 2026 | the **de vine news** newsletter committee forms (a curated newsletter, separate from the old digest) |
+
+next up: strengthening how our domain proves our emails are really from pir, so they land in inboxes
+instead of spam.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-10-04-new-helpdesk-email-and-our-email-history"><time class="when" datetime="2026-10-04">Oct 4</time><span class="what"><b>A new helpdesk@ address, checkout follow-ups, and a look back at PIR&#39;s email<span data-arr-new-tag hidden></span></b><span class="gist">PIR now has helpdesk@psychedelicsinrecovery.org for the new helpdesks, convention checkout follow-ups are set up and tested, and we documented how PIR&#39;s email has…</span><span class="sub"><span class="pri low">Low</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="chart-month" data-month="2026-09">September 2026</li><li class="star high" data-month="2026-09" data-priority="P1-high" data-search="the mobile menu now scrolls properly to reach every page <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the open mobile menu now scrolls smoothly and reliably all the way down, confirmed on a real iphone — and grows with a submenu's content before it needs to scroll at all.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+a follow-up to the previous mobile menu fix: once the menu button itself became reliable, a second
+issue turned up — on a real phone, the open menu wouldn't scroll at all, making it impossible to
+reach items further down the list. it took a few real passes to actually pin down: a couple of
+individually-correct fixes along the way (a body-scroll lock, then fixing how often the menu's own
+size was being recalculated) still weren't the full story. the real cause turned out to be a shared
+css class name matching 33 different elements in the page instead of the one intended — a good
+reminder that a selector looking right isn't the same as confirming what it actually matches. found
+by inspecting the live page directly rather than guessing again, and confirmed fixed on christopher's
+own iphone.
+
+## what changed
+
+- the open menu now scrolls smoothly and reliably to reach every item, confirmed on a real phone.
+- the background page no longer scrolls underneath the open menu — only the menu itself moves.
+- the menu grows to fit a submenu's expanding content first, and only becomes scrollable once it
+  actually reaches near the bottom of the screen — rather than always having scroll room available
+  even for a short menu.
+- the menu button grows slightly when opened, and rounds evenly on all four corners.
+- a deeper purple, matching the rest of the site.
+
+## why it mattered
+
+a menu that only shows its top few items isn't really usable — this closes out the mobile
+navigation work with the menu genuinely working end to end, confirmed on a real device, not just
+visible.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-09-24-mobile-menu-now-scrolls-properly"><time class="when" datetime="2026-09-24">Sep 24</time><span class="what"><b>The mobile menu now scrolls properly to reach every page<span data-arr-new-tag hidden></span></b><span class="gist">The open mobile menu now scrolls smoothly and reliably all the way down, confirmed on a real iPhone — and grows with a submenu&#39;s content before it needs to scroll at all.</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star high" data-month="2026-09" data-priority="P1-high" data-search="the mobile menu button now works reliably on phones — including iphone <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the mobile menu button was unreliable across phones/browsers — now confirmed working on a real iphone, not just testing tools.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+the menu button on phones (the small icon in the top corner that opens the site's navigation) has
+been unreliable for a while — sometimes hard to find, sometimes not showing up at all depending on
+your phone and browser. that's now fixed and confirmed working on a real iphone, not just in
+testing tools.
+
+## what changed
+
+- the menu button now reliably shows up on real phones, not just in browser testing tools that
+  simulate a phone screen. the two didn't always agree, which is exactly why this took a few
+  passes to fully track down.
+- it now sits at a consistent height next to the contact and donate buttons, instead of drifting
+  out of alignment.
+- it has its own distinct look (a deep purple, rounded on all sides) so it's easy to spot as its
+  own tappable control rather than blending into the navigation bar around it.
+- the menu that drops down when you tap it now spans the full width of the screen, and highlights
+  whichever page you're currently on in that same color.
+- the site logo in the top-left corner is a little bigger on phones and tablets too.
+
+## why it mattered
+
+a lot of people visiting the site — including many members of the fellowship — do so from a phone,
+and the menu button is how they get anywhere else on the site. when it wasn't showing up reliably,
+it meant real people couldn't navigate on mobile at all in some cases. this was the top priority fix
+this round.
+
+## what's still being worked on
+
+the button itself is solid — the menu it opens still needed more work to actually scroll properly.
+see the follow-up entry,
+[&quot;the mobile menu now scrolls properly to reach every page&quot;](/changelog/wordpress/2026-09-24-mobile-menu-now-scrolls-properly).
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-09-23-mobile-menu-button-now-reliable"><time class="when" datetime="2026-09-23">Sep 23</time><span class="what"><b>The mobile menu button now works reliably on phones — including iPhone<span data-arr-new-tag hidden></span></b><span class="gist">The mobile menu button was unreliable across phones/browsers — now confirmed working on a real iPhone, not just testing tools.</span><span class="sub"><span class="pri high">High</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star medium" data-month="2026-09" data-priority="P2-medium" data-search="the site header now stays out of your way while you scroll — and comes right back when you need it <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the nav bar tucks itself away as you scroll down a page and slides right back the moment you scroll up, so it's out of the way when you're reading and there when you need it.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+if you visit the site on your phone, you'll notice the navigation bar now tucks itself away as you
+read down a page, giving you more room to actually see the content — and slides right back into
+view the moment you start scrolling back up, so it's always there when you want it.
+
+## what changed
+
+- the header hides smoothly as you scroll down, and reappears as soon as you scroll up — even if
+  you're deep into a long page, not just at the very top.
+- the contact and donate buttons and the site logo got an initial sizing/spacing pass on phones
+  and tablets. (the mobile menu button itself needed more work than first thought — see the
+  follow-up entry below.)
+- a search box used on several pages (homepage, resources, and every blog post) no longer causes
+  the page to scroll sideways on mobile — a bug that had come back more than once and is now fixed
+  everywhere the search box appears, not just where it was originally noticed.
+
+## why it mattered
+
+small, real annoyances on mobile — a header eating screen space, a sideways scroll that shouldn't
+be there — add up. none of this changes what the site does, just how comfortable it is to use,
+especially for the majority of visitors who are on a phone.
+
+## what's still being worked on
+
+the header's reveal-on-scroll-up behavior is confirmed working on desktop browsers; real-device
+testing on mobile is ongoing to make sure it feels just as smooth there. the mobile menu button's
+own reliability issues are covered in
+[&quot;the mobile menu button now works reliably on phones — including iphone&quot;](/changelog/wordpress/2026-09-23-mobile-menu-button-now-reliable).
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-09-23-header-stays-out-of-your-way"><time class="when" datetime="2026-09-23">Sep 23</time><span class="what"><b>The site header now stays out of your way while you scroll — and comes right back when you need it<span data-arr-new-tag hidden></span></b><span class="gist">The nav bar tucks itself away as you scroll down a page and slides right back the moment you scroll up, so it&#39;s out of the way when you&#39;re reading and there when you…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star low" data-month="2026-09" data-priority="P3-low" data-search="footer social icons now properly centered on mobile <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the footer's social icons weren't centered on phones, and its image wasn't centered on desktop either. both are now fixed.</div>
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## what changed
+
+- footer social icons are now centered on mobile screens.
+- the footer image is now centered on desktop.
+
+## why it mattered
+
+small polish, but it's the kind of thing that's easy to notice and hard to un-notice once you have
+— the footer appears on every page, so getting it right matters more than its size suggests.
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2026-09-22-footer-icons-centered-on-mobile"><time class="when" datetime="2026-09-22">Sep 22</time><span class="what"><b>Footer social icons now properly centered on mobile<span data-arr-new-tag hidden></span></b><span class="gist">The footer&#39;s social icons weren&#39;t centered on phones, and its image wasn&#39;t centered on desktop either. Both are now fixed.</span><span class="sub"><span class="pri low">Low</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="star low" data-month="2026-09" data-priority="P3-low" data-search="smtp 451 4.7.1 - the fifty-emails lesson <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> a bulk send to ~100 recipients hit wpx's mail throttle: 50 emails per 30 minutes per mailbox. not a bug - a deliberate guard on a mail service built for correspondence, not campaigns. the lesson the fellowship's mailers keep re-learning since 2023: bulk belongs on a dedicated sender.</div>
+
+*source: wpx ticket #996300, &quot;smtp error: [451] 4.7.1&quot; (wpx support portal).*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+kevin f. tried to send a bulk email to around 100 people and got smtp error **451 4.7.1**, resorting to copy-paste batches. ilona b. at wpx explained the design: **50 emails per 30 minutes per mailbox**, an automatic protection for the mail servers' ip reputation rather than a fault. exceed it and the mailbox cools off until the window resets.
+
+the guidance matches what this desk has known since the 2023 tech com reports ([&quot;our digest email continues to grow and is getting clipped&quot;](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/2023-10-18-keeping-meetings-safe/)): wpx mail is for day-to-day correspondence. newsletters, announcements, and anything automated belong on a **dedicated email delivery service**.
+
+which is exactly where the digest email landed eventually - and why the newsletter subdomain exists at all.
+
+</details>
+
+*slow mail is a feature; the wrong tool is the bug.*"><a href="/changelog-astro-public/changelog/wordpress/2026-09-21-the-fifty-emails-lesson"><time class="when" datetime="2026-09-21">Sep 21</time><span class="what"><b>SMTP 451 4.7.1 - the fifty-emails lesson<span data-arr-new-tag hidden></span></b><span class="gist">A bulk send to ~100 recipients hit WPX&#39;s mail throttle: 50 emails per 30 minutes per mailbox. Not a bug - a deliberate guard on a mail service built for correspondence,…</span><span class="sub"><span class="pri low">Low</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Kevin F" size="18"></arrival-avatar></span>Kevin F</span></span></span></a></li><li class="chart-month" data-month="2026-05">May 2026</li><li class="star medium" data-month="2026-05" data-priority="P2-medium" data-search="imagick, loopbacks, and the https that wasn't <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> a live-chat morning with wpx that settled a whole season of site health warnings in one sitting: imagick installed on all four sites, the firewall taught that our own server ips are friends (the whitelisting that later made agent automation safe), mariadb 10.5 and no redis declared features rather than flaws - and the service site's https error turning out to be one missing &quot;s&quot; in our own url settings.</div>
+
+*source: wpx live chat #tf4oyj9p9z, logged as ticket #388799 (wpx support portal).*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## the asks, and where they landed
+
+christopher came to the chat with three requests and stayed for a tour of the whole basement:
+
+1. **imagick** - installed first for the service site (martin g.), then, when christopher asked the right follow-up question, extended to **all four websites**: main, service, newsletter, publications (denis s.).
+2. **the loopback 400s** - site health's complaint that the server couldn't talk to itself. wpx's logs showed the real story: their firewall had been denying rest api access to an asn it flagged as &quot;mimicking chrome.&quot; the fix: **a permanent whitelist of the server's own ips (194.1.147.16 and 194.1.147.34) and standard user-agent strings**, so internal rest loopbacks - and the automation tooling the tech committee was openly planning - would never be intercepted as a &quot;malicious hacker script.&quot;
+3. **mariadb 10.6+** - declined, on purpose: shared host, the version is a deliberate stability choice, and wordpress 7.0 installs happily on 10.3+. the badge is cosmetic.
+
+## the rest of the tour
+
+- **redis object cache**: not available on the wordpress plan (woocommerce/agency only), and &quot;not required either&quot; at our scale.
+- **php 8.4** held (8.5 available; elementor/astra caution won the day).
+- **the https error on the subdomain** - christopher solved it himself mid-chat: the wordpress and site address urls in settings → general were missing the &quot;s.&quot; manually corrected, saved, error gone.
+- **the zip module ghost** - server-side present and working, yet site health kept insisting it was missing. php version swap didn't clear it; cache-flush rituals didn't clear it. filed under *known-benign*, never to be chased again.
+- **updraftplus restored** by adding `rewriterule .* - [e=noabort:1]` to the .htaccess files.
+
+## why this morning matters
+
+the whitelist is the quiet headliner. it's the reason background tasks, cron-driven updates, and later the tech committee's api-driven automation could talk to the sites without tripping the firewall. the chat also produced the fellowship's working list of *ignorable* warnings - so no future volunteer burns an evening on the mariadb badge or the zip ghost. (gemini's suggestion to add `wp_disable_development_plugins` to wp-config was politely declined - the constant isn't real for this purpose, and denis s. said as much.)
+
+</details>
+
+*sometimes the fix is a letter. sometimes it's a whitelist.*"><a href="/changelog-astro-public/changelog/wordpress/2026-05-27-imagick-loopbacks-and-the-https-that-wasnt"><time class="when" datetime="2026-05-27">May 27</time><span class="what"><b>Imagick, loopbacks, and the https that wasn&#39;t<span data-arr-new-tag hidden></span></b><span class="gist">A live-chat morning with WPX that settled a whole season of Site Health warnings in one sitting: imagick installed on all four sites, the firewall taught that our own…</span><span class="sub"><span class="pri medium">Medium</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Christopher W" github="drasticstatic" size="18"></arrival-avatar></span>Christopher W</span></span></span></a></li><li class="chart-month" data-month="2026-04">April 2026</li><li class="star low" data-month="2026-04" data-priority="P3-low" data-search="three reminders and one epp code: the transfer completes <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> between march and april 2026, wpx's migration team sent three automated alarms titled &quot;important! domain transfer failed&quot; — but the actual problem was one missing password: the epp auth info code, which every registrar must provide on request. once it reached wpx, the transfer completed, and psychedelicsinrecovery.org came fully home.</div>
+
+*source: wpx tickets #749349 (10 mar 2026), #528865 (02 apr 2026), #743286 (15 apr 2026) — automated migration-team reminders addressed to kevin f.*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+## 🔑 what an epp code is
+
+a domain can't move between registrars without its **epp auth info** — sometimes called a &quot;domain secret,&quot; &quot;transfer key,&quot; or &quot;domain password.&quot; it exists to protect the domain's owner: nobody can transfer a domain away without proving they hold it. every registrar is obliged to provide it on request; siteground kept it until asked.
+
+## 📬 three alarms, one missing code
+
+the [domain's hosting move](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-01-30-the-domain-comes-home/) had gone through in january with a records re-pointed — but the registrar-level transfer itself sat pending, waiting on that code. wpx's migration experts sent the same polite alarm three times over five weeks:
+
+1. **#749349** — kristian s., march 10
+2. **#528865** — tsvetomir p., april 2
+3. **#743286** — monika d., april 15
+
+each explained exactly what was needed and how to obtain it. once the epp auth info was provided, the transfer went through — and by the time of [the may server-health morning](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-05-27-imagick-loopbacks-and-the-https-that-wasnt/), all four websites were fully on wpx, https forced, the xdn in front of everything.
+
+## 🧠 the lesson in the subject line
+
+&quot;important! domain transfer failed&quot; is a frightening subject line for what was really a missing form field. a pattern this desk keeps meeting: **the scariest alarm is often the smallest key.** when an automated system says &quot;failed,&quot; read what it's actually asking for before assuming the building is on fire.
+
+</details>
+
+*the sign on the door, the deed, and the keys — all in the same drawer now.*"><a href="/changelog-astro-public/changelog/wordpress/2026-04-15-three-reminders-and-one-epp-code"><time class="when" datetime="2026-04-15">Apr 15</time><span class="what"><b>Three reminders and one EPP code: the transfer completes<span data-arr-new-tag hidden></span></b><span class="gist">Between March and April 2026, WPX&#39;s migration team sent three automated alarms titled &quot;IMPORTANT! Domain transfer failed&quot; — but the actual problem was one missing…</span><span class="sub"><span class="pri low">Low</span><span class="by"><span class="arr-stack" aria-hidden="true"><arrival-avatar name="Kevin F" size="18"></arrival-avatar></span>Kevin F</span></span></span></a></li><li class="chart-month" data-month="2026-01">January 2026</li><li class="star medium" data-month="2026-01" data-priority="P2-medium" data-search="the domain comes home (and buys its ticket twice) <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the psychedelicsinrecovery.org domain transfer from siteground hit a snag: the checkout flow sold a duplicate hosting plan instead of charging for the transfer, and the site greeted visitors with &quot;not found.&quot; a records were re-pointed while wpx's system admins untangled the billing.</div>
+
+*source: wpx ticket #511813, &quot;transferring domain&quot; (wpx support portal).*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+when the domain itself moved from siteground to wpx in january 2026, the checkout experience quietly sold a **second wordpress hosting plan** instead of simply charging for the transfer. the duplicate was cancelled, but the double purchase had wedged something in wpx's system, and the main site served visitors a stark &quot;the requested url was not found on this server.&quot;
+
+kevin f. jumped into the ticket to own the mix-up and ask for the duplicate's refund to the card used - which wpx forwarded to their teams. denis s. diagnosed the plan duplication and gave the interim move: update the domain's **a records at siteground** to **198.60.193.33** until the system admins could fix the underlying issue. konstantin k. clarified which records (siteground's, not wpx's), david l. made the change and shared the dns screenshots, and georgi y. confirmed receipt.
+
+the subdomains, already pointing at wpx, never blinked. the escalation carried the system admins' working-hours caveat of the era - **monday-friday, 09:00-18:00 gmt+2** (their schedule later shifted to gmt+3).
+
+it's a small comedy in retrospect - the domain literally purchased two seats on the same flight - and a reminder of a pattern this desk keeps meeting: **third-party checkout flows quietly making architectural decisions.** the same instinct later showed up as browser-supplied advice in [the server-health morning](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-05-27-imagick-loopbacks-and-the-https-that-wasnt/).
+
+</details>
+
+*the sign on the door now matches the building.*"><a href="/changelog-astro-public/changelog/wordpress/2026-01-30-the-domain-comes-home"><time class="when" datetime="2026-01-30">Jan 30</time><span class="what"><b>The domain comes home (and buys its ticket twice)<span data-arr-new-tag hidden></span></b><span class="gist">The psychedelicsinrecovery.org domain transfer from SiteGround hit a snag: the checkout flow sold a duplicate hosting plan instead of charging for the transfer, and the…</span><span class="sub"><span class="pri medium">Medium</span><span class="by">David L</span></span></span></a></li><li class="chart-month" data-month="2025-12">December 2025</li><li class="star low" data-month="2025-12" data-priority="P3-low" data-search="a fresh certificate for publications <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> a small, satisfying fix: the publications subdomain's ssl certificate was acting up, wpx deleted and reissued it, and everything went back to normal. two months into the wpx era, the small machinery hums.</div>
+
+*source: wpx ticket #827833, &quot;ssl certificate&quot; (wpx support portal).*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+david l asked wpx to delete and reissue the let's encrypt certificate for **publications.psychedelicsinrecovery.org**, which had been misbehaving. svilen d., a technical support shift lead at wpx, checked and confirmed the new certificate was in place the same day, with the usual advice to hard-refresh or use an incognito window before judging.
+
+no drama, no outage - the kind of ticket that exists just to prove the plumbing works. every subdomain eventually gets its turn in this chair; the same request would be made again, by name and by subdomain, in [the server-health morning](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-05-27-imagick-loopbacks-and-the-https-that-wasnt/) five months later.
+
+</details>
+
+*small gears matter too.*"><a href="/changelog-astro-public/changelog/wordpress/2025-12-13-fresh-certificate-for-publications"><time class="when" datetime="2025-12-13">Dec 13</time><span class="what"><b>A fresh certificate for publications<span data-arr-new-tag hidden></span></b><span class="gist">A small, satisfying fix: the publications subdomain&#39;s SSL certificate was acting up, WPX deleted and reissued it, and everything went back to normal. Two months into…</span><span class="sub"><span class="pri low">Low</span><span class="by">David L</span></span></span></a></li><li class="chart-month" data-month="2025-10">October 2025</li><li class="star medium" data-month="2025-10" data-priority="P2-medium" data-search="tech 2.0 begins: the fellowship moves to wpx <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> the entry our whole wpx era hangs from: the free migration request that brought psychedelicsinrecovery.org from siteground to wpx, cache plugins pre-configured to the host's settings, and nameservers handed over. tech 2.0 starts here.</div>
+
+*source: wpx ticket #860932, &quot;free website migration request&quot; (wpx support portal).*
+
+<details>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+david l filed the migration request on october 9, 2025: the wordpress site would move by plugin, https intact, with wpx installing and configuring **w3 total cache and autoptimize** with their pre-configured settings. no mail would be transferred - the fellowship's email stayed where it was.
+
+wpx support (alexander g. and elena n.) walked the standard path: migration completed, then the dns handoff - nameservers **ns1/ns2/ns3.wpx.net** (or an a record to the origin) - with a 24-48 hour propagation window and a warning not to touch the site mid-move. wpx cloud (their xdn edge) came enabled by default, which only reaches full speed when the domain points through their nameservers.
+
+two details worth keeping:
+
+1. **the cache plugins arrived pre-tuned.** w3 total cache and autoptimize were installed *by the host*, with settings chosen for their servers - a decision whose consequences (both good and subtle) surface again and again in later entries on this desk, all the way to [the great slowness investigation](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-05-the-great-slowness-investigation/) a year later.
+2. **the ssl certificate was offered a ride but declined** - the existing cert could be moved if provided, or a free wpx certificate installed after propagation. [three months later, publications needed a reissue](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-12-13-fresh-certificate-for-publications/).
+
+the subdomains - service, publications, and later newsletter and publicrelations - would follow onto the same platform. the tech 2.0 era (documented in the [tech com desk](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/tech-com/)) ran on this new ground.
+
+</details>
+
+*the first domino of tech 2.0.*"><a href="/changelog-astro-public/changelog/wordpress/2025-10-09-the-fellowship-moves-to-wpx"><time class="when" datetime="2025-10-09">Oct 9</time><span class="what"><b>Tech 2.0 begins: the fellowship moves to WPX<span data-arr-new-tag hidden></span></b><span class="gist">The entry our whole WPX era hangs from: the free migration request that brought psychedelicsinrecovery.org from SiteGround to WPX, cache plugins pre-configured to the…</span><span class="sub"><span class="pri medium">Medium</span><span class="by">David L</span></span></span></a></li><li class="star high" data-month="2025-10" data-priority="P1-high" data-search="in memory of david l <div class=&quot;tldr&quot;><i class=&quot;ph ph-lightbulb&quot;></i> <strong>tl;dr:</strong> a moment of remembrance for <strong>david l</strong> - the fellowship member whose hands first reached out to wpx on october 8, 2025, and who carried our sites through the migration, the certificates, and the domain transfer. every page that loads quickly today stands on ground he helped move us to. rest well, david.</div>
+
+<details open>
+<summary><i class=&quot;ph ph-caret-right&quot;></i> read the full story →</summary>
+
+<img src=&quot;https://psychedelicsinrecovery.github.io/changelog-astro-public/assets/2025-10-08-david-lee-ticket-102161.png&quot; alt=&quot;ticket #102161, dated october 8 2025 - david l's first message to wpx about migrating the pir site&quot; style=&quot;max-width:100%;border-radius:12px;margin:1rem 0&quot; loading=&quot;lazy&quot; />
+
+*ticket #102161 - david l's first contact with wpx, october 8, 2025. this is where tech 2.0 began.*
+
+## 🚪 the first door
+
+on october 8, 2025, a ticket appeared in the wpx queue titled simply **&quot;migrating a site.&quot;** its author was david l, managing the psychedelicsinrecovery account. he asked how to bring both the main domain and the service subdomain to wpx - and when the answer came back that each site is its own migration, he took it in stride and filed them, one by one.
+
+the next day came the formal migration request itself. through the winter, his name keeps appearing exactly where the work was: the ssl certificate for publications that december, the domain transfer in january - where he patiently sorted out which a records lived where, screenshots attached, until the sign on the door matched the building.
+
+## 🕯️ what he left us
+
+every fast page load, every secure certificate, every meeting that starts on time - the fellowship's online home stands on ground david helped move us to. the records on this desk exist because people like david did the quiet work: filing the tickets, walking the support chats, carrying dns records back and forth until things simply worked.
+
+the sites he moved keep serving the fellowship every day. that is a legacy in the truest service sense - work done quietly, for others, that outlasts the doing.
+
+## 🙏 a moment
+
+this entry is shared with the fellowship as a way for us all to take a moment to remember the life of david l. if his work touched your recovery - a meeting you found, a page that helped you, a tool that was there when you needed it - that is his hand still reaching.
+
+his memory now has a permanent shelf in the [contacts page](https://psychedelicsinrecovery.github.io/changelog-astro-public/library/contacts/) - the 🕯️ in loving memory section - where everyone who wove this story is gathered in one place.
+
+*in loving memory. rest easy, david. thank you for your service.*
+
+*his story continues across this desk: [the migration](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-10-09-the-fellowship-moves-to-wpx/), [the certificate](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2025-12-13-fresh-certificate-for-publications/), [the domain coming home](https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-01-30-the-domain-comes-home/).*
+
+</details>"><a href="/changelog-astro-public/changelog/wordpress/2025-10-08-in-memory-of-david-lee"><time class="when" datetime="2025-10-08">Oct 8</time><span class="what"><b>In memory of David L<span data-arr-new-tag hidden></span></b><span class="gist">A moment of remembrance for David L - the fellowship member whose hands first reached out to WPX on October 8, 2025, and who carried our sites through the migration,…</span><span class="sub"><span class="pri high">High</span><span class="by">The PIR Fellowship</span></span></span></a></li></ol><p class="empty" id="no-results" hidden>No entries match that search or filter.</p></div></section></main><footer><div class="wrap pir-foot"><div><a class="brand" href="/changelog-astro-public/" style="margin-bottom:.6rem"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34">AstroLog</a><span>What's shipped for Psychedelics In Recovery™, in plain language, and the write-ups behind it.</span><a class="tended" href="https://psychedelicsinrecovery.github.io/catalyst-desk-public/"><span class="cat-mark" aria-hidden="true"></span>Tended by <b>C.A.T.A.L.Y.S.T.</b>, PIR®'s helper fleet</a></div><!-- Every way around, in groups, an icon on each link (drawn by the kit from org.js: footer.groups). --><arrival-footer current="changelog"></arrival-footer></div></footer><nav class="dock" aria-label="Quick links"><div class="wrap"><span class="mark">PIR®</span><a href="https://psychedelicsinrecovery.github.io/"><i class="ph-fill ph-house" aria-hidden="true"></i><span class="lg">Entry portal</span><span class="sm">Hub</span></a><a href="/changelog-astro-public/"><i class="ph-fill ph-door-open" aria-hidden="true"></i>Porch</a><a href="/changelog-astro-public/changelog" aria-current="page"><i class="ph-fill ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a><a href="/changelog-astro-public/library"><i class="ph-fill ph-books" aria-hidden="true"></i>Library</a><a href="/changelog-astro-public/ledger"><i class="ph-fill ph-scroll" aria-hidden="true"></i>Ledger</a><a href="/changelog-astro-public/map"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Map</a><a href="https://discord.gg/MyprTq8w95" data-arrival-open="community"><i class="ph-fill ph-users-three" aria-hidden="true"></i>Community</a><a class="end" href="https://www.psychedelicsinrecovery.org/contact/" data-arrival-open="contact"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i><span class="lg">Reach out</span><span class="sm">Contact</span></a></div></nav><!-- The star field (one copy, served by the hub) follows the kit's motion and cursor choices. --><script src="https://psychedelicsinrecovery.github.io/starfield.js" defer></script><script src="/alex-desk-public/assets/alex.js" defer></script><script src="/changelog-astro-public/astrolog.js" defer></script></body></html><script type="module">var e=document.getElementById(`search-input`),t=document.querySelectorAll(`.tabs button[data-priority]`),n=document.querySelectorAll(`#changelog-list .star`),r=document.querySelectorAll(`#changelog-list .chart-month`),i=document.getElementById(`no-results`),a=`all`;function o(){let t=e.value.trim().toLowerCase(),o=new Set,s=0;n.forEach(e=>{let n=(a===`all`||e.dataset.priority===a)&&(!t||(e.dataset.search??``).includes(t));e.hidden=!n,n&&(s++,o.add(e.dataset.month??``))}),r.forEach(e=>e.hidden=!o.has(e.dataset.month??``)),i.hidden=s>0,window.dispatchEvent(new Event(`scroll`))}e?.addEventListener(`input`,o),t.forEach(e=>e.addEventListener(`click`,()=>{t.forEach(e=>e.setAttribute(`aria-pressed`,`false`)),e.setAttribute(`aria-pressed`,`true`),a=e.dataset.priority??`all`,o()}));</script>
