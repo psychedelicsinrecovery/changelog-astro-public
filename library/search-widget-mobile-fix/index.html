@@ -1,0 +1,179 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>The search widget&#39;s mobile horizontal-scroll saga — Library</title><meta name="description" content="Four rounds tracking down why a search box kept causing sideways scroll on phones, site-wide."><meta name="theme-color" content="#06050e"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="alternate" type="application/rss+xml" title="PIR® AstroLog changelog" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml"><!-- Link previews (Discord, WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/search-widget-mobile-fix"><meta property="og:site_name" content="PIR® AstroLog"><meta property="og:type" content="article"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/search-widget-mobile-fix"><meta property="og:title" content="The search widget's mobile horizontal-scroll saga — Library"><meta property="og:description" content="Four rounds tracking down why a search box kept causing sideways scroll on phones, site-wide."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/library/search-widget-mobile-fix.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="The search widget's mobile horizontal-scroll saga. A PIR® AstroLog library write-up."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The search widget's mobile horizontal-scroll saga — Library"><meta name="twitter:description" content="Four rounds tracking down why a search box kept causing sideways scroll on phones, site-wide."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/library/search-widget-mobile-fix.jpg"><meta name="twitter:image:alt" content="The search widget's mobile horizontal-scroll saga. A PIR® AstroLog library write-up."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><!-- PIR's arrival kit, served from the hub. Load order matters: kit CSS, PIR's kit CSS, then the
+         design system and this site's layer. The scripts stay in <head> (not deferred) so the
+         visitor's light, motion and contrast apply before first paint. --><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/org.css"><script src="https://psychedelicsinrecovery.github.io/arrival/org.js"></script><script src="https://psychedelicsinrecovery.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/alex-desk-public/assets/alex.css"><link rel="stylesheet" href="/changelog-astro-public/astrolog.css"></head><body class="docpage"><a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then
+         into a Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="top"><div class="wrap"><a class="brand" href="/changelog-astro-public/" aria-label="PIR® AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34"><span class="arr-brand-text"><span class="word">AstroLog</span> <small>PIR®</small></span></a><arrival-nav current="library"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><div class="doc-band" aria-hidden="true"></div><div class="wrap doc"><aside class="toc" aria-label="On this page"><b>On this page</b><nav><a href="#the-widget-and-where-it-lives" class="d2">The widget, and where it lives</a><a href="#the-three-problems-and-what-actually-caused-each" class="d2">The three problems, and what actually caused each</a><a href="#reusable-mobile-css-shape-adapt-selectors-per-pages-actual-wrapper-ids" class="d2">Reusable mobile CSS shape (adapt selectors per page’s actual wrapper IDs)</a><a href="#adding-this-widget-to-a-new-page" class="d2">Adding this widget to a new page</a></nav></aside><article class="prose" style="max-width:46rem"><a class="crumb" href="/changelog-astro-public/library"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i>All library write-ups</a><h1>The search widget&#39;s mobile horizontal-scroll saga</h1><p class="desc">Four rounds tracking down why a search box kept causing sideways scroll on phones, site-wide.</p><div class="meta-row"><span><i class="ph-fill ph-timer" aria-hidden="true"></i> 7 min read</span></div><div class="doc-tools"><button class="tool" type="button" data-details-toggle hidden aria-pressed="false"><i class="ph-fill ph-arrows-out-line-vertical" aria-hidden="true"></i><span class="lbl">Expand all</span></button><button class="tool" type="button" onclick="window.print()"><i class="ph-fill ph-printer" aria-hidden="true"></i><span>Print or save as PDF</span></button><button class="tool" type="button" data-arrival-open="copy" title="Shared in Discord, WhatsApp or iMessage, it arrives with its own preview card"><i class="ph-fill ph-link" aria-hidden="true"></i><span>Copy a link</span></button></div><div class="tldr">
+<i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> Four rounds tracking down a search box that kept causing sideways scroll on mobile, site-wide. The short version: overflow issues can hide in more places than the one page where you first notice them.
+</div>
+<blockquote>
+<p>🔒 <strong>Serving PIR®?</strong> The living, members-only version of this doc is <a href="https://github.com/psychedelicsinrecovery/tech-committee/blob/main/docs/public/SEARCH-WIDGET-MOBILE-FIX.md"><code>tech-committee/docs/public/SEARCH-WIDGET-MOBILE-FIX.md</code></a> (it 404s unless you’re a member of PIR’s GitHub org). <a href="mailto:helpdesk@psychedelicsinrecovery.org?subject=GitHub%20access%20request%20(service%20role)">Request access for your service role</a>.</p>
+</blockquote>
+<details>
+<summary><i class="ph ph-caret-right"></i> Read the full story →</summary>
+<h1 id="elementor-search-form-widget--mobile-overflowtruncation-fix-reference">Elementor Search Form widget — mobile overflow/truncation fix, reference</h1>
+<p><strong>Purpose:</strong> a clean technical reference for this specific widget’s mobile problems and fixes,
+separate from <code>FOOTER-RECONNAISSANCE.md</code>’s chronological log of how we got here. Read this if you
+need the current state or are adding this widget to a new page. Read <code>FOOTER-RECONNAISSANCE.md</code>
+(search-widget sections) if you want the history of what went wrong along the way.</p>
+<h2 id="the-widget-and-where-it-lives">The widget, and where it lives</h2>
+<p>Elementor Pro’s “Search Form” widget (<code>widget_type: search.default</code>, <code>live_results: yes</code>). It has
+no native mobile-responsive controls for border-radius, padding, or typography reachable via the
+site’s MCP tooling — every fix here is a CSS injection via an HTML widget, not a widget setting.
+<strong>There is no global Custom-CSS mechanism for this site.</strong> Adding this widget to a new page means
+repeating the fix below on that page; nothing propagates automatically.</p>
+<p>As of 2026-09-23, it’s live on 6 pages:</p>
+<table>
+<thead>
+<tr>
+<th>Page</th>
+<th>Post ID</th>
+<th>Wrapper chain</th>
+<th>Fix widget</th>
+<th>Native <code>border-radius:55px</code>?</th>
+<th>Search widget ID</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Homepage</td>
+<td><code>9572</code></td>
+<td><code>ed5e712</code> → <code>2203955</code> → <code>2827d53</code> → search</td>
+<td><code>ef693d1</code></td>
+<td>Yes</td>
+<td><code>1312455</code></td>
+</tr>
+<tr>
+<td>Convention 2026</td>
+<td><code>12760</code></td>
+<td><code>29005439</code> → <code>4c129c5e</code> → search</td>
+<td><code>0ea64c9</code></td>
+<td>No</td>
+<td><code>4f2a26d</code></td>
+</tr>
+<tr>
+<td>Resources</td>
+<td><code>24</code></td>
+<td>→ <code>65296741</code> → search</td>
+<td>(own widget)</td>
+<td>Yes</td>
+<td><code>335bd7a4</code></td>
+</tr>
+<tr>
+<td>Public Relations</td>
+<td><code>12603</code></td>
+<td>→ <code>2cd5a92e</code> → search</td>
+<td>(own widget)</td>
+<td>Yes</td>
+<td><code>3dc17463</code></td>
+</tr>
+<tr>
+<td>Search results</td>
+<td><code>12891</code></td>
+<td>→ <code>31ce4ff3</code> → search</td>
+<td>(own widget)</td>
+<td>Yes</td>
+<td><code>be7228c</code></td>
+</tr>
+<tr>
+<td>Single Post Template</td>
+<td><code>9317</code> (renders on every blog post)</td>
+<td>→ <code>541fe80</code> → search</td>
+<td>(own widget)</td>
+<td>No</td>
+<td><code>6f07d1d</code></td>
+</tr>
+</tbody>
+</table>
+<p>Homepage’s widget is a synced Elementor Global Widget (<code>templateID: 13663</code>, “search-bar”) — but
+the template itself has no wrapping container, so the overflow/mobile fix still has to be injected
+per-page, not once on the template.</p>
+<h2 id="the-three-problems-and-what-actually-caused-each">The three problems, and what actually caused each</h2>
+<p><strong>1. Horizontal overflow.</strong> The widget’s own oversized border-radius + large negative-spread
+box-shadow renders wider than its container on mobile. Fix: <code>max-width:100%; overflow-x:hidden</code>
+on the outer wrapper. Straightforward — the only subtlety is that the wrapper nests a different
+number of levels deep depending on the page (1–3), so the rule has to be applied at every level
+that page actually has, not just the innermost.</p>
+<p><strong>2. The “heavy corner-radius mask.”</strong> This one is <em>not</em> caused by anything we wrote. Four of the
+six pages’ wrapper containers (see table above) carry a native Elementor container setting,
+<code>border-radius: 55px</code> on all four corners, unrelated to the search widget’s own styling. Combined
+with the <code>overflow-x:hidden</code> fix from problem 1, that 55px radius clips the search field into a
+heavily rounded mask, where there’s no room for a 55px radius to read as a subtle rounded corner —
+it reads as a mask. <strong>Originally fixed mobile-only, assuming desktop’s 55px was intentional — that
+assumption was wrong.</strong> Christopher confirmed the mask was also visible on desktop for homepage,
+Resources, and Public Relations. Fix now applies unconditionally (not scoped to a mobile media
+query) on all 3 affected pages. The two pages without this native setting (convention, Single Post
+Template) never showed the mask on either breakpoint.</p>
+<p><strong>3. Truncated placeholder text vs. an oversized submit button.</strong> The real live markup is:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#85E89D">div</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"e-search-input-wrapper"</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;</span><span style="color:#85E89D">svg</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"keyboard-icon"</span><span style="color:#B392F0"> ...</span><span style="color:#FDAEB7;font-style:italic">/</span><span style="color:#E1E4E8">&gt;  </span><span style="color:#6A737D">&lt;!-- decorative, ~30px --&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;</span><span style="color:#FDAEB7;font-style:italic">input</span><span style="color:#B392F0"> placeholder</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"Type to start searching..."</span><span style="color:#E1E4E8"> /&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#FDAEB7;font-style:italic">div</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;</span><span style="color:#FDAEB7;font-style:italic">button</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"e-search-submit"</span><span style="color:#E1E4E8">&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">  &lt;</span><span style="color:#FDAEB7;font-style:italic">svg</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">"e-fas-search"</span><span style="color:#E1E4E8">/&gt; &lt;</span><span style="color:#FDAEB7;font-style:italic">span</span><span style="color:#B392F0"> class</span><span style="color:#E1E4E8">=</span><span style="color:#9ECBFF">""</span><span style="color:#E1E4E8">&gt;Search&lt;/</span><span style="color:#FDAEB7;font-style:italic">span</span><span style="color:#E1E4E8">&gt;  </span><span style="color:#6A737D">&lt;!-- visible text, NOT screen-reader-only --&gt;</span></span>
+<span class="line"><span style="color:#E1E4E8">&lt;/</span><span style="color:#FDAEB7;font-style:italic">button</span><span style="color:#E1E4E8">&gt;</span></span></code></pre>
+<p>An earlier attempt assumed the submit button had no text span at all — wrong; it has one, and it’s
+visible, not <code>.sr-only</code>. Combined with <code>flex-shrink:0</code> on the button (added to stop it collapsing
+to nothing), the full “Search” label rendered at full size and ate the width the placeholder text
+and the decorative keyboard icon both needed, forcing a choice between showing the icon or showing
+the full placeholder string.</p>
+<p><strong>Fix, current state:</strong> hide <code>.e-search-submit span</code> directly on mobile — button becomes
+icon-only (magnifying glass), freeing the width. That let the keyboard icon come back too, just
+slightly smaller (20×20px instead of ~30px) rather than full size, plus a reduced input font-size
+(14px) and letting the input <code>flex-grow</code> into the reclaimed space. Net result on mobile: keyboard
+icon, full “Type to start searching…” placeholder, and an icon-only submit button, all visible,
+nothing clipped.</p>
+<p><strong>4. Placeholder text still truncated differently per page, even with the CSS above identical
+everywhere.</strong> Not a CSS problem at all — the search widget’s own Elementor <strong>responsive settings</strong>
+(not the injected CSS) differed between pages. The convention page’s widget (<code>4f2a26d</code>) uniquely
+carried <code>_flex_align_self_mobile: "stretch"</code> and <code>_flex_size_mobile: "shrink"</code>; none of the other 5
+widget instances had these set, so their input field wasn’t actually allowed to grow into the
+freed space the CSS above provides — it just stayed narrow, cutting the placeholder off earlier.
+Fix: applied the identical two settings to all 5 other instances (via <code>update-element</code> on the
+widget’s own settings, not CSS). <strong>Verification caveat:</strong> confirmed via settings-parity with the
+one page already known to render correctly (convention page) — no tool was found to fetch this
+site’s aggregated/minified generated CSS to visually re-confirm pixel-for-pixel, so this is
+verified-by-configuration-match, not verified-by-screenshot. Worth a real device check.</p>
+<p><strong>5. The “fix” above never actually applied to the homepage — a Global Widget reference gotcha.</strong>
+Live testing after problem 4’s fix showed the homepage was still the <em>worst</em> result of all 6 pages
+(“Type to start se….”), not fixed at all. Cause: the homepage’s search widget ID, <code>1312455</code>, is a
+<strong>Global Widget reference</strong> (<code>widgetType: "global"</code>) — a pointer to a synced template, not the
+widget itself. Writing settings to <code>1312455</code> writes to the reference, which does nothing; the real
+widget instance lives inside the template it points to: <code>templateID: 13663</code>, actual widget ID
+<strong><code>2b63de67</code></strong>. Applied the settings there instead. <strong>Anywhere this site uses a Global Widget, edit
+the ID the <code>templateID</code> points to, not the reference ID <code>get-page-structure</code> shows you on the
+page</strong> — this cost real debugging time and is worth checking first next time, not last.</p>
+<p><strong>6. Resources and Public Relations were still worse than convention/blog despite already having
+correct widget settings and identical CSS.</strong> Correlated exactly with wrapper nesting depth (3
+levels for these two vs. 2 for convention vs. 1 for the Single Post Template) — small per-level
+padding accumulating across 3 levels ate enough width to matter, even though nothing was
+individually wrong. Fix: added <code>padding: 0 !important</code> on every wrapper level (mobile-only) in
+these two pages’ existing fix widgets (<code>a3b907b</code> for Resources, <code>63e03f2</code> for Public Relations).</p>
+<h2 id="reusable-mobile-css-shape-adapt-selectors-per-pages-actual-wrapper-ids">Reusable mobile CSS shape (adapt selectors per page’s actual wrapper IDs)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="css"><code><span class="line"><span style="color:#FDAEB7;font-style:italic">.elementor-element-&lt;outer-wrapper</span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">border-radius</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#F97583"> !important</span><span style="color:#E1E4E8">; } </span><span style="color:#6A737D">/* unconditional — only if the page has the native 55px radius */</span></span>
+<span class="line"><span style="color:#F97583">@media</span><span style="color:#E1E4E8"> (</span><span style="color:#79B8FF">max-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">767</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">) {</span></span>
+<span class="line"><span style="color:#FDAEB7;font-style:italic">  .elementor-element-&lt;outer-wrapper</span><span style="color:#F97583">&gt;</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">max-width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">100</span><span style="color:#F97583">%</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">overflow-x</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">hidden</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">padding</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">0</span><span style="color:#F97583"> !important</span><span style="color:#E1E4E8">; } </span><span style="color:#6A737D">/* padding:0 on every nesting level if 3+ levels deep */</span></span>
+<span class="line"><span style="color:#B392F0">  .e-search-submit</span><span style="color:#85E89D"> span</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">display</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">none</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#B392F0">  .e-search-input-wrapper</span><span style="color:#85E89D"> svg</span><span style="color:#B392F0">.keyboard-icon</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">width</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">20</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">height</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">20</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#B392F0">  .e-search-input-wrapper</span><span style="color:#85E89D"> input</span><span style="color:#E1E4E8"> { </span><span style="color:#79B8FF">font-size</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">14</span><span style="color:#F97583">px</span><span style="color:#E1E4E8">; </span><span style="color:#79B8FF">flex-grow</span><span style="color:#E1E4E8">: </span><span style="color:#79B8FF">1</span><span style="color:#E1E4E8">; }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<h2 id="adding-this-widget-to-a-new-page">Adding this widget to a new page</h2>
+<ol>
+<li>Find the widget’s actual wrapper container ID(s) via <code>get-page-structure</code>. <strong>If the widget’s
+<code>widgetType</code> is <code>"global"</code>, that ID is a reference, not the real widget</strong> — follow its
+<code>templateID</code> and find the actual widget ID inside that template. Every setting/CSS change below
+goes on the real widget, never the reference.</li>
+<li>Check whether that wrapper carries a native <code>border-radius</code> (via <code>get-element-settings</code>) — if
+so, add the zero-radius override, unconditionally (not just mobile — desktop can have this too).</li>
+<li>Set <code>_flex_align_self_mobile: "stretch"</code> and <code>_flex_size_mobile: "shrink"</code> on the search
+widget’s own settings (<code>update-element</code>) — without these, the input won’t grow into whatever
+space the CSS frees up, no matter how correct the CSS is.</li>
+<li>Add an HTML widget inside the innermost wrapper with the CSS shape above, IDs substituted. If
+the wrapper nests 3+ levels deep, add <code>padding:0 !important</code> at every level, not just the
+innermost — accumulated padding across levels eats width even when each level looks fine alone.</li>
+<li>Verify by live fetch. Cache purge is confirmed not needed as of 2026-09-23 (Christopher’s
+iPhone/desktop force-refresh both show changes immediately) — earlier rounds’ “purge W3TC +
+WPX/XDN first” caveat no longer applies.</li>
+</ol>
+<hr>
+<p>Co-Authored-By: Alfred · ClaudeCodeCLI · Anthropic [Sonnet-5]</p>
+</details>
+</article></div></main><footer><div class="wrap pir-foot"><div><a class="brand" href="/changelog-astro-public/" style="margin-bottom:.6rem"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34">AstroLog</a><span>What's shipped for Psychedelics In Recovery™, in plain language, and the write-ups behind it.</span><a class="tended" href="https://psychedelicsinrecovery.github.io/catalyst-desk-public/"><span class="cat-mark" aria-hidden="true"></span>Tended by <b>C.A.T.A.L.Y.S.T.</b>, PIR®'s helper fleet</a></div><!-- Every way around, in groups, an icon on each link (drawn by the kit from org.js: footer.groups). --><arrival-footer current="library"></arrival-footer></div></footer><nav class="dock" aria-label="Quick links"><div class="wrap"><span class="mark">PIR®</span><a href="https://psychedelicsinrecovery.github.io/"><i class="ph-fill ph-house" aria-hidden="true"></i><span class="lg">Entry portal</span><span class="sm">Hub</span></a><a href="/changelog-astro-public/"><i class="ph-fill ph-door-open" aria-hidden="true"></i>Porch</a><a href="/changelog-astro-public/changelog"><i class="ph-fill ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a><a href="/changelog-astro-public/library" aria-current="page"><i class="ph-fill ph-books" aria-hidden="true"></i>Library</a><a href="/changelog-astro-public/ledger"><i class="ph-fill ph-scroll" aria-hidden="true"></i>Ledger</a><a href="/changelog-astro-public/map"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Map</a><a href="https://discord.gg/MyprTq8w95" data-arrival-open="community"><i class="ph-fill ph-users-three" aria-hidden="true"></i>Community</a><a class="end" href="https://www.psychedelicsinrecovery.org/contact/" data-arrival-open="contact"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i><span class="lg">Reach out</span><span class="sm">Contact</span></a></div></nav><!-- The star field (one copy, served by the hub) follows the kit's motion and cursor choices. --><script src="https://psychedelicsinrecovery.github.io/starfield.js" defer></script><script src="/alex-desk-public/assets/alex.js" defer></script><script src="/changelog-astro-public/astrolog.js" defer></script></body></html>
