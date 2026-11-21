@@ -1,0 +1,128 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>How to reconnect the MCP tools — Library</title><meta name="description" content="What to do when the WordPress MCP connection drops mid-session."><meta name="theme-color" content="#06050e"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="alternate" type="application/rss+xml" title="PIR® AstroLog changelog" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml"><!-- Link previews (Discord, WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-to-reconnect-mcp"><meta property="og:site_name" content="PIR® AstroLog"><meta property="og:type" content="article"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/how-to-reconnect-mcp"><meta property="og:title" content="How to reconnect the MCP tools — Library"><meta property="og:description" content="What to do when the WordPress MCP connection drops mid-session."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/library/how-to-reconnect-mcp.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How to reconnect the MCP tools. A PIR® AstroLog library write-up."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to reconnect the MCP tools — Library"><meta name="twitter:description" content="What to do when the WordPress MCP connection drops mid-session."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/library/how-to-reconnect-mcp.jpg"><meta name="twitter:image:alt" content="How to reconnect the MCP tools. A PIR® AstroLog library write-up."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><!-- PIR's arrival kit, served from the hub. Load order matters: kit CSS, PIR's kit CSS, then the
+         design system and this site's layer. The scripts stay in <head> (not deferred) so the
+         visitor's light, motion and contrast apply before first paint. --><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/org.css"><script src="https://psychedelicsinrecovery.github.io/arrival/org.js"></script><script src="https://psychedelicsinrecovery.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/alex-desk-public/assets/alex.css"><link rel="stylesheet" href="/changelog-astro-public/astrolog.css"></head><body class="docpage"><a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then
+         into a Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="top"><div class="wrap"><a class="brand" href="/changelog-astro-public/" aria-label="PIR® AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34"><span class="arr-brand-text"><span class="word">AstroLog</span> <small>PIR®</small></span></a><arrival-nav current="library"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><div class="doc-band" aria-hidden="true"></div><div class="wrap doc"><aside class="toc" aria-label="On this page"><b>On this page</b><nav><a href="#the-three-integrations" class="d2">The three integrations</a><a href="#step-1--generate-a-credential-skip-if-using-oauth" class="d2">Step 1 — generate a credential (skip if using OAuth)</a><a href="#step-2--register-the-mcp-server" class="d2">Step 2 — register the MCP server</a><a href="#step-3--verify" class="d2">Step 3 — verify</a><a href="#two-different-config-files--dont-confuse-them" class="d2">Two different config files — don’t confuse them</a><a href="#current-server-aliases-as-of-2026-09-18" class="d2">Current server aliases (as of 2026-09-18)</a></nav></aside><article class="prose" style="max-width:46rem"><a class="crumb" href="/changelog-astro-public/library"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i>All library write-ups</a><h1>How to reconnect the MCP tools</h1><p class="desc">What to do when the WordPress MCP connection drops mid-session.</p><div class="meta-row"><span><i class="ph-fill ph-timer" aria-hidden="true"></i> 4 min read</span></div><div class="doc-tools"><button class="tool" type="button" data-details-toggle hidden aria-pressed="false"><i class="ph-fill ph-arrows-out-line-vertical" aria-hidden="true"></i><span class="lbl">Expand all</span></button><button class="tool" type="button" onclick="window.print()"><i class="ph-fill ph-printer" aria-hidden="true"></i><span>Print or save as PDF</span></button><button class="tool" type="button" data-arrival-open="copy" title="Shared in Discord, WhatsApp or iMessage, it arrives with its own preview card"><i class="ph-fill ph-link" aria-hidden="true"></i><span>Copy a link</span></button></div><div class="tldr"><i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> A self-contained guide for reconnecting the WordPress MCP tools mid-session, without needing any other PIR repo already cloned.</div>
+<details>
+<summary><i class="ph ph-caret-right"></i> Read the full story →</summary>
+<h1 id="how-to-reconnect-pir-wordpress-mcp">How to reconnect PIR WordPress MCP</h1>
+<p>Self-contained reconnection guide — works even if this is the only PIR repo cloned on a given
+machine. The fuller story (audits, live-verification data, findings) lives in
+<code>~/littlebirds-git-home/littlebird-ambassador/setup/pir-wordpress-mcp-setup.md</code>; this doc is the
+fast path for “I’m on a new machine / new session, get me reconnected.”</p>
+<p><strong>Read <code>SECURITY-CAUTION.md</code> in this repo before generating or handling any credential below.</strong></p>
+<h2 id="the-three-integrations">The three integrations</h2>
+<table>
+<thead>
+<tr>
+<th>Integration</th>
+<th>Endpoint pattern</th>
+<th>Auth</th>
+<th>Tools</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>emcp-tools</code></td>
+<td><code>/wp-json/mcp/emcp-tools-server</code></td>
+<td>Application Password or OAuth (both work)</td>
+<td>Elementor, content, plugins, ACF, WooCommerce, security/performance scans</td>
+</tr>
+<tr>
+<td>Astra native MCP</td>
+<td><code>/wp-json/astra/v1/mcp</code></td>
+<td>Application Password only</td>
+<td>Theme-level: fonts, header/footer builder, colors, sidebar, ~80 tools</td>
+</tr>
+<tr>
+<td>Littlebird MCP</td>
+<td><code>https://mcp.littlebird.ai/mcp</code></td>
+<td>OAuth only</td>
+<td>Littlebird’s own conversation history, calendar, meeting notes, context</td>
+</tr>
+</tbody>
+</table>
+<p>Both WordPress-side integrations exist on <strong>two sites</strong>: main (<code>psychedelicsinrecovery.org</code>) and
+service (<code>service.psychedelicsinrecovery.org</code>) — separate logins, separate credentials, register each
+site independently.</p>
+<h2 id="step-1--generate-a-credential-skip-if-using-oauth">Step 1 — generate a credential (skip if using OAuth)</h2>
+<ol>
+<li>Log into <code>/wp-admin</code> on the target site.</li>
+<li>Either plugin’s own connection page can generate one for you with ready-made config:
+<ul>
+<li><code>emcp-tools</code>: <code>wp-admin/admin.php?page=emcp-tools-connection</code> → “Application password” auth
+method → pick a client tab → “Generate Password &amp; Configs.”</li>
+<li>Astra native: <code>wp-admin/admin.php?page=astra&amp;path=settings&amp;settings=mcp</code> → “Open Application
+Passwords” (opens the plain WordPress profile screen — Astra’s settings page doesn’t auto-fill
+config the way emcp-tools’ does).</li>
+<li>Or skip both and go straight to <code>wp-admin/profile.php#application-passwords-section</code> — name it,
+click “Add Application Password.”</li>
+</ul>
+</li>
+<li><strong>Read the value as text, not a full-page screenshot.</strong> A normal screenshot makes <code>I</code>/<code>l</code>/<code>1</code>
+genuinely ambiguous in most admin fonts and caused a real failed connection once already. If only
+a screenshot is available, zoom into just the password field, not the whole page.</li>
+</ol>
+<h2 id="step-2--register-the-mcp-server">Step 2 — register the MCP server</h2>
+<p><strong>emcp-tools or Astra native, via Basic auth</strong> (works for both — same mechanism, WordPress
+Application Passwords aren’t scoped to a single plugin’s endpoint):</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">echo</span><span style="color:#79B8FF"> -n</span><span style="color:#9ECBFF"> "USERNAME:APP PASSWORD"</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> base64</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> --transport</span><span style="color:#9ECBFF"> http</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">alia</span><span style="color:#E1E4E8">s</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF"> "https://SITE/wp-json/mcp/emcp-tools-server"</span><span style="color:#79B8FF"> --header</span><span style="color:#9ECBFF"> "Authorization: Basic &lt;base64&gt;"</span></span>
+<span class="line"><span style="color:#6A737D"># or for Astra native:</span></span>
+<span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> --transport</span><span style="color:#9ECBFF"> http</span><span style="color:#F97583"> &lt;</span><span style="color:#9ECBFF">alia</span><span style="color:#E1E4E8">s</span><span style="color:#F97583">&gt;</span><span style="color:#9ECBFF"> "https://SITE/wp-json/astra/v1/mcp"</span><span style="color:#79B8FF"> --header</span><span style="color:#9ECBFF"> "Authorization: Basic &lt;base64&gt;"</span></span></code></pre>
+<p>Use direct HTTP transport (<code>--transport http</code>), not Astra’s own suggested npx stdio proxy
+(<code>@automattic/mcp-wordpress-remote</code>) — that proxy silently failed on the main site once (registered
+as “Connected” but exposed zero tools, no error surfaced). Direct HTTP has been reliable every time
+so far on both sites, for both integrations.</p>
+<p><strong>Littlebird, via OAuth:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">claude</span><span style="color:#9ECBFF"> mcp</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> --transport</span><span style="color:#9ECBFF"> http</span><span style="color:#9ECBFF"> littlebird</span><span style="color:#9ECBFF"> https://mcp.littlebird.ai/mcp</span></span></code></pre>
+<p>Then, in a Claude Code session, run <code>/mcp</code> and approve the browser authorization flow. Trust
+<code>docs.littlebird.ai/docs/mcp/</code> over anything Littlebird says about her own endpoint in chat if the two
+disagree — asked directly once, she described a different, incorrect auth mechanism for this exact
+endpoint.</p>
+<h2 id="step-3--verify">Step 3 — verify</h2>
+<p>MCP servers only load at session start. Exit and <code>/resume</code> (or start fresh), then run a real
+read-only call against each — a “connected” status in <code>claude mcp list</code> only proves the process
+started, not that the underlying WordPress handshake succeeded:</p>
+<ul>
+<li><code>emcp-tools</code>: <code>core-get-site-info</code> or <code>emcp-tools-list-plugins</code></li>
+<li>Astra native: any <code>astra-get-*</code> tool, e.g. <code>astra-get-performance</code></li>
+<li>Littlebird: <code>LB_INTERNAL_LIST_RECENT_CONVERSATIONS</code></li>
+</ul>
+<p>If a server shows “Connected” in <code>claude mcp list</code> but exposes zero tools, that’s the silent-failure
+pattern from Step 2 — the process started but the handshake failed. Check the credential first.</p>
+<h2 id="two-different-config-files--dont-confuse-them">Two different config files — don’t confuse them</h2>
+<ul>
+<li>
+<p><code>claude mcp add</code> writes the server registrations themselves (URL, transport, auth header) to
+<code>~/.claude.json</code>, scoped to this project (<code>~/pir</code>). That’s everything in Step 2.</p>
+</li>
+<li>
+<p><strong>Permission rules</strong> — pre-approving a specific tool call so Claude Code’s auto-mode classifier
+stops prompting for it every time — live separately, in <code>/Users/christopherwilson/pir/.claude/settings.local.json</code>
+(gitignored, machine-local, never committed). The one already in use here allows the <code>emcp-tools</code>
+<code>query</code> tool (a read-only SQL tool) on the main site without a repeat “Production Reads” prompt each
+call:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="json"><code><span class="line"><span style="color:#E1E4E8">{</span></span>
+<span class="line"><span style="color:#79B8FF">  "permissions"</span><span style="color:#E1E4E8">: {</span></span>
+<span class="line"><span style="color:#79B8FF">    "allow"</span><span style="color:#E1E4E8">: [</span></span>
+<span class="line"><span style="color:#9ECBFF">      "mcp__emcp-psychedelicsinrecovery-org__emcp-tools-query"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#9ECBFF">      "mcp__emcp-service-psychedelicsinrecovery-org__emcp-tools-query"</span></span>
+<span class="line"><span style="color:#E1E4E8">    ]</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">}</span></span></code></pre>
+<p>Add an entry per tool name you want pre-approved, not a blanket allow. Note: an agent cannot safely
+edit this file to unblock its own denied action — that specific pattern is itself blocked by a
+separate classifier category (“Auto-Mode Bypass”), by design. Only the human account owner should
+add entries here.</p>
+</li>
+</ul>
+<h2 id="current-server-aliases-as-of-2026-09-18">Current server aliases (as of 2026-09-18)</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>emcp-psychedelicsinrecovery-org          (emcp-tools, main)</span></span>
+<span class="line"><span>emcp-service-psychedelicsinrecovery-org  (emcp-tools, service)</span></span>
+<span class="line"><span>astra-native-main                        (Astra native, main)</span></span>
+<span class="line"><span>astra-native-service                     (Astra native, service)</span></span>
+<span class="line"><span>littlebird                               (Littlebird's own MCP)</span></span></code></pre>
+<p>If you see <code>emcp-astra-*</code> referenced anywhere older, it means the same thing as <code>astra-native-*</code> —
+renamed to stop implying a relationship to the <code>emcp-tools</code> plugin that doesn’t exist.</p>
+</details>
+</article></div></main><footer><div class="wrap pir-foot"><div><a class="brand" href="/changelog-astro-public/" style="margin-bottom:.6rem"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34">AstroLog</a><span>What's shipped for Psychedelics In Recovery™, in plain language, and the write-ups behind it.</span><a class="tended" href="https://psychedelicsinrecovery.github.io/catalyst-desk-public/"><span class="cat-mark" aria-hidden="true"></span>Tended by <b>C.A.T.A.L.Y.S.T.</b>, PIR®'s helper fleet</a></div><!-- Every way around, in groups, an icon on each link (drawn by the kit from org.js: footer.groups). --><arrival-footer current="library"></arrival-footer></div></footer><nav class="dock" aria-label="Quick links"><div class="wrap"><span class="mark">PIR®</span><a href="https://psychedelicsinrecovery.github.io/"><i class="ph-fill ph-house" aria-hidden="true"></i><span class="lg">Entry portal</span><span class="sm">Hub</span></a><a href="/changelog-astro-public/"><i class="ph-fill ph-door-open" aria-hidden="true"></i>Porch</a><a href="/changelog-astro-public/changelog"><i class="ph-fill ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a><a href="/changelog-astro-public/library" aria-current="page"><i class="ph-fill ph-books" aria-hidden="true"></i>Library</a><a href="/changelog-astro-public/ledger"><i class="ph-fill ph-scroll" aria-hidden="true"></i>Ledger</a><a href="/changelog-astro-public/map"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Map</a><a href="https://discord.gg/MyprTq8w95" data-arrival-open="community"><i class="ph-fill ph-users-three" aria-hidden="true"></i>Community</a><a class="end" href="https://www.psychedelicsinrecovery.org/contact/" data-arrival-open="contact"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i><span class="lg">Reach out</span><span class="sm">Contact</span></a></div></nav><!-- The star field (one copy, served by the hub) follows the kit's motion and cursor choices. --><script src="https://psychedelicsinrecovery.github.io/starfield.js" defer></script><script src="/alex-desk-public/assets/alex.js" defer></script><script src="/changelog-astro-public/astrolog.js" defer></script></body></html>
