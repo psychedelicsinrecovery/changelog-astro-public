@@ -1,0 +1,202 @@
+<!DOCTYPE html><html lang="en" data-arrival-site="astrolog"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Why the site got slow (and why it wasn&#39;t Claude, Littlebird, or AI) — Library</title><meta name="description" content="The real, traced-to-the-evidence story of the PIR® slowdown - what we checked, what WPX found in server logs, what's fixed, and a plain-language guide to bots vs. AI agents vs. simple automation."><meta name="theme-color" content="#06050e"><link rel="icon" href="/changelog-astro-public/favicon.svg" type="image/svg+xml"><link rel="alternate icon" href="/changelog-astro-public/favicon.png"><link rel="alternate" type="application/rss+xml" title="PIR® AstroLog changelog" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/rss.xml"><!-- Link previews (Discord, WhatsApp, iMessage, Telegram…): every URL absolute, a real JPEG. --><link rel="canonical" href="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/why-the-site-was-slow-and-it-wasnt-ai"><meta property="og:site_name" content="PIR® AstroLog"><meta property="og:type" content="article"><meta property="og:url" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/library/why-the-site-was-slow-and-it-wasnt-ai"><meta property="og:title" content="Why the site got slow (and why it wasn't Claude, Littlebird, or AI) — Library"><meta property="og:description" content="The real, traced-to-the-evidence story of the PIR® slowdown - what we checked, what WPX found in server logs, what's fixed, and a plain-language guide to bots vs. AI agents vs. simple automation."><meta property="og:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/library/why-the-site-was-slow-and-it-wasnt-ai.jpg"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Why the site got slow (and why it wasn't Claude, Littlebird, or AI). A PIR® AstroLog library write-up."><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Why the site got slow (and why it wasn't Claude, Littlebird, or AI) — Library"><meta name="twitter:description" content="The real, traced-to-the-evidence story of the PIR® slowdown - what we checked, what WPX found in server logs, what's fixed, and a plain-language guide to bots vs. AI agents vs. simple automation."><meta name="twitter:image" content="https://psychedelicsinrecovery.github.io/changelog-astro-public/og/library/why-the-site-was-slow-and-it-wasnt-ai.jpg"><meta name="twitter:image:alt" content="Why the site got slow (and why it wasn't Claude, Littlebird, or AI). A PIR® AstroLog library write-up."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/fill/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/regular/style.css"><!-- PIR's arrival kit, served from the hub. Load order matters: kit CSS, PIR's kit CSS, then the
+         design system and this site's layer. The scripts stay in <head> (not deferred) so the
+         visitor's light, motion and contrast apply before first paint. --><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/arrival.css"><link rel="stylesheet" href="https://psychedelicsinrecovery.github.io/arrival/org.css"><script src="https://psychedelicsinrecovery.github.io/arrival/org.js"></script><script src="https://psychedelicsinrecovery.github.io/arrival/arrival.js"></script><link rel="stylesheet" href="/alex-desk-public/assets/alex.css"><link rel="stylesheet" href="/changelog-astro-public/astrolog.css"></head><body class="docpage"><a class="skip" href="#main">Skip to content</a><div class="progress" aria-hidden="true"></div><canvas id="starfield-canvas" aria-hidden="true"></canvas><!-- One row at every width: the brand, the kit's navbar (from org.js: it folds into "More", then
+         into a Menu button below 1100px, rather than wrapping) and the kit's tools. --><header class="top"><div class="wrap"><a class="brand" href="/changelog-astro-public/" aria-label="PIR® AstroLog, porch"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34"><span class="arr-brand-text"><span class="word">AstroLog</span> <small>PIR®</small></span></a><arrival-nav current="library"></arrival-nav><arrival-controls></arrival-controls></div></header><main id="main"><div class="doc-band" aria-hidden="true"></div><div class="wrap doc"><aside class="toc" aria-label="On this page"><b>On this page</b><nav><a href="#round-one-the-caching-settings-were-quietly-broken" class="d3">Round one: the caching settings were quietly broken</a><a href="#round-two-finding-a-second-more-serious-pattern" class="d3">Round two: finding a second, more serious pattern</a><a href="#taking-it-to-wpx-with-real-evidence-instead-of-a-vague-complaint" class="d3">Taking it to WPX, with real evidence instead of a vague complaint</a><a href="#closing-it-out-with-our-own-numbers-not-just-a-vendors-word" class="d3">Closing it out, with our own numbers, not just a vendor’s word</a></nav></aside><article class="prose" style="max-width:46rem"><a class="crumb" href="/changelog-astro-public/library"><i class="ph-fill ph-arrow-left" aria-hidden="true"></i>All library write-ups</a><h1>Why the site got slow (and why it wasn&#39;t Claude, Littlebird, or AI)</h1><p class="desc">The real, traced-to-the-evidence story of the PIR® slowdown - what we checked, what WPX found in server logs, what&#39;s fixed, and a plain-language guide to bots vs. AI agents vs. simple automation.</p><div class="meta-row"><time datetime="2026-10-08"><i class="ph-fill ph-calendar-blank" aria-hidden="true"></i> 2026-10-08</time><span><i class="ph-fill ph-timer" aria-hidden="true"></i> 12 min read</span></div><div class="doc-tools"><button class="tool" type="button" data-details-toggle hidden aria-pressed="false"><i class="ph-fill ph-arrows-out-line-vertical" aria-hidden="true"></i><span class="lbl">Expand all</span></button><button class="tool" type="button" onclick="window.print()"><i class="ph-fill ph-printer" aria-hidden="true"></i><span>Print or save as PDF</span></button><button class="tool" type="button" data-arrival-open="copy" title="Shared in Discord, WhatsApp or iMessage, it arrives with its own preview card"><i class="ph-fill ph-link" aria-hidden="true"></i><span>Copy a link</span></button></div><div class="tldr"><i class="ph ph-lightbulb"></i> <strong>TL;DR:</strong> The site has been slow on and off for a while - longer than any AI tooling has been involved, confirmed by WPX hosting's own server logs. The real cause: ordinary search-engine/SEO bots (not AI) repeatedly hitting our events calendar's "live" pages, which can't be cached and forced the server to redo heavy work on every bot visit. We've confirmed this with real before/after numbers, not just WPX's word for it. Alfred and Littlebird structurally cannot cause this kind of slowdown - they connect through a private, authenticated tool, never as public bot traffic. Below: the actual investigation, in full, in accordions so you can skip to what you care about.</div>
+<p><em>Related entries on the ledger: <a href="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-05-the-great-slowness-investigation/">the great slowness investigation</a> - the working log this guide came from - and <a href="https://psychedelicsinrecovery.github.io/changelog-astro-public/changelog/wordpress/2026-10-14-xdn-takes-a-breather/">the XDN takes a breather</a>, the edge layer’s own ongoing chapter.</em></p>
+<details>
+<summary><i class="ph ph-caret-right"></i> 🔍 The investigation, blow by blow →</summary>
+<p>This section is the real working log, not a cleaned-up summary - the same level of detail Alfred and
+Christopher were working with in real time, so anyone can see exactly what was checked and why,
+instead of just taking “it’s fixed” on faith.</p>
+<p><strong>First correction, up front</strong>: the slowness itself goes back further than late September - well
+before Claude or Littlebird had any real hands-on access to the site. That timing is important,
+because it’s the single clearest piece of evidence that AI tooling was never the cause.</p>
+<h3 id="round-one-the-caching-settings-were-quietly-broken">Round one: the caching settings were quietly broken</h3>
+<p>While chasing a performance complaint, Alfred read W3 Total Cache’s actual saved configuration file
+directly off the server (not just the admin screen, which can be misleading) and found that three
+important settings - <strong>Minify</strong>, <strong>Database Cache</strong>, and <strong>Object Cache</strong> - had all been silently
+switched off. The file’s own leftover data showed it had last been saved from one specific settings
+tab, which is a known W3 Total Cache quirk: saving one tab can silently reset checkboxes on other
+tabs that weren’t part of that save. Nobody did this on purpose; it was the plugin’s own save
+behavior.</p>
+<p>With Minify off, the browser had to download <strong>93 separate CSS and JavaScript files</strong> on every page
+load instead of a handful of combined ones. Turning Minify, DB Cache, and Object Cache back on
+dropped that to <strong>15 files</strong>, and the site’s own internal performance score went from <strong>80 to 88</strong>
+immediately. Real improvement - but the site was <em>still</em> reported as slow afterward, which meant
+there was more going on.</p>
+<h3 id="round-two-finding-a-second-more-serious-pattern">Round two: finding a second, more serious pattern</h3>
+<p>To rule things in or out properly, Alfred fetched a handful of real pages directly and timed them.
+Pages that hadn’t been recently visited (and so weren’t cached yet) took <strong>3 to over 11 seconds</strong> to
+generate - <code>/contact/</code> alone took 11.4 seconds on a cold hit. Once a page was cached, the same page
+loaded in <strong>150-400 milliseconds</strong>. That gap pointed at two separate things worth checking: how long
+the server takes to build an <em>uncached</em> page, and whether something was stopping pages from staying
+cached in the first place.</p>
+<p>Then, while proactively trying to “warm” the cache by requesting many pages at once, something more
+concerning showed up: firing about 30 requests to the site in close succession caused <strong>more than
+half of them to time out completely after 10 seconds, with nothing returned at all</strong> - not slow,
+just silence. That specific pattern (several requests at once failing outright) usually points to a
+server running out of available worker processes, not just a slow page.</p>
+<h3 id="taking-it-to-wpx-with-real-evidence-instead-of-a-vague-complaint">Taking it to WPX, with real evidence instead of a vague complaint</h3>
+<p>At this point the question shifted from “what can we fix in WordPress” to “what are our hosting
+plan’s actual limits,” so a support ticket went to <strong>WPX</strong> with the exact numbers above - not “the
+site feels slow,” but specific timings, specific pages, and the exact failure pattern.</p>
+<p>WPX’s own team confirmed, from their side:</p>
+<ul>
+<li><strong>3 PHP worker processes per website</strong> on our current plan (a hard ceiling on how many requests can
+be handled genuinely at the same time).</li>
+<li><strong>A 200-requests-per-minute rate limit</strong>, which is normally hard to hit by accident.</li>
+<li>That this particular limit is part of their DDoS-protection layer and isn’t something that gets
+raised just by asking.</li>
+</ul>
+<p>They also pulled real server logs and found two concrete things:</p>
+<ol>
+<li><strong><code>wp-cron</code> (WordPress’s internal scheduler) was firing more than once per second</strong> - far more
+often than it should. WPX fixed this directly: they turned off the automatic trigger and replaced
+it with a proper server-level task running every 5 minutes.</li>
+<li><strong>The real driver of the CPU spikes: automated bots repeatedly hitting the events calendar’s
+“live” query pages</strong> - specifically ones using the calendar’s dynamic view settings
+(technical names: <code>eventDisplay</code>, <code>posts_per_page</code>, <code>tribe-bar-date</code>). Calendar views like this
+show real-time data and can’t be saved as a static cached page, so <em>every single bot visit</em> forced
+the server to do real, heavy work from scratch. One of the bots WPX named was <strong>MJ12Bot</strong>, which
+belongs to <strong>Majestic</strong>, a UK company that crawls websites to build a commercial link-analysis
+database - a completely ordinary, non-AI, SEO-industry bot that visits a huge share of public
+websites on the internet, PIR® included.</li>
+</ol>
+<p>WPX added a protective check specifically on those calendar query pages and confirmed, from their own
+monitoring, that CPU usage stabilized within days.</p>
+<h3 id="closing-it-out-with-our-own-numbers-not-just-a-vendors-word">Closing it out, with our own numbers, not just a vendor’s word</h3>
+<p>Rather than call it done because WPX said so, the events calendar plugin (confirmed to actually be
+the thing generating those bot-bait pages) was temporarily switched off entirely, every cache was
+cleared, and the same pages that were timed at the start were timed again.</p>
+<p><strong>Before</strong> (the original cold readings): <code>/contact/</code> 11.4s, <code>/resources/</code> 9.3s, <code>/history/</code> 4.4s,
+<code>/vision/</code> 3.1s.</p>
+<p><strong>After disabling the plugin</strong> (fresh cold readings, same pages): <code>/contact/</code> 3.3s, <code>/resources/</code>
+4.5s, <code>/history/</code> 2.9s, <code>/vision/</code> 2.9s - roughly <strong>2-3× faster even on an uncached hit</strong>, before any
+caching benefit at all.</p>
+<p><strong>After properly warming the cache</strong> (every real page on both sites fetched once, deliberately, one
+at a time rather than all at once - mindful of that 3-worker ceiling): every page tested on the main
+site loaded in well under a second on the next visit (most around 0.3-0.9s), and the service site
+came in consistently under half a second. These aren’t projections - they’re real, just-measured
+numbers.</p>
+<p><strong>Update - this one’s solved now, and it wasn’t what it looked like at first:</strong> the smaller mystery
+mentioned above (a database edit to one small script not showing up live for over an hour) led the
+investigation down a wrong turn before the real answer turned up - worth telling honestly, not just
+the part that turned out right. The first theory was Varnish, a caching layer sitting in front of
+the site that nobody had noticed before; that lead was chased through two rounds with WPX support,
+who confirmed the Varnish setup existed but - once a CDN-cache-clear test came back with no
+change - it turned out WPX doesn’t actually manage that layer at all (it’s driven by a WordPress
+plugin, not their hosting infrastructure), which ruled it out as the cause. The real answer: the
+header/footer snippet plugin keeps its <em>own</em> internal cache of content, completely separate from
+any page cache, CDN, or Varnish - and that internal cache simply hadn’t refreshed since the last
+edit. One re-save fixed it instantly, confirmed byte-for-byte on the live page. Nothing about this
+touched W3 Total Cache, Varnish, or WPX’s CDN - all three were innocent, and now we know for sure
+instead of just assuming.</p>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> 🤖 "Bot" doesn't mean "AI" - the actual difference →</summary>
+<p>This mix-up is extremely common, so it’s worth explaining clearly, once, for everyone:</p>
+<ul>
+<li><strong>A bot</strong>, in the context of a website, is just <em>any computer program that visits web pages
+automatically</em> instead of a person clicking around. Search engines run bots to find and index
+pages (that’s how PIR® shows up in Google). SEO companies like Majestic run bots to study links
+between sites. Spammers run bots too. None of this requires AI - the first web bots existed in the
+1990s, decades before anything like Claude existed.</li>
+<li><strong>An AI agent</strong> (like Alfred, who writes this changelog, or Littlebird) is something different
+entirely: a person directs it, in a private conversation, to go do a specific task - write
+something, fix something, look something up - and it reports back. It isn’t out crawling the
+public internet on its own; it’s doing exactly what it was asked, when it was asked, the way the
+investigation above shows step by step.</li>
+<li><strong>A bot’s name is just a label it picks for itself</strong>, and anyone can type anything there - it
+proves nothing. WPX’s logs mentioning traffic “calling itself Claude” is not evidence that
+Anthropic (the company that makes Claude) did anything; it only means <em>some</em> automated visitor
+used that word in a header nobody checks, the same way anyone can put any name in an email’s “From”
+field.</li>
+</ul>
+<p>The structural reason AI tools couldn’t have caused this: <strong>Alfred and Littlebird never visit the
+site the way a bot or a regular visitor does.</strong> They connect through a private, logged-in tool
+(called “EMCP Tools”) built specifically for this - not through public pages, not anonymously, and
+not in a way that shows up as “bot traffic” at all. It’s simply a different road into the site
+entirely, and the investigation above - reading actual config files, timing actual pages, finding an
+actual plugin - is what that road looks like in practice: deliberate, human-directed, and visible.</p>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> ⌨️ CLI, MCP, OAuth - a plain-language glossary →</summary>
+<p>Since PIR® will keep leaning on these tools, here’s what the jargon actually means:</p>
+<ul>
+<li><strong>CLI</strong> (command-line interface): a text-based way of giving a computer program instructions,
+instead of clicking buttons. This is how Christopher and Alfred mostly work together - it’s not
+mysterious, it’s just typing instead of clicking, the same way the investigation above was carried
+out as a real back-and-forth conversation, not something running unattended.</li>
+<li><strong>MCP</strong> (Model Context Protocol): the specific, permissioned connection that lets an AI assistant
+like Alfred actually <em>do</em> things on a real site (read a page, fix a setting) instead of only
+talking about it. Every MCP connection is something a person deliberately set up and can remove.</li>
+<li><strong>OAuth</strong>: a standard way of granting an app access to part of an account <em>without</em> ever handing
+over a password. If you’ve ever clicked “Sign in with Google,” that’s OAuth. It’s a security
+feature, not a risk.</li>
+<li><strong>Agent</strong>: a general term for an AI assistant that can take real actions (not just chat) toward
+a goal a person gave it - check its work, look things up, make a change - while reporting back what
+it did. Still always person-directed; “agent” describes capability, not autonomy.</li>
+</ul>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> 🛍️ Also not AI: our order confirmation emails →</summary>
+<p>Someone recently wondered if our WooCommerce order confirmation emails were AI-generated. They’re
+not - they’re simple, rule-based automation: “when an order is placed, send this pre-written
+template.” No AI writes or decides anything there; it’s the same kind of automation email services
+have used for 20+ years, just running on our store. Worth naming explicitly, since “automated” and
+“AI” get conflated just as often as “bot” and “AI” do.</p>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> 🧭 Found the calendar's <em>actual</em> root cause, and the real fix plan →</summary>
+<p>The original fix for the bot-overwhelmed events calendar was really a stopgap: WPX added bot
+protection at their edge, and the calendar plugin was switched off site-wide while a better answer
+got worked out. Digging further found the actual mechanism underneath it: the site’s caching plugin
+had a setting - “cache pages with a query string” - switched off across the board. The calendar’s
+dynamic views (today’s events, this month’s events, a specific date) are all built using query
+strings, so with that setting off, <em>every single one</em> had to be rebuilt from scratch on every visit,
+whether that visit came from a bot or a real person. It was never really about the calendar
+specifically; the calendar just generated more of these uncacheable URLs than anything else on the
+site.</p>
+<p>The real fix: turn that setting on, so the common calendar views actually get cached and reused
+instead of rebuilt every time - a more durable fix than leaning on bot-blocking alone. One snag
+found while trying to flip it: the setting is currently locked/greyed out in the caching plugin’s
+own admin screen on both sites, for a reason that isn’t clear yet (possibly tied to another caching
+layer, possibly a hosting-level restriction). That question - along with confirming it’s safe
+before anything changes - is with WPX now. Once resolved and tested, the plan is to turn the
+calendar back on.</p>
+<p>Separately, a fifth PIR subdomain launched this week:
+<strong>publicrelations.psychedelicsinrecovery.org</strong>, continuing the “every committee gets its own
+lightweight WordPress site” plan already underway with <code>newsletter.</code> and <code>publications.</code> - so
+committees can manage their own corner of PIR’s web presence without needing access to the main or
+service sites.</p>
+</details>
+<details>
+<summary><i class="ph ph-caret-right"></i> ✅ Where things stand right now →</summary>
+<ul>
+<li><strong>Runaway background scheduler</strong>: found and fixed by WPX. The automatic <code>wp-cron</code> trigger was
+replaced with a clean server-level cron, now every 5 minutes on both sites. The main site’s backlog
+of overdue tasks cleared once its cron frequency was raised (verified 2026-10-12).</li>
+<li><strong>The main site now runs through WPX’s CDN</strong> (2026-10-12). Until then it had been served straight
+from the origin server, while the service site already had a CDN in front of it, which is a big
+part of why real visitors felt the main site was slower. Cached pages now come from WPX’s edge in
+under a fifth of a second. Cart, checkout, and account pages are confirmed never cached.</li>
+<li><strong>Three dead stylesheet requests removed</strong> from every main-site page. One add-on plugin was
+requesting files that don’t exist, and each request quietly made the server build a full “page
+not found” response on every visit.</li>
+<li><strong>Bot traffic on the events calendar</strong>: root cause now understood (see above) - a sitewide
+caching setting, not something specific to the calendar. Plugin stays off until the fix is applied
+and tested; WPX protection remains active in the meantime.</li>
+<li><strong>Measured result</strong>: cold-page load times down roughly 2-3× even before caching kicks in, and
+every real page on both sites now loads in under a second once warmed - re-confirmed today with
+fresh timings, not assumed.</li>
+<li><strong>The service-subdomain caching oddity</strong>: solved (see the update above) - a plugin’s own internal
+cache, unrelated to hosting, Varnish, or any CDN.</li>
+<li><strong>Alfred and Littlebird</strong>: cleared, structurally, not just by claim - a completely different
+connection into the site than how bots or regular traffic ever arrive.</li>
+</ul>
+<p>PIR® is going to keep using AI tools like Claude and Littlebird going forward - carefully, with real
+humans directing every action, the same way this whole investigation happened - because they
+genuinely help a small, volunteer-run fellowship get more done than its people alone have time for.
+Hopefully this makes the “how” a lot less mysterious, and a lot easier to trust. 🙏</p>
+</details>
+</article></div></main><footer><div class="wrap pir-foot"><div><a class="brand" href="/changelog-astro-public/" style="margin-bottom:.6rem"><img src="/changelog-astro-public/favicon.svg" alt="" width="34" height="34">AstroLog</a><span>What's shipped for Psychedelics In Recovery™, in plain language, and the write-ups behind it.</span><a class="tended" href="https://psychedelicsinrecovery.github.io/catalyst-desk-public/"><span class="cat-mark" aria-hidden="true"></span>Tended by <b>C.A.T.A.L.Y.S.T.</b>, PIR®'s helper fleet</a></div><!-- Every way around, in groups, an icon on each link (drawn by the kit from org.js: footer.groups). --><arrival-footer current="library"></arrival-footer></div></footer><nav class="dock" aria-label="Quick links"><div class="wrap"><span class="mark">PIR®</span><a href="https://psychedelicsinrecovery.github.io/"><i class="ph-fill ph-house" aria-hidden="true"></i><span class="lg">Entry portal</span><span class="sm">Hub</span></a><a href="/changelog-astro-public/"><i class="ph-fill ph-door-open" aria-hidden="true"></i>Porch</a><a href="/changelog-astro-public/changelog"><i class="ph-fill ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a><a href="/changelog-astro-public/library" aria-current="page"><i class="ph-fill ph-books" aria-hidden="true"></i>Library</a><a href="/changelog-astro-public/ledger"><i class="ph-fill ph-scroll" aria-hidden="true"></i>Ledger</a><a href="/changelog-astro-public/map"><i class="ph-fill ph-map-trifold" aria-hidden="true"></i>Map</a><a href="https://discord.gg/MyprTq8w95" data-arrival-open="community"><i class="ph-fill ph-users-three" aria-hidden="true"></i>Community</a><a class="end" href="https://www.psychedelicsinrecovery.org/contact/" data-arrival-open="contact"><i class="ph-fill ph-chat-circle-text" aria-hidden="true"></i><span class="lg">Reach out</span><span class="sm">Contact</span></a></div></nav><!-- The star field (one copy, served by the hub) follows the kit's motion and cursor choices. --><script src="https://psychedelicsinrecovery.github.io/starfield.js" defer></script><script src="/alex-desk-public/assets/alex.js" defer></script><script src="/changelog-astro-public/astrolog.js" defer></script></body></html>
